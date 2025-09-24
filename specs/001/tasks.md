@@ -72,7 +72,7 @@
 - [x] T005 **[Project Lead]** Set up logging system for tracking data processing steps and validation results in src/logging_config.py
 
 ## Phase 3.2: Data Exploration and Validation **[Andrew]**
-- [ ] T006 **[Andrew]** Load QCEW CSV files and examine data structure, columns, and data types in notebooks/exploration.ipynb
+- [x] T006 **[Andrew]** Load QCEW CSV files and examine data structure, columns, and data types in notebooks/exploration.ipynb
 - [ ] T007 **[Andrew]** Perform exploratory data analysis on employment counts, wages, and geographic coverage in notebooks/exploration.ipynb
 - [ ] T008 **[Andrew]** Identify missing values, outliers, and data quality issues across quarters in notebooks/exploration.ipynb
 - [ ] T009 **[Andrew]** Create summary statistics and visualizations for employment trends by industry/region in notebooks/exploration.ipynb
