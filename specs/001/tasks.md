@@ -65,11 +65,11 @@
 - Paths shown below assume single project - adjust based on plan.md structure
 
 ## Phase 3.1: Setup **[Project Lead]**
-- [ ] T001 **[Project Lead]** Implement automated data download script for QCEW CSV files from California Open Data Portal in src/data_download.py
-- [ ] T002 **[Project Lead]** Set up PyTorch environment with pandas, scikit-learn, matplotlib, seaborn in src/environment.py
-- [ ] T003 **[Project Lead]** Create data directory structure for raw, processed, and validated datasets in data/ directory
-- [ ] T004 **[Project Lead]** Implement automated data fetching/aggregation scripts with error handling and retries in src/data_acquisition.py
-- [ ] T005 **[Project Lead]** Set up logging system for tracking data processing steps and validation results in src/logging_config.py
+- [x] T001 **[Project Lead]** Implement automated data download script for QCEW CSV files from California Open Data Portal in src/data_download.py
+- [x] T002 **[Project Lead]** Set up PyTorch environment with pandas, scikit-learn, matplotlib, seaborn in src/environment.py
+- [x] T003 **[Project Lead]** Create data directory structure for raw, processed, and validated datasets in data/ directory
+- [x] T004 **[Project Lead]** Implement automated data fetching/aggregation scripts with error handling and retries in src/data_acquisition.py
+- [x] T005 **[Project Lead]** Set up logging system for tracking data processing steps and validation results in src/logging_config.py
 
 ## Phase 3.2: Data Exploration and Validation **[Andrew]**
 - [ ] T006 **[Andrew]** Load QCEW CSV files and examine data structure, columns, and data types in notebooks/exploration.ipynb
