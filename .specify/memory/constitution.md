@@ -1,50 +1,41 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- Sync Impact Report
+Version change: none → 1.0.0
+List of modified principles: N/A (new constitution)
+Added sections: Additional Constraints, Development Workflow
+Removed sections: N/A
+Templates requiring updates: plan-template.md (✅ no update needed - generic), spec-template.md (✅ no update needed - generic), tasks-template.md (✅ no update needed - generic)
+Follow-up TODOs: None
+-->
+
+# IS-160 Project Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Rigorous Data Validation
+Rigorous data validation must be performed at each processing step, incorporating automated quality checks to ensure data integrity, accuracy, and reliability throughout the analysis pipeline.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Comprehensive Feature Engineering
+Comprehensive feature engineering must leverage domain expertise in employment economics to transform raw data into meaningful, predictive features that capture economic relationships and temporal dynamics.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Reproducible Research
+All research and modeling activities must be fully reproducible, utilizing fixed random seeds for stochastic processes and maintaining detailed logging to enable traceability and verification of results.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Modular PyTorch Implementation
+PyTorch implementations must be modular, with clear block-by-block documentation that explains the purpose, inputs, outputs, and logic of each component to facilitate maintenance and collaboration.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Temporal and Geographic Data Handling
+Proper handling of temporal and geographic data structures is required for effective convolutional neural network input, ensuring accurate representation of spatio-temporal patterns in employment data.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### VI. Privacy and Statistical Best Practices
+Strict adherence to employment data privacy regulations and statistical best practices is mandatory, including anonymization techniques, ethical data usage, and rigorous statistical methodology to protect sensitive information and ensure valid inferences.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Additional Constraints
+All implementations must use Python 3.8+ as the primary language. PyTorch is the required deep learning framework for neural network components. Data processing must incorporate automated validation pipelines. Geographic data must be handled using appropriate spatial libraries (e.g., GeoPandas). Temporal data must preserve chronological ordering and handle time zones correctly.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Development Workflow
+All code changes must undergo peer review. Automated tests, including data validation checks, must pass before merge. Documentation must be updated for any changes affecting public APIs or data processing pipelines. Reproducibility checks must be performed for any modeling changes.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This constitution supersedes all other project practices and guidelines. Amendments require consensus approval from project stakeholders and must include documentation of rationale and impact. All development activities must comply with the stated principles; any deviations require explicit justification and approval. Regular reviews must be conducted to ensure ongoing compliance.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-09-24 | **Last Amended**: 2025-09-24
