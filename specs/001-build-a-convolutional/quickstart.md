@@ -33,9 +33,9 @@ pip install pytest black isort  # development tools
 
 ### 4. Data Acquisition
 ```bash
-# Data will be provided in ./data/ directory
-# If not present, download from BLS QCEW portal
 mkdir -p data/raw data/processed data/validated
+python src/data_download.py  # Downloads all required QCEW CSV files automatically
+# Note: Data files are gitignored and will not be committed to version control
 ```
 
 ## Project Structure
