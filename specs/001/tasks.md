@@ -1,4 +1,17 @@
-# Tasks: Build a Convolutional Neural Network for Employment Trends Analysis
+# Tas**Team Work **Total Team Members**: 3
+- **Project Lead**: Overall coordination, setup, data exploration, validation, preprocessing, model architecture, visualization, and final documentation
+- **Andrew**: Training infrastructure, loss functions, and evaluation
+- **Alejo**: Feature engineering, and documentationents**
+
+**Total Team Members**: 3
+- **Project Lead**: Overall coordination, setup, data exploration, validation, preprocessing, model architecture, visualization, and final documentation
+- **Andrew**: Training infrastructure, loss functions, and evaluation
+- **Alejo**: Feature engineering, and documentation
+
+### Workload Distribution
+- **Project Lead**: 41 tasks (Setup, Data Exploration/Validation, Preprocessing/Model Architecture, Visualization, Documentation)
+- **Andrew**: 20 tasks (Training Infrastructure, Loss Functions/Evaluation)
+- **Alejo**: 20 tasks (Feature Engineering, Documentation) Convolutional Neural Network for Employment Trends Analysis
 
 **Input**: Design documents from `/specs/001-build-a-convolutional/`
 **Prerequisites**: spec.md (available), plan.md (not yet created), research.md, data-model.md, contracts/
@@ -11,19 +24,19 @@
 - **Alejo**: Feature engineering, model architecture, loss functions, and evaluation
 
 ### Workload Distribution
-- **Project Lead**: 25 tasks (Setup, Preprocessing/Model Architecture, Visualization, Documentation)
-- **Andrew**: 25 tasks (Data Exploration, Training Infrastructure, Baseline Comparison)
-- **Alejo**: 25 tasks (Feature Engineering, Loss Functions/Evaluation)
+- **Project Lead**: 41 tasks (Setup, Data Exploration/Validation, Preprocessing/Model Architecture, Visualization, Documentation)
+- **Andrew**: 20 tasks (Training Infrastructure, Loss Functions/Evaluation)
+- **Alejo**: 20 tasks (Feature Engineering, Documentation)
 
 ### Phase Assignments
 - **Phase 3.1 Setup**: Project Lead
-- **Phase 3.2 Data Exploration**: Andrew
+- **Phase 3.2 Data Exploration**: Project Lead
 - **Phase 3.3 Feature Engineering**: Alejo
 - **Phase 3.4 Data Preprocessing/Model Architecture**: Project Lead
 - **Phase 3.5 Training Infrastructure**: Andrew
-- **Phase 3.6 Loss Functions/Evaluation**: Alejo
+- **Phase 3.6 Loss Functions/Evaluation**: Andrew
 - **Phase 3.7 Visualization/Baselines**: Project Lead
-- **Phase 3.8 Documentation**: Andrew
+- **Phase 3.8 Documentation**: Alejo
 
 ## Execution Flow (main)
 ```
@@ -71,19 +84,19 @@
 - [x] T004 **[Project Lead]** Implement automated data fetching/aggregation scripts with error handling and retries in src/data_acquisition.py
 - [x] T005 **[Project Lead]** Set up logging system for tracking data processing steps and validation results in src/logging_config.py
 
-## Phase 3.2: Data Exploration and Validation **[Andrew]**
+## Phase 3.2: Data Exploration and Validation **[Project Lead]**
 **Note**: This phase serves as the starting point for the entire workflow. The exploration script (notebooks/exploration.ipynb and src/exploration.py) must first trigger the initial data download if data is not present, ensuring the dataset is available before proceeding with analysis. All subsequent phases will be aggregated into a single unified file that runs the complete pipeline from data download to CNN training and evaluation with one click.
 
-- [x] T006 **[Andrew]** Load QCEW CSV files and examine data structure, columns, and data types in notebooks/exploration.ipynb and src/exploration.py (trigger data download if needed)
-- [ ] T007 **[Andrew]** Perform exploratory data analysis on employment counts, wages, and geographic coverage in notebooks/exploration.ipynb and src/exploration.py
-- [ ] T008 **[Andrew]** Identify missing values, outliers, and data quality issues across quarters in notebooks/exploration.ipynb and src/exploration.py
-- [ ] T009 **[Andrew]** Create summary statistics and visualizations for employment trends by industry/region in notebooks/exploration.ipynb and src/exploration.py
-- [ ] T010 **[Andrew]** Document data schema and create data dictionary for employment variables in docs/data_dictionary.md
-- [ ] T011 **[Andrew]** Create automated validation functions for employment count ranges and wage consistency in src/validation.py
-- [ ] T012 **[Andrew]** Implement statistical tests for detecting anomalies in quarterly employment changes in src/validation.py
-- [ ] T013 **[Andrew]** Build data quality scorecards for each geographic area and industry sector in src/validation.py
-- [ ] T014 **[Andrew]** Validate temporal continuity and identify gaps in quarterly reporting in src/validation.py
-- [ ] T015 **[Andrew]** Create validation reports with flagged records and quality metrics in src/validation.py
+- [x] T006 **[Project Lead]** Load QCEW CSV files and examine data structure, columns, and data types in notebooks/exploration.ipynb and src/exploration.py (trigger data download if needed)
+- [ ] T007 **[Project Lead]** Perform exploratory data analysis on employment counts, wages, and geographic coverage in notebooks/exploration.ipynb and src/exploration.py
+- [ ] T008 **[Project Lead]** Identify missing values, outliers, and data quality issues across quarters in notebooks/exploration.ipynb and src/exploration.py
+- [ ] T009 **[Project Lead]** Create summary statistics and visualizations for employment trends by industry/region in notebooks/exploration.ipynb and src/exploration.py
+- [ ] T010 **[Project Lead]** Document data schema and create data dictionary for employment variables in docs/data_dictionary.md
+- [ ] T011 **[Project Lead]** Create automated validation functions for employment count ranges and wage consistency in src/validation.py
+- [ ] T012 **[Project Lead]** Implement statistical tests for detecting anomalies in quarterly employment changes in src/validation.py
+- [ ] T013 **[Project Lead]** Build data quality scorecards for each geographic area and industry sector in src/validation.py
+- [ ] T014 **[Project Lead]** Validate temporal continuity and identify gaps in quarterly reporting in src/validation.py
+- [ ] T015 **[Project Lead]** Create validation reports with flagged records and quality metrics in src/validation.py
 
 ## Phase 3.3: Feature Engineering **[Alejo]**
 - [ ] T016 **[Alejo]** Calculate quarter-over-quarter employment growth rates and percentage changes in src/feature_engineering.py
@@ -126,17 +139,17 @@
 - [ ] T049 **[Andrew]** Implement early stopping based on employment prediction validation loss in src/training.py
 - [ ] T050 **[Andrew]** Build learning rate scheduling appropriate for employment data convergence in src/training.py
 
-## Phase 3.6: Loss Functions and Evaluation **[Alejo]**
-- [ ] T051 **[Alejo]** Implement weighted loss functions emphasizing recent employment trends in src/loss_metrics.py
-- [ ] T052 **[Alejo]** Create custom metrics for employment forecasting accuracy (MAPE, directional accuracy) in src/loss_metrics.py
-- [ ] T053 **[Alejo]** Add employment volatility prediction loss for capturing uncertainty in src/loss_metrics.py
-- [ ] T054 **[Alejo]** Build industry-weighted loss functions for sector-specific prediction importance in src/loss_metrics.py
-- [ ] T055 **[Alejo]** Validate loss functions align with employment forecasting evaluation standards in src/loss_metrics.py
-- [ ] T056 **[Alejo]** Calculate employment prediction accuracy across different time horizons in src/evaluation.py
-- [ ] T057 **[Alejo]** Create confusion matrices for employment growth/decline classification in src/evaluation.py
-- [ ] T058 **[Alejo]** Plot predicted vs actual employment trends by industry and region in src/evaluation.py
-- [ ] T059 **[Alejo]** Generate employment volatility prediction accuracy assessments in src/evaluation.py
-- [ ] T060 **[Alejo]** Validate model performance against employment forecasting benchmarks in src/evaluation.py
+## Phase 3.6: Loss Functions and Evaluation **[Andrew]**
+- [ ] T051 **[Andrew]** Implement weighted loss functions emphasizing recent employment trends in src/loss_metrics.py
+- [ ] T052 **[Andrew]** Create custom metrics for employment forecasting accuracy (MAPE, directional accuracy) in src/loss_metrics.py
+- [ ] T053 **[Andrew]** Add employment volatility prediction loss for capturing uncertainty in src/loss_metrics.py
+- [ ] T054 **[Andrew]** Build industry-weighted loss functions for sector-specific prediction importance in src/loss_metrics.py
+- [ ] T055 **[Andrew]** Validate loss functions align with employment forecasting evaluation standards in src/loss_metrics.py
+- [ ] T056 **[Andrew]** Calculate employment prediction accuracy across different time horizons in src/evaluation.py
+- [ ] T057 **[Andrew]** Create confusion matrices for employment growth/decline classification in src/evaluation.py
+- [ ] T058 **[Andrew]** Plot predicted vs actual employment trends by industry and region in src/evaluation.py
+- [ ] T059 **[Andrew]** Generate employment volatility prediction accuracy assessments in src/evaluation.py
+- [ ] T060 **[Andrew]** Validate model performance against employment forecasting benchmarks in src/evaluation.py
 
 ## Phase 3.7: Visualization and Comparison **[Project Lead]**
 - [ ] T061 **[Project Lead]** Implement feature attribution techniques for employment factor importance in src/visualization.py
@@ -150,12 +163,12 @@
 - [ ] T069 **[Project Lead]** Benchmark computational efficiency for large-scale employment data processing in src/baselines.py
 - [ ] T070 **[Project Lead]** Validate CNN provides meaningful improvement over employment forecasting baselines in src/baselines.py
 
-## Phase 3.8: Documentation and Reporting **[Andrew]**
-- [ ] T071 **[Andrew]** Document CNN methodology for employment data analysis and prediction in docs/methodology.md
-- [ ] T072 **[Andrew]** Create comprehensive results analysis with employment trend insights in docs/results.md
-- [ ] T073 **[Andrew]** Build reproducible experiment scripts for QCEW data processing in scripts/
-- [ ] T074 **[Andrew]** Generate academic-style report on CNN applications to labor economics in docs/report.pdf
-- [ ] T075 **[Andrew]** Validate all results are reproducible and methodology is clearly documented in docs/validation.md
+## Phase 3.8: Documentation and Reporting **[Alejo]**
+- [ ] T071 **[Alejo]** Document CNN methodology for employment data analysis and prediction in docs/methodology.md
+- [ ] T072 **[Alejo]** Create comprehensive results analysis with employment trend insights in docs/results.md
+- [ ] T073 **[Alejo]** Build reproducible experiment scripts for QCEW data processing in scripts/
+- [ ] T074 **[Alejo]** Generate academic-style report on CNN applications to labor economics in docs/report.pdf
+- [ ] T075 **[Alejo]** Validate all results are reproducible and methodology is clearly documented in docs/validation.md
 
 ### Unified Pipeline Development
 To achieve the goal of a single-click execution, all components will be developed in separate files initially for modularity, then aggregated into one comprehensive script.
@@ -188,21 +201,20 @@ Tasks that can run in parallel (marked [P]) are limited in this sequential workf
 
 **Project Lead** can work on:
 - T001, T002, T003, T004, T005 (setup tasks)
+- T006-T015 (data exploration/validation) after setup
 - T031-T035 (preprocessing) after Phase 3.3 complete
 - T036-T040 (model architecture) after preprocessing
 - T061-T070 (visualization/baselines) after Phase 3.6 complete
 - T071-T075 (documentation) - can start early
 
 **Andrew** can work on:
-- T006-T010 (exploration) after setup
-- T011-T015 (validation) in parallel with exploration
 - T041-T045 (dataset) after Phase 3.4 complete
 - T046-T050 (training) after dataset development
+- T051-T060 (loss/metrics and evaluation) after training
 
 **Alejo** can work on:
 - T016-T030 (feature engineering) after Phase 3.2 complete
-- T051-T055 (loss/metrics) after Phase 3.5 complete
-- T056-T060 (evaluation) after loss/metrics development
+- T071-T075 (documentation) after Phase 3.7 complete
 
 ## Dependency Graph
 All tasks follow a strict sequential dependency:
