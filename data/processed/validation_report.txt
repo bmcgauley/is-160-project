@@ -1,0 +1,44 @@
+================================================================================
+QCEW DATA VALIDATION REPORT
+================================================================================
+Generated: 2025-09-25 12:14:10
+Data file: C:\GitHub\is-160-project\data\processed\qcew_consolidated.csv
+
+OVERALL DATA QUALITY SCORE: 0.886 (88.6%)
+
+EMPLOYMENT VALIDATION SUMMARY:
+----------------------------------------
+Total records: 64,036
+Zero employment with establishments: 4,494
+month1_emplvl extreme outliers: 472
+month2_emplvl extreme outliers: 476
+month3_emplvl extreme outliers: 478
+Total employment: 3,167,338,577
+
+WAGE VALIDATION SUMMARY:
+------------------------------
+Zero wages with employment: 26
+Negative wages: 0
+Average weekly wage: $1,522
+Wage range: $0 - $96,972
+
+ANOMALY DETECTION SUMMARY:
+-----------------------------------
+oty_month1_emplvl_pct_chg anomalies: 60 (0.1%)
+oty_month2_emplvl_pct_chg anomalies: 245 (0.4%)
+oty_month3_emplvl_pct_chg anomalies: 225 (0.4%)
+Temporal continuity: 100.0%
+
+DATA QUALITY DIMENSIONS:
+------------------------------
+Data Completeness: 1.000 (100.0%)
+Temporal Coverage: 1.331 (133.1%)
+Value Consistency: 0.930 (93.0%)
+Statistical Stability: 0.003 (0.3%)
+
+VALIDATION RECOMMENDATIONS:
+-----------------------------------
+• Review records with establishments but zero employment
+• Investigate records with employment but zero wages
+
+================================================================================

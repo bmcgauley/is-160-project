@@ -88,16 +88,16 @@
 **Note**: This phase serves as the starting point for the entire workflow. The exploration script (notebooks/exploration.ipynb and src/exploration.py) must first trigger the initial data download if data is not present, ensuring the dataset is available before proceeding with analysis. All subsequent phases will be aggregated into a single unified file that runs the complete pipeline from data download to CNN training and evaluation with one click.
 
 - [x] T006 **[Project Lead]** Load QCEW CSV files and examine data structure, columns, and data types in notebooks/exploration.ipynb and src/exploration.py (trigger data download if needed)
-- [ ] T007 **[Project Lead]** Merge all loaded QCEW CSV files into a single semi-processed dataset for unified analysis, ensuring raw data remains unmodified and creating a consolidated data object for feature engineering
-- [ ] T008 **[Project Lead]** Perform exploratory data analysis on employment counts, wages, and geographic coverage in notebooks/exploration.ipynb and src/exploration.py
-- [ ] T009 **[Project Lead]** Identify missing values, outliers, and data quality issues across quarters in notebooks/exploration.ipynb and src/exploration.py
-- [ ] T010 **[Project Lead]** Create summary statistics and visualizations for employment trends by industry/region in notebooks/exploration.ipynb and src/exploration.py
-- [ ] T011 **[Project Lead]** Document data schema and create data dictionary for employment variables in docs/data_dictionary.md
-- [ ] T012 **[Project Lead]** Create automated validation functions for employment count ranges and wage consistency in src/validation.py
-- [ ] T013 **[Project Lead]** Implement statistical tests for detecting anomalies in quarterly employment changes in src/validation.py
-- [ ] T014 **[Project Lead]** Build data quality scorecards for each geographic area and industry sector in src/validation.py
-- [ ] T015 **[Project Lead]** Validate temporal continuity and identify gaps in quarterly reporting in src/validation.py
-- [ ] T016 **[Project Lead]** Create validation reports with flagged records and quality metrics in src/validation.py
+- [x] T007 **[Project Lead]** Merge all loaded QCEW CSV files into a single semi-processed dataset for unified analysis, ensuring raw data remains unmodified and creating a consolidated data object for feature engineering
+- [x] T008 **[Project Lead]** Perform exploratory data analysis on employment counts, wages, and geographic coverage in notebooks/exploration.ipynb and src/exploration.py
+- [x] T009 **[Project Lead]** Identify missing values, outliers, and data quality issues across quarters in notebooks/exploration.ipynb and src/exploration.py
+- [x] T010 **[Project Lead]** Create summary statistics and visualizations for employment trends by industry/region in notebooks/exploration.ipynb and src/exploration.py
+- [x] T011 **[Project Lead]** Document data schema and create data dictionary for employment variables in docs/data_dictionary.md
+- [x] T012 **[Project Lead]** Create automated validation functions for employment count ranges and wage consistency in src/validation.py
+- [x] T013 **[Project Lead]** Implement statistical tests for detecting anomalies in quarterly employment changes in src/validation.py
+- [x] T014 **[Project Lead]** Build data quality scorecards for each geographic area and industry sector in src/validation.py
+- [x] T015 **[Project Lead]** Validate temporal continuity and identify gaps in quarterly reporting in src/validation.py
+- [x] T016 **[Project Lead]** Create validation reports with flagged records and quality metrics in src/validation.py
 
 ## Phase 3.3: Feature Engineering **[Alejo]**
 - [ ] T017 **[Alejo]** Calculate quarter-over-quarter employment growth rates and percentage changes in src/feature_engineering.py
