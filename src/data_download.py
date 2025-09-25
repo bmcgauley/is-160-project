@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 # Configuration
 BASE_URL = "https://data.bls.gov/cew/data/api"
 AREA_CODE = "06000"  # California statewide
-DATA_DIR = Path("data/raw")
+DATA_DIR = Path(__file__).parent.parent / "data" / "raw"
 
 # Download parameters
 START_YEAR = 2020

@@ -72,10 +72,12 @@
 - [x] T005 **[Project Lead]** Set up logging system for tracking data processing steps and validation results in src/logging_config.py
 
 ## Phase 3.2: Data Exploration and Validation **[Andrew]**
-- [x] T006 **[Andrew]** Load QCEW CSV files and examine data structure, columns, and data types in notebooks/exploration.ipynb
-- [ ] T007 **[Andrew]** Perform exploratory data analysis on employment counts, wages, and geographic coverage in notebooks/exploration.ipynb
-- [ ] T008 **[Andrew]** Identify missing values, outliers, and data quality issues across quarters in notebooks/exploration.ipynb
-- [ ] T009 **[Andrew]** Create summary statistics and visualizations for employment trends by industry/region in notebooks/exploration.ipynb
+**Note**: This phase serves as the starting point for the entire workflow. The exploration script (notebooks/exploration.ipynb and src/exploration.py) must first trigger the initial data download if data is not present, ensuring the dataset is available before proceeding with analysis. All subsequent phases will be aggregated into a single unified file that runs the complete pipeline from data download to CNN training and evaluation with one click.
+
+- [x] T006 **[Andrew]** Load QCEW CSV files and examine data structure, columns, and data types in notebooks/exploration.ipynb and src/exploration.py (trigger data download if needed)
+- [ ] T007 **[Andrew]** Perform exploratory data analysis on employment counts, wages, and geographic coverage in notebooks/exploration.ipynb and src/exploration.py
+- [ ] T008 **[Andrew]** Identify missing values, outliers, and data quality issues across quarters in notebooks/exploration.ipynb and src/exploration.py
+- [ ] T009 **[Andrew]** Create summary statistics and visualizations for employment trends by industry/region in notebooks/exploration.ipynb and src/exploration.py
 - [ ] T010 **[Andrew]** Document data schema and create data dictionary for employment variables in docs/data_dictionary.md
 - [ ] T011 **[Andrew]** Create automated validation functions for employment count ranges and wage consistency in src/validation.py
 - [ ] T012 **[Andrew]** Implement statistical tests for detecting anomalies in quarterly employment changes in src/validation.py
@@ -154,6 +156,32 @@
 - [ ] T073 **[Andrew]** Build reproducible experiment scripts for QCEW data processing in scripts/
 - [ ] T074 **[Andrew]** Generate academic-style report on CNN applications to labor economics in docs/report.pdf
 - [ ] T075 **[Andrew]** Validate all results are reproducible and methodology is clearly documented in docs/validation.md
+
+### Unified Pipeline Development
+To achieve the goal of a single-click execution, all components will be developed in separate files initially for modularity, then aggregated into one comprehensive script.
+
+- [ ] T082 **[Project Lead]** Develop modular components in separate files (data download, exploration, feature engineering, preprocessing, model architecture, training, evaluation, visualization)
+- [ ] T083 **[Project Lead]** Create integration functions to combine all modules into a single workflow
+- [ ] T084 **[Project Lead]** Build a unified script (src/unified_pipeline.py) that executes the entire pipeline from data download to CNN training and evaluation
+- [ ] T085 **[Project Lead]** Add command-line interface and configuration options to the unified script for flexibility
+- [ ] T086 **[Project Lead]** Test the unified script end-to-end and ensure it runs with one click
+- [ ] T087 **[Project Lead]** Document the unified pipeline usage and deployment instructions
+
+## Issues and Resolutions
+
+### Issue 1: Jupyter Notebook Conversion to Python Scripts
+The specs documentation mentions performing tasks in .ipynb files, which is acceptable for interactive development. However, to ensure redundancy and compatibility, each Jupyter notebook should be converted to a corresponding Python script as part of the workflow. This allows for easier integration into automated pipelines and provides alternative execution methods.
+
+- [x] T076 **[Project Lead]** Convert notebooks/exploration.ipynb to src/exploration.py with equivalent functionality
+- [ ] T077 **[Project Lead]** Ensure all notebook-based tasks include conversion steps to Python scripts
+- [ ] T078 **[Project Lead]** Update task descriptions to reference both notebook and script versions where applicable
+
+### Issue 2: Preventing CSV Data Files from Being Pushed to GitHub
+Despite .gitignore configurations, CSV data files in the data/ directory are being pushed to GitHub. Since each team member downloads their own data using the scripts, these large files should not be version-controlled. Need to properly configure .gitignore and potentially remove already committed files.
+
+- [x] T079 **[Andrew]** Update .gitignore to exclude all .csv files in data/ subdirectories (data/raw/*.csv, data/processed/*.csv, data/validated/*.csv)
+- [x] T080 **[Andrew]** Check for and remove any already committed CSV files from the repository
+- [x] T081 **[Andrew]** Verify that data download scripts still function correctly without committed CSV files
 
 ## Parallel Execution Examples
 Tasks that can run in parallel (marked [P]) are limited in this sequential workflow, but some setup tasks can be parallelized. Team members can work on their assigned phases simultaneously where dependencies allow.
