@@ -1,0 +1,11 @@
+QCEW California Data Summary
+Date Range: 2004 Q1 - 2025 Q4
+Total Records: 243270
+Unique Areas: 1
+Years Covered: [np.int64(2004), np.int64(2005), np.int64(2006), np.int64(2007), np.int64(2008), np.int64(2009), np.int64(2010), np.int64(2011), np.int64(2012), np.int64(2013), np.int64(2014), np.int64(2015), np.int64(2016), np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020), np.int64(2021), np.int64(2022), np.int64(2023), np.int64(2024)]
+Data Columns: ['area_fips', 'own_code', 'industry_code', 'agglvl_code', 'size_code', 'year', 'qtr', 'disclosure_code', 'qtrly_estabs', 'month1_emplvl', 'month2_emplvl', 'month3_emplvl', 'total_qtrly_wages', 'taxable_qtrly_wages', 'qtrly_contributions', 'avg_wkly_wage', 'source_file', 'lq_disclosure_code', 'lq_qtrly_estabs', 'lq_month1_emplvl', 'lq_month2_emplvl', 'lq_month3_emplvl', 'lq_total_qtrly_wages', 'lq_taxable_qtrly_wages', 'lq_qtrly_contributions', 'lq_avg_wkly_wage', 'oty_disclosure_code', 'oty_qtrly_estabs_chg', 'oty_qtrly_estabs_pct_chg', 'oty_month1_emplvl_chg', 'oty_month1_emplvl_pct_chg', 'oty_month2_emplvl_chg', 'oty_month2_emplvl_pct_chg', 'oty_month3_emplvl_chg', 'oty_month3_emplvl_pct_chg', 'oty_total_qtrly_wages_chg', 'oty_total_qtrly_wages_pct_chg', 'oty_taxable_qtrly_wages_chg', 'oty_taxable_qtrly_wages_pct_chg', 'oty_qtrly_contributions_chg', 'oty_qtrly_contributions_pct_chg', 'oty_avg_wkly_wage_chg', 'oty_avg_wkly_wage_pct_chg', 'quarter_start', 'avg_monthly_emplvl']
+
+Employment Statistics:
+Total Establishments: 1,086,739,060
+Average Quarterly Wages: $815,106,003
+Average Weekly Wage: $1,212.58
