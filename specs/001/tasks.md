@@ -295,6 +295,11 @@ Despite .gitignore configurations, CSV data files in the data/ directory are bei
 - [x] T081 **[Andrew]** Check for and remove any already committed CSV files from the repository
 - [x] T082 **[Andrew]** Verify that data download scripts still function correctly without committed CSV files
 
+### Issue 3: Limited Data Download Range
+The current data download script only retrieves QCEW data from 2020 Q1 to 2024 Q4, despite the California Open Data Portal having data available from 2004-2025. This significantly limits the historical context available for time series modeling and forecasting.
+
+- [ ] T099 **[Project Lead]** Investigate why data download is limited to 2020-2024 and identify methods to access full historical dataset (2004-2025) from California Open Data Portal
+
 ## Parallel Execution Examples
 Tasks that can run in parallel (marked [P]) are limited in this sequential workflow, but some setup tasks can be parallelized. Team members can work on their assigned phases simultaneously where dependencies allow.
 
