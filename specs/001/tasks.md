@@ -1,5 +1,9 @@
 # Tas**Team Work **Total Team Members**: 3
-- **Project Lead**: Overall coordination, setup, data exploration, validation, preprocessing, model architecture, visualization, and final documentation
+- **Project Lead**: Overall coordination, setup, data exploration, validation, preprocessing, model architecture, visualization, a- [ ] T079 **[Alejo]** Document LSTM methodology for employment data analysis and prediction in docs/methodology.md
+- [ ] T080 **[Alejo]** Create comprehensive results analysis with employment trend insights in docs/results.md
+- [ ] T081 **[Alejo]** Build reproducible experiment scripts for QCEW data processing in scripts/
+- [ ] T082 **[Alejo]** Generate academic-style report on LSTM applications to labor economics in docs/report.pdf
+- [ ] T083 **[Alejo]** Validate all results are reproducible and methodology is clearly documented in docs/validation.mdnal documentation
 - **Andrew**: Training infrastructure, loss functions, and evaluation
 - **Alejo**: Feature engineering, and documentationents**
 
@@ -9,9 +13,9 @@
 - **Alejo**: Feature engineering, and documentation
 
 ### Workload Distribution
-- **Project Lead**: 42 tasks (Setup, Data Exploration/Validation, Preprocessing/Model Architecture, Visualization, Documentation)
+- **Project Lead**: 49 tasks (Setup, Data Exploration/Validation, Preprocessing/Model Architecture, Visualization, Unified Pipeline, Prediction Interface)
 - **Andrew**: 20 tasks (Training Infrastructure, Loss Functions/Evaluation)
-- **Alejo**: 20 tasks (Feature Engineering, Documentation) Convolutional Neural Network for Employment Trends Analysis
+- **Alejo**: 20 tasks (Feature Engineering, Documentation) RNN/LSTM for Employment Forecasting with Interactive Visualizations
 
 **Input**: Design documents from `/specs/001-build-a-convolutional/`
 **Prerequisites**: spec.md (available), plan.md (not yet created), research.md, data-model.md, contracts/
@@ -24,7 +28,7 @@
 - **Alejo**: Feature engineering, model architecture, loss functions, and evaluation
 
 ### Workload Distribution
-- **Project Lead**: 42 tasks (Setup, Data Exploration/Validation, Preprocessing/Model Architecture, Visualization, Documentation)
+- **Project Lead**: 49 tasks (Setup, Data Exploration/Validation, Preprocessing/Model Architecture, Visualization, Unified Pipeline, Prediction Interface)
 - **Andrew**: 20 tasks (Training Infrastructure, Loss Functions/Evaluation)
 - **Alejo**: 20 tasks (Feature Engineering, Documentation)
 
@@ -120,13 +124,13 @@
 - [ ] T032 **[Project Lead]** Normalize employment counts and wage data using robust scaling techniques in src/preprocessing.py
 - [ ] T033 **[Project Lead]** Handle missing values with domain-appropriate imputation strategies in src/preprocessing.py
 - [ ] T034 **[Project Lead]** Create categorical encodings for industry codes and geographic identifiers in src/preprocessing.py
-- [ ] T035 **[Project Lead]** Transform tabular data into tensor format suitable for CNN processing in src/preprocessing.py
+- [ ] T035 **[Project Lead]** Transform tabular data into sequence format suitable for RNN/LSTM processing in src/preprocessing.py
 - [ ] T036 **[Project Lead]** Validate preprocessing steps maintain data distribution properties in src/preprocessing.py
-- [ ] T037 **[Project Lead]** Design 1D CNN layers for temporal employment sequence processing in src/cnn_model.py
-- [ ] T038 **[Project Lead]** Implement 2D CNN layers for geographic-temporal employment pattern recognition in src/cnn_model.py
-- [ ] T039 **[Project Lead]** Create custom CNN architecture combining temporal and spatial convolutions in src/cnn_model.py
-- [ ] T040 **[Project Lead]** Add batch normalization and dropout layers appropriate for employment data in src/cnn_model.py
-- [ ] T041 **[Project Lead]** Validate CNN architecture dimensions match processed employment tensor shapes in src/cnn_model.py
+- [ ] T037 **[Project Lead]** Design LSTM layers for temporal employment sequence processing in src/lstm_model.py
+- [ ] T038 **[Project Lead]** Implement RNN architecture for sequential employment pattern recognition in src/lstm_model.py
+- [ ] T039 **[Project Lead]** Create custom LSTM architecture combining temporal dependencies and spatial features in src/lstm_model.py
+- [ ] T040 **[Project Lead]** Add batch normalization and dropout layers appropriate for employment data in src/lstm_model.py
+- [ ] T041 **[Project Lead]** Validate LSTM architecture dimensions match processed employment sequence shapes in src/lstm_model.py
 
 ## Phase 3.5: Training Infrastructure **[Andrew]**
 - [ ] T042 **[Andrew]** Create PyTorch Dataset class for efficient QCEW data loading and batching in src/dataset.py
@@ -154,18 +158,25 @@
 
 ## Phase 3.7: Visualization and Comparison **[Project Lead]**
 - [ ] T062 **[Project Lead]** Implement feature attribution techniques for employment factor importance in src/visualization.py
-- [ ] T063 **[Project Lead]** Visualize CNN learned filters and their relationship to employment patterns in src/visualization.py
+- [ ] T063 **[Project Lead]** Visualize LSTM learned patterns and their relationship to employment sequences in src/visualization.py
 - [ ] T064 **[Project Lead]** Create employment trend visualizations showing model predictions vs reality in src/visualization.py
 - [ ] T065 **[Project Lead]** Generate geographic heat maps of employment prediction accuracy in src/visualization.py
 - [ ] T066 **[Project Lead]** Validate feature importance aligns with known employment economic factors in src/visualization.py
 - [ ] T067 **[Project Lead]** Implement traditional employment forecasting models (ARIMA, exponential smoothing) in src/baselines.py
-- [ ] T068 **[Project Lead]** Compare CNN performance against econometric employment prediction models in src/baselines.py
-- [ ] T069 **[Project Lead]** Create ensemble methods combining CNN with traditional employment forecasting in src/baselines.py
+- [ ] T068 **[Project Lead]** Compare LSTM performance against econometric employment prediction models in src/baselines.py
+- [ ] T069 **[Project Lead]** Create ensemble methods combining LSTM with traditional employment forecasting in src/baselines.py
 - [ ] T070 **[Project Lead]** Benchmark computational efficiency for large-scale employment data processing in src/baselines.py
-- [ ] T071 **[Project Lead]** Validate CNN provides meaningful improvement over employment forecasting baselines in src/baselines.py
+- [ ] T071 **[Project Lead]** Validate LSTM provides meaningful improvement over employment forecasting baselines in src/baselines.py
+- [ ] T072 **[Project Lead]** Create visual predictions vs actuals plots showing predicted employment alongside actual values in src/prediction_visuals.py
+- [ ] T073 **[Project Lead]** Implement multi-step ahead forecasts with 4-quarter predictions and uncertainty bands in src/forecasting.py
+- [ ] T074 **[Project Lead]** Build industry risk dashboard displaying growth/decline status for each industry code in src/dashboard.py
+- [ ] T075 **[Project Lead]** Develop county-level comparison visualizations for Central Valley counties employment growth vs decline in src/county_comparisons.py
+- [ ] T076 **[Project Lead]** Create early warning system flagging industries predicted to lose >5% employment in next 2 quarters in src/early_warning.py
+- [ ] T077 **[Project Lead]** Generate wage growth predictions showing industries with highest wage increases in src/wage_predictions.py
+- [ ] T078 **[Project Lead]** Produce policy insights with actionable recommendations based on employment predictions in src/policy_insights.py
 
 ## Phase 3.8: Documentation and Reporting **[Alejo]**
-- [ ] T072 **[Alejo]** Document CNN methodology for employment data analysis and prediction in docs/methodology.md
+- [ ] T079 **[Alejo]** Document LSTM methodology for employment data analysis and prediction in docs/methodology.md
 - [ ] T073 **[Alejo]** Create comprehensive results analysis with employment trend insights in docs/results.md
 - [ ] T074 **[Alejo]** Build reproducible experiment scripts for QCEW data processing in scripts/
 - [ ] T075 **[Alejo]** Generate academic-style report on CNN applications to labor economics in docs/report.pdf
@@ -174,12 +185,15 @@
 ### Unified Pipeline Development
 To achieve the goal of a single-click execution, all components will be developed in separate files initially for modularity, then aggregated into one comprehensive script.
 
-- [ ] T083 **[Project Lead]** Develop modular components in separate files (data download, exploration, feature engineering, preprocessing, model architecture, training, evaluation, visualization)
-- [ ] T084 **[Project Lead]** Create integration functions to combine all modules into a single workflow
-- [ ] T085 **[Project Lead]** Build a unified script (src/unified_pipeline.py) that executes the entire pipeline from data download to CNN training and evaluation
-- [ ] T086 **[Project Lead]** Add command-line interface and configuration options to the unified script for flexibility
-- [ ] T087 **[Project Lead]** Test the unified script end-to-end and ensure it runs with one click
-- [ ] T088 **[Project Lead]** Document the unified pipeline usage and deployment instructions
+- [ ] T084 **[Project Lead]** Develop modular components in separate files (data download, exploration, feature engineering, preprocessing, model architecture, training, evaluation, visualization)
+- [ ] T085 **[Project Lead]** Create integration functions to combine all modules into a single workflow
+- [ ] T086 **[Project Lead]** Build a unified script (src/unified_pipeline.py) that executes the entire pipeline from data download to LSTM training and evaluation
+- [ ] T087 **[Project Lead]** Add command-line interface and configuration options to the unified script for flexibility
+- [ ] T088 **[Project Lead]** Test the unified script end-to-end and ensure it runs with one click
+- [ ] T089 **[Project Lead]** Document the unified pipeline usage and deployment instructions
+- [ ] T090 **[Project Lead]** Build interactive prediction interface allowing user input of future time and displaying forecasts with visualizations in src/prediction_interface.py
+- [ ] T091 **[Project Lead]** Integrate maps, charts, graphs, and confidence bands into the prediction interface output
+- [ ] T092 **[Project Lead]** Add uncertainty estimation and error bands to all prediction visualizations
 
 ## Issues and Resolutions
 
