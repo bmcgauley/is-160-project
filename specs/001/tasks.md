@@ -120,6 +120,8 @@
 - [ ] T030 **[Alejo]** Calculate spatial autocorrelation features for neighboring region employment in src/geographic_features.py
 - [ ] T031 **[Alejo]** Validate geographic features against known economic geography patterns in src/geographic_features.py
 
+- [ ] T093 **[Project Lead]** Set up feature engineering structure and initial files for team collaboration
+
 ## Phase 3.4: Data Preprocessing and Model Architecture **[Project Lead]**
 - [ ] T032 **[Project Lead]** Normalize employment counts and wage data using robust scaling techniques in src/preprocessing.py
 - [ ] T033 **[Project Lead]** Handle missing values with domain-appropriate imputation strategies in src/preprocessing.py
@@ -131,6 +133,8 @@
 - [ ] T039 **[Project Lead]** Create custom LSTM architecture combining temporal dependencies and spatial features in src/lstm_model.py
 - [ ] T040 **[Project Lead]** Add batch normalization and dropout layers appropriate for employment data in src/lstm_model.py
 - [ ] T041 **[Project Lead]** Validate LSTM architecture dimensions match processed employment sequence shapes in src/lstm_model.py
+
+- [ ] T094 **[Project Lead]** Set up data preprocessing and model architecture structure and initial files for team collaboration
 
 ## Phase 3.5: Training Infrastructure **[Andrew]**
 - [ ] T042 **[Andrew]** Create PyTorch Dataset class for efficient QCEW data loading and batching in src/dataset.py
@@ -144,6 +148,8 @@
 - [ ] T050 **[Andrew]** Implement early stopping based on employment prediction validation loss in src/training.py
 - [ ] T051 **[Andrew]** Build learning rate scheduling appropriate for employment data convergence in src/training.py
 
+- [ ] T095 **[Project Lead]** Set up training infrastructure structure and initial files for team collaboration
+
 ## Phase 3.6: Loss Functions and Evaluation **[Andrew]**
 - [ ] T052 **[Andrew]** Implement weighted loss functions emphasizing recent employment trends in src/loss_metrics.py
 - [ ] T053 **[Andrew]** Create custom metrics for employment forecasting accuracy (MAPE, directional accuracy) in src/loss_metrics.py
@@ -155,6 +161,8 @@
 - [ ] T059 **[Andrew]** Plot predicted vs actual employment trends by industry and region in src/evaluation.py
 - [ ] T060 **[Andrew]** Generate employment volatility prediction accuracy assessments in src/evaluation.py
 - [ ] T061 **[Andrew]** Validate model performance against employment forecasting benchmarks in src/evaluation.py
+
+- [ ] T096 **[Project Lead]** Set up loss functions and evaluation structure and initial files for team collaboration
 
 ## Phase 3.7: Visualization and Comparison **[Project Lead]**
 - [ ] T062 **[Project Lead]** Implement feature attribution techniques for employment factor importance in src/visualization.py
@@ -175,12 +183,16 @@
 - [ ] T077 **[Project Lead]** Generate wage growth predictions showing industries with highest wage increases in src/wage_predictions.py
 - [ ] T078 **[Project Lead]** Produce policy insights with actionable recommendations based on employment predictions in src/policy_insights.py
 
+- [ ] T097 **[Project Lead]** Set up visualization and comparison structure and initial files for team collaboration
+
 ## Phase 3.8: Documentation and Reporting **[Alejo]**
 - [ ] T079 **[Alejo]** Document LSTM methodology for employment data analysis and prediction in docs/methodology.md
 - [ ] T073 **[Alejo]** Create comprehensive results analysis with employment trend insights in docs/results.md
 - [ ] T074 **[Alejo]** Build reproducible experiment scripts for QCEW data processing in scripts/
 - [ ] T075 **[Alejo]** Generate academic-style report on CNN applications to labor economics in docs/report.pdf
 - [ ] T076 **[Alejo]** Validate all results are reproducible and methodology is clearly documented in docs/validation.md
+
+- [ ] T098 **[Project Lead]** Set up documentation and reporting structure and initial files for team collaboration
 
 ### Unified Pipeline Development
 To achieve the goal of a single-click execution, all components will be developed in separate files initially for modularity, then aggregated into one comprehensive script.
@@ -194,6 +206,78 @@ To achieve the goal of a single-click execution, all components will be develope
 - [ ] T090 **[Project Lead]** Build interactive prediction interface allowing user input of future time and displaying forecasts with visualizations in src/prediction_interface.py
 - [ ] T091 **[Project Lead]** Integrate maps, charts, graphs, and confidence bands into the prediction interface output
 - [ ] T092 **[Project Lead]** Add uncertainty estimation and error bands to all prediction visualizations
+
+## File Location Reference
+
+### Core Source Files (src/)
+**Data Acquisition & Setup:**
+- `src/data_download.py` - Automated QCEW CSV download from California Open Data Portal (T001)
+- `src/data_acquisition.py` - Data fetching/aggregation with error handling (T004)
+- `src/environment.py` - PyTorch environment setup with dependencies (T002)
+- `src/logging_config.py` - Logging system for data processing (T005)
+
+**Data Exploration & Validation:**
+- `src/exploration.py` - Data structure examination and EDA (T006-T010)
+- `src/validation.py` - Data quality validation and statistical tests (T012-T016)
+- `notebooks/exploration.ipynb` - Jupyter notebook version of exploration (T006-T010)
+
+**Feature Engineering (Phase 3.3):**
+- `src/feature_engineering.py` - Core feature calculations (T017-T021)
+- `src/temporal_features.py` - Rolling statistics and cyclical features (T022-T026)
+- `src/geographic_features.py` - Spatial features and industry classifications (T027-T031)
+
+**Data Preprocessing & Model Architecture (Phase 3.4):**
+- `src/preprocessing.py` - Data normalization, imputation, encoding, sequence transformation (T032-T036)
+- `src/lstm_model.py` - LSTM/RNN architectures and validation (T037-T041)
+
+**Training Infrastructure (Phase 3.5):**
+- `src/dataset.py` - PyTorch Dataset/DataLoader classes (T042-T046)
+- `src/training.py` - Training loops, validation, checkpointing (T047-T051)
+
+**Loss Functions & Evaluation (Phase 3.6):**
+- `src/loss_metrics.py` - Custom loss functions and metrics (T052-T056)
+- `src/evaluation.py` - Model evaluation and baseline comparisons (T057-T061)
+
+**Visualization & Comparison (Phase 3.7):**
+- `src/visualization.py` - Feature attribution and LSTM pattern visualization (T062-T066)
+- `src/baselines.py` - ARIMA and exponential smoothing models (T067-T071)
+- `src/prediction_visuals.py` - Predictions vs actuals plots (T072)
+- `src/forecasting.py` - Multi-step forecasting with uncertainty (T073)
+- `src/dashboard.py` - Industry risk dashboards (T074)
+- `src/county_comparisons.py` - Central Valley county comparisons (T075)
+- `src/early_warning.py` - Early warning systems (T076)
+- `src/wage_predictions.py` - Wage growth predictions (T077)
+- `src/policy_insights.py` - Policy recommendations (T078)
+
+**Unified Pipeline:**
+- `src/unified_pipeline.py` - Single-click execution pipeline (T086)
+- `src/prediction_interface.py` - Interactive prediction interface (T090-T092)
+
+### Documentation Files (docs/)
+- `docs/data_dictionary.md` - Employment variables documentation (T011)
+- `docs/methodology.md` - LSTM methodology documentation (T079)
+- `docs/results.md` - Comprehensive results analysis (T080)
+- `docs/report.pdf` - Academic-style final report (T082)
+- `docs/validation.md` - Reproducibility and validation documentation (T083)
+
+### Scripts Directory (scripts/)
+- `scripts/` - Directory for reproducible experiment scripts (T081)
+
+### Data Directories
+- `data/raw/` - Raw QCEW CSV files
+- `data/processed/` - Consolidated and cleaned datasets
+- `data/validated/` - Quality-checked datasets
+
+## Setup Tasks Status
+
+The following setup tasks have been completed to establish project structure:
+
+- [x] T093 **[Alejo]** Set up feature engineering structure and initial files for team collaboration
+- [x] T094 **[Project Lead]** Set up data preprocessing and model architecture structure and initial files for team collaboration
+- [x] T095 **[Project Lead]** Set up training infrastructure structure and initial files for team collaboration
+- [x] T096 **[Project Lead]** Set up loss functions and evaluation structure and initial files for team collaboration
+- [x] T097 **[Project Lead]** Set up visualization and comparison structure and initial files for team collaboration
+- [x] T098 **[Project Lead]** Set up documentation and reporting structure and initial files for team collaboration
 
 ## Issues and Resolutions
 
