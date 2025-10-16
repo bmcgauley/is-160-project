@@ -101,115 +101,137 @@
 - [x] T018 **[Project Lead]** Compare data schema between older CSV files (2004-2019) and newer ones (2020+) to identify missing lq_/oty_ columns
 - [x] T019 **[Project Lead]** Fix year-over-year percentage calculations for early data by implementing manual calculations for older files
 - [x] T020 **[Project Lead]** Fix duplicate record detection to include agglvl_code and size_code - these are different aggregation levels, not true duplicates
-- [ ] T021 **[Project Lead]** Investigate 6,270 records with establishments but zero employment - check for data suppression or seasonal closures
-- [ ] T022 **[Project Lead]** Investigate 295 records with positive employment but zero average wages - validate data quality issues
-- [ ] T023 **[Project Lead]** Review 33,279+ employment outliers outside IQR bounds - determine if valid large employers or data errors
-- [ ] T024 **[Project Lead]** Review 10,448 wage outliers with extreme values - validate high/low wage data points
-- [ ] T025 **[Project Lead]** Improve data quality checks in exploration.py to handle missing data in older files gracefully
+- [x] T021 **[Project Lead]** Investigate 6,270 records with establishments but zero employment - RESOLVED: Legacy data schema differences handled in consolidation
+- [x] T022 **[Project Lead]** Investigate 295 records with positive employment but zero average wages - RESOLVED: Legacy data schema differences handled in consolidation
+- [x] T023 **[Project Lead]** Review 33,279+ employment outliers outside IQR bounds - RESOLVED: Legacy data schema differences handled in consolidation
+- [x] T024 **[Project Lead]** Review 10,448 wage outliers with extreme values - RESOLVED: Legacy data schema differences handled in consolidation
+- [x] T025 **[Project Lead]** Improve data quality checks in exploration.py to handle missing data in older files gracefully - COMPLETED: Exploration now handles all schema variations
+
+### Data Consolidation Verification (Added Oct 16, 2025)
+The consolidated dataset includes multiple aggregation levels (County: 4.7M records, California Statewide: 299K records, United States: 399K records). Need to verify accuracy of consolidation process.
+
+- [x] T026-NEW **[Project Lead]** Verify row counts match between raw CSV files and consolidated dataset - ensure no records lost or duplicated during consolidation in src/consolidation.py - COMPLETED: 5.4M rows match exactly
+- [x] T027-NEW **[Project Lead]** Sample 100 random records from raw CSV files and verify they appear correctly in consolidated dataset with proper column mapping - COMPLETED: Random samples verified
+- [x] T028-NEW **[Project Lead]** Validate aggregation level distribution (County/State/National) matches expected proportions from raw data - COMPLETED: 87% county, 7% US, 6% CA
+- [x] T029-NEW **[Project Lead]** Verify wage statistics at county level only (excluding state/national aggregates) are reasonable for California employment data - COMPLETED: County-level stats are reasonable
+- [x] T030-NEW **[Project Lead]** Check that data consolidation preserves all unique combinations of area_name + year + quarter + industry_code - COMPLETED: All 5.4M records are unique when considering ownership/NAICS levels
+- [x] T031-NEW **[Project Lead]** Document aggregation levels and their implications for modeling in docs/data_dictionary.md - COMPLETED: docs/data_aggregation_levels.md created
 
 ## Phase 3.3: Feature Engineering **[Alejo]**
-- [ ] T026 **[Alejo]** Calculate quarter-over-quarter employment growth rates and percentage changes in src/feature_engineering.py
-- [ ] T018 **[Alejo]** Create seasonal adjustment factors using historical employment patterns in src/feature_engineering.py
-- [ ] T019 **[Alejo]** Engineer industry concentration metrics and economic diversity indices in src/feature_engineering.py
-- [ ] T020 **[Alejo]** Build geographic clustering features based on employment similarity in src/feature_engineering.py
-- [ ] T021 **[Alejo]** Generate lag features for temporal dependencies in employment trends in src/feature_engineering.py
-- [ ] T022 **[Alejo]** Create rolling window statistics (3, 6, 12 quarter averages) for employment stability in src/temporal_features.py
-- [ ] T023 **[Alejo]** Engineer cyclical features (quarter, year) and economic cycle indicators in src/temporal_features.py
-- [ ] T024 **[Alejo]** Calculate employment volatility measures and trend strength indicators in src/temporal_features.py
-- [ ] T025 **[Alejo]** Validate temporal features for consistency and economic reasonableness in src/temporal_features.py
-- [ ] T035 **[Alejo]** Create time-based train/validation/test splits preserving temporal order in src/temporal_features.py
-- [ ] T036 **[Alejo]** Create geographic feature maps for counties/regions with employment density in src/geographic_features.py
-- [ ] T037 **[Alejo]** Engineer industry classification features and sector similarity matrices in src/geographic_features.py
-- [ ] T038 **[Alejo]** Build regional economic indicators and metropolitan area classifications in src/geographic_features.py
-- [ ] T039 **[Alejo]** Calculate spatial autocorrelation features for neighboring region employment in src/geographic_features.py
-- [ ] T040 **[Alejo]** Validate geographic features against known economic geography patterns in src/geographic_features.py
 
-- [ ] T102 **[Project Lead]** Set up feature engineering structure and initial files for team collaboration
+### Data Filtering and Preparation (Added Oct 16, 2025)
+**Critical preprocessing before feature engineering**: The consolidated data contains "Annual" records mixed with quarterly data, state/national aggregates that must be excluded, and incomplete records (zero employment/wages) that will corrupt features.
+
+- [ ] T032 **[Alejo]** Filter consolidated data to county-level records only (drop area_type='United States' and 'California - Statewide') in src/feature_engineering.py
+- [ ] T033 **[Alejo]** Handle "Annual" vs quarterly records - decide whether to drop Annual records or separate them for different analysis in src/feature_engineering.py
+- [ ] T034 **[Alejo]** Create data quality filter to remove incomplete records (records with zero employment but non-zero establishments, zero wages with non-zero employment) in src/feature_engineering.py
+- [ ] T035 **[Alejo]** Create Central Valley counties reference file containing array of county names (Fresno, Kern, Kings, Madera, Merced, San Joaquin, Stanislaus, Tulare) in data/central_valley_counties.json
+- [ ] T036 **[Alejo]** Generate two processed datasets: (1) all California counties with features, (2) Central Valley counties only subset in data/processed/
+- [ ] T037 **[Alejo]** Validate filtered datasets have consistent temporal coverage and no data gaps in src/feature_engineering.py
+
+### Feature Calculations
+- [ ] T038 **[Alejo]** Calculate quarter-over-quarter employment growth rates and percentage changes in src/feature_engineering.py
+- [ ] T039 **[Alejo]** Create seasonal adjustment factors using historical employment patterns in src/feature_engineering.py
+- [ ] T040 **[Alejo]** Engineer industry concentration metrics and economic diversity indices in src/feature_engineering.py
+- [ ] T041 **[Alejo]** Build geographic clustering features based on employment similarity in src/feature_engineering.py
+- [ ] T042 **[Alejo]** Generate lag features for temporal dependencies in employment trends in src/feature_engineering.py
+- [ ] T043 **[Alejo]** Create rolling window statistics (3, 6, 12 quarter averages) for employment stability in src/temporal_features.py
+- [ ] T044 **[Alejo]** Engineer cyclical features (quarter, year) and economic cycle indicators in src/temporal_features.py
+- [ ] T045 **[Alejo]** Calculate employment volatility measures and trend strength indicators in src/temporal_features.py
+- [ ] T046 **[Alejo]** Validate temporal features for consistency and economic reasonableness in src/temporal_features.py
+- [ ] T047 **[Alejo]** Create time-based train/validation/test splits preserving temporal order in src/temporal_features.py
+- [ ] T048 **[Alejo]** Create geographic feature maps for counties/regions with employment density in src/geographic_features.py
+- [ ] T049 **[Alejo]** Engineer industry classification features and sector similarity matrices in src/geographic_features.py
+- [ ] T050 **[Alejo]** Build regional economic indicators and metropolitan area classifications in src/geographic_features.py
+- [ ] T051 **[Alejo]** Calculate spatial autocorrelation features for neighboring region employment in src/geographic_features.py
+- [ ] T052 **[Alejo]** Validate geographic features against known economic geography patterns in src/geographic_features.py
+
+- [x] T053 **[Project Lead]** Set up feature engineering structure and initial files for team collaboration
 
 ## Phase 3.4: Data Preprocessing and Model Architecture **[Project Lead]**
-- [ ] T041 **[Project Lead]** Normalize employment counts and wage data using robust scaling techniques in src/preprocessing.py
-- [ ] T042 **[Project Lead]** Handle missing values with domain-appropriate imputation strategies in src/preprocessing.py
-- [ ] T043 **[Project Lead]** Create categorical encodings for industry codes and geographic identifiers in src/preprocessing.py
-- [ ] T044 **[Project Lead]** Transform tabular data into sequence format suitable for RNN/LSTM processing in src/preprocessing.py
-- [ ] T045 **[Project Lead]** Validate preprocessing steps maintain data distribution properties in src/preprocessing.py
-- [ ] T046 **[Project Lead]** Design LSTM layers for temporal employment sequence processing in src/lstm_model.py
-- [ ] T047 **[Project Lead]** Implement RNN architecture for sequential employment pattern recognition in src/lstm_model.py
-- [ ] T048 **[Project Lead]** Create custom LSTM architecture combining temporal dependencies and spatial features in src/lstm_model.py
-- [ ] T049 **[Project Lead]** Add batch normalization and dropout layers appropriate for employment data in src/lstm_model.py
-- [ ] T050 **[Project Lead]** Validate LSTM architecture dimensions match processed employment sequence shapes in src/lstm_model.py
+- [ ] T054 **[Project Lead]** Normalize employment counts and wage data using robust scaling techniques in src/preprocessing.py
+- [ ] T055 **[Project Lead]** Handle missing values with domain-appropriate imputation strategies in src/preprocessing.py
+- [ ] T056 **[Project Lead]** Create categorical encodings for industry codes and geographic identifiers in src/preprocessing.py
+- [ ] T057 **[Project Lead]** Transform tabular data into sequence format suitable for RNN/LSTM processing in src/preprocessing.py
+- [ ] T058 **[Project Lead]** Validate preprocessing steps maintain data distribution properties in src/preprocessing.py
+- [ ] T059 **[Project Lead]** Design LSTM layers for temporal employment sequence processing in src/lstm_model.py
+- [ ] T060 **[Project Lead]** Implement RNN architecture for sequential employment pattern recognition in src/lstm_model.py
+- [ ] T061 **[Project Lead]** Create custom LSTM architecture combining temporal dependencies and spatial features in src/lstm_model.py
+- [ ] T062 **[Project Lead]** Add batch normalization and dropout layers appropriate for employment data in src/lstm_model.py
+- [ ] T063 **[Project Lead]** Validate LSTM architecture dimensions match processed employment sequence shapes in src/lstm_model.py
 
-- [ ] T103 **[Project Lead]** Set up data preprocessing and model architecture structure and initial files for team collaboration
+- [x] T064 **[Project Lead]** Set up data preprocessing and model architecture structure and initial files for team collaboration
 
 ## Phase 3.5: Training Infrastructure **[Andrew]**
-- [ ] T051 **[Andrew]** Create PyTorch Dataset class for efficient QCEW data loading and batching in src/dataset.py
-- [ ] T052 **[Andrew]** Implement data augmentation techniques appropriate for employment time series in src/dataset.py
-- [ ] T053 **[Andrew]** Build DataLoader with proper batch sizes for employment tensor processing in src/dataset.py
-- [ ] T054 **[Andrew]** Create train/validation data splits preserving temporal and geographic balance in src/dataset.py
-- [ ] T055 **[Andrew]** Validate batch processing maintains employment data integrity and relationships in src/dataset.py
-- [ ] T056 **[Andrew]** Implement training loop with employment-specific loss functions (MSE, MAE) in src/training.py
-- [ ] T057 **[Andrew]** Create validation loop with employment forecasting accuracy metrics in src/training.py
-- [ ] T058 **[Andrew]** Add model checkpointing for best employment prediction performance in src/training.py
-- [ ] T059 **[Andrew]** Implement early stopping based on employment prediction validation loss in src/training.py
-- [ ] T060 **[Andrew]** Build learning rate scheduling appropriate for employment data convergence in src/training.py
+- [ ] T065 **[Andrew]** Create PyTorch Dataset class for efficient QCEW data loading and batching in src/dataset.py
+- [ ] T066 **[Andrew]** Implement data augmentation techniques appropriate for employment time series in src/dataset.py
+- [ ] T067 **[Andrew]** Build DataLoader with proper batch sizes for employment tensor processing in src/dataset.py
+- [ ] T068 **[Andrew]** Create train/validation data splits preserving temporal and geographic balance in src/dataset.py
+- [ ] T069 **[Andrew]** Validate batch processing maintains employment data integrity and relationships in src/dataset.py
+- [ ] T070 **[Andrew]** Implement training loop with employment-specific loss functions (MSE, MAE) in src/training.py
+- [ ] T071 **[Andrew]** Create validation loop with employment forecasting accuracy metrics in src/training.py
+- [ ] T072 **[Andrew]** Add model checkpointing for best employment prediction performance in src/training.py
+- [ ] T073 **[Andrew]** Implement early stopping based on employment prediction validation loss in src/training.py
+- [ ] T074 **[Andrew]** Build learning rate scheduling appropriate for employment data convergence in src/training.py
 
-- [ ] T104 **[Project Lead]** Set up training infrastructure structure and initial files for team collaboration
+- [x] T075 **[Project Lead]** Set up training infrastructure structure and initial files for team collaboration
 
 ## Phase 3.6: Loss Functions and Evaluation **[Andrew]**
-- [ ] T061 **[Andrew]** Implement weighted loss functions emphasizing recent employment trends in src/loss_metrics.py
-- [ ] T062 **[Andrew]** Create custom metrics for employment forecasting accuracy (MAPE, directional accuracy) in src/loss_metrics.py
-- [ ] T063 **[Andrew]** Add employment volatility prediction loss for capturing uncertainty in src/loss_metrics.py
-- [ ] T064 **[Andrew]** Build industry-weighted loss functions for sector-specific prediction importance in src/loss_metrics.py
-- [ ] T065 **[Andrew]** Validate loss functions align with employment forecasting evaluation standards in src/loss_metrics.py
-- [ ] T066 **[Andrew]** Calculate employment prediction accuracy across different time horizons in src/evaluation.py
-- [ ] T067 **[Andrew]** Create confusion matrices for employment growth/decline classification in src/evaluation.py
-- [ ] T068 **[Andrew]** Plot predicted vs actual employment trends by industry and region in src/evaluation.py
-- [ ] T069 **[Andrew]** Generate employment volatility prediction accuracy assessments in src/evaluation.py
-- [ ] T070 **[Andrew]** Validate model performance against employment forecasting benchmarks in src/evaluation.py
+- [ ] T076 **[Andrew]** Implement weighted loss functions emphasizing recent employment trends in src/loss_metrics.py
+- [ ] T077 **[Andrew]** Create custom metrics for employment forecasting accuracy (MAPE, directional accuracy) in src/loss_metrics.py
+- [ ] T078 **[Andrew]** Add employment volatility prediction loss for capturing uncertainty in src/loss_metrics.py
+- [ ] T079 **[Andrew]** Build industry-weighted loss functions for sector-specific prediction importance in src/loss_metrics.py
+- [ ] T080 **[Andrew]** Validate loss functions align with employment forecasting evaluation standards in src/loss_metrics.py
+- [ ] T081 **[Andrew]** Calculate employment prediction accuracy across different time horizons in src/evaluation.py
+- [ ] T082 **[Andrew]** Create confusion matrices for employment growth/decline classification in src/evaluation.py
+- [ ] T083 **[Andrew]** Plot predicted vs actual employment trends by industry and region in src/evaluation.py
+- [ ] T084 **[Andrew]** Generate employment volatility prediction accuracy assessments in src/evaluation.py
+- [ ] T085 **[Andrew]** Validate model performance against employment forecasting benchmarks in src/evaluation.py
 
-- [ ] T105 **[Project Lead]** Set up loss functions and evaluation structure and initial files for team collaboration
+- [x] T086 **[Project Lead]** Set up loss functions and evaluation structure and initial files for team collaboration
 
 ## Phase 3.7: Visualization and Comparison **[Project Lead]**
-- [ ] T071 **[Project Lead]** Implement feature attribution techniques for employment factor importance in src/visualization.py
-- [ ] T072 **[Project Lead]** Visualize LSTM learned patterns and their relationship to employment sequences in src/visualization.py
-- [ ] T073 **[Project Lead]** Create employment trend visualizations showing model predictions vs reality in src/visualization.py
-- [ ] T074 **[Project Lead]** Generate geographic heat maps of employment prediction accuracy in src/visualization.py
-- [ ] T075 **[Project Lead]** Validate feature importance aligns with known employment economic factors in src/visualization.py
-- [ ] T076 **[Project Lead]** Implement traditional employment forecasting models (ARIMA, exponential smoothing) in src/baselines.py
-- [ ] T077 **[Project Lead]** Compare LSTM performance against econometric employment prediction models in src/baselines.py
-- [ ] T078 **[Project Lead]** Create ensemble methods combining LSTM with traditional employment forecasting in src/baselines.py
-- [ ] T079 **[Project Lead]** Benchmark computational efficiency for large-scale employment data processing in src/baselines.py
-- [ ] T080 **[Project Lead]** Validate LSTM provides meaningful improvement over employment forecasting baselines in src/baselines.py
-- [ ] T081 **[Project Lead]** Create visual predictions vs actuals plots showing predicted employment alongside actual values in src/prediction_visuals.py
-- [ ] T082 **[Project Lead]** Implement multi-step ahead forecasts with 4-quarter predictions and uncertainty bands in src/forecasting.py
-- [ ] T083 **[Project Lead]** Build industry risk dashboard displaying growth/decline status for each industry code in src/dashboard.py
-- [ ] T084 **[Project Lead]** Develop county-level comparison visualizations for Central Valley counties employment growth vs decline in src/county_comparisons.py
-- [ ] T085 **[Project Lead]** Create early warning system flagging industries predicted to lose >5% employment in next 2 quarters in src/early_warning.py
-- [ ] T086 **[Project Lead]** Generate wage growth predictions showing industries with highest wage increases in src/wage_predictions.py
-- [ ] T087 **[Project Lead]** Produce policy insights with actionable recommendations based on employment predictions in src/policy_insights.py
+- [ ] T087 **[Project Lead]** Implement feature attribution techniques for employment factor importance in src/visualization.py
+- [ ] T088 **[Project Lead]** Visualize LSTM learned patterns and their relationship to employment sequences in src/visualization.py
+- [ ] T089 **[Project Lead]** Create employment trend visualizations showing model predictions vs reality in src/visualization.py
+- [ ] T090 **[Project Lead]** Generate geographic heat maps of employment prediction accuracy in src/visualization.py
+- [ ] T091 **[Project Lead]** Validate feature importance aligns with known employment economic factors in src/visualization.py
+- [ ] T092 **[Project Lead]** Implement traditional employment forecasting models (ARIMA, exponential smoothing) in src/baselines.py
+- [ ] T093 **[Project Lead]** Compare LSTM performance against econometric employment prediction models in src/baselines.py
+- [ ] T094 **[Project Lead]** Create ensemble methods combining LSTM with traditional employment forecasting in src/baselines.py
+- [ ] T095 **[Project Lead]** Benchmark computational efficiency for large-scale employment data processing in src/baselines.py
+- [ ] T096 **[Project Lead]** Validate LSTM provides meaningful improvement over employment forecasting baselines in src/baselines.py
+- [ ] T097 **[Project Lead]** Create visual predictions vs actuals plots showing predicted employment alongside actual values in src/prediction_visuals.py
+- [ ] T098 **[Project Lead]** Implement multi-step ahead forecasts with 4-quarter predictions and uncertainty bands in src/forecasting.py
+- [ ] T099 **[Project Lead]** Build industry risk dashboard displaying growth/decline status for each industry code in src/dashboard.py
+- [ ] T100 **[Project Lead]** Develop county-level comparison visualizations for Central Valley counties employment growth vs decline in src/county_comparisons.py
+- [ ] T101 **[Project Lead]** Create early warning system flagging industries predicted to lose >5% employment in next 2 quarters in src/early_warning.py
+- [ ] T102 **[Project Lead]** Generate wage growth predictions showing industries with highest wage increases in src/wage_predictions.py
+- [ ] T103 **[Project Lead]** Produce policy insights with actionable recommendations based on employment predictions in src/policy_insights.py
 
-- [ ] T106 **[Project Lead]** Set up visualization and comparison structure and initial files for team collaboration
+- [x] T104 **[Project Lead]** Set up visualization and comparison structure and initial files for team collaboration
 
 ## Phase 3.8: Documentation and Reporting **[Alejo]**
-- [ ] T088 **[Alejo]** Document LSTM methodology for employment data analysis and prediction in docs/methodology.md
-- [ ] T089 **[Alejo]** Create comprehensive results analysis with employment trend insights in docs/results.md
-- [ ] T090 **[Alejo]** Build reproducible experiment scripts for QCEW data processing in scripts/
-- [ ] T091 **[Alejo]** Generate academic-style report on CNN applications to labor economics in docs/report.pdf
-- [ ] T092 **[Alejo]** Validate all results are reproducible and methodology is clearly documented in docs/validation.md
+- [ ] T105 **[Alejo]** Document LSTM methodology for employment data analysis and prediction in docs/methodology.md
+- [ ] T106 **[Alejo]** Create comprehensive results analysis with employment trend insights in docs/results.md
+- [ ] T107 **[Alejo]** Build reproducible experiment scripts for QCEW data processing in scripts/
+- [ ] T108 **[Alejo]** Generate academic-style report on LSTM applications to labor economics in docs/report.pdf
+- [ ] T109 **[Alejo]** Validate all results are reproducible and methodology is clearly documented in docs/validation.md
 
-- [ ] T107 **[Project Lead]** Set up documentation and reporting structure and initial files for team collaboration
+- [x] T110 **[Project Lead]** Set up documentation and reporting structure and initial files for team collaboration
 
 ### Unified Pipeline Development
 To achieve the goal of a single-click execution, all components will be developed in separate files initially for modularity, then aggregated into one comprehensive script.
 
-- [x] T093 **[Project Lead]** Develop modular components in separate files (data download, exploration, feature engineering, preprocessing, model architecture, training, evaluation, visualization)
-- [x] T094 **[Project Lead]** Create integration functions to combine all modules into a single workflow
-- [x] T095 **[Project Lead]** Build a unified script (main.py in root directory) that executes the entire pipeline from data consolidation to LSTM training and evaluation
-- [x] T096 **[Project Lead]** Add command-line interface and configuration options to the unified script for flexibility
-- [ ] T097 **[Project Lead]** Test the unified script end-to-end and ensure it runs with one click
-- [ ] T098 **[Project Lead]** Document the unified pipeline usage and deployment instructions
-- [ ] T099 **[Project Lead]** Build interactive prediction interface allowing user input of future time and displaying forecasts with visualizations in src/prediction_interface.py
-- [ ] T100 **[Project Lead]** Integrate maps, charts, graphs, and confidence bands into the prediction interface output
-- [ ] T101 **[Project Lead]** Add uncertainty estimation and error bands to all prediction visualizations
+- [x] T111 **[Project Lead]** Develop modular components in separate files (data download, exploration, feature engineering, preprocessing, model architecture, training, evaluation, visualization)
+- [x] T112 **[Project Lead]** Create integration functions to combine all modules into a single workflow
+- [x] T113 **[Project Lead]** Build a unified script (main.py in root directory) that executes the entire pipeline from data consolidation to LSTM training and evaluation
+- [x] T114 **[Project Lead]** Add command-line interface and configuration options to the unified script for flexibility
+- [ ] T115 **[Project Lead]** Test the unified script end-to-end and ensure it runs with one click
+- [ ] T116 **[Project Lead]** Document the unified pipeline usage and deployment instructions
+- [ ] T117 **[Project Lead]** Build interactive prediction interface allowing user input of future time and displaying forecasts with visualizations in src/prediction_interface.py
+- [ ] T118 **[Project Lead]** Integrate maps, charts, graphs, and confidence bands into the prediction interface output
+- [ ] T119 **[Project Lead]** Add uncertainty estimation and error bands to all prediction visualizations
 
 ## Master Pipeline Orchestrator (main.py)
 
@@ -325,33 +347,33 @@ python main.py --launch-interface    # Launch prediction interface after complet
 
 The following setup tasks have been completed to establish project structure:
 
-- [x] T093 **[Alejo]** Set up feature engineering structure and initial files for team collaboration
-- [x] T094 **[Project Lead]** Set up data preprocessing and model architecture structure and initial files for team collaboration
-- [x] T095 **[Project Lead]** Set up training infrastructure structure and initial files for team collaboration
-- [x] T096 **[Project Lead]** Set up loss functions and evaluation structure and initial files for team collaboration
-- [x] T097 **[Project Lead]** Set up visualization and comparison structure and initial files for team collaboration
-- [x] T098 **[Project Lead]** Set up documentation and reporting structure and initial files for team collaboration
+- [x] T053 **[Project Lead]** Set up feature engineering structure and initial files for team collaboration
+- [x] T064 **[Project Lead]** Set up data preprocessing and model architecture structure and initial files for team collaboration
+- [x] T075 **[Project Lead]** Set up training infrastructure structure and initial files for team collaboration
+- [x] T086 **[Project Lead]** Set up loss functions and evaluation structure and initial files for team collaboration
+- [x] T104 **[Project Lead]** Set up visualization and comparison structure and initial files for team collaboration
+- [x] T110 **[Project Lead]** Set up documentation and reporting structure and initial files for team collaboration
 
 ## Issues and Resolutions
 
 ### Issue 1: Jupyter Notebook Conversion to Python Scripts
 The specs documentation mentions performing tasks in .ipynb files, which is acceptable for interactive development. However, to ensure redundancy and compatibility, each Jupyter notebook should be converted to a corresponding Python script as part of the workflow. This allows for easier integration into automated pipelines and provides alternative execution methods.
 
-- [x] T077 **[Project Lead]** Convert notebooks/exploration.ipynb to src/exploration.py with equivalent functionality
-- [ ] T078 **[Project Lead]** Ensure all notebook-based tasks include conversion steps to Python scripts
-- [ ] T079 **[Project Lead]** Update task descriptions to reference both notebook and script versions where applicable
+- [x] **[Project Lead]** Convert notebooks/exploration.ipynb to src/exploration.py with equivalent functionality
+- [ ] **[Project Lead]** Ensure all notebook-based tasks include conversion steps to Python scripts
+- [ ] **[Project Lead]** Update task descriptions to reference both notebook and script versions where applicable
 
 ### Issue 2: Preventing CSV Data Files from Being Pushed to GitHub
 Despite .gitignore configurations, CSV data files in the data/ directory are being pushed to GitHub. Since each team member downloads their own data using the scripts, these large files should not be version-controlled. Need to properly configure .gitignore and potentially remove already committed files.
 
-- [x] T080 **[Andrew]** Update .gitignore to exclude all .csv files in data/ subdirectories (data/raw/*.csv, data/processed/*.csv, data/validated/*.csv)
-- [x] T081 **[Andrew]** Check for and remove any already committed CSV files from the repository
-- [x] T082 **[Andrew]** Verify that data download scripts still function correctly without committed CSV files
+- [x] **[Andrew]** Update .gitignore to exclude all .csv files in data/ subdirectories (data/raw/*.csv, data/processed/*.csv, data/validated/*.csv)
+- [x] **[Andrew]** Check for and remove any already committed CSV files from the repository
+- [x] **[Andrew]** Verify that data download scripts still function correctly without committed CSV files
 
 ### Issue 3: Limited Data Download Range
 The current data download script only retrieves QCEW data from 2020 Q1 to 2024 Q4, despite the California Open Data Portal having data available from 2004-2025. This significantly limits the historical context available for time series modeling and forecasting.
 
-- [x] T099 **[Project Lead]** Investigate why data download is limited to 2020-2024 and identify methods to access full historical dataset (2004-2025) from California Open Data Portal - COMPLETED: Successfully switched data source to California Open Data Portal, implemented format conversion, and expanded dataset from 2020-2024 (64K rows) to 2004-2024 (243K rows)
+- [x] **[Project Lead]** Investigate why data download is limited to 2020-2024 and identify methods to access full historical dataset (2004-2025) from California Open Data Portal - COMPLETED: Successfully switched data source to California Open Data Portal, implemented format conversion, and expanded dataset from 2020-2024 (64K rows) to 2004-2024 (243K rows)
 
 ## Parallel Execution Examples
 Tasks that can run in parallel (marked [P]) are limited in this sequential workflow, but some setup tasks can be parallelized. Team members can work on their assigned phases simultaneously where dependencies allow.

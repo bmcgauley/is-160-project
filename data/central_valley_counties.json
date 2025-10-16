@@ -1,0 +1,43 @@
+{
+  "description": "Central Valley California Counties for Employment Forecasting Analysis",
+  "region": "Central Valley",
+  "state": "California",
+  "purpose": "Subset filtering for LSTM employment forecasting model - focus on agricultural/manufacturing economy",
+  "created": "2025-10-16",
+  "counties": [
+    "Fresno County",
+    "Kern County",
+    "Kings County",
+    "Madera County",
+    "Merced County",
+    "San Joaquin County",
+    "Stanislaus County",
+    "Tulare County"
+  ],
+  "additional_counties_optional": [
+    "Butte County",
+    "Colusa County",
+    "Glenn County",
+    "Placer County",
+    "Sacramento County",
+    "Shasta County",
+    "Solano County",
+    "Sutter County",
+    "Tehama County",
+    "Yolo County",
+    "Yuba County"
+  ],
+  "notes": [
+    "Core 8 counties represent the agricultural heartland of California",
+    "Additional counties may be included for broader Central Valley analysis",
+    "County names must match 'area_name' column format in consolidated data exactly",
+    "Use for filtering: df[df['area_name'].isin(counties)]"
+  ],
+  "data_filtering_instructions": {
+    "step_1": "Filter to county-level only: area_type == 'County'",
+    "step_2": "Remove Annual records: quarter != 'Annual'",
+    "step_3": "Remove incomplete records: avg_monthly_emplvl > 0 AND total_qtrly_wages > 0",
+    "step_4": "Filter to Central Valley: area_name in counties list",
+    "expected_reduction": "From 4.7M county records to ~200-300K Central Valley records"
+  }
+}
