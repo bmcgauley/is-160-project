@@ -108,7 +108,7 @@
 - [ ] T025 **[Project Lead]** Improve data quality checks in exploration.py to handle missing data in older files gracefully
 
 ## Phase 3.3: Feature Engineering **[Alejo]**
-- [ ] T017 **[Alejo]** Calculate quarter-over-quarter employment growth rates and percentage changes in src/feature_engineering.py
+- [ ] T026 **[Alejo]** Calculate quarter-over-quarter employment growth rates and percentage changes in src/feature_engineering.py
 - [ ] T018 **[Alejo]** Create seasonal adjustment factors using historical employment patterns in src/feature_engineering.py
 - [ ] T019 **[Alejo]** Engineer industry concentration metrics and economic diversity indices in src/feature_engineering.py
 - [ ] T020 **[Alejo]** Build geographic clustering features based on employment similarity in src/feature_engineering.py
@@ -201,15 +201,64 @@
 ### Unified Pipeline Development
 To achieve the goal of a single-click execution, all components will be developed in separate files initially for modularity, then aggregated into one comprehensive script.
 
-- [ ] T093 **[Project Lead]** Develop modular components in separate files (data download, exploration, feature engineering, preprocessing, model architecture, training, evaluation, visualization)
-- [ ] T094 **[Project Lead]** Create integration functions to combine all modules into a single workflow
-- [ ] T095 **[Project Lead]** Build a unified script (src/unified_pipeline.py) that executes the entire pipeline from data download to LSTM training and evaluation
-- [ ] T096 **[Project Lead]** Add command-line interface and configuration options to the unified script for flexibility
+- [x] T093 **[Project Lead]** Develop modular components in separate files (data download, exploration, feature engineering, preprocessing, model architecture, training, evaluation, visualization)
+- [x] T094 **[Project Lead]** Create integration functions to combine all modules into a single workflow
+- [x] T095 **[Project Lead]** Build a unified script (main.py in root directory) that executes the entire pipeline from data consolidation to LSTM training and evaluation
+- [x] T096 **[Project Lead]** Add command-line interface and configuration options to the unified script for flexibility
 - [ ] T097 **[Project Lead]** Test the unified script end-to-end and ensure it runs with one click
 - [ ] T098 **[Project Lead]** Document the unified pipeline usage and deployment instructions
 - [ ] T099 **[Project Lead]** Build interactive prediction interface allowing user input of future time and displaying forecasts with visualizations in src/prediction_interface.py
 - [ ] T100 **[Project Lead]** Integrate maps, charts, graphs, and confidence bands into the prediction interface output
 - [ ] T101 **[Project Lead]** Add uncertainty estimation and error bands to all prediction visualizations
+
+## Master Pipeline Orchestrator (main.py)
+
+**Location**: `/main.py` (root directory)
+
+**Purpose**: Single entry point for the entire QCEW employment forecasting pipeline that coordinates all stages from data consolidation through model training and prediction.
+
+**Key Features**:
+- ✅ Protects raw data files (read-only access, never modified)
+- ✅ Consolidates multiple CSV files into master dataset
+- ✅ Stages: Consolidate → Explore → Validate → Feature Engineering → Preprocess → Train → Evaluate → Predict
+- ✅ Automatic directory creation (processed/, validated/, plots/)
+- ✅ Comprehensive logging and progress tracking
+- ✅ Stage-specific execution (run individual stages as needed)
+- ✅ Command-line interface with options (--stage, --skip-plots, --force-rebuild)
+- ✅ Generates exploration visualizations automatically
+
+**Usage**:
+```bash
+# Run full pipeline
+python main.py
+
+# Run specific stage
+python main.py --stage explore
+python main.py --stage train
+python main.py --stage predict
+
+# Options
+python main.py --skip-plots          # Skip visualization generation
+python main.py --force-rebuild       # Force rebuild of consolidated data
+python main.py --launch-interface    # Launch prediction interface after completion
+```
+
+**Data Flow**:
+1. **Input**: Raw CSV files in `/data/raw/` (manually downloaded, never modified)
+2. **Consolidation**: Combines all CSVs → `/data/processed/qcew_master_consolidated.csv`
+3. **Exploration**: Analysis + visualizations → `/data/processed/plots/`
+4. **Validation**: Quality checks → `/data/validated/qcew_validated.csv`
+5. **Features**: Engineered features → `/data/processed/qcew_features.csv`
+6. **Preprocessing**: Normalized sequences → `/data/processed/qcew_preprocessed.csv`
+7. **Training**: Model training → `/data/processed/lstm_model.pt`
+8. **Evaluation**: Performance metrics and comparison plots
+9. **Prediction**: Interactive forecasting interface
+
+**Visualization Outputs** (automatically generated in `/data/processed/plots/`):
+- `employment_trends.png` - Total employment over time
+- `quarterly_distribution.png` - Employment by quarter
+- `wage_trends.png` - Average weekly wage trends
+- `top_industries.png` - Top 15 industries by employment
 
 ## File Location Reference
 
