@@ -157,21 +157,22 @@ class QCEWPipeline:
             logger.info(f"\nPipeline started at: {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
 
             # Stage 1: Consolidate data
-            df = self.stage_1_consolidate_data()
+            df_consolidated = self.stage_1_consolidate_data()
 
             # Stage 2: Explore data
-            exploration_results = self.stage_2_explore_data(df)
+            exploration_results = self.stage_2_explore_data(df_consolidated)
 
-            # Stage 3: Validate data
-            validation_results = self.stage_3_validate_data(df)
+            # Stage 3: Validate data (uses consolidated data)
+            validation_results = self.stage_3_validate_data(df_consolidated)
 
-            # Stage 4: Feature engineering
-            df_features = self.stage_4_feature_engineering(df)
+            # Stage 4: Feature engineering (uses validated data from file)
+            df_validated = pd.read_csv(self.validated_file)
+            df_features = self.stage_4_feature_engineering(df_validated)
 
-            # Stage 5: Preprocessing
+            # Stage 5: Preprocessing (uses features data)
             df_processed, preprocessor = self.stage_5_preprocessing(df_features)
 
-            # Stage 6: Train model
+            # Stage 6: Train model (uses preprocessed data)
             training_results = self.stage_6_train_model(df_processed)
 
             # Stage 7: Evaluate model

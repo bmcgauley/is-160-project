@@ -1,0 +1,78 @@
+2025-10-20 10:24:34 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: cannot import name 'validate_data_quality' from 'validation' (C:\GitHub\is-160-project\src\validation.py)
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 166, in run_full_pipeline
+    validation_results = self.stage_3_validate_data(df)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 90, in stage_3_validate_data
+    from validation import validate_data_quality
+ImportError: cannot import name 'validate_data_quality' from 'validation' (C:\GitHub\is-160-project\src\validation.py)
+2025-10-20 12:40:22 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: No module named 'feature_pipeline'
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 170, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
+    from feature_pipeline import engineer_features
+ModuleNotFoundError: No module named 'feature_pipeline'
+2025-10-20 12:47:34 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: No module named 'feature_pipeline'
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 170, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
+    from feature_pipeline import engineer_features
+ModuleNotFoundError: No module named 'feature_pipeline'
+2025-10-20 12:53:49 - exploration - ERROR - Error generating plots: Can't find a usable init.tcl in the following directories: 
+    C:/Users/brian/AppData/Local/Programs/Python/Python313/lib/tcl8.6 C:/lib/tcl8.6 C:/lib/tcl8.6 C:/library C:/library C:/tcl8.6.15/library C:/tcl8.6.15/library
+
+
+
+This probably means that Tcl wasn't installed properly.
+
+2025-10-20 12:55:16 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: No module named 'feature_pipeline'
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 170, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
+    from feature_pipeline import engineer_features
+ModuleNotFoundError: No module named 'feature_pipeline'
+2025-10-20 12:58:43 - exploration - ERROR - Error generating plots: Can't find a usable init.tcl in the following directories: 
+    C:/Users/brian/AppData/Local/Programs/Python/Python313/lib/tcl8.6 C:/lib/tcl8.6 C:/lib/tcl8.6 C:/library C:/library C:/tcl8.6.15/library C:/tcl8.6.15/library
+
+
+
+This probably means that Tcl wasn't installed properly.
+
+2025-10-20 13:00:55 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: No module named 'feature_pipeline'
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 170, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
+    from feature_pipeline import engineer_features
+ModuleNotFoundError: No module named 'feature_pipeline'
+2025-10-20 13:07:34 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: No module named 'feature_pipeline'
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 170, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
+    from feature_pipeline import engineer_features
+ModuleNotFoundError: No module named 'feature_pipeline'
+2025-10-20 13:13:52 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: No module named 'feature_pipeline'
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 170, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
+    from feature_pipeline import engineer_features
+ModuleNotFoundError: No module named 'feature_pipeline'
+2025-10-20 13:49:16 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: No module named 'feature_pipeline'
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 170, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
+    from feature_pipeline import engineer_features
+ModuleNotFoundError: No module named 'feature_pipeline'

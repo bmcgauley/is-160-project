@@ -314,3 +314,717 @@ Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
 2025-10-16 08:27:17 - exploration - INFO -   - Creating wage trends plot...
 2025-10-16 08:27:18 - exploration - INFO -   - Creating top industries plot...
 2025-10-16 08:27:19 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 10:23:31 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 10:23:31 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 10:23:31 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 10:23:31 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-10-20 10:23:31 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 10:23:31 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 10:23:31 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 10:24:05 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-10-20 10:24:05
+2025-10-20 10:24:05 - consolidation - INFO - 
+================================================================================
+2025-10-20 10:24:05 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 10:24:05 - consolidation - INFO - ================================================================================
+2025-10-20 10:24:05 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 10:24:18 - consolidation - INFO - Loaded 5,430,384 records from consolidated file
+2025-10-20 10:24:24 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 10:24:24 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 10:24:24 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 10:24:24 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 10:24:26 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 10:24:26 - exploration - INFO - Date Range: 2004 - 2024
+2025-10-20 10:24:26 - exploration - INFO - 
+Employment Statistics:
+2025-10-20 10:24:26 - exploration - INFO -   avg_monthly_emplvl:
+2025-10-20 10:24:26 - exploration - INFO -     Mean: 32,605
+2025-10-20 10:24:26 - exploration - INFO -     Median: 278
+2025-10-20 10:24:26 - exploration - INFO -     Min: 0
+2025-10-20 10:24:26 - exploration - INFO -     Max: 156,276,764
+2025-10-20 10:24:26 - exploration - INFO -   month1_emplvl:
+2025-10-20 10:24:26 - exploration - INFO -     Mean: 25,950
+2025-10-20 10:24:26 - exploration - INFO -     Median: 137
+2025-10-20 10:24:26 - exploration - INFO -     Min: 0
+2025-10-20 10:24:26 - exploration - INFO -     Max: 156,042,582
+2025-10-20 10:24:27 - exploration - INFO -   month2_emplvl:
+2025-10-20 10:24:27 - exploration - INFO -     Mean: 26,097
+2025-10-20 10:24:27 - exploration - INFO -     Median: 137
+2025-10-20 10:24:27 - exploration - INFO -     Min: 0
+2025-10-20 10:24:27 - exploration - INFO -     Max: 156,584,838
+2025-10-20 10:24:27 - exploration - INFO - 
+Wage Statistics:
+2025-10-20 10:24:27 - exploration - INFO -   total_qtrly_wages:
+2025-10-20 10:24:27 - exploration - INFO -     Mean: $730,128,622.54
+2025-10-20 10:24:27 - exploration - INFO -     Median: $4,250,230.50
+2025-10-20 10:24:27 - exploration - INFO -   avg_wkly_wage:
+2025-10-20 10:24:27 - exploration - INFO -     Mean: $1,035.44
+2025-10-20 10:24:27 - exploration - INFO -     Median: $893.00
+2025-10-20 10:24:27 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 10:24:27 - exploration - INFO -   - Creating employment trends plot...
+2025-10-20 10:24:31 - exploration - INFO -   - Creating quarterly distribution plot...
+2025-10-20 10:24:32 - exploration - INFO -   - Creating wage trends plot...
+2025-10-20 10:24:32 - exploration - INFO -   - Creating top industries plot...
+2025-10-20 10:24:34 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 10:24:34 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: cannot import name 'validate_data_quality' from 'validation' (C:\GitHub\is-160-project\src\validation.py)
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 166, in run_full_pipeline
+    validation_results = self.stage_3_validate_data(df)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 90, in stage_3_validate_data
+    from validation import validate_data_quality
+ImportError: cannot import name 'validate_data_quality' from 'validation' (C:\GitHub\is-160-project\src\validation.py)
+2025-10-20 12:38:01 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:38:01 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 12:38:01 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:38:01 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-10-20 12:38:01 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 12:38:01 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 12:38:01 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:38:05 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-10-20 12:38:05
+2025-10-20 12:38:05 - consolidation - INFO - 
+================================================================================
+2025-10-20 12:38:05 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 12:38:05 - consolidation - INFO - ================================================================================
+2025-10-20 12:38:05 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 12:38:18 - consolidation - INFO - Loaded 5,430,384 records from consolidated file
+2025-10-20 12:38:23 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 12:38:23 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 12:38:23 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:38:23 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 12:38:25 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 12:38:25 - exploration - INFO - Date Range: 2004 - 2024
+2025-10-20 12:38:25 - exploration - INFO - 
+Employment Statistics:
+2025-10-20 12:38:26 - exploration - INFO -   avg_monthly_emplvl:
+2025-10-20 12:38:26 - exploration - INFO -     Mean: 32,605
+2025-10-20 12:38:26 - exploration - INFO -     Median: 278
+2025-10-20 12:38:26 - exploration - INFO -     Min: 0
+2025-10-20 12:38:26 - exploration - INFO -     Max: 156,276,764
+2025-10-20 12:38:26 - exploration - INFO -   month1_emplvl:
+2025-10-20 12:38:26 - exploration - INFO -     Mean: 25,950
+2025-10-20 12:38:26 - exploration - INFO -     Median: 137
+2025-10-20 12:38:26 - exploration - INFO -     Min: 0
+2025-10-20 12:38:26 - exploration - INFO -     Max: 156,042,582
+2025-10-20 12:38:26 - exploration - INFO -   month2_emplvl:
+2025-10-20 12:38:26 - exploration - INFO -     Mean: 26,097
+2025-10-20 12:38:26 - exploration - INFO -     Median: 137
+2025-10-20 12:38:26 - exploration - INFO -     Min: 0
+2025-10-20 12:38:26 - exploration - INFO -     Max: 156,584,838
+2025-10-20 12:38:26 - exploration - INFO - 
+Wage Statistics:
+2025-10-20 12:38:26 - exploration - INFO -   total_qtrly_wages:
+2025-10-20 12:38:26 - exploration - INFO -     Mean: $730,128,622.54
+2025-10-20 12:38:26 - exploration - INFO -     Median: $4,250,230.50
+2025-10-20 12:38:27 - exploration - INFO -   avg_wkly_wage:
+2025-10-20 12:38:27 - exploration - INFO -     Mean: $1,035.44
+2025-10-20 12:38:27 - exploration - INFO -     Median: $893.00
+2025-10-20 12:38:27 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 12:38:27 - exploration - INFO -   - Creating employment trends plot...
+2025-10-20 12:38:30 - exploration - INFO -   - Creating quarterly distribution plot...
+2025-10-20 12:38:31 - exploration - INFO -   - Creating wage trends plot...
+2025-10-20 12:38:32 - exploration - INFO -   - Creating top industries plot...
+2025-10-20 12:38:33 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:38:33 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 12:38:33 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 12:38:33 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:38:33 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 12:38:33 - validation - INFO - Running employment range validation...
+2025-10-20 12:38:33 - validation - INFO - Running wage consistency validation...
+2025-10-20 12:38:34 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 12:38:39 - validation - INFO - Generating quality scorecards...
+2025-10-20 12:39:24 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 12:39:24 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 12:40:09 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 12:40:09 - validation - INFO - Overall Quality Score: 7.812
+2025-10-20 12:40:09 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 12:40:09 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 12:40:22 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: No module named 'feature_pipeline'
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 170, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
+    from feature_pipeline import engineer_features
+ModuleNotFoundError: No module named 'feature_pipeline'
+2025-10-20 12:45:36 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:45:36 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 12:45:36 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:45:36 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-10-20 12:45:36 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 12:45:36 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 12:45:36 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:45:43 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-10-20 12:45:43
+2025-10-20 12:45:43 - consolidation - INFO - 
+================================================================================
+2025-10-20 12:45:43 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 12:45:43 - consolidation - INFO - ================================================================================
+2025-10-20 12:45:43 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 12:45:55 - consolidation - INFO - Loaded 5,430,384 records from consolidated file
+2025-10-20 12:45:56 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 12:45:56 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 12:45:56 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:45:56 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 12:45:58 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 12:45:58 - exploration - INFO - Date Range: 2004 - 2024
+2025-10-20 12:45:58 - exploration - INFO - 
+Employment Statistics:
+2025-10-20 12:45:59 - exploration - INFO -   avg_monthly_emplvl:
+2025-10-20 12:45:59 - exploration - INFO -     Mean: 32,605
+2025-10-20 12:45:59 - exploration - INFO -     Median: 278
+2025-10-20 12:45:59 - exploration - INFO -     Min: 0
+2025-10-20 12:45:59 - exploration - INFO -     Max: 156,276,764
+2025-10-20 12:45:59 - exploration - INFO -   month1_emplvl:
+2025-10-20 12:45:59 - exploration - INFO -     Mean: 25,950
+2025-10-20 12:45:59 - exploration - INFO -     Median: 137
+2025-10-20 12:45:59 - exploration - INFO -     Min: 0
+2025-10-20 12:45:59 - exploration - INFO -     Max: 156,042,582
+2025-10-20 12:45:59 - exploration - INFO -   month2_emplvl:
+2025-10-20 12:45:59 - exploration - INFO -     Mean: 26,097
+2025-10-20 12:45:59 - exploration - INFO -     Median: 137
+2025-10-20 12:45:59 - exploration - INFO -     Min: 0
+2025-10-20 12:45:59 - exploration - INFO -     Max: 156,584,838
+2025-10-20 12:45:59 - exploration - INFO - 
+Wage Statistics:
+2025-10-20 12:45:59 - exploration - INFO -   total_qtrly_wages:
+2025-10-20 12:45:59 - exploration - INFO -     Mean: $730,128,622.54
+2025-10-20 12:45:59 - exploration - INFO -     Median: $4,250,230.50
+2025-10-20 12:46:00 - exploration - INFO -   avg_wkly_wage:
+2025-10-20 12:46:00 - exploration - INFO -     Mean: $1,035.44
+2025-10-20 12:46:00 - exploration - INFO -     Median: $893.00
+2025-10-20 12:46:00 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 12:46:00 - exploration - INFO -   - Creating employment trends plot...
+2025-10-20 12:46:01 - exploration - INFO -   - Creating quarterly distribution plot...
+2025-10-20 12:46:02 - exploration - INFO -   - Creating wage trends plot...
+2025-10-20 12:46:02 - exploration - INFO -   - Creating top industries plot...
+2025-10-20 12:46:03 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:46:03 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 12:46:03 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 12:46:03 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:46:03 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 12:46:03 - validation - INFO - Running employment range validation...
+2025-10-20 12:46:04 - validation - INFO - Running wage consistency validation...
+2025-10-20 12:46:05 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 12:46:09 - validation - INFO - Generating quality scorecards...
+2025-10-20 12:46:34 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 12:46:34 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 12:47:20 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 12:47:20 - validation - INFO - Overall Quality Score: 0.648
+2025-10-20 12:47:20 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 12:47:20 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 12:47:34 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: No module named 'feature_pipeline'
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 170, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
+    from feature_pipeline import engineer_features
+ModuleNotFoundError: No module named 'feature_pipeline'
+2025-10-20 12:52:27 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:52:27 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 12:52:27 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:52:27 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-10-20 12:52:27 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 12:52:27 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 12:52:27 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:53:11 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:53:11 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 12:53:11 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:53:11 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-10-20 12:53:11 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 12:53:11 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 12:53:11 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:53:25 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-10-20 12:53:25
+2025-10-20 12:53:25 - consolidation - INFO - 
+================================================================================
+2025-10-20 12:53:25 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 12:53:25 - consolidation - INFO - ================================================================================
+2025-10-20 12:53:25 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 12:53:39 - consolidation - INFO - Loaded 5,430,384 records from consolidated file
+2025-10-20 12:53:43 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 12:53:43 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 12:53:43 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:53:43 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 12:53:44 - exploration - INFO -   Filtering to county-level records: 4,732,218 of 5,430,384 total records
+2025-10-20 12:53:46 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 12:53:46 - exploration - INFO - County-Level Records: 4,732,218 rows
+2025-10-20 12:53:46 - exploration - INFO - Date Range: 2004 - 2024
+2025-10-20 12:53:46 - exploration - INFO - 
+Employment Statistics (County-Level Only):
+2025-10-20 12:53:46 - exploration - INFO -   avg_monthly_emplvl:
+2025-10-20 12:53:46 - exploration - INFO -     Mean: 3,004
+2025-10-20 12:53:46 - exploration - INFO -     Median: 213
+2025-10-20 12:53:46 - exploration - INFO -     Min: 0
+2025-10-20 12:53:46 - exploration - INFO -     Max: 4,583,485
+2025-10-20 12:53:47 - exploration - INFO -   month1_emplvl:
+2025-10-20 12:53:47 - exploration - INFO -     Mean: 2,392
+2025-10-20 12:53:47 - exploration - INFO -     Median: 112
+2025-10-20 12:53:47 - exploration - INFO -     Min: 0
+2025-10-20 12:53:47 - exploration - INFO -     Max: 4,563,073
+2025-10-20 12:53:47 - exploration - INFO -   month2_emplvl:
+2025-10-20 12:53:47 - exploration - INFO -     Mean: 2,405
+2025-10-20 12:53:47 - exploration - INFO -     Median: 112
+2025-10-20 12:53:47 - exploration - INFO -     Min: 0
+2025-10-20 12:53:47 - exploration - INFO -     Max: 4,608,275
+2025-10-20 12:53:47 - exploration - INFO - 
+Wage Statistics (County-Level Only):
+2025-10-20 12:53:47 - exploration - INFO -   total_qtrly_wages:
+2025-10-20 12:53:47 - exploration - INFO -     Mean: $76,419,401.10
+2025-10-20 12:53:47 - exploration - INFO -     Median: $3,155,335.50
+2025-10-20 12:53:47 - exploration - INFO -   avg_wkly_wage:
+2025-10-20 12:53:47 - exploration - INFO -     Mean: $1,018.95
+2025-10-20 12:53:47 - exploration - INFO -     Median: $875.00
+2025-10-20 12:53:48 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 12:53:49 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-10-20 12:53:49 - exploration - INFO -   - Creating employment trends plot...
+2025-10-20 12:53:49 - exploration - ERROR - Error generating plots: Can't find a usable init.tcl in the following directories: 
+    C:/Users/brian/AppData/Local/Programs/Python/Python313/lib/tcl8.6 C:/lib/tcl8.6 C:/lib/tcl8.6 C:/library C:/library C:/tcl8.6.15/library C:/tcl8.6.15/library
+
+
+
+This probably means that Tcl wasn't installed properly.
+
+2025-10-20 12:53:49 - exploration - INFO - Continuing without plots...
+2025-10-20 12:53:50 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 12:53:50 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 12:53:50 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:53:50 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 12:53:50 - validation - INFO - Running employment range validation...
+2025-10-20 12:53:50 - validation - INFO - Running wage consistency validation...
+2025-10-20 12:53:51 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 12:53:55 - validation - INFO - Generating quality scorecards...
+2025-10-20 12:54:18 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 12:54:18 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 12:55:03 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 12:55:03 - validation - INFO - Overall Quality Score: 0.648
+2025-10-20 12:55:03 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 12:55:03 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 12:55:16 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: No module named 'feature_pipeline'
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 170, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
+    from feature_pipeline import engineer_features
+ModuleNotFoundError: No module named 'feature_pipeline'
+2025-10-20 12:58:25 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-10-20 12:58:25
+2025-10-20 12:58:25 - consolidation - INFO - 
+================================================================================
+2025-10-20 12:58:25 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 12:58:25 - consolidation - INFO - ================================================================================
+2025-10-20 12:58:25 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 12:58:37 - consolidation - INFO - Loaded 5,430,384 records from consolidated file
+2025-10-20 12:58:37 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 12:58:37 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 12:58:37 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:58:37 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 12:58:38 - exploration - INFO -   Filtering to county-level records: 4,732,218 of 5,430,384 total records
+2025-10-20 12:58:40 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 12:58:40 - exploration - INFO - County-Level Records: 4,732,218 rows
+2025-10-20 12:58:40 - exploration - INFO - Date Range: 2004 - 2024
+2025-10-20 12:58:40 - exploration - INFO - 
+Employment Statistics (County-Level Only):
+2025-10-20 12:58:40 - exploration - INFO -   avg_monthly_emplvl:
+2025-10-20 12:58:40 - exploration - INFO -     Mean: 3,004
+2025-10-20 12:58:40 - exploration - INFO -     Median: 213
+2025-10-20 12:58:40 - exploration - INFO -     Min: 0
+2025-10-20 12:58:40 - exploration - INFO -     Max: 4,583,485
+2025-10-20 12:58:41 - exploration - INFO -   month1_emplvl:
+2025-10-20 12:58:41 - exploration - INFO -     Mean: 2,392
+2025-10-20 12:58:41 - exploration - INFO -     Median: 112
+2025-10-20 12:58:41 - exploration - INFO -     Min: 0
+2025-10-20 12:58:41 - exploration - INFO -     Max: 4,563,073
+2025-10-20 12:58:41 - exploration - INFO -   month2_emplvl:
+2025-10-20 12:58:41 - exploration - INFO -     Mean: 2,405
+2025-10-20 12:58:41 - exploration - INFO -     Median: 112
+2025-10-20 12:58:41 - exploration - INFO -     Min: 0
+2025-10-20 12:58:41 - exploration - INFO -     Max: 4,608,275
+2025-10-20 12:58:41 - exploration - INFO - 
+Wage Statistics (County-Level Only):
+2025-10-20 12:58:41 - exploration - INFO -   total_qtrly_wages:
+2025-10-20 12:58:41 - exploration - INFO -     Mean: $76,419,401.10
+2025-10-20 12:58:41 - exploration - INFO -     Median: $3,155,335.50
+2025-10-20 12:58:41 - exploration - INFO -   avg_wkly_wage:
+2025-10-20 12:58:41 - exploration - INFO -     Mean: $1,018.95
+2025-10-20 12:58:41 - exploration - INFO -     Median: $875.00
+2025-10-20 12:58:42 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 12:58:43 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-10-20 12:58:43 - exploration - INFO -   - Creating employment trends plot...
+2025-10-20 12:58:43 - exploration - ERROR - Error generating plots: Can't find a usable init.tcl in the following directories: 
+    C:/Users/brian/AppData/Local/Programs/Python/Python313/lib/tcl8.6 C:/lib/tcl8.6 C:/lib/tcl8.6 C:/library C:/library C:/tcl8.6.15/library C:/tcl8.6.15/library
+
+
+
+This probably means that Tcl wasn't installed properly.
+
+2025-10-20 12:58:43 - exploration - INFO - Continuing without plots...
+2025-10-20 12:58:43 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 12:58:43 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 12:58:43 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:58:43 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 12:58:43 - validation - INFO - Running employment range validation...
+2025-10-20 12:58:43 - validation - INFO - Running wage consistency validation...
+2025-10-20 12:58:44 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 12:59:04 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:59:04 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 12:59:04 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:59:04 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-10-20 12:59:04 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 12:59:04 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 12:59:04 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:59:07 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-10-20 12:59:07
+2025-10-20 12:59:07 - consolidation - INFO - 
+================================================================================
+2025-10-20 12:59:07 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 12:59:07 - consolidation - INFO - ================================================================================
+2025-10-20 12:59:07 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 12:59:20 - consolidation - INFO - Loaded 5,430,384 records from consolidated file
+2025-10-20 12:59:22 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 12:59:22 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 12:59:22 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:59:22 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 12:59:23 - exploration - INFO -   Filtering to county-level records: 4,732,218 of 5,430,384 total records
+2025-10-20 12:59:25 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 12:59:25 - exploration - INFO - County-Level Records: 4,732,218 rows
+2025-10-20 12:59:25 - exploration - INFO - Date Range: 2004 - 2024
+2025-10-20 12:59:25 - exploration - INFO - 
+Employment Statistics (County-Level Only):
+2025-10-20 12:59:25 - exploration - INFO -   avg_monthly_emplvl:
+2025-10-20 12:59:25 - exploration - INFO -     Mean: 3,004
+2025-10-20 12:59:25 - exploration - INFO -     Median: 213
+2025-10-20 12:59:25 - exploration - INFO -     Min: 0
+2025-10-20 12:59:25 - exploration - INFO -     Max: 4,583,485
+2025-10-20 12:59:25 - exploration - INFO -   month1_emplvl:
+2025-10-20 12:59:25 - exploration - INFO -     Mean: 2,392
+2025-10-20 12:59:25 - exploration - INFO -     Median: 112
+2025-10-20 12:59:25 - exploration - INFO -     Min: 0
+2025-10-20 12:59:25 - exploration - INFO -     Max: 4,563,073
+2025-10-20 12:59:26 - exploration - INFO -   month2_emplvl:
+2025-10-20 12:59:26 - exploration - INFO -     Mean: 2,405
+2025-10-20 12:59:26 - exploration - INFO -     Median: 112
+2025-10-20 12:59:26 - exploration - INFO -     Min: 0
+2025-10-20 12:59:26 - exploration - INFO -     Max: 4,608,275
+2025-10-20 12:59:26 - exploration - INFO - 
+Wage Statistics (County-Level Only):
+2025-10-20 12:59:26 - exploration - INFO -   total_qtrly_wages:
+2025-10-20 12:59:26 - exploration - INFO -     Mean: $76,419,401.10
+2025-10-20 12:59:26 - exploration - INFO -     Median: $3,155,335.50
+2025-10-20 12:59:26 - exploration - INFO -   avg_wkly_wage:
+2025-10-20 12:59:26 - exploration - INFO -     Mean: $1,018.95
+2025-10-20 12:59:26 - exploration - INFO -     Median: $875.00
+2025-10-20 12:59:26 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 12:59:27 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-10-20 12:59:27 - exploration - INFO -   - Creating employment trends plot...
+2025-10-20 12:59:28 - exploration - INFO -   - Creating quarterly distribution plot...
+2025-10-20 12:59:29 - exploration - INFO -   - Creating wage trends plot...
+2025-10-20 12:59:30 - exploration - INFO -   - Creating top industries plot...
+2025-10-20 12:59:31 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:59:31 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 12:59:31 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 12:59:31 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 12:59:31 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 12:59:31 - validation - INFO - Running employment range validation...
+2025-10-20 12:59:31 - validation - INFO - Running wage consistency validation...
+2025-10-20 12:59:32 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 12:59:36 - validation - INFO - Generating quality scorecards...
+2025-10-20 12:59:59 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 12:59:59 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:00:41 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 13:00:41 - validation - INFO - Overall Quality Score: 0.648
+2025-10-20 13:00:41 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:00:41 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 13:00:55 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: No module named 'feature_pipeline'
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 170, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
+    from feature_pipeline import engineer_features
+ModuleNotFoundError: No module named 'feature_pipeline'
+2025-10-20 13:05:38 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 13:05:38 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 13:05:38 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 13:05:38 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-10-20 13:05:38 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 13:05:38 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 13:05:38 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 13:05:42 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-10-20 13:05:42
+2025-10-20 13:05:42 - consolidation - INFO - 
+================================================================================
+2025-10-20 13:05:42 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 13:05:42 - consolidation - INFO - ================================================================================
+2025-10-20 13:05:42 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 13:05:54 - consolidation - INFO - Loaded 5,430,384 records from consolidated file
+2025-10-20 13:05:55 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 13:05:55 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 13:05:55 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 13:05:55 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 13:05:56 - exploration - INFO -   Filtering to county-level records: 4,732,218 of 5,430,384 total records
+2025-10-20 13:05:58 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 13:05:58 - exploration - INFO - County-Level Records: 4,732,218 rows
+2025-10-20 13:05:58 - exploration - INFO - Date Range: 2004 - 2024
+2025-10-20 13:05:58 - exploration - INFO - 
+Employment Statistics (County-Level Only):
+2025-10-20 13:05:58 - exploration - INFO -   avg_monthly_emplvl:
+2025-10-20 13:05:58 - exploration - INFO -     Mean: 3,004
+2025-10-20 13:05:58 - exploration - INFO -     Median: 213
+2025-10-20 13:05:58 - exploration - INFO -     Min: 0
+2025-10-20 13:05:58 - exploration - INFO -     Max: 4,583,485
+2025-10-20 13:05:59 - exploration - INFO -   month1_emplvl:
+2025-10-20 13:05:59 - exploration - INFO -     Mean: 2,392
+2025-10-20 13:05:59 - exploration - INFO -     Median: 112
+2025-10-20 13:05:59 - exploration - INFO -     Min: 0
+2025-10-20 13:05:59 - exploration - INFO -     Max: 4,563,073
+2025-10-20 13:05:59 - exploration - INFO -   month2_emplvl:
+2025-10-20 13:05:59 - exploration - INFO -     Mean: 2,405
+2025-10-20 13:05:59 - exploration - INFO -     Median: 112
+2025-10-20 13:05:59 - exploration - INFO -     Min: 0
+2025-10-20 13:05:59 - exploration - INFO -     Max: 4,608,275
+2025-10-20 13:05:59 - exploration - INFO - 
+Wage Statistics (County-Level Only):
+2025-10-20 13:05:59 - exploration - INFO -   total_qtrly_wages:
+2025-10-20 13:05:59 - exploration - INFO -     Mean: $76,419,401.10
+2025-10-20 13:05:59 - exploration - INFO -     Median: $3,155,335.50
+2025-10-20 13:05:59 - exploration - INFO -   avg_wkly_wage:
+2025-10-20 13:05:59 - exploration - INFO -     Mean: $1,018.95
+2025-10-20 13:05:59 - exploration - INFO -     Median: $875.00
+2025-10-20 13:05:59 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 13:06:01 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-10-20 13:06:01 - exploration - INFO -   - Creating employment trends plot...
+2025-10-20 13:06:02 - exploration - INFO -   - Creating quarterly distribution plot...
+2025-10-20 13:06:02 - exploration - INFO -   - Creating wage trends plot...
+2025-10-20 13:06:03 - exploration - INFO -   - Creating top industries plot...
+2025-10-20 13:06:06 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 13:06:06 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 13:06:06 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 13:06:06 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 13:06:06 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 13:06:06 - validation - INFO - Running employment range validation...
+2025-10-20 13:06:06 - validation - INFO - Running wage consistency validation...
+2025-10-20 13:06:07 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 13:06:12 - validation - INFO - Generating quality scorecards...
+2025-10-20 13:06:34 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 13:06:34 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:07:20 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 13:07:20 - validation - INFO - Overall Quality Score: 0.648
+2025-10-20 13:07:20 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:07:20 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 13:07:34 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: No module named 'feature_pipeline'
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 170, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
+    from feature_pipeline import engineer_features
+ModuleNotFoundError: No module named 'feature_pipeline'
+2025-10-20 13:11:59 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 13:11:59 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 13:11:59 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 13:11:59 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-10-20 13:11:59 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 13:11:59 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 13:11:59 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 13:12:02 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-10-20 13:12:02
+2025-10-20 13:12:02 - consolidation - INFO - 
+================================================================================
+2025-10-20 13:12:02 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 13:12:02 - consolidation - INFO - ================================================================================
+2025-10-20 13:12:02 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 13:12:14 - consolidation - INFO - Loaded 5,430,384 records from consolidated file
+2025-10-20 13:12:15 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 13:12:15 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 13:12:15 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 13:12:15 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 13:12:16 - exploration - INFO -   Filtering to county-level records: 4,732,218 of 5,430,384 total records
+2025-10-20 13:12:18 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 13:12:18 - exploration - INFO - County-Level Records: 4,732,218 rows
+2025-10-20 13:12:18 - exploration - INFO - Date Range: 2004 - 2024
+2025-10-20 13:12:18 - exploration - INFO - 
+Employment Statistics (County-Level Only):
+2025-10-20 13:12:18 - exploration - INFO -   avg_monthly_emplvl:
+2025-10-20 13:12:18 - exploration - INFO -     Mean: 3,004
+2025-10-20 13:12:18 - exploration - INFO -     Median: 213
+2025-10-20 13:12:18 - exploration - INFO -     Min: 0
+2025-10-20 13:12:18 - exploration - INFO -     Max: 4,583,485
+2025-10-20 13:12:19 - exploration - INFO -   month1_emplvl:
+2025-10-20 13:12:19 - exploration - INFO -     Mean: 2,392
+2025-10-20 13:12:19 - exploration - INFO -     Median: 112
+2025-10-20 13:12:19 - exploration - INFO -     Min: 0
+2025-10-20 13:12:19 - exploration - INFO -     Max: 4,563,073
+2025-10-20 13:12:19 - exploration - INFO -   month2_emplvl:
+2025-10-20 13:12:19 - exploration - INFO -     Mean: 2,405
+2025-10-20 13:12:19 - exploration - INFO -     Median: 112
+2025-10-20 13:12:19 - exploration - INFO -     Min: 0
+2025-10-20 13:12:19 - exploration - INFO -     Max: 4,608,275
+2025-10-20 13:12:19 - exploration - INFO - 
+Wage Statistics (County-Level Only):
+2025-10-20 13:12:19 - exploration - INFO -   total_qtrly_wages:
+2025-10-20 13:12:19 - exploration - INFO -     Mean: $76,419,401.10
+2025-10-20 13:12:19 - exploration - INFO -     Median: $3,155,335.50
+2025-10-20 13:12:19 - exploration - INFO -   avg_wkly_wage:
+2025-10-20 13:12:19 - exploration - INFO -     Mean: $1,018.95
+2025-10-20 13:12:19 - exploration - INFO -     Median: $875.00
+2025-10-20 13:12:19 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 13:12:21 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-10-20 13:12:21 - exploration - INFO -   - Creating employment trends plot...
+2025-10-20 13:12:22 - exploration - INFO -   - Creating quarterly distribution plot...
+2025-10-20 13:12:23 - exploration - INFO -   - Creating wage trends plot...
+2025-10-20 13:12:24 - exploration - INFO -   - Creating top industries plot...
+2025-10-20 13:12:25 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 13:12:25 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 13:12:25 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 13:12:25 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 13:12:25 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 13:12:25 - validation - INFO - Running employment range validation...
+2025-10-20 13:12:25 - validation - INFO - Running wage consistency validation...
+2025-10-20 13:12:26 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 13:12:30 - validation - INFO - Generating quality scorecards...
+2025-10-20 13:12:53 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 13:12:53 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:13:38 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 13:13:38 - validation - INFO - Overall Quality Score: 0.648
+2025-10-20 13:13:38 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:13:38 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 13:13:52 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: No module named 'feature_pipeline'
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 170, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
+    from feature_pipeline import engineer_features
+ModuleNotFoundError: No module named 'feature_pipeline'
+2025-10-20 13:47:17 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 13:47:17 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 13:47:17 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 13:47:17 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-10-20 13:47:17 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 13:47:17 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 13:47:17 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 13:47:26 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-10-20 13:47:26
+2025-10-20 13:47:26 - consolidation - INFO - 
+================================================================================
+2025-10-20 13:47:26 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 13:47:26 - consolidation - INFO - ================================================================================
+2025-10-20 13:47:26 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 13:47:38 - consolidation - INFO - Loaded 5,430,384 records from consolidated file
+2025-10-20 13:47:39 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 13:47:39 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 13:47:39 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 13:47:39 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 13:47:41 - exploration - INFO -   Filtering to county-level records: 4,732,218 of 5,430,384 total records
+2025-10-20 13:47:43 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 13:47:43 - exploration - INFO - County-Level Records: 4,732,218 rows
+2025-10-20 13:47:43 - exploration - INFO - Date Range: 2004 - 2024
+2025-10-20 13:47:43 - exploration - INFO - 
+Employment Statistics (County-Level Only):
+2025-10-20 13:47:43 - exploration - INFO -   avg_monthly_emplvl:
+2025-10-20 13:47:43 - exploration - INFO -     Mean: 3,004
+2025-10-20 13:47:43 - exploration - INFO -     Median: 213
+2025-10-20 13:47:43 - exploration - INFO -     Min: 0
+2025-10-20 13:47:43 - exploration - INFO -     Max: 4,583,485
+2025-10-20 13:47:43 - exploration - INFO -   month1_emplvl:
+2025-10-20 13:47:43 - exploration - INFO -     Mean: 2,392
+2025-10-20 13:47:43 - exploration - INFO -     Median: 112
+2025-10-20 13:47:43 - exploration - INFO -     Min: 0
+2025-10-20 13:47:43 - exploration - INFO -     Max: 4,563,073
+2025-10-20 13:47:43 - exploration - INFO -   month2_emplvl:
+2025-10-20 13:47:43 - exploration - INFO -     Mean: 2,405
+2025-10-20 13:47:43 - exploration - INFO -     Median: 112
+2025-10-20 13:47:43 - exploration - INFO -     Min: 0
+2025-10-20 13:47:43 - exploration - INFO -     Max: 4,608,275
+2025-10-20 13:47:43 - exploration - INFO - 
+Wage Statistics (County-Level Only):
+2025-10-20 13:47:44 - exploration - INFO -   total_qtrly_wages:
+2025-10-20 13:47:44 - exploration - INFO -     Mean: $76,419,401.10
+2025-10-20 13:47:44 - exploration - INFO -     Median: $3,155,335.50
+2025-10-20 13:47:44 - exploration - INFO -   avg_wkly_wage:
+2025-10-20 13:47:44 - exploration - INFO -     Mean: $1,018.95
+2025-10-20 13:47:44 - exploration - INFO -     Median: $875.00
+2025-10-20 13:47:44 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 13:47:45 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-10-20 13:47:45 - exploration - INFO -   - Creating employment trends plot...
+2025-10-20 13:47:47 - exploration - INFO -   - Creating quarterly distribution plot...
+2025-10-20 13:47:48 - exploration - INFO -   - Creating wage trends plot...
+2025-10-20 13:47:49 - exploration - INFO -   - Creating top industries plot...
+2025-10-20 13:47:52 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 13:47:52 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 13:47:52 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 13:47:52 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 13:47:52 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 13:47:52 - validation - INFO - Running employment range validation...
+2025-10-20 13:47:53 - validation - INFO - Running wage consistency validation...
+2025-10-20 13:47:54 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 13:47:58 - validation - INFO - Generating quality scorecards...
+2025-10-20 13:48:19 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 13:48:19 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:49:03 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 13:49:03 - validation - INFO - Overall Quality Score: 0.648
+2025-10-20 13:49:03 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:49:03 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 13:49:16 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: No module named 'feature_pipeline'
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 170, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
+    from feature_pipeline import engineer_features
+ModuleNotFoundError: No module named 'feature_pipeline'

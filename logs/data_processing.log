@@ -161,3 +161,251 @@ Dataset Shape: 5,430,384 rows x 16 columns
 2025-10-16 08:27:10 - exploration - INFO - 
 Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
 2025-10-16 08:27:19 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 10:23:31 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 10:23:31 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 10:23:31 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 10:23:31 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 10:24:05 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 10:24:05 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 10:24:24 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 10:24:24 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 10:24:26 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 10:24:27 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 10:24:34 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 10:24:34 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: cannot import name 'validate_data_quality' from 'validation' (C:\GitHub\is-160-project\src\validation.py)
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 166, in run_full_pipeline
+    validation_results = self.stage_3_validate_data(df)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 90, in stage_3_validate_data
+    from validation import validate_data_quality
+ImportError: cannot import name 'validate_data_quality' from 'validation' (C:\GitHub\is-160-project\src\validation.py)
+2025-10-20 12:38:01 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 12:38:01 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 12:38:01 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 12:38:01 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:38:05 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 12:38:05 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 12:38:23 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 12:38:23 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 12:38:25 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 12:38:27 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 12:38:33 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:38:33 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 12:38:33 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 12:38:33 - validation - INFO - Running employment range validation...
+2025-10-20 12:38:33 - validation - INFO - Running wage consistency validation...
+2025-10-20 12:38:34 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 12:38:39 - validation - INFO - Generating quality scorecards...
+2025-10-20 12:39:24 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 12:39:24 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 12:40:09 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 12:40:09 - validation - INFO - Overall Quality Score: 7.812
+2025-10-20 12:40:09 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 12:40:09 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 12:45:36 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 12:45:36 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 12:45:36 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 12:45:36 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:45:43 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 12:45:43 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 12:45:56 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 12:45:56 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 12:45:58 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 12:46:00 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 12:46:03 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:46:03 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 12:46:03 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 12:46:03 - validation - INFO - Running employment range validation...
+2025-10-20 12:46:04 - validation - INFO - Running wage consistency validation...
+2025-10-20 12:46:05 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 12:46:09 - validation - INFO - Generating quality scorecards...
+2025-10-20 12:46:34 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 12:46:34 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 12:47:20 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 12:47:20 - validation - INFO - Overall Quality Score: 0.648
+2025-10-20 12:47:20 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 12:47:20 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 12:52:27 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 12:52:27 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 12:52:27 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 12:52:27 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:53:11 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 12:53:11 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 12:53:11 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 12:53:11 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:53:25 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 12:53:25 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 12:53:43 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 12:53:43 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 12:53:46 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 12:53:48 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 12:53:49 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-10-20 12:53:49 - exploration - ERROR - Error generating plots: Can't find a usable init.tcl in the following directories: 
+    C:/Users/brian/AppData/Local/Programs/Python/Python313/lib/tcl8.6 C:/lib/tcl8.6 C:/lib/tcl8.6 C:/library C:/library C:/tcl8.6.15/library C:/tcl8.6.15/library
+
+
+
+This probably means that Tcl wasn't installed properly.
+
+2025-10-20 12:53:50 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 12:53:50 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 12:53:50 - validation - INFO - Running employment range validation...
+2025-10-20 12:53:50 - validation - INFO - Running wage consistency validation...
+2025-10-20 12:53:51 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 12:53:55 - validation - INFO - Generating quality scorecards...
+2025-10-20 12:54:18 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 12:54:18 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 12:55:03 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 12:55:03 - validation - INFO - Overall Quality Score: 0.648
+2025-10-20 12:55:03 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 12:55:03 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 12:58:25 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 12:58:25 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 12:58:37 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 12:58:37 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 12:58:40 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 12:58:42 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 12:58:43 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-10-20 12:58:43 - exploration - ERROR - Error generating plots: Can't find a usable init.tcl in the following directories: 
+    C:/Users/brian/AppData/Local/Programs/Python/Python313/lib/tcl8.6 C:/lib/tcl8.6 C:/lib/tcl8.6 C:/library C:/library C:/tcl8.6.15/library C:/tcl8.6.15/library
+
+
+
+This probably means that Tcl wasn't installed properly.
+
+2025-10-20 12:58:43 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 12:58:43 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 12:58:43 - validation - INFO - Running employment range validation...
+2025-10-20 12:58:43 - validation - INFO - Running wage consistency validation...
+2025-10-20 12:58:44 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 12:59:04 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 12:59:04 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 12:59:04 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 12:59:04 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:59:07 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 12:59:07 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 12:59:22 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 12:59:22 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 12:59:25 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 12:59:26 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 12:59:27 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-10-20 12:59:31 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 12:59:31 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 12:59:31 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 12:59:31 - validation - INFO - Running employment range validation...
+2025-10-20 12:59:31 - validation - INFO - Running wage consistency validation...
+2025-10-20 12:59:32 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 12:59:36 - validation - INFO - Generating quality scorecards...
+2025-10-20 12:59:59 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 12:59:59 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:00:41 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 13:00:41 - validation - INFO - Overall Quality Score: 0.648
+2025-10-20 13:00:41 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:00:41 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 13:05:38 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 13:05:38 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 13:05:38 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 13:05:38 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 13:05:42 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 13:05:42 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 13:05:55 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 13:05:55 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 13:05:58 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 13:05:59 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 13:06:01 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-10-20 13:06:06 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 13:06:06 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 13:06:06 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 13:06:06 - validation - INFO - Running employment range validation...
+2025-10-20 13:06:06 - validation - INFO - Running wage consistency validation...
+2025-10-20 13:06:07 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 13:06:12 - validation - INFO - Generating quality scorecards...
+2025-10-20 13:06:34 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 13:06:34 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:07:20 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 13:07:20 - validation - INFO - Overall Quality Score: 0.648
+2025-10-20 13:07:20 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:07:20 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 13:11:59 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 13:11:59 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 13:11:59 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 13:11:59 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 13:12:02 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 13:12:02 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 13:12:15 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 13:12:15 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 13:12:18 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 13:12:19 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 13:12:21 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-10-20 13:12:25 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 13:12:25 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 13:12:25 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 13:12:25 - validation - INFO - Running employment range validation...
+2025-10-20 13:12:25 - validation - INFO - Running wage consistency validation...
+2025-10-20 13:12:26 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 13:12:30 - validation - INFO - Generating quality scorecards...
+2025-10-20 13:12:53 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 13:12:53 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:13:38 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 13:13:38 - validation - INFO - Overall Quality Score: 0.648
+2025-10-20 13:13:38 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:13:38 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 13:47:17 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 13:47:17 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 13:47:17 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 13:47:17 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 13:47:26 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 13:47:26 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 13:47:39 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 13:47:39 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 13:47:43 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 16 columns
+2025-10-20 13:47:44 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 13:47:45 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-10-20 13:47:52 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 13:47:52 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 13:47:52 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 13:47:52 - validation - INFO - Running employment range validation...
+2025-10-20 13:47:53 - validation - INFO - Running wage consistency validation...
+2025-10-20 13:47:54 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 13:47:58 - validation - INFO - Generating quality scorecards...
+2025-10-20 13:48:19 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 13:48:19 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:49:03 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 13:49:03 - validation - INFO - Overall Quality Score: 0.648
+2025-10-20 13:49:03 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 13:49:03 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt

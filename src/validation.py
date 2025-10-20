@@ -22,15 +22,16 @@ class QCEWValidator:
     Comprehensive validator for QCEW employment data quality and consistency.
     """
 
-    def __init__(self, data_path: Optional[str] = None):
+    def __init__(self, data_path: Optional[str] = None, df: pd.DataFrame = None):
         """
-        Initialize validator with optional data path.
+        Initialize validator with optional data path or DataFrame.
 
         Args:
             data_path: Path to consolidated QCEW data file
+            df: DataFrame to validate directly (takes precedence over data_path)
         """
         self.data_path = data_path or Path(__file__).parent.parent / "data" / "processed" / "qcew_consolidated.csv"
-        self.df = None
+        self.df = df  # If df is provided, use it directly
         self.validation_results = {}
 
     def load_data(self) -> pd.DataFrame:
@@ -77,9 +78,13 @@ class QCEWValidator:
             }
 
         # Range validation summary
+        # Note: Total employment sum is across ALL records including duplicates at different
+        # aggregation levels (county/state/national), so it's not a meaningful statistic.
+        # We report it but note it's for reference only.
         total_employment = df['month1_emplvl'].sum()
         results['range_validation'] = {
             'total_employment': total_employment,
+            'total_employment_note': 'Sum across all records - includes multiple aggregation levels',
             'min_employment': df['month1_emplvl'].min(),
             'max_employment': df['month1_emplvl'].max(),
             'mean_employment': df['month1_emplvl'].mean(),
@@ -163,6 +168,15 @@ class QCEWValidator:
 
     def _check_wage_change_reasonableness(self, df: pd.DataFrame) -> Dict[str, int]:
         """Check for unreasonable year-over-year wage changes."""
+        # Check if the column exists (may not exist in older data)
+        if 'oty_avg_wkly_wage_pct_chg' not in df.columns:
+            return {
+                'extreme_wage_increases': 0,
+                'extreme_wage_decreases': 0,
+                'total_extreme_changes': 0,
+                'note': 'oty_avg_wkly_wage_pct_chg column not available in data'
+            }
+        
         # Flag wage changes > 50% or < -50% as potentially problematic
         extreme_increases = (df['oty_avg_wkly_wage_pct_chg'] > 50).sum()
         extreme_decreases = (df['oty_avg_wkly_wage_pct_chg'] < -50).sum()
@@ -207,8 +221,10 @@ class QCEWValidator:
                     }
 
         # Seasonal pattern analysis
-        df['quarter'] = df['year'].astype(str) + 'Q' + df['qtr'].astype(str)
-        quarterly_avg = df.groupby('qtr')['month1_emplvl'].mean()
+        # Use 'quarter' column if it exists, otherwise fallback to 'qtr'
+        quarter_col = 'quarter' if 'quarter' in df.columns else 'qtr'
+        df['quarter_label'] = df['year'].astype(str) + 'Q' + df[quarter_col].astype(str)
+        quarterly_avg = df.groupby(quarter_col)['month1_emplvl'].mean()
         seasonal_variation = quarterly_avg.std() / quarterly_avg.mean()
 
         results['seasonal_anomalies'] = {
@@ -269,7 +285,12 @@ class QCEWValidator:
             if len(group) > 4:  # Need minimum records for meaningful analysis
                 completeness = (group[['month1_emplvl', 'avg_wkly_wage']].notna().all(axis=1)).mean()
                 consistency = 1 - (group['month1_emplvl'] == 0).mean()  # Lower zero employment is better
-                stability = 1 / (1 + group['oty_month1_emplvl_pct_chg'].std())  # Lower variation is better
+                
+                # Calculate stability only if oty column exists
+                if 'oty_month1_emplvl_pct_chg' in group.columns:
+                    stability = 1 / (1 + group['oty_month1_emplvl_pct_chg'].std())  # Lower variation is better
+                else:
+                    stability = 0.5  # Default mid-range score if data not available
 
                 quality_score = (completeness * 0.4 + consistency * 0.3 + stability * 0.3)
                 results['industry_quality_scores'][industry] = {
@@ -281,7 +302,8 @@ class QCEWValidator:
                 }
 
         # Ownership quality scores
-        ownership_groups = df.groupby('own_code')
+        ownership_col = 'ownership' if 'ownership' in df.columns else 'own_code'
+        ownership_groups = df.groupby(ownership_col)
         for ownership, group in ownership_groups:
             completeness = (group[['month1_emplvl', 'avg_wkly_wage']].notna().all(axis=1)).mean()
             coverage = len(group) / len(df)  # Representation in dataset
@@ -297,7 +319,9 @@ class QCEWValidator:
         # Temporal quality scores
         year_groups = df.groupby('year')
         for year, group in year_groups:
-            quarterly_completeness = len(group) / (4 * len(df.groupby('industry_code')))  # Expected 4 quarters per industry
+            # More realistic quarterly completeness: check if we have data for 4 quarters
+            quarters_present = group['quarter'].nunique() if 'quarter' in group.columns else group.get('qtr', pd.Series()).nunique()
+            quarterly_completeness = min(quarters_present / 4.0, 1.0)  # Cap at 1.0
             data_quality = (group[['month1_emplvl', 'avg_wkly_wage']].notna().all(axis=1)).mean()
 
             quality_score = (quarterly_completeness * 0.6 + data_quality * 0.4)
@@ -305,15 +329,28 @@ class QCEWValidator:
                 'score': quality_score,
                 'quarterly_completeness': quarterly_completeness,
                 'data_quality': data_quality,
-                'record_count': len(group)
+                'record_count': len(group),
+                'quarters_present': quarters_present
             }
 
         # Overall quality dimensions
+        # Calculate statistical stability only if oty column exists
+        if 'oty_month1_emplvl_pct_chg' in df.columns:
+            oty_std = df['oty_month1_emplvl_pct_chg'].std()
+            stat_stability = 1 / (1 + oty_std) if not np.isnan(oty_std) else 0.5
+        else:
+            stat_stability = 0.5  # Default mid-range score if data not available
+        
+        # Temporal coverage: check if we have reasonable quarterly coverage
+        # Instead of complex calculation, check average quarters per year
+        avg_quarters_per_year = df.groupby('year')['quarter'].nunique().mean() if 'quarter' in df.columns else 0
+        temporal_coverage_score = min(avg_quarters_per_year / 4.0, 1.0)  # Cap at 1.0
+            
         results['quality_dimensions'] = {
             'data_completeness': (df[['month1_emplvl', 'avg_wkly_wage']].notna().all(axis=1)).mean(),
-            'temporal_coverage': len(df) / (len(df['year'].unique()) * 4 * len(df['industry_code'].unique())),
+            'temporal_coverage': temporal_coverage_score,
             'value_consistency': 1 - ((df['month1_emplvl'] == 0) & (df['qtrly_estabs'] > 0)).mean(),
-            'statistical_stability': 1 / (1 + df['oty_month1_emplvl_pct_chg'].std())
+            'statistical_stability': stat_stability
         }
 
         # Overall quality score (weighted average)
@@ -367,7 +404,10 @@ class QCEWValidator:
             report_lines.append(f"{month} extreme outliers: {outliers.get('extreme_high', 0):,}")
 
         range_val = emp_results.get('range_validation', {})
-        report_lines.append(f"Total employment: {range_val.get('total_employment', 0):,}")
+        # Note: Don't report total employment as it's misleading with multiple aggregation levels
+        report_lines.append(f"Mean employment per record: {range_val.get('mean_employment', 0):,.0f}")
+        report_lines.append(f"Median employment per record: {range_val.get('median_employment', 0):,.0f}")
+        report_lines.append(f"Employment range: {range_val.get('min_employment', 0):,.0f} - {range_val.get('max_employment', 0):,.0f}")
         report_lines.append("")
 
         # Wage validation summary
@@ -436,6 +476,72 @@ class QCEWValidator:
             logger.info(f"Detailed validation report saved to {output_path}")
 
         return report_text
+
+def validate_data_quality(df: pd.DataFrame, output_file) -> Dict[str, any]:
+    """
+    Wrapper function to validate data quality and save validated data.
+    
+    Args:
+        df: DataFrame to validate
+        output_file: Path to save validated data (string or Path object)
+        
+    Returns:
+        Dictionary with validation results
+    """
+    logger.info(f"Validating data quality for {len(df):,} records")
+    
+    # Convert output_file to Path object if it's a string
+    output_file = Path(output_file) if isinstance(output_file, str) else output_file
+    
+    # Initialize validator with the DataFrame
+    validator = QCEWValidator(df=df)
+    
+    # Run all validation checks
+    logger.info("Running employment range validation...")
+    emp_results = validator.validate_employment_ranges()
+    
+    logger.info("Running wage consistency validation...")
+    wage_results = validator.validate_wage_consistency()
+    
+    logger.info("Running statistical anomaly detection...")
+    anomaly_results = validator.detect_statistical_anomalies()
+    
+    logger.info("Generating quality scorecards...")
+    quality_results = validator.build_data_quality_scorecards()
+    
+    # Generate validation report
+    report_dir = output_file.parent
+    report_dir.mkdir(parents=True, exist_ok=True)
+    report_path = report_dir / "validation_report.txt"
+    report = validator.generate_validation_report(report_path)
+    
+    # Save validated data (original data passes through)
+    logger.info(f"Saving validated data to {output_file}")
+    output_file.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(output_file, index=False)
+    
+    # Extract temporal info from anomaly results
+    temporal_results = anomaly_results.get('temporal_anomalies', {})
+    
+    # Combine all results
+    validation_summary = {
+        'employment_ranges': emp_results,
+        'wage_consistency': wage_results,
+        'statistical_anomalies': anomaly_results,
+        'temporal_continuity': temporal_results,
+        'quality_scorecards': quality_results,
+        'overall_score': quality_results.get('overall_quality_score', 0),
+        'validated_file': str(output_file),
+        'report_file': str(report_path)
+    }
+    
+    logger.info(f"\n[OK] Validation complete!")
+    logger.info(f"Overall Quality Score: {validation_summary['overall_score']:.3f}")
+    logger.info(f"Validated data saved to: {output_file}")
+    logger.info(f"Report saved to: {report_path}")
+    
+    return validation_summary
+
 
 def main():
     """Main function to run complete validation suite."""
