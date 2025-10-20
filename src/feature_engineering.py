@@ -293,8 +293,21 @@ def calculate_quarterly_growth_rates(df: pd.DataFrame,
     for col in growth_cols:
         inf_count = np.isinf(df_with_growth[col]).sum()
         if inf_count > 0:
-            logger.warning(f"  [WARN] {col}: {inf_count} infinite values (division by zero)")
-            df_with_growth[col] = df_with_growth[col].replace([np.inf, -np.inf], np.nan)
+            logger.info(f"  Handling {col}: {inf_count:,} infinite values (division by zero) - replacing with 0.0")
+            df_with_growth[col] = df_with_growth[col].replace([np.inf, -np.inf], 0.0)
+    
+    # Report final statistics after handling infinities
+    logger.info("\nFinal growth rate statistics (after cleaning):")
+    for col in growth_cols:
+        non_null = df_with_growth[col].notna().sum()
+        null_count = df_with_growth[col].isna().sum()
+        logger.info(f"  {col}:")
+        logger.info(f"    Valid values: {non_null:,}")
+        logger.info(f"    Null values: {null_count:,}")
+        logger.info(f"    Mean: {df_with_growth[col].mean():.2f}%")
+        logger.info(f"    Median: {df_with_growth[col].median():.2f}%")
+        logger.info(f"    Min: {df_with_growth[col].min():.2f}%")
+        logger.info(f"    Max: {df_with_growth[col].max():.2f}%")
     
     logger.info("\n[SUCCESS] Growth rate calculations completed")
     logger.info("="*80)
@@ -404,6 +417,18 @@ def generate_lag_features(df: pd.DataFrame,
         
         null_count = df_with_lags[lag_col_name].isnull().sum()
         logger.info(f"  Created {lag_col_name}: {null_count:,} null values (beginning of series)")
+    
+    # Report statistics for each lag feature
+    logger.info("\nLag feature statistics:")
+    for lag in lags:
+        lag_col_name = f'{value_col}_lag_{lag}'
+        non_null = df_with_lags[lag_col_name].notna().sum()
+        logger.info(f"  {lag_col_name}:")
+        logger.info(f"    Valid values: {non_null:,}")
+        logger.info(f"    Mean: {df_with_lags[lag_col_name].mean():.2f}")
+        logger.info(f"    Median: {df_with_lags[lag_col_name].median():.2f}")
+        logger.info(f"    Min: {df_with_lags[lag_col_name].min():.0f}")
+        logger.info(f"    Max: {df_with_lags[lag_col_name].max():.0f}")
     
     logger.info(f"\n[SUCCESS] Generated {len(lags)} lag features")
     logger.info("="*80)

@@ -166,6 +166,18 @@ The consolidated dataset includes multiple aggregation levels (County: 4.7M reco
 - [~] T040 **[Alejo]** Engineer industry concentration metrics and economic diversity indices in src/feature_engineering.py - DEFERRED: Advanced feature (HHI calculation), low priority for initial model
 - [~] T041 **[Alejo]** Build geographic clustering features based on employment similarity in src/feature_engineering.py - DEFERRED: Advanced spatial analysis, low priority for initial model
 - [x] T042 **[Alejo]** Generate lag features for temporal dependencies in employment trends in src/feature_engineering.py - COMPLETED: generate_lag_features() adds 4 lag columns (1-4 quarters back)
+
+### Feature Engineering Quality & Visualization (Added Oct 20, 2025)
+**Enhancement**: Add comprehensive statistics and visualizations at each feature engineering step to help users understand data transformations and validate feature quality.
+
+- [ ] T042a **[Alejo]** Add distribution plots for growth rate features (QoQ%, YoY%) showing before/after histograms in src/feature_engineering.py with save to data/feature_engineering/plots/
+- [ ] T042b **[Alejo]** Create time series plots showing employment trends with lag features overlaid for sample counties/industries in src/feature_engineering.py
+- [ ] T042c **[Alejo]** Generate correlation heatmap between original employment and all lag features in src/feature_engineering.py
+- [ ] T042d **[Alejo]** Add statistical summary tables (mean, median, std, min, max, null count) printed to console after each feature engineering step in src/feature_engineering.py - PARTIALLY COMPLETE: Added for T038 and T042
+- [ ] T042e **[Alejo]** Create data quality report showing: records removed at each filter step, null values introduced by lag/growth features, outlier detection in new features in src/feature_engineering.py
+- [ ] T042f **[Alejo]** Generate before/after comparison plots for T033 (quarterly distribution) and T034 (quality filtering impact) in src/feature_engineering.py
+- [ ] T042g **[Alejo]** Add feature importance estimation using correlation with target variable (future employment) in src/feature_engineering.py
+
 - [ ] T043 **[Alejo]** Create rolling window statistics (3, 6, 12 quarter averages) for employment stability in src/temporal_features.py
 - [ ] T044 **[Alejo]** Engineer cyclical features (quarter, year) and economic cycle indicators in src/temporal_features.py
 - [ ] T045 **[Alejo]** Calculate employment volatility measures and trend strength indicators in src/temporal_features.py
