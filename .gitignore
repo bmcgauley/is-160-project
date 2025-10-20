@@ -1,2 +1,36 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+env/
+
+# Logs
+logs/
+*.log
+
+# Data directories - ignore all CSV and data files
 data/raw/
+data/processed/*.csv
+data/processed/*.npz
+data/validated/*.csv
+data/feature_engineering/*.csv
+
+# Specific large files (legacy - covered by patterns above)
 data/processed/qcew_consolidated.csv
+data/processed/qcew_master_consolidated.csv
+data/processed/qcew_preprocessed.csv
+data/processed/qcew_preprocessed_sequences.npz
+data/validated/qcew_validated.csv
+data/validated/qcew_california_validated_2004_2025.csv
+
+# Keep README files and reports
+!data/*/README.md
+!data/*/*/README.md
+!data/validated/validation_report.txt

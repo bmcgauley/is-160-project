@@ -64,27 +64,31 @@ def consolidate_raw_data(raw_dir: Path, output_file: Path, force_rebuild: bool =
         all_dfs.append(df_chunk)
         logger.info(f"  [OK] Loaded {rows:,} rows")
 
-    # Concatenate all dataframes
+    # Normalize column names BEFORE concatenation to avoid duplicates
+    logger.info("\nNormalizing column names across all files...")
+    for i, df_chunk in enumerate(all_dfs):
+        # Normalize to lowercase with underscores
+        df_chunk.columns = df_chunk.columns.str.lower().str.replace(' ', '_').str.replace('(', '').str.replace(')', '')
+        
+        # Map column names for consistency (handles schema differences between old/new files)
+        column_mapping = {
+            'time_period': 'quarter',  # 2020+ files use 'Time Period'
+            # 'quarter' stays as 'quarter'  # 2004-2019 files use 'Quarter'
+            'naics_code': 'industry_code',
+            'establishments': 'qtrly_estabs',
+            'average_monthly_employment': 'avg_monthly_emplvl',
+            '1st_month_emp': 'month1_emplvl',
+            '2nd_month_emp': 'month2_emplvl',
+            '3rd_month_emp': 'month3_emplvl',
+            'total_wages_all_workers': 'total_qtrly_wages',
+            'average_weekly_wages': 'avg_wkly_wage'
+        }
+        df_chunk.rename(columns=column_mapping, inplace=True)
+        all_dfs[i] = df_chunk
+    
+    # Concatenate all dataframes (now with consistent column names)
     logger.info("\nCombining all datasets...")
     consolidated_df = pd.concat(all_dfs, ignore_index=True)
-
-    # Normalize column names to lowercase with underscores
-    consolidated_df.columns = consolidated_df.columns.str.lower().str.replace(' ', '_').str.replace('(', '').str.replace(')', '')
-    
-    # Map column names for consistency
-    column_mapping = {
-        'time_period': 'quarter',
-        'naics_level': 'naics_level',
-        'naics_code': 'industry_code',
-        'establishments': 'qtrly_estabs',
-        'average_monthly_employment': 'avg_monthly_emplvl',
-        '1st_month_emp': 'month1_emplvl',
-        '2nd_month_emp': 'month2_emplvl',
-        '3rd_month_emp': 'month3_emplvl',
-        'total_wages_all_workers': 'total_qtrly_wages',
-        'average_weekly_wages': 'avg_wkly_wage'
-    }
-    consolidated_df.rename(columns=column_mapping, inplace=True)
 
     # Basic info
     logger.info(f"\n[OK] Successfully consolidated {len(csv_files)} files")

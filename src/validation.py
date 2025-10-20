@@ -460,9 +460,9 @@ class QCEWValidator:
 
         if issues:
             for issue in issues:
-                report_lines.append(f"• {issue}")
+                report_lines.append(f"  - {issue}")
         else:
-            report_lines.append("• Data quality is acceptable for analysis")
+            report_lines.append("  - Data quality is acceptable for analysis")
         report_lines.append("")
 
         report_lines.append("=" * 80)

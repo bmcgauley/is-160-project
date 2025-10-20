@@ -57,14 +57,14 @@ def check_package_version(package_name: str, min_version: str) -> bool:
         required_parts.extend([0] * (max_len - len(required_parts)))
 
         if installed_parts >= required_parts:
-            logger.info(f"✓ {package_name} {version} >= {min_version}")
+            logger.info(f"[OK] {package_name} {version} >= {min_version}")
             return True
         else:
-            logger.warning(f"✗ {package_name} {version} < {min_version}")
+            logger.warning(f"[WARN] {package_name} {version} < {min_version}")
             return False
 
     except ImportError:
-        logger.error(f"✗ {package_name} not installed")
+        logger.error(f"[ERROR] {package_name} not installed")
         return False
     except Exception as e:
         logger.error(f"Error checking {package_name}: {e}")
@@ -82,16 +82,16 @@ def check_pytorch_setup() -> bool:
 
         # Check CUDA availability
         if torch.cuda.is_available():
-            logger.info(f"✓ CUDA available: {torch.cuda.get_device_name(0)}")
+            logger.info(f"[OK] CUDA available: {torch.cuda.get_device_name(0)}")
             logger.info(f"  CUDA version: {torch.version.cuda}")
         else:
-            logger.info("ℹ CUDA not available, using CPU")
+            logger.info("[INFO] CUDA not available, using CPU")
 
         # Check MPS availability (Apple Silicon)
         if hasattr(torch, 'mps') and torch.mps.is_available():
-            logger.info("✓ MPS (Apple Silicon) available")
+            logger.info("[OK] MPS (Apple Silicon) available")
         elif hasattr(torch, 'backends') and hasattr(torch.backends, 'mps') and torch.backends.mps.is_available():
-            logger.info("✓ MPS (Apple Silicon) available")
+            logger.info("[OK] MPS (Apple Silicon) available")
 
         return True
 
@@ -142,9 +142,9 @@ def validate_environment() -> bool:
     # Check Python version
     python_version = sys.version_info
     if python_version >= (3, 8):
-        logger.info(f"✓ Python {python_version.major}.{python_version.minor}.{python_version.micro}")
+        logger.info(f"[OK] Python {python_version.major}.{python_version.minor}.{python_version.micro}")
     else:
-        logger.error(f"✗ Python {python_version.major}.{python_version.minor}.{python_version.micro} < 3.8 required")
+        logger.error(f"[ERROR] Python {python_version.major}.{python_version.minor}.{python_version.micro} < 3.8 required")
         all_good = False
 
     # Check required packages
@@ -157,9 +157,9 @@ def validate_environment() -> bool:
         all_good = False
 
     if all_good:
-        logger.info("✓ Environment validation passed")
+        logger.info("[SUCCESS] Environment validation passed")
     else:
-        logger.error("✗ Environment validation failed")
+        logger.error("[FAIL] Environment validation failed")
 
     return all_good
 

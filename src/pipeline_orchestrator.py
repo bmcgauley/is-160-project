@@ -11,9 +11,22 @@ from pathlib import Path
 from datetime import datetime
 import warnings
 
-from validation import QCEWValidator
-from preprocessing import EmploymentDataPreprocessor
-from lstm_model import EmploymentLSTM
+# Only import modules that currently exist
+# Other modules will be imported locally when their stages are called
+try:
+    from validation import QCEWValidator
+except ImportError:
+    QCEWValidator = None
+    
+try:
+    from preprocessing import EmploymentDataPreprocessor
+except ImportError:
+    EmploymentDataPreprocessor = None
+    
+try:
+    from lstm_model import EmploymentLSTM
+except ImportError:
+    EmploymentLSTM = None
 
 warnings.filterwarnings('ignore')
 
@@ -39,17 +52,19 @@ class QCEWPipeline:
         self.raw_dir = self.data_dir / "raw"
         self.processed_dir = self.data_dir / "processed"
         self.validated_dir = self.data_dir / "validated"
+        self.feature_eng_dir = self.data_dir / "feature_engineering"
         self.plots_dir = self.processed_dir / "plots"
 
         # Create directories if they don't exist
         self.processed_dir.mkdir(exist_ok=True)
         self.validated_dir.mkdir(exist_ok=True)
+        self.feature_eng_dir.mkdir(exist_ok=True)
         self.plots_dir.mkdir(exist_ok=True)
 
         # Pipeline state tracking
         self.consolidated_file = self.processed_dir / "qcew_master_consolidated.csv"
         self.validated_file = self.validated_dir / "qcew_validated.csv"
-        self.features_file = self.processed_dir / "qcew_features.csv"
+        self.features_file = self.feature_eng_dir / "final_features.csv"
         self.preprocessed_file = self.processed_dir / "qcew_preprocessed.csv"
         self.model_file = self.processed_dir / "lstm_model.pt"
 
@@ -59,6 +74,7 @@ class QCEWPipeline:
         logger.info(f"Base directory: {self.base_dir}")
         logger.info(f"Raw data: {self.raw_dir}")
         logger.info(f"Processed data: {self.processed_dir}")
+        logger.info(f"Feature engineering: {self.feature_eng_dir}")
         logger.info(f"Plots: {self.plots_dir}")
 
     def stage_1_consolidate_data(self) -> pd.DataFrame:
@@ -104,7 +120,11 @@ class QCEWPipeline:
         logger.info("STAGE 4: FEATURE ENGINEERING")
         logger.info("="*80)
         
-        df_features = engineer_features(df, self.features_file)
+        df_features = engineer_features(
+            df, 
+            output_file=self.features_file,
+            feature_eng_dir=self.feature_eng_dir
+        )
         return df_features
 
     def stage_5_preprocessing(self, df: pd.DataFrame) -> tuple:
@@ -115,40 +135,42 @@ class QCEWPipeline:
         logger.info("STAGE 5: DATA PREPROCESSING")
         logger.info("="*80)
         
-        result = preprocess_for_lstm(df, self.preprocessed_file)
-        return result
+        X_tensor, y_tensor, preprocessor = preprocess_for_lstm(
+            df, 
+            output_file=self.preprocessed_file,
+            sequence_length=12  # 12 quarters = 3 years
+        )
+        return X_tensor, y_tensor, preprocessor
 
-    def stage_6_train_model(self, data: pd.DataFrame) -> dict:
+    def stage_6_train_model(self, X_tensor, y_tensor, preprocessor) -> dict:
         """Stage 6: Model Training"""
-        from training_pipeline import train_lstm_model
-        
         logger.info("\n" + "="*80)
         logger.info("STAGE 6: MODEL TRAINING")
         logger.info("="*80)
         
-        results = train_lstm_model(data, self.model_file)
-        return results
+        logger.error("[ERROR] Stage 6: Model Training not yet implemented")
+        logger.error("[ERROR] This stage will be implemented after preprocessing is complete")
+        raise NotImplementedError("Model training stage (T065-T074) not yet implemented")
 
     def stage_7_evaluate_model(self) -> dict:
         """Stage 7: Model Evaluation"""
-        from evaluation_pipeline import evaluate_lstm_model
-        
         logger.info("\n" + "="*80)
         logger.info("STAGE 7: MODEL EVALUATION")
         logger.info("="*80)
         
-        results = evaluate_lstm_model(self.model_file, self.preprocessed_file)
-        return results
+        logger.error("[ERROR] Stage 7: Model Evaluation not yet implemented")
+        logger.error("[ERROR] This stage will be implemented after model training is complete")
+        raise NotImplementedError("Model evaluation stage (T076-T085) not yet implemented")
 
     def stage_8_prediction_interface(self):
         """Stage 8: Interactive Prediction Interface"""
-        from prediction_interface import launch_interface
-        
         logger.info("\n" + "="*80)
         logger.info("STAGE 8: INTERACTIVE PREDICTION INTERFACE")
         logger.info("="*80)
         
-        launch_interface(self.model_file, self.preprocessed_file)
+        logger.error("[ERROR] Stage 8: Prediction Interface not yet implemented")
+        logger.error("[ERROR] This stage will be implemented after model evaluation is complete")
+        raise NotImplementedError("Prediction interface stage (T117-T119) not yet implemented")
 
     def run_full_pipeline(self):
         """Run the complete pipeline from start to finish."""
@@ -170,10 +192,13 @@ class QCEWPipeline:
             df_features = self.stage_4_feature_engineering(df_validated)
 
             # Stage 5: Preprocessing (uses features data)
-            df_processed, preprocessor = self.stage_5_preprocessing(df_features)
+            X_tensor, y_tensor, preprocessor = self.stage_5_preprocessing(df_features)
 
-            # Stage 6: Train model (uses preprocessed data)
-            training_results = self.stage_6_train_model(df_processed)
+            # Stage 6: Train model (uses preprocessed sequences)
+            if X_tensor is None or len(X_tensor) == 0:
+                logger.error("[ERROR] No preprocessed sequences available for training")
+                return
+            training_results = self.stage_6_train_model(X_tensor, y_tensor, preprocessor)
 
             # Stage 7: Evaluate model
             evaluation_results = self.stage_7_evaluate_model()
