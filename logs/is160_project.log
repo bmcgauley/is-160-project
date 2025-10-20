@@ -1028,3 +1028,1142 @@ Traceback (most recent call last):
   File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
     from feature_pipeline import engineer_features
 ModuleNotFoundError: No module named 'feature_pipeline'
+2025-10-20 14:05:30 - __main__ - INFO - 
+================================================================================
+2025-10-20 14:05:30 - __main__ - INFO - TESTING T032: FILTER TO COUNTY-LEVEL RECORDS
+2025-10-20 14:05:30 - __main__ - INFO - ================================================================================
+2025-10-20 14:05:30 - __main__ - INFO - 
+Loading consolidated data from: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 14:05:43 - __main__ - INFO - Loaded 5,430,384 records
+2025-10-20 14:05:43 - __main__ - INFO - 
+--------------------------------------------------------------------------------
+2025-10-20 14:05:43 - __main__ - INFO - SAMPLE DATA BEFORE FILTERING
+2025-10-20 14:05:43 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-20 14:05:43 - __main__ - INFO - 
+                    area_type       area_name  year  quarter
+0                      County  Alameda County  2020  1st Qtr
+1                      County  Alameda County  2020  1st Qtr
+44432  California - Statewide      California  2020  1st Qtr
+44433  California - Statewide      California  2020  1st Qtr
+47226           United States   United States  2020  1st Qtr
+47227           United States   United States  2020  1st Qtr
+2025-10-20 14:05:43 - src.feature_engineering - INFO - 
+================================================================================
+2025-10-20 14:05:43 - src.feature_engineering - INFO - T032: FILTERING TO COUNTY-LEVEL RECORDS
+2025-10-20 14:05:43 - src.feature_engineering - INFO - ================================================================================
+2025-10-20 14:05:43 - src.feature_engineering - INFO - Initial dataset: 5,430,384 records
+2025-10-20 14:05:44 - src.feature_engineering - INFO - 
+Area type distribution BEFORE filtering:
+2025-10-20 14:05:44 - src.feature_engineering - INFO -   County: 4,732,218 records (87.1%)
+2025-10-20 14:05:44 - src.feature_engineering - INFO -   United States: 399,362 records (7.4%)
+2025-10-20 14:05:44 - src.feature_engineering - INFO -   California - Statewide: 298,804 records (5.5%)
+2025-10-20 14:05:45 - src.feature_engineering - INFO - 
+Filtering results:
+2025-10-20 14:05:45 - src.feature_engineering - INFO -   Retained (County): 4,732,218 records
+2025-10-20 14:05:45 - src.feature_engineering - INFO -   Removed (State + National): 698,166 records (12.9%)
+2025-10-20 14:05:45 - src.feature_engineering - INFO -   Unique counties: 58
+2025-10-20 14:05:45 - src.feature_engineering - INFO -   Year range: 2004-2024
+2025-10-20 14:05:45 - src.feature_engineering - INFO - ================================================================================
+
+2025-10-20 14:05:45 - __main__ - INFO - 
+--------------------------------------------------------------------------------
+2025-10-20 14:05:45 - __main__ - INFO - VALIDATION CHECKS
+2025-10-20 14:05:45 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-20 14:05:46 - __main__ - INFO -   PASS: Only 'County' records remain
+2025-10-20 14:05:47 - __main__ - INFO -   area_type: 0 nulls
+2025-10-20 14:05:47 - __main__ - INFO -   area_name: 0 nulls
+2025-10-20 14:05:47 - __main__ - INFO -   year: 0 nulls
+2025-10-20 14:05:47 - __main__ - INFO -   quarter: 3,518,447 nulls
+2025-10-20 14:05:47 - __main__ - WARNING -   WARNING: Found null values in key columns
+2025-10-20 14:05:47 - __main__ - INFO -   Year range: 2004 - 2024
+2025-10-20 14:05:47 - __main__ - INFO -   Unique years: 21
+2025-10-20 14:05:47 - __main__ - INFO -   PASS: Temporal coverage preserved
+2025-10-20 14:05:47 - __main__ - INFO -   Unique counties: 58
+2025-10-20 14:05:47 - __main__ - INFO - 
+  Top 10 counties by record count:
+2025-10-20 14:05:47 - __main__ - INFO -     Los Angeles County: 233,842 records
+2025-10-20 14:05:47 - __main__ - INFO -     Orange County: 192,421 records
+2025-10-20 14:05:47 - __main__ - INFO -     San Diego County: 191,284 records
+2025-10-20 14:05:47 - __main__ - INFO -     San Bernardino County: 171,335 records
+2025-10-20 14:05:47 - __main__ - INFO -     Alameda County: 165,489 records
+2025-10-20 14:05:47 - __main__ - INFO -     Riverside County: 162,784 records
+2025-10-20 14:05:47 - __main__ - INFO -     Santa Clara County: 156,771 records
+2025-10-20 14:05:47 - __main__ - INFO -     Sacramento County: 152,536 records
+2025-10-20 14:05:47 - __main__ - INFO -     Ventura County: 138,886 records
+2025-10-20 14:05:47 - __main__ - INFO -     San Francisco County: 135,898 records
+2025-10-20 14:05:47 - __main__ - INFO -   PASS: Multiple counties present
+2025-10-20 14:05:47 - __main__ - INFO -   Expected county records: ~4,729,864 (87.1% of total)
+2025-10-20 14:05:47 - __main__ - INFO -   Actual county records: 4,732,218
+2025-10-20 14:05:47 - __main__ - INFO -   Difference: 0.05%
+2025-10-20 14:05:47 - __main__ - INFO -   PASS: Record count matches expectations
+2025-10-20 14:05:47 - __main__ - INFO - 
+--------------------------------------------------------------------------------
+2025-10-20 14:05:47 - __main__ - INFO - SAMPLE DATA AFTER FILTERING
+2025-10-20 14:05:47 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-20 14:05:47 - __main__ - INFO - 
+  area_type       area_name  year  quarter industry_code
+0    County  Alameda County  2020  1st Qtr          1024
+1    County  Alameda County  2020  1st Qtr           491
+2    County  Alameda County  2020  1st Qtr           541
+3    County  Alameda County  2020  1st Qtr         54133
+4    County  Alameda County  2020  1st Qtr            62
+5    County  Alameda County  2020  1st Qtr          6211
+6    County  Alameda County  2020  1st Qtr           102
+7    County  Alameda County  2020  1st Qtr          1025
+8    County  Alameda County  2020  1st Qtr          1023
+9    County  Alameda County  2020  1st Qtr          1028
+2025-10-20 14:05:47 - __main__ - INFO - 
+================================================================================
+2025-10-20 14:05:47 - __main__ - INFO - T032 TEST SUMMARY
+2025-10-20 14:05:47 - __main__ - INFO - ================================================================================
+2025-10-20 14:05:47 - __main__ - INFO - ================================================================================
+
+2025-10-20 14:07:52 - __main__ - INFO - 
+================================================================================
+2025-10-20 14:07:52 - __main__ - INFO - TESTING T032: FILTER TO COUNTY-LEVEL RECORDS
+2025-10-20 14:07:52 - __main__ - INFO - ================================================================================
+2025-10-20 14:07:52 - __main__ - INFO - 
+Loading consolidated data from: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 14:08:05 - __main__ - INFO - Loaded 5,430,384 records
+2025-10-20 14:08:05 - __main__ - INFO - 
+--------------------------------------------------------------------------------
+2025-10-20 14:08:05 - __main__ - INFO - SAMPLE DATA BEFORE FILTERING
+2025-10-20 14:08:05 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-20 14:08:05 - __main__ - INFO - 
+                    area_type       area_name  year  quarter
+0                      County  Alameda County  2020  1st Qtr
+1                      County  Alameda County  2020  1st Qtr
+44432  California - Statewide      California  2020  1st Qtr
+44433  California - Statewide      California  2020  1st Qtr
+47226           United States   United States  2020  1st Qtr
+47227           United States   United States  2020  1st Qtr
+2025-10-20 14:08:05 - src.feature_engineering - INFO - 
+================================================================================
+2025-10-20 14:08:05 - src.feature_engineering - INFO - T032: FILTERING TO COUNTY-LEVEL RECORDS
+2025-10-20 14:08:05 - src.feature_engineering - INFO - ================================================================================
+2025-10-20 14:08:05 - src.feature_engineering - INFO - Initial dataset: 5,430,384 records
+2025-10-20 14:08:06 - src.feature_engineering - INFO - 
+Area type distribution BEFORE filtering:
+2025-10-20 14:08:06 - src.feature_engineering - INFO -   County: 4,732,218 records (87.1%)
+2025-10-20 14:08:06 - src.feature_engineering - INFO -   United States: 399,362 records (7.4%)
+2025-10-20 14:08:06 - src.feature_engineering - INFO -   California - Statewide: 298,804 records (5.5%)
+2025-10-20 14:08:07 - src.feature_engineering - INFO - 
+Filtering results:
+2025-10-20 14:08:07 - src.feature_engineering - INFO -   Retained (County): 4,732,218 records
+2025-10-20 14:08:07 - src.feature_engineering - INFO -   Removed (State + National): 698,166 records (12.9%)
+2025-10-20 14:08:07 - src.feature_engineering - INFO -   Unique counties: 58
+2025-10-20 14:08:07 - src.feature_engineering - INFO -   Year range: 2004-2024
+2025-10-20 14:08:07 - src.feature_engineering - INFO - 
+[SUCCESS] County-level filtering completed successfully
+2025-10-20 14:08:07 - src.feature_engineering - INFO - ================================================================================
+
+2025-10-20 14:08:07 - __main__ - INFO - 
+--------------------------------------------------------------------------------
+2025-10-20 14:08:07 - __main__ - INFO - VALIDATION CHECKS
+2025-10-20 14:08:07 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-20 14:08:08 - __main__ - INFO - 
+[CHECK 1] Unique area_type values after filtering: ['County']
+2025-10-20 14:08:08 - __main__ - INFO -   PASS: Only 'County' records remain
+2025-10-20 14:08:09 - __main__ - INFO - 
+[CHECK 2] Null values in key columns:
+2025-10-20 14:08:09 - __main__ - INFO -   area_type: 0 nulls
+2025-10-20 14:08:09 - __main__ - INFO -   area_name: 0 nulls
+2025-10-20 14:08:09 - __main__ - INFO -   year: 0 nulls
+2025-10-20 14:08:09 - __main__ - INFO -   quarter: 3,518,447 nulls
+2025-10-20 14:08:09 - __main__ - WARNING -   WARNING: Found null values in key columns
+2025-10-20 14:08:09 - __main__ - INFO - 
+[CHECK 3] Temporal coverage:
+2025-10-20 14:08:09 - __main__ - INFO -   Year range: 2004 - 2024
+2025-10-20 14:08:09 - __main__ - INFO -   Unique years: 21
+2025-10-20 14:08:09 - __main__ - INFO -   PASS: Temporal coverage preserved
+2025-10-20 14:08:09 - __main__ - INFO - 
+[CHECK 4] Geographic coverage:
+2025-10-20 14:08:09 - __main__ - INFO -   Unique counties: 58
+2025-10-20 14:08:09 - __main__ - INFO - 
+  Top 10 counties by record count:
+2025-10-20 14:08:09 - __main__ - INFO -     Los Angeles County: 233,842 records
+2025-10-20 14:08:09 - __main__ - INFO -     Orange County: 192,421 records
+2025-10-20 14:08:09 - __main__ - INFO -     San Diego County: 191,284 records
+2025-10-20 14:08:09 - __main__ - INFO -     San Bernardino County: 171,335 records
+2025-10-20 14:08:09 - __main__ - INFO -     Alameda County: 165,489 records
+2025-10-20 14:08:09 - __main__ - INFO -     Riverside County: 162,784 records
+2025-10-20 14:08:09 - __main__ - INFO -     Santa Clara County: 156,771 records
+2025-10-20 14:08:09 - __main__ - INFO -     Sacramento County: 152,536 records
+2025-10-20 14:08:09 - __main__ - INFO -     Ventura County: 138,886 records
+2025-10-20 14:08:09 - __main__ - INFO -     San Francisco County: 135,898 records
+2025-10-20 14:08:09 - __main__ - INFO -   PASS: Multiple counties present
+2025-10-20 14:08:09 - __main__ - INFO - 
+[CHECK 5] Data volume validation:
+2025-10-20 14:08:09 - __main__ - INFO -   Expected county records: ~4,729,864 (87.1% of total)
+2025-10-20 14:08:09 - __main__ - INFO -   Actual county records: 4,732,218
+2025-10-20 14:08:09 - __main__ - INFO -   Difference: 0.05%
+2025-10-20 14:08:09 - __main__ - INFO -   PASS: Record count matches expectations
+2025-10-20 14:08:09 - __main__ - INFO - 
+--------------------------------------------------------------------------------
+2025-10-20 14:08:09 - __main__ - INFO - SAMPLE DATA AFTER FILTERING
+2025-10-20 14:08:09 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-20 14:08:09 - __main__ - INFO - 
+  area_type       area_name  year  quarter industry_code
+0    County  Alameda County  2020  1st Qtr          1024
+1    County  Alameda County  2020  1st Qtr           491
+2    County  Alameda County  2020  1st Qtr           541
+3    County  Alameda County  2020  1st Qtr         54133
+4    County  Alameda County  2020  1st Qtr            62
+5    County  Alameda County  2020  1st Qtr          6211
+6    County  Alameda County  2020  1st Qtr           102
+7    County  Alameda County  2020  1st Qtr          1025
+8    County  Alameda County  2020  1st Qtr          1023
+9    County  Alameda County  2020  1st Qtr          1028
+2025-10-20 14:08:09 - __main__ - INFO - 
+================================================================================
+2025-10-20 14:08:09 - __main__ - INFO - T032 TEST SUMMARY
+2025-10-20 14:08:09 - __main__ - INFO - ================================================================================
+2025-10-20 14:08:09 - __main__ - INFO - [PASS] All validation checks passed
+2025-10-20 14:08:09 - __main__ - INFO - [PASS] Successfully filtered to 4,732,218 county-level records
+2025-10-20 14:08:09 - __main__ - INFO - [PASS] Removed 698,166 state/national aggregates
+2025-10-20 14:08:09 - __main__ - INFO - [PASS] Data integrity maintained
+2025-10-20 14:08:09 - __main__ - INFO - 
+*** T032 IMPLEMENTATION SUCCESSFUL ***
+2025-10-20 14:08:09 - __main__ - INFO - ================================================================================
+
+2025-10-20 14:10:08 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:10:08 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 14:10:08 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:10:08 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-10-20 14:10:08 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 14:10:08 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 14:10:08 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 14:10:08 - pipeline_orchestrator - INFO - 
+Running stage: consolidate
+2025-10-20 14:10:08 - consolidation - INFO - 
+================================================================================
+2025-10-20 14:10:08 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 14:10:08 - consolidation - INFO - ================================================================================
+2025-10-20 14:10:08 - consolidation - INFO - Found 6 raw CSV files:
+2025-10-20 14:10:08 - consolidation - INFO -   - qcew-2020-2022.csv (89.9 MB)
+2025-10-20 14:10:08 - consolidation - INFO -   - qcew-2023-2024.csv (66.3 MB)
+2025-10-20 14:10:08 - consolidation - INFO -   - qcew_2004-2007.csv (115.0 MB)
+2025-10-20 14:10:08 - consolidation - INFO -   - qcew_2008-2011.csv (116.7 MB)
+2025-10-20 14:10:08 - consolidation - INFO -   - qcew_2012-2015.csv (116.4 MB)
+2025-10-20 14:10:08 - consolidation - INFO -   - qcew_2016-2019.csv (118.0 MB)
+2025-10-20 14:10:08 - consolidation - INFO - 
+Loading and combining all CSV files...
+2025-10-20 14:10:08 - consolidation - INFO - Reading qcew-2020-2022.csv...
+2025-10-20 14:10:10 - consolidation - INFO -   [OK] Loaded 798,464 rows
+2025-10-20 14:10:10 - consolidation - INFO - Reading qcew-2023-2024.csv...
+2025-10-20 14:10:11 - consolidation - INFO -   [OK] Loaded 585,454 rows
+2025-10-20 14:10:11 - consolidation - INFO - Reading qcew_2004-2007.csv...
+2025-10-20 14:10:14 - consolidation - INFO -   [OK] Loaded 1,033,078 rows
+2025-10-20 14:10:14 - consolidation - INFO - Reading qcew_2008-2011.csv...
+2025-10-20 14:10:16 - consolidation - INFO -   [OK] Loaded 1,003,975 rows
+2025-10-20 14:10:16 - consolidation - INFO - Reading qcew_2012-2015.csv...
+2025-10-20 14:10:18 - consolidation - INFO -   [OK] Loaded 999,458 rows
+2025-10-20 14:10:18 - consolidation - INFO - Reading qcew_2016-2019.csv...
+2025-10-20 14:10:20 - consolidation - INFO -   [OK] Loaded 1,009,955 rows
+2025-10-20 14:10:20 - consolidation - INFO - 
+Normalizing column names across all files...
+2025-10-20 14:10:20 - consolidation - INFO - 
+Combining all datasets...
+2025-10-20 14:10:20 - consolidation - INFO - 
+[OK] Successfully consolidated 6 files
+2025-10-20 14:10:20 - consolidation - INFO -   Total records: 5,430,384
+2025-10-20 14:10:20 - consolidation - INFO -   Columns: 15
+2025-10-20 14:10:20 - consolidation - INFO -   Date range: 2004-2024
+2025-10-20 14:10:28 - consolidation - INFO -   Memory usage: 2272.0 MB
+2025-10-20 14:10:28 - consolidation - INFO - 
+Saving consolidated dataset to: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 14:11:10 - consolidation - INFO - [OK] Consolidated dataset saved successfully
+2025-10-20 14:11:10 - consolidation - INFO - 
+[WARNING] VERIFICATION: Ensuring raw data files remain unmodified...
+2025-10-20 14:11:10 - consolidation - INFO -   [OK] qcew-2020-2022.csv - unchanged
+2025-10-20 14:11:10 - consolidation - INFO -   [OK] qcew-2023-2024.csv - unchanged
+2025-10-20 14:11:10 - consolidation - INFO -   [OK] qcew_2004-2007.csv - unchanged
+2025-10-20 14:11:10 - consolidation - INFO -   [OK] qcew_2008-2011.csv - unchanged
+2025-10-20 14:11:10 - consolidation - INFO -   [OK] qcew_2012-2015.csv - unchanged
+2025-10-20 14:11:10 - consolidation - INFO -   [OK] qcew_2016-2019.csv - unchanged
+2025-10-20 14:11:26 - __main__ - INFO - 
+================================================================================
+2025-10-20 14:11:26 - __main__ - INFO - TESTING T032: FILTER TO COUNTY-LEVEL RECORDS
+2025-10-20 14:11:26 - __main__ - INFO - ================================================================================
+2025-10-20 14:11:26 - __main__ - INFO - 
+Loading consolidated data from: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 14:11:39 - __main__ - INFO - Loaded 5,430,384 records
+2025-10-20 14:11:39 - __main__ - INFO - 
+--------------------------------------------------------------------------------
+2025-10-20 14:11:39 - __main__ - INFO - SAMPLE DATA BEFORE FILTERING
+2025-10-20 14:11:39 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-20 14:11:40 - __main__ - INFO - 
+                    area_type       area_name  year  quarter
+0                      County  Alameda County  2020  1st Qtr
+1                      County  Alameda County  2020  1st Qtr
+44432  California - Statewide      California  2020  1st Qtr
+44433  California - Statewide      California  2020  1st Qtr
+47226           United States   United States  2020  1st Qtr
+47227           United States   United States  2020  1st Qtr
+2025-10-20 14:11:40 - src.feature_engineering - INFO - 
+================================================================================
+2025-10-20 14:11:40 - src.feature_engineering - INFO - T032: FILTERING TO COUNTY-LEVEL RECORDS
+2025-10-20 14:11:40 - src.feature_engineering - INFO - ================================================================================
+2025-10-20 14:11:40 - src.feature_engineering - INFO - Initial dataset: 5,430,384 records
+2025-10-20 14:11:40 - src.feature_engineering - INFO - 
+Area type distribution BEFORE filtering:
+2025-10-20 14:11:40 - src.feature_engineering - INFO -   County: 4,732,218 records (87.1%)
+2025-10-20 14:11:40 - src.feature_engineering - INFO -   United States: 399,362 records (7.4%)
+2025-10-20 14:11:40 - src.feature_engineering - INFO -   California - Statewide: 298,804 records (5.5%)
+2025-10-20 14:11:41 - src.feature_engineering - INFO - 
+Filtering results:
+2025-10-20 14:11:41 - src.feature_engineering - INFO -   Retained (County): 4,732,218 records
+2025-10-20 14:11:41 - src.feature_engineering - INFO -   Removed (State + National): 698,166 records (12.9%)
+2025-10-20 14:11:42 - src.feature_engineering - INFO -   Unique counties: 58
+2025-10-20 14:11:42 - src.feature_engineering - INFO -   Year range: 2004-2024
+2025-10-20 14:11:42 - src.feature_engineering - INFO - 
+[SUCCESS] County-level filtering completed successfully
+2025-10-20 14:11:42 - src.feature_engineering - INFO - ================================================================================
+
+2025-10-20 14:11:42 - __main__ - INFO - 
+--------------------------------------------------------------------------------
+2025-10-20 14:11:42 - __main__ - INFO - VALIDATION CHECKS
+2025-10-20 14:11:42 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-20 14:11:42 - __main__ - INFO - 
+[CHECK 1] Unique area_type values after filtering: ['County']
+2025-10-20 14:11:42 - __main__ - INFO -   PASS: Only 'County' records remain
+2025-10-20 14:11:43 - __main__ - INFO - 
+[CHECK 2] Null values in key columns:
+2025-10-20 14:11:43 - __main__ - INFO -   area_type: 0 nulls
+2025-10-20 14:11:43 - __main__ - INFO -   area_name: 0 nulls
+2025-10-20 14:11:43 - __main__ - INFO -   year: 0 nulls
+2025-10-20 14:11:43 - __main__ - INFO -   quarter: 0 nulls
+2025-10-20 14:11:43 - __main__ - INFO -   PASS: No null values in key columns
+2025-10-20 14:11:43 - __main__ - INFO - 
+[CHECK 3] Temporal coverage:
+2025-10-20 14:11:43 - __main__ - INFO -   Year range: 2004 - 2024
+2025-10-20 14:11:43 - __main__ - INFO -   Unique years: 21
+2025-10-20 14:11:43 - __main__ - INFO -   PASS: Temporal coverage preserved
+2025-10-20 14:11:43 - __main__ - INFO - 
+[CHECK 4] Geographic coverage:
+2025-10-20 14:11:43 - __main__ - INFO -   Unique counties: 58
+2025-10-20 14:11:43 - __main__ - INFO - 
+  Top 10 counties by record count:
+2025-10-20 14:11:43 - __main__ - INFO -     Los Angeles County: 233,842 records
+2025-10-20 14:11:43 - __main__ - INFO -     Orange County: 192,421 records
+2025-10-20 14:11:43 - __main__ - INFO -     San Diego County: 191,284 records
+2025-10-20 14:11:43 - __main__ - INFO -     San Bernardino County: 171,335 records
+2025-10-20 14:11:43 - __main__ - INFO -     Alameda County: 165,489 records
+2025-10-20 14:11:43 - __main__ - INFO -     Riverside County: 162,784 records
+2025-10-20 14:11:43 - __main__ - INFO -     Santa Clara County: 156,771 records
+2025-10-20 14:11:43 - __main__ - INFO -     Sacramento County: 152,536 records
+2025-10-20 14:11:43 - __main__ - INFO -     Ventura County: 138,886 records
+2025-10-20 14:11:43 - __main__ - INFO -     San Francisco County: 135,898 records
+2025-10-20 14:11:43 - __main__ - INFO -   PASS: Multiple counties present
+2025-10-20 14:11:43 - __main__ - INFO - 
+[CHECK 5] Data volume validation:
+2025-10-20 14:11:43 - __main__ - INFO -   Expected county records: ~4,729,864 (87.1% of total)
+2025-10-20 14:11:43 - __main__ - INFO -   Actual county records: 4,732,218
+2025-10-20 14:11:43 - __main__ - INFO -   Difference: 0.05%
+2025-10-20 14:11:43 - __main__ - INFO -   PASS: Record count matches expectations
+2025-10-20 14:11:43 - __main__ - INFO - 
+--------------------------------------------------------------------------------
+2025-10-20 14:11:43 - __main__ - INFO - SAMPLE DATA AFTER FILTERING
+2025-10-20 14:11:43 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-20 14:11:43 - __main__ - INFO - 
+  area_type       area_name  year  quarter industry_code
+0    County  Alameda County  2020  1st Qtr          1024
+1    County  Alameda County  2020  1st Qtr           491
+2    County  Alameda County  2020  1st Qtr           541
+3    County  Alameda County  2020  1st Qtr         54133
+4    County  Alameda County  2020  1st Qtr            62
+5    County  Alameda County  2020  1st Qtr          6211
+6    County  Alameda County  2020  1st Qtr           102
+7    County  Alameda County  2020  1st Qtr          1025
+8    County  Alameda County  2020  1st Qtr          1023
+9    County  Alameda County  2020  1st Qtr          1028
+2025-10-20 14:11:43 - __main__ - INFO - 
+================================================================================
+2025-10-20 14:11:43 - __main__ - INFO - T032 TEST SUMMARY
+2025-10-20 14:11:43 - __main__ - INFO - ================================================================================
+2025-10-20 14:11:43 - __main__ - INFO - [PASS] All validation checks passed
+2025-10-20 14:11:43 - __main__ - INFO - [PASS] Successfully filtered to 4,732,218 county-level records
+2025-10-20 14:11:43 - __main__ - INFO - [PASS] Removed 698,166 state/national aggregates
+2025-10-20 14:11:43 - __main__ - INFO - [PASS] Data integrity maintained
+2025-10-20 14:11:43 - __main__ - INFO - 
+*** T032 IMPLEMENTATION SUCCESSFUL ***
+2025-10-20 14:11:43 - __main__ - INFO - ================================================================================
+
+2025-10-20 14:15:35 - __main__ - INFO - 
+================================================================================
+2025-10-20 14:15:35 - __main__ - INFO - TESTING T032: FILTER TO COUNTY-LEVEL RECORDS
+2025-10-20 14:15:35 - __main__ - INFO - ================================================================================
+2025-10-20 14:15:35 - __main__ - INFO - 
+Loading consolidated data from: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 14:15:49 - __main__ - INFO - Loaded 5,430,384 records
+2025-10-20 14:15:49 - __main__ - INFO - 
+--------------------------------------------------------------------------------
+2025-10-20 14:15:49 - __main__ - INFO - SAMPLE DATA BEFORE FILTERING
+2025-10-20 14:15:49 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-20 14:15:49 - __main__ - INFO - 
+                    area_type       area_name  year  quarter
+0                      County  Alameda County  2020  1st Qtr
+1                      County  Alameda County  2020  1st Qtr
+44432  California - Statewide      California  2020  1st Qtr
+44433  California - Statewide      California  2020  1st Qtr
+47226           United States   United States  2020  1st Qtr
+47227           United States   United States  2020  1st Qtr
+2025-10-20 14:15:49 - src.feature_engineering - INFO - 
+================================================================================
+2025-10-20 14:15:49 - src.feature_engineering - INFO - T032: FILTERING TO COUNTY-LEVEL RECORDS
+2025-10-20 14:15:49 - src.feature_engineering - INFO - ================================================================================
+2025-10-20 14:15:49 - src.feature_engineering - INFO - Initial dataset: 5,430,384 records
+2025-10-20 14:15:50 - src.feature_engineering - INFO - 
+Area type distribution BEFORE filtering:
+2025-10-20 14:15:50 - src.feature_engineering - INFO -   County: 4,732,218 records (87.1%)
+2025-10-20 14:15:50 - src.feature_engineering - INFO -   United States: 399,362 records (7.4%)
+2025-10-20 14:15:50 - src.feature_engineering - INFO -   California - Statewide: 298,804 records (5.5%)
+2025-10-20 14:15:51 - src.feature_engineering - INFO - 
+Filtering results:
+2025-10-20 14:15:51 - src.feature_engineering - INFO -   Retained (County): 4,732,218 records
+2025-10-20 14:15:51 - src.feature_engineering - INFO -   Removed (State + National): 698,166 records (12.9%)
+2025-10-20 14:15:51 - src.feature_engineering - INFO -   Unique counties: 58
+2025-10-20 14:15:51 - src.feature_engineering - INFO -   Year range: 2004-2024
+2025-10-20 14:15:51 - src.feature_engineering - INFO - 
+[SUCCESS] County-level filtering completed successfully
+2025-10-20 14:15:51 - src.feature_engineering - INFO - ================================================================================
+
+2025-10-20 14:15:51 - src.feature_engineering - INFO - Saving county-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T032_county_filtered.csv
+2025-10-20 14:16:26 - src.feature_engineering - INFO - [OK] Saved 4,732,218 records to T032_county_filtered.csv
+2025-10-20 14:16:26 - __main__ - INFO - 
+--------------------------------------------------------------------------------
+2025-10-20 14:16:26 - __main__ - INFO - VALIDATION CHECKS
+2025-10-20 14:16:26 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-20 14:16:26 - __main__ - INFO - 
+[CHECK 1] Unique area_type values after filtering: ['County']
+2025-10-20 14:16:26 - __main__ - INFO -   PASS: Only 'County' records remain
+2025-10-20 14:16:27 - __main__ - INFO - 
+[CHECK 2] Null values in key columns:
+2025-10-20 14:16:27 - __main__ - INFO -   area_type: 0 nulls
+2025-10-20 14:16:27 - __main__ - INFO -   area_name: 0 nulls
+2025-10-20 14:16:27 - __main__ - INFO -   year: 0 nulls
+2025-10-20 14:16:27 - __main__ - INFO -   quarter: 0 nulls
+2025-10-20 14:16:27 - __main__ - INFO -   PASS: No null values in key columns
+2025-10-20 14:16:27 - __main__ - INFO - 
+[CHECK 3] Temporal coverage:
+2025-10-20 14:16:27 - __main__ - INFO -   Year range: 2004 - 2024
+2025-10-20 14:16:27 - __main__ - INFO -   Unique years: 21
+2025-10-20 14:16:27 - __main__ - INFO -   PASS: Temporal coverage preserved
+2025-10-20 14:16:27 - __main__ - INFO - 
+[CHECK 4] Geographic coverage:
+2025-10-20 14:16:27 - __main__ - INFO -   Unique counties: 58
+2025-10-20 14:16:28 - __main__ - INFO - 
+  Top 10 counties by record count:
+2025-10-20 14:16:28 - __main__ - INFO -     Los Angeles County: 233,842 records
+2025-10-20 14:16:28 - __main__ - INFO -     Orange County: 192,421 records
+2025-10-20 14:16:28 - __main__ - INFO -     San Diego County: 191,284 records
+2025-10-20 14:16:28 - __main__ - INFO -     San Bernardino County: 171,335 records
+2025-10-20 14:16:28 - __main__ - INFO -     Alameda County: 165,489 records
+2025-10-20 14:16:28 - __main__ - INFO -     Riverside County: 162,784 records
+2025-10-20 14:16:28 - __main__ - INFO -     Santa Clara County: 156,771 records
+2025-10-20 14:16:28 - __main__ - INFO -     Sacramento County: 152,536 records
+2025-10-20 14:16:28 - __main__ - INFO -     Ventura County: 138,886 records
+2025-10-20 14:16:28 - __main__ - INFO -     San Francisco County: 135,898 records
+2025-10-20 14:16:28 - __main__ - INFO -   PASS: Multiple counties present
+2025-10-20 14:16:28 - __main__ - INFO - 
+[CHECK 5] Data volume validation:
+2025-10-20 14:16:28 - __main__ - INFO -   Expected county records: ~4,729,864 (87.1% of total)
+2025-10-20 14:16:28 - __main__ - INFO -   Actual county records: 4,732,218
+2025-10-20 14:16:28 - __main__ - INFO -   Difference: 0.05%
+2025-10-20 14:16:28 - __main__ - INFO -   PASS: Record count matches expectations
+2025-10-20 14:16:28 - __main__ - INFO - 
+--------------------------------------------------------------------------------
+2025-10-20 14:16:28 - __main__ - INFO - SAMPLE DATA AFTER FILTERING
+2025-10-20 14:16:28 - __main__ - INFO - --------------------------------------------------------------------------------
+2025-10-20 14:16:28 - __main__ - INFO - 
+  area_type       area_name  year  quarter industry_code
+0    County  Alameda County  2020  1st Qtr          1024
+1    County  Alameda County  2020  1st Qtr           491
+2    County  Alameda County  2020  1st Qtr           541
+3    County  Alameda County  2020  1st Qtr         54133
+4    County  Alameda County  2020  1st Qtr            62
+5    County  Alameda County  2020  1st Qtr          6211
+6    County  Alameda County  2020  1st Qtr           102
+7    County  Alameda County  2020  1st Qtr          1025
+8    County  Alameda County  2020  1st Qtr          1023
+9    County  Alameda County  2020  1st Qtr          1028
+2025-10-20 14:16:28 - __main__ - INFO - 
+================================================================================
+2025-10-20 14:16:28 - __main__ - INFO - T032 TEST SUMMARY
+2025-10-20 14:16:28 - __main__ - INFO - ================================================================================
+2025-10-20 14:16:28 - __main__ - INFO - [PASS] All validation checks passed
+2025-10-20 14:16:28 - __main__ - INFO - [PASS] Successfully filtered to 4,732,218 county-level records
+2025-10-20 14:16:28 - __main__ - INFO - [PASS] Removed 698,166 state/national aggregates
+2025-10-20 14:16:28 - __main__ - INFO - [PASS] Data integrity maintained
+2025-10-20 14:16:28 - __main__ - INFO - 
+*** T032 IMPLEMENTATION SUCCESSFUL ***
+2025-10-20 14:16:28 - __main__ - INFO - ================================================================================
+
+2025-10-20 14:16:28 - __main__ - INFO - [OK] Output file created: T032_county_filtered.csv (546.7 MB)
+2025-10-20 14:24:43 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:24:43 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 14:24:43 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:24:43 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-10-20 14:24:43 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 14:24:43 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 14:24:43 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-10-20 14:24:43 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 14:24:50 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-10-20 14:24:50
+2025-10-20 14:24:50 - consolidation - INFO - 
+================================================================================
+2025-10-20 14:24:50 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 14:24:50 - consolidation - INFO - ================================================================================
+2025-10-20 14:24:50 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 14:25:02 - consolidation - INFO - Loaded 5,430,384 records from consolidated file
+2025-10-20 14:25:03 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 14:25:03 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 14:25:03 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:25:03 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 14:25:04 - exploration - INFO -   Filtering to county-level records: 4,732,218 of 5,430,384 total records
+2025-10-20 14:25:06 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 15 columns
+2025-10-20 14:25:06 - exploration - INFO - County-Level Records: 4,732,218 rows
+2025-10-20 14:25:06 - exploration - INFO - Date Range: 2004 - 2024
+2025-10-20 14:25:06 - exploration - INFO - 
+Employment Statistics (County-Level Only):
+2025-10-20 14:25:06 - exploration - INFO -   avg_monthly_emplvl:
+2025-10-20 14:25:06 - exploration - INFO -     Mean: 3,004
+2025-10-20 14:25:06 - exploration - INFO -     Median: 213
+2025-10-20 14:25:06 - exploration - INFO -     Min: 0
+2025-10-20 14:25:06 - exploration - INFO -     Max: 4,583,485
+2025-10-20 14:25:06 - exploration - INFO -   month1_emplvl:
+2025-10-20 14:25:06 - exploration - INFO -     Mean: 2,392
+2025-10-20 14:25:06 - exploration - INFO -     Median: 112
+2025-10-20 14:25:06 - exploration - INFO -     Min: 0
+2025-10-20 14:25:06 - exploration - INFO -     Max: 4,563,073
+2025-10-20 14:25:06 - exploration - INFO -   month2_emplvl:
+2025-10-20 14:25:06 - exploration - INFO -     Mean: 2,405
+2025-10-20 14:25:06 - exploration - INFO -     Median: 112
+2025-10-20 14:25:06 - exploration - INFO -     Min: 0
+2025-10-20 14:25:06 - exploration - INFO -     Max: 4,608,275
+2025-10-20 14:25:06 - exploration - INFO - 
+Wage Statistics (County-Level Only):
+2025-10-20 14:25:07 - exploration - INFO -   total_qtrly_wages:
+2025-10-20 14:25:07 - exploration - INFO -     Mean: $76,419,401.10
+2025-10-20 14:25:07 - exploration - INFO -     Median: $3,155,335.50
+2025-10-20 14:25:07 - exploration - INFO -   avg_wkly_wage:
+2025-10-20 14:25:07 - exploration - INFO -     Mean: $1,018.95
+2025-10-20 14:25:07 - exploration - INFO -     Median: $875.00
+2025-10-20 14:25:07 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 14:25:08 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-10-20 14:25:08 - exploration - INFO -   - Creating employment trends plot...
+2025-10-20 14:25:09 - exploration - INFO -   - Creating quarterly distribution plot...
+2025-10-20 14:25:10 - exploration - INFO -   - Creating wage trends plot...
+2025-10-20 14:25:12 - exploration - INFO -   - Creating top industries plot...
+2025-10-20 14:25:15 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 14:25:15 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 14:25:15 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 14:25:15 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:25:15 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 14:25:15 - validation - INFO - Running employment range validation...
+2025-10-20 14:25:15 - validation - INFO - Running wage consistency validation...
+2025-10-20 14:25:16 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 14:25:20 - validation - INFO - Generating quality scorecards...
+2025-10-20 14:25:42 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 14:25:42 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 14:26:26 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 14:26:26 - validation - INFO - Overall Quality Score: 0.859
+2025-10-20 14:26:26 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 14:26:26 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 14:26:39 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 14:26:39 - pipeline_orchestrator - INFO - STAGE 4: FEATURE ENGINEERING
+2025-10-20 14:26:39 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:26:39 - feature_pipeline - INFO - 
+================================================================================
+2025-10-20 14:26:39 - feature_pipeline - INFO - FEATURE ENGINEERING PIPELINE
+2025-10-20 14:26:39 - feature_pipeline - INFO - ================================================================================
+2025-10-20 14:26:39 - feature_pipeline - INFO - 
+[STAGE 1/10] T032: Filtering to county-level records...
+2025-10-20 14:26:39 - feature_engineering - INFO - 
+================================================================================
+2025-10-20 14:26:39 - feature_engineering - INFO - T032: FILTERING TO COUNTY-LEVEL RECORDS
+2025-10-20 14:26:39 - feature_engineering - INFO - ================================================================================
+2025-10-20 14:26:39 - feature_engineering - INFO - Initial dataset: 5,430,384 records
+2025-10-20 14:26:39 - feature_engineering - INFO - 
+Area type distribution BEFORE filtering:
+2025-10-20 14:26:39 - feature_engineering - INFO -   County: 4,732,218 records (87.1%)
+2025-10-20 14:26:39 - feature_engineering - INFO -   United States: 399,362 records (7.4%)
+2025-10-20 14:26:39 - feature_engineering - INFO -   California - Statewide: 298,804 records (5.5%)
+2025-10-20 14:26:40 - feature_engineering - INFO - 
+Filtering results:
+2025-10-20 14:26:40 - feature_engineering - INFO -   Retained (County): 4,732,218 records
+2025-10-20 14:26:40 - feature_engineering - INFO -   Removed (State + National): 698,166 records (12.9%)
+2025-10-20 14:26:41 - feature_engineering - INFO -   Unique counties: 58
+2025-10-20 14:26:41 - feature_engineering - INFO -   Year range: 2004-2024
+2025-10-20 14:26:41 - feature_engineering - INFO - 
+[SUCCESS] County-level filtering completed successfully
+2025-10-20 14:26:41 - feature_engineering - INFO - ================================================================================
+
+2025-10-20 14:26:41 - feature_engineering - INFO - Saving county-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T032_county_filtered.csv
+2025-10-20 14:27:18 - feature_engineering - INFO - [OK] Saved 4,732,218 records to T032_county_filtered.csv
+2025-10-20 14:27:18 - feature_pipeline - INFO - [OK] County filtering complete: 4,732,218 records
+2025-10-20 14:27:18 - feature_pipeline - INFO - 
+[STAGE 2/10] T033: Handling Annual vs quarterly records...
+2025-10-20 14:27:18 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-10-20 14:27:18 - feature_pipeline - INFO - 
+[STAGE 3/10] T034: Data quality filtering...
+2025-10-20 14:27:18 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-10-20 14:27:18 - feature_pipeline - INFO - 
+[STAGE 4/10] T035: Central Valley counties subset...
+2025-10-20 14:27:18 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-10-20 14:27:18 - feature_pipeline - INFO - 
+[STAGE 5/10] T036: All California counties processing...
+2025-10-20 14:27:18 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-10-20 14:27:18 - feature_pipeline - INFO - 
+[STAGE 6/10] T038: Calculating quarterly growth rates...
+2025-10-20 14:27:18 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-10-20 14:27:18 - feature_pipeline - INFO - 
+[STAGE 7/10] T039: Creating seasonal adjustments...
+2025-10-20 14:27:18 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-10-20 14:27:18 - feature_pipeline - INFO - 
+[STAGE 8/10] T040: Calculating industry concentration...
+2025-10-20 14:27:18 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-10-20 14:27:18 - feature_pipeline - INFO - 
+[STAGE 9/10] T041: Building geographic clustering...
+2025-10-20 14:27:18 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-10-20 14:27:18 - feature_pipeline - INFO - 
+[STAGE 10/10] T042: Generating lag features...
+2025-10-20 14:27:18 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-10-20 14:27:18 - feature_pipeline - INFO - 
+Saving feature-engineered dataset to: C:\GitHub\is-160-project\data\feature_engineering\final_features.csv
+2025-10-20 14:27:58 - feature_pipeline - INFO - [OK] Saved 4,732,218 records to final_features.csv
+2025-10-20 14:27:58 - feature_pipeline - INFO - 
+================================================================================
+2025-10-20 14:27:58 - feature_pipeline - INFO - FEATURE ENGINEERING COMPLETE
+2025-10-20 14:27:58 - feature_pipeline - INFO - Currently implemented: T032 only
+2025-10-20 14:27:58 - feature_pipeline - INFO - Pending: T033-T042
+2025-10-20 14:27:58 - feature_pipeline - INFO - ================================================================================
+
+2025-10-20 14:27:58 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 14:27:58 - pipeline_orchestrator - INFO - STAGE 5: DATA PREPROCESSING
+2025-10-20 14:27:58 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:27:58 - preprocessing_pipeline - INFO - 
+================================================================================
+2025-10-20 14:27:58 - preprocessing_pipeline - INFO - PREPROCESSING PIPELINE FOR LSTM
+2025-10-20 14:27:58 - preprocessing_pipeline - INFO - ================================================================================
+2025-10-20 14:27:58 - preprocessing_pipeline - INFO - 
+[STAGE 1/5] T054: Normalizing employment and wage data...
+2025-10-20 14:27:58 - preprocessing_pipeline - INFO -   Normalizing 6 columns using robust scaling
+2025-10-20 14:27:58 - preprocessing - INFO - Normalizing columns: ['avg_monthly_emplvl', 'month1_emplvl', 'month2_emplvl', 'month3_emplvl', 'total_qtrly_wages', 'avg_wkly_wage']
+2025-10-20 14:27:58 - preprocessing_pipeline - INFO - [OK] Normalization complete
+2025-10-20 14:27:58 - preprocessing_pipeline - INFO - 
+[STAGE 2/5] T055: Handling missing values...
+2025-10-20 14:28:00 - preprocessing_pipeline - INFO -   Found 43,667 missing values
+2025-10-20 14:28:00 - preprocessing - INFO - Handling missing values with median strategy
+2025-10-20 14:28:00 - preprocessing_pipeline - INFO - [OK] Missing values handled
+2025-10-20 14:28:00 - preprocessing_pipeline - INFO - 
+[STAGE 3/5] T056: Creating categorical encodings...
+2025-10-20 14:28:00 - preprocessing_pipeline - INFO -   Encoding 3 categorical columns
+2025-10-20 14:28:00 - preprocessing - INFO - Creating categorical encodings for: ['industry_code', 'area_name', 'ownership']
+2025-10-20 14:28:00 - preprocessing_pipeline - INFO - [OK] Categorical encoding complete
+2025-10-20 14:28:00 - preprocessing_pipeline - INFO - 
+[STAGE 4/5] T057: Transforming to sequence format...
+2025-10-20 14:28:00 - preprocessing_pipeline - INFO -   Creating sequences of length 12
+2025-10-20 14:28:00 - preprocessing_pipeline - INFO -   Target column: month1_emplvl
+2025-10-20 14:28:00 - preprocessing - INFO - Transforming data to sequences of length 12
+2025-10-20 14:28:00 - preprocessing_pipeline - INFO - [OK] Created 0 sequences
+2025-10-20 14:28:00 - preprocessing_pipeline - INFO - 
+[STAGE 5/5] T058: Validating preprocessing...
+2025-10-20 14:28:00 - preprocessing - INFO - Validating preprocessing steps...
+2025-10-20 14:28:00 - preprocessing_pipeline - INFO - [OK] Preprocessing validation passed
+2025-10-20 14:28:00 - preprocessing_pipeline - INFO - 
+Saving preprocessed data to: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-10-20 14:28:40 - preprocessing_pipeline - INFO - [OK] Saved preprocessed data: qcew_preprocessed.csv
+2025-10-20 14:28:40 - preprocessing_pipeline - INFO - [OK] Saved sequences: qcew_preprocessed_sequences.npz
+2025-10-20 14:28:40 - preprocessing_pipeline - INFO - 
+================================================================================
+2025-10-20 14:28:40 - preprocessing_pipeline - INFO - PREPROCESSING COMPLETE
+2025-10-20 14:28:40 - preprocessing_pipeline - INFO - Sequences: (0,)
+2025-10-20 14:28:40 - preprocessing_pipeline - INFO - Targets: (0,)
+2025-10-20 14:28:40 - preprocessing_pipeline - INFO - ================================================================================
+
+2025-10-20 14:28:40 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 195, in run_full_pipeline
+    df_processed, preprocessor = self.stage_5_preprocessing(df_features)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2025-10-20 14:32:47 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-10-20 14:32:47
+2025-10-20 14:32:47 - consolidation - INFO - 
+================================================================================
+2025-10-20 14:32:47 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 14:32:47 - consolidation - INFO - ================================================================================
+2025-10-20 14:32:47 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 14:41:54 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:41:54 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 14:41:54 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:41:54 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-10-20 14:41:54 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 14:41:54 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 14:41:54 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-10-20 14:41:54 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 14:41:59 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-10-20 14:41:59
+2025-10-20 14:41:59 - consolidation - INFO - 
+================================================================================
+2025-10-20 14:41:59 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 14:41:59 - consolidation - INFO - ================================================================================
+2025-10-20 14:41:59 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 14:42:11 - consolidation - INFO - Loaded 5,430,384 records from consolidated file
+2025-10-20 14:42:12 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 14:42:12 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 14:42:12 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:42:12 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 14:42:13 - exploration - INFO -   Filtering to county-level records: 4,732,218 of 5,430,384 total records
+2025-10-20 14:42:15 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 15 columns
+2025-10-20 14:42:15 - exploration - INFO - County-Level Records: 4,732,218 rows
+2025-10-20 14:42:15 - exploration - INFO - Date Range: 2004 - 2024
+2025-10-20 14:42:15 - exploration - INFO - 
+Employment Statistics (County-Level Only):
+2025-10-20 14:42:15 - exploration - INFO -   avg_monthly_emplvl:
+2025-10-20 14:42:15 - exploration - INFO -     Mean: 3,004
+2025-10-20 14:42:15 - exploration - INFO -     Median: 213
+2025-10-20 14:42:15 - exploration - INFO -     Min: 0
+2025-10-20 14:42:15 - exploration - INFO -     Max: 4,583,485
+2025-10-20 14:42:15 - exploration - INFO -   month1_emplvl:
+2025-10-20 14:42:15 - exploration - INFO -     Mean: 2,392
+2025-10-20 14:42:15 - exploration - INFO -     Median: 112
+2025-10-20 14:42:15 - exploration - INFO -     Min: 0
+2025-10-20 14:42:15 - exploration - INFO -     Max: 4,563,073
+2025-10-20 14:42:15 - exploration - INFO -   month2_emplvl:
+2025-10-20 14:42:15 - exploration - INFO -     Mean: 2,405
+2025-10-20 14:42:15 - exploration - INFO -     Median: 112
+2025-10-20 14:42:15 - exploration - INFO -     Min: 0
+2025-10-20 14:42:15 - exploration - INFO -     Max: 4,608,275
+2025-10-20 14:42:15 - exploration - INFO - 
+Wage Statistics (County-Level Only):
+2025-10-20 14:42:16 - exploration - INFO -   total_qtrly_wages:
+2025-10-20 14:42:16 - exploration - INFO -     Mean: $76,419,401.10
+2025-10-20 14:42:16 - exploration - INFO -     Median: $3,155,335.50
+2025-10-20 14:42:16 - exploration - INFO -   avg_wkly_wage:
+2025-10-20 14:42:16 - exploration - INFO -     Mean: $1,018.95
+2025-10-20 14:42:16 - exploration - INFO -     Median: $875.00
+2025-10-20 14:42:16 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 14:42:17 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-10-20 14:42:17 - exploration - INFO -   - Creating employment trends plot...
+2025-10-20 14:42:19 - exploration - INFO -   - Creating quarterly distribution plot...
+2025-10-20 14:42:20 - exploration - INFO -   - Creating wage trends plot...
+2025-10-20 14:42:21 - exploration - INFO -   - Creating top industries plot...
+2025-10-20 14:42:24 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 14:42:24 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 14:42:24 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 14:42:24 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:42:24 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 14:42:24 - validation - INFO - Running employment range validation...
+2025-10-20 14:42:24 - validation - INFO - Running wage consistency validation...
+2025-10-20 14:42:25 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 14:42:29 - validation - INFO - Generating quality scorecards...
+2025-10-20 14:42:49 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 14:42:49 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 14:43:33 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 14:43:33 - validation - INFO - Overall Quality Score: 0.859
+2025-10-20 14:43:33 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 14:43:33 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 14:43:45 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 14:43:45 - pipeline_orchestrator - INFO - STAGE 4: FEATURE ENGINEERING
+2025-10-20 14:43:45 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:43:45 - feature_pipeline - INFO - 
+================================================================================
+2025-10-20 14:43:45 - feature_pipeline - INFO - FEATURE ENGINEERING PIPELINE
+2025-10-20 14:43:45 - feature_pipeline - INFO - ================================================================================
+2025-10-20 14:43:45 - feature_pipeline - INFO - 
+[STAGE 1/10] T032: Filtering to county-level records...
+2025-10-20 14:43:45 - feature_engineering - INFO - 
+================================================================================
+2025-10-20 14:43:45 - feature_engineering - INFO - T032: FILTERING TO COUNTY-LEVEL RECORDS
+2025-10-20 14:43:45 - feature_engineering - INFO - ================================================================================
+2025-10-20 14:43:45 - feature_engineering - INFO - Initial dataset: 5,430,384 records
+2025-10-20 14:43:46 - feature_engineering - INFO - 
+Area type distribution BEFORE filtering:
+2025-10-20 14:43:46 - feature_engineering - INFO -   County: 4,732,218 records (87.1%)
+2025-10-20 14:43:46 - feature_engineering - INFO -   United States: 399,362 records (7.4%)
+2025-10-20 14:43:46 - feature_engineering - INFO -   California - Statewide: 298,804 records (5.5%)
+2025-10-20 14:43:47 - feature_engineering - INFO - 
+Filtering results:
+2025-10-20 14:43:47 - feature_engineering - INFO -   Retained (County): 4,732,218 records
+2025-10-20 14:43:47 - feature_engineering - INFO -   Removed (State + National): 698,166 records (12.9%)
+2025-10-20 14:43:47 - feature_engineering - INFO -   Unique counties: 58
+2025-10-20 14:43:47 - feature_engineering - INFO -   Year range: 2004-2024
+2025-10-20 14:43:47 - feature_engineering - INFO - 
+[SUCCESS] County-level filtering completed successfully
+2025-10-20 14:43:47 - feature_engineering - INFO - ================================================================================
+
+2025-10-20 14:43:47 - feature_engineering - INFO - Saving county-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T032_county_filtered.csv
+2025-10-20 14:44:27 - feature_engineering - INFO - [OK] Saved 4,732,218 records to T032_county_filtered.csv
+2025-10-20 14:44:27 - feature_pipeline - INFO - [OK] County filtering complete: 4,732,218 records
+2025-10-20 14:44:27 - feature_pipeline - INFO - 
+[STAGE 2/10] T033: Handling Annual vs quarterly records...
+2025-10-20 14:44:27 - feature_engineering - INFO - 
+================================================================================
+2025-10-20 14:44:27 - feature_engineering - INFO - T033: FILTERING TO QUARTERLY RECORDS ONLY
+2025-10-20 14:44:27 - feature_engineering - INFO - ================================================================================
+2025-10-20 14:44:27 - feature_engineering - INFO - Initial dataset: 4,732,218 records
+2025-10-20 14:44:27 - feature_engineering - INFO - 
+Quarter distribution BEFORE filtering:
+2025-10-20 14:44:27 - feature_engineering - INFO -   1st Qtr: 944,965 records (20.0%)
+2025-10-20 14:44:27 - feature_engineering - INFO -   2nd Qtr: 949,400 records (20.1%)
+2025-10-20 14:44:27 - feature_engineering - INFO -   3rd Qtr: 956,056 records (20.2%)
+2025-10-20 14:44:27 - feature_engineering - INFO -   4th Qtr: 927,499 records (19.6%)
+2025-10-20 14:44:28 - feature_engineering - INFO -   Annual: 954,298 records (20.2%)
+2025-10-20 14:44:28 - feature_engineering - INFO - 
+Filtering results:
+2025-10-20 14:44:28 - feature_engineering - INFO -   Retained (Quarterly): 0 records
+2025-10-20 14:44:28 - feature_engineering - INFO -   Removed (Annual): 4,732,218 records (100.0%)
+2025-10-20 14:44:28 - feature_engineering - INFO -   [OK] All annual records successfully removed
+2025-10-20 14:44:28 - feature_engineering - INFO - 
+[SUCCESS] Quarterly filtering completed successfully
+2025-10-20 14:44:28 - feature_engineering - INFO - ================================================================================
+2025-10-20 14:44:28 - feature_engineering - INFO - Saving quarterly-only data to: C:\GitHub\is-160-project\data\feature_engineering\T033_quarterly_only.csv
+2025-10-20 14:44:28 - feature_engineering - INFO - [OK] Saved 0 records to T033_quarterly_only.csv
+2025-10-20 14:44:28 - feature_pipeline - INFO - [OK] Quarterly filtering complete: 0 records
+2025-10-20 14:44:28 - feature_pipeline - INFO - 
+[STAGE 3/10] T034: Data quality filtering...
+2025-10-20 14:44:28 - feature_engineering - INFO - 
+================================================================================
+2025-10-20 14:44:28 - feature_engineering - INFO - T034: DATA QUALITY FILTERING
+2025-10-20 14:44:28 - feature_engineering - INFO - ================================================================================
+2025-10-20 14:44:28 - feature_engineering - INFO - Initial dataset: 0 records
+2025-10-20 14:44:28 - feature_engineering - INFO - 
+Rule 1: Negative employment
+2025-10-20 14:44:28 - feature_engineering - INFO -   Removed: 0 records
+2025-10-20 14:44:28 - feature_engineering - INFO - 
+Rule 2: Negative wages
+2025-10-20 14:44:28 - feature_engineering - INFO -   Removed: 0 records
+2025-10-20 14:44:28 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: division by zero
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 192, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 123, in stage_4_feature_engineering
+    df_features = engineer_features(
+        df,
+        output_file=self.features_file,
+        feature_eng_dir=self.feature_eng_dir
+    )
+  File "C:\GitHub\is-160-project\src\feature_pipeline.py", line 76, in engineer_features
+    df = data_quality_filter(df, output_dir=feature_eng_dir)
+  File "C:\GitHub\is-160-project\src\feature_engineering.py", line 216, in data_quality_filter
+    removed_pct = (total_removed / initial_count) * 100
+                   ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+ZeroDivisionError: division by zero
+2025-10-20 14:45:36 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:45:36 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 14:45:36 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:45:36 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-10-20 14:45:36 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 14:45:36 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 14:45:36 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-10-20 14:45:36 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 14:45:38 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-10-20 14:45:38
+2025-10-20 14:45:38 - consolidation - INFO - 
+================================================================================
+2025-10-20 14:45:38 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 14:45:38 - consolidation - INFO - ================================================================================
+2025-10-20 14:45:38 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 14:46:39 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:46:39 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-10-20 14:46:39 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:46:39 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-10-20 14:46:39 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-10-20 14:46:39 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-10-20 14:46:39 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-10-20 14:46:39 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 14:46:41 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-10-20 14:46:41
+2025-10-20 14:46:41 - consolidation - INFO - 
+================================================================================
+2025-10-20 14:46:41 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-10-20 14:46:41 - consolidation - INFO - ================================================================================
+2025-10-20 14:46:41 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-10-20 14:46:52 - consolidation - INFO - Loaded 5,430,384 records from consolidated file
+2025-10-20 14:46:53 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 14:46:53 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-10-20 14:46:53 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:46:53 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-10-20 14:46:54 - exploration - INFO -   Filtering to county-level records: 4,732,218 of 5,430,384 total records
+2025-10-20 14:46:56 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 15 columns
+2025-10-20 14:46:56 - exploration - INFO - County-Level Records: 4,732,218 rows
+2025-10-20 14:46:56 - exploration - INFO - Date Range: 2004 - 2024
+2025-10-20 14:46:56 - exploration - INFO - 
+Employment Statistics (County-Level Only):
+2025-10-20 14:46:56 - exploration - INFO -   avg_monthly_emplvl:
+2025-10-20 14:46:56 - exploration - INFO -     Mean: 3,004
+2025-10-20 14:46:56 - exploration - INFO -     Median: 213
+2025-10-20 14:46:56 - exploration - INFO -     Min: 0
+2025-10-20 14:46:56 - exploration - INFO -     Max: 4,583,485
+2025-10-20 14:46:56 - exploration - INFO -   month1_emplvl:
+2025-10-20 14:46:56 - exploration - INFO -     Mean: 2,392
+2025-10-20 14:46:56 - exploration - INFO -     Median: 112
+2025-10-20 14:46:56 - exploration - INFO -     Min: 0
+2025-10-20 14:46:56 - exploration - INFO -     Max: 4,563,073
+2025-10-20 14:46:56 - exploration - INFO -   month2_emplvl:
+2025-10-20 14:46:56 - exploration - INFO -     Mean: 2,405
+2025-10-20 14:46:56 - exploration - INFO -     Median: 112
+2025-10-20 14:46:56 - exploration - INFO -     Min: 0
+2025-10-20 14:46:56 - exploration - INFO -     Max: 4,608,275
+2025-10-20 14:46:56 - exploration - INFO - 
+Wage Statistics (County-Level Only):
+2025-10-20 14:46:57 - exploration - INFO -   total_qtrly_wages:
+2025-10-20 14:46:57 - exploration - INFO -     Mean: $76,419,401.10
+2025-10-20 14:46:57 - exploration - INFO -     Median: $3,155,335.50
+2025-10-20 14:46:57 - exploration - INFO -   avg_wkly_wage:
+2025-10-20 14:46:57 - exploration - INFO -     Mean: $1,018.95
+2025-10-20 14:46:57 - exploration - INFO -     Median: $875.00
+2025-10-20 14:46:57 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-10-20 14:46:58 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-10-20 14:46:58 - exploration - INFO -   - Creating employment trends plot...
+2025-10-20 14:47:00 - exploration - INFO -   - Creating quarterly distribution plot...
+2025-10-20 14:47:01 - exploration - INFO -   - Creating wage trends plot...
+2025-10-20 14:47:02 - exploration - INFO -   - Creating top industries plot...
+2025-10-20 14:47:05 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-10-20 14:47:05 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 14:47:05 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-10-20 14:47:05 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:47:05 - validation - INFO - Validating data quality for 5,430,384 records
+2025-10-20 14:47:05 - validation - INFO - Running employment range validation...
+2025-10-20 14:47:06 - validation - INFO - Running wage consistency validation...
+2025-10-20 14:47:07 - validation - INFO - Running statistical anomaly detection...
+2025-10-20 14:47:10 - validation - INFO - Generating quality scorecards...
+2025-10-20 14:47:32 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 14:47:32 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 14:48:17 - validation - INFO - 
+[OK] Validation complete!
+2025-10-20 14:48:17 - validation - INFO - Overall Quality Score: 0.859
+2025-10-20 14:48:17 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-10-20 14:48:17 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-10-20 14:48:30 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 14:48:30 - pipeline_orchestrator - INFO - STAGE 4: FEATURE ENGINEERING
+2025-10-20 14:48:30 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:48:30 - feature_pipeline - INFO - 
+================================================================================
+2025-10-20 14:48:30 - feature_pipeline - INFO - FEATURE ENGINEERING PIPELINE
+2025-10-20 14:48:30 - feature_pipeline - INFO - ================================================================================
+2025-10-20 14:48:30 - feature_pipeline - INFO - 
+[STAGE 1/10] T032: Filtering to county-level records...
+2025-10-20 14:48:30 - feature_engineering - INFO - 
+================================================================================
+2025-10-20 14:48:30 - feature_engineering - INFO - T032: FILTERING TO COUNTY-LEVEL RECORDS
+2025-10-20 14:48:30 - feature_engineering - INFO - ================================================================================
+2025-10-20 14:48:30 - feature_engineering - INFO - Initial dataset: 5,430,384 records
+2025-10-20 14:48:30 - feature_engineering - INFO - 
+Area type distribution BEFORE filtering:
+2025-10-20 14:48:31 - feature_engineering - INFO -   County: 4,732,218 records (87.1%)
+2025-10-20 14:48:31 - feature_engineering - INFO -   United States: 399,362 records (7.4%)
+2025-10-20 14:48:31 - feature_engineering - INFO -   California - Statewide: 298,804 records (5.5%)
+2025-10-20 14:48:32 - feature_engineering - INFO - 
+Filtering results:
+2025-10-20 14:48:32 - feature_engineering - INFO -   Retained (County): 4,732,218 records
+2025-10-20 14:48:32 - feature_engineering - INFO -   Removed (State + National): 698,166 records (12.9%)
+2025-10-20 14:48:32 - feature_engineering - INFO -   Unique counties: 58
+2025-10-20 14:48:32 - feature_engineering - INFO -   Year range: 2004-2024
+2025-10-20 14:48:32 - feature_engineering - INFO - 
+[SUCCESS] County-level filtering completed successfully
+2025-10-20 14:48:32 - feature_engineering - INFO - ================================================================================
+
+2025-10-20 14:48:32 - feature_engineering - INFO - Saving county-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T032_county_filtered.csv
+2025-10-20 14:49:13 - feature_engineering - INFO - [OK] Saved 4,732,218 records to T032_county_filtered.csv
+2025-10-20 14:49:13 - feature_pipeline - INFO - [OK] County filtering complete: 4,732,218 records
+2025-10-20 14:49:13 - feature_pipeline - INFO - 
+[STAGE 2/10] T033: Handling Annual vs quarterly records...
+2025-10-20 14:49:13 - feature_engineering - INFO - 
+================================================================================
+2025-10-20 14:49:13 - feature_engineering - INFO - T033: FILTERING TO QUARTERLY RECORDS ONLY
+2025-10-20 14:49:13 - feature_engineering - INFO - ================================================================================
+2025-10-20 14:49:13 - feature_engineering - INFO - Initial dataset: 4,732,218 records
+2025-10-20 14:49:13 - feature_engineering - INFO - 
+Quarter distribution BEFORE filtering:
+2025-10-20 14:49:13 - feature_engineering - INFO -   1st Qtr: 944,965 records (20.0%)
+2025-10-20 14:49:13 - feature_engineering - INFO -   2nd Qtr: 949,400 records (20.1%)
+2025-10-20 14:49:13 - feature_engineering - INFO -   3rd Qtr: 956,056 records (20.2%)
+2025-10-20 14:49:13 - feature_engineering - INFO -   4th Qtr: 927,499 records (19.6%)
+2025-10-20 14:49:13 - feature_engineering - INFO -   Annual: 954,298 records (20.2%)
+2025-10-20 14:49:14 - feature_engineering - INFO - 
+Filtering results:
+2025-10-20 14:49:14 - feature_engineering - INFO -   Retained (Quarterly): 3,777,920 records
+2025-10-20 14:49:14 - feature_engineering - INFO -   Removed (Annual): 954,298 records (20.2%)
+2025-10-20 14:49:15 - feature_engineering - INFO -   [OK] All annual records successfully removed
+2025-10-20 14:49:15 - feature_engineering - INFO - 
+[SUCCESS] Quarterly filtering completed successfully
+2025-10-20 14:49:15 - feature_engineering - INFO - ================================================================================
+2025-10-20 14:49:15 - feature_engineering - INFO - Saving quarterly-only data to: C:\GitHub\is-160-project\data\feature_engineering\T033_quarterly_only.csv
+2025-10-20 14:49:44 - feature_engineering - INFO - [OK] Saved 3,777,920 records to T033_quarterly_only.csv
+2025-10-20 14:49:45 - feature_pipeline - INFO - [OK] Quarterly filtering complete: 3,777,920 records
+2025-10-20 14:49:45 - feature_pipeline - INFO - 
+[STAGE 3/10] T034: Data quality filtering...
+2025-10-20 14:49:45 - feature_engineering - INFO - 
+================================================================================
+2025-10-20 14:49:45 - feature_engineering - INFO - T034: DATA QUALITY FILTERING
+2025-10-20 14:49:45 - feature_engineering - INFO - ================================================================================
+2025-10-20 14:49:45 - feature_engineering - INFO - Initial dataset: 3,777,920 records
+2025-10-20 14:49:45 - feature_engineering - INFO - 
+Rule 1: Negative employment
+2025-10-20 14:49:45 - feature_engineering - INFO -   Removed: 0 records
+2025-10-20 14:49:46 - feature_engineering - INFO - 
+Rule 2: Negative wages
+2025-10-20 14:49:46 - feature_engineering - INFO -   Removed: 0 records
+2025-10-20 14:49:46 - feature_engineering - INFO - 
+Filtering summary:
+2025-10-20 14:49:46 - feature_engineering - INFO -   Initial records: 3,777,920
+2025-10-20 14:49:46 - feature_engineering - INFO -   Final records: 3,777,920
+2025-10-20 14:49:46 - feature_engineering - INFO -   Total removed: 0 records (0.00%)
+2025-10-20 14:49:46 - feature_engineering - INFO - 
+[SUCCESS] Data quality filtering completed successfully
+2025-10-20 14:49:46 - feature_engineering - INFO - ================================================================================
+2025-10-20 14:49:46 - feature_engineering - INFO - Saving quality-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T034_quality_filtered.csv
+2025-10-20 14:50:15 - feature_engineering - INFO - [OK] Saved 3,777,920 records to T034_quality_filtered.csv
+2025-10-20 14:50:16 - feature_pipeline - INFO - [OK] Quality filtering complete: 3,777,920 records
+2025-10-20 14:50:16 - feature_pipeline - INFO - 
+[STAGE 4/10] T035: Central Valley counties subset...
+2025-10-20 14:50:16 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-10-20 14:50:16 - feature_pipeline - INFO - 
+[STAGE 5/10] T036: All California counties processing...
+2025-10-20 14:50:16 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-10-20 14:50:16 - feature_pipeline - INFO - 
+[STAGE 6/10] T038: Calculating quarterly growth rates...
+2025-10-20 14:50:16 - feature_engineering - INFO - 
+================================================================================
+2025-10-20 14:50:16 - feature_engineering - INFO - T038: CALCULATING QUARTERLY GROWTH RATES
+2025-10-20 14:50:16 - feature_engineering - INFO - ================================================================================
+2025-10-20 14:50:16 - feature_engineering - INFO - Employment column: avg_monthly_emplvl
+2025-10-20 14:50:16 - feature_engineering - INFO - Grouping by: ['area_name', 'industry_code']
+2025-10-20 14:50:20 - feature_engineering - INFO - 
+Growth rate statistics:
+2025-10-20 14:50:20 - feature_engineering - INFO -   QoQ % change - Mean: inf%
+2025-10-20 14:50:20 - feature_engineering - INFO -   QoQ % change - Std: nan%
+2025-10-20 14:50:20 - feature_engineering - INFO -   YoY % change - Mean: inf%
+2025-10-20 14:50:20 - feature_engineering - INFO -   YoY % change - Std: nan%
+2025-10-20 14:50:20 - feature_engineering - WARNING -   [WARN] employment_qoq_pct_change: 12516 infinite values (division by zero)
+2025-10-20 14:50:20 - feature_engineering - WARNING -   [WARN] employment_yoy_pct_change: 12617 infinite values (division by zero)
+2025-10-20 14:50:20 - feature_engineering - INFO - 
+[SUCCESS] Growth rate calculations completed
+2025-10-20 14:50:20 - feature_engineering - INFO - ================================================================================
+2025-10-20 14:50:21 - feature_pipeline - INFO - [OK] Growth rates complete: 3,777,920 records
+2025-10-20 14:50:21 - feature_pipeline - INFO - 
+[STAGE 7/10] T039: Creating seasonal adjustments...
+2025-10-20 14:50:21 - feature_pipeline - INFO - [PENDING] Seasonal adjustments - advanced feature, will be added in next iteration
+2025-10-20 14:50:21 - feature_pipeline - INFO - 
+[STAGE 8/10] T040: Calculating industry concentration...
+2025-10-20 14:50:21 - feature_pipeline - INFO - [PENDING] Industry concentration - advanced feature, will be added in next iteration
+2025-10-20 14:50:21 - feature_pipeline - INFO - 
+[STAGE 9/10] T041: Building geographic clustering...
+2025-10-20 14:50:21 - feature_pipeline - INFO - [PENDING] Geographic clustering - advanced feature, will be added in next iteration
+2025-10-20 14:50:21 - feature_pipeline - INFO - 
+[STAGE 10/10] T042: Generating lag features...
+2025-10-20 14:50:21 - feature_engineering - INFO - 
+================================================================================
+2025-10-20 14:50:21 - feature_engineering - INFO - T042: GENERATING LAG FEATURES
+2025-10-20 14:50:21 - feature_engineering - INFO - ================================================================================
+2025-10-20 14:50:21 - feature_engineering - INFO - Value column: avg_monthly_emplvl
+2025-10-20 14:50:21 - feature_engineering - INFO - Lag periods: [1, 2, 3, 4]
+2025-10-20 14:50:21 - feature_engineering - INFO - Grouping by: ['area_name', 'industry_code']
+2025-10-20 14:50:24 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_1: 80,982 null values (beginning of series)
+2025-10-20 14:50:24 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_2: 156,223 null values (beginning of series)
+2025-10-20 14:50:25 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_3: 225,823 null values (beginning of series)
+2025-10-20 14:50:26 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_4: 292,033 null values (beginning of series)
+2025-10-20 14:50:26 - feature_engineering - INFO - 
+[SUCCESS] Generated 4 lag features
+2025-10-20 14:50:26 - feature_engineering - INFO - ================================================================================
+2025-10-20 14:50:26 - feature_pipeline - INFO - [OK] Lag features complete: 3,777,920 records
+2025-10-20 14:50:26 - feature_pipeline - INFO - 
+Saving feature-engineered dataset to: C:\GitHub\is-160-project\data\feature_engineering\final_features.csv
+2025-10-20 14:51:37 - feature_pipeline - INFO - [OK] Saved 3,777,920 records to final_features.csv
+2025-10-20 14:51:37 - feature_pipeline - INFO - 
+================================================================================
+2025-10-20 14:51:37 - feature_pipeline - INFO - FEATURE ENGINEERING COMPLETE
+2025-10-20 14:51:37 - feature_pipeline - INFO - Currently implemented: T032 only
+2025-10-20 14:51:37 - feature_pipeline - INFO - Pending: T033-T042
+2025-10-20 14:51:37 - feature_pipeline - INFO - ================================================================================
+
+2025-10-20 14:51:37 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 14:51:37 - pipeline_orchestrator - INFO - STAGE 5: DATA PREPROCESSING
+2025-10-20 14:51:37 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:51:37 - preprocessing_pipeline - INFO - 
+================================================================================
+2025-10-20 14:51:37 - preprocessing_pipeline - INFO - PREPROCESSING PIPELINE FOR LSTM
+2025-10-20 14:51:37 - preprocessing_pipeline - INFO - ================================================================================
+2025-10-20 14:51:37 - preprocessing_pipeline - INFO - 
+[STAGE 1/5] T054: Normalizing employment and wage data...
+2025-10-20 14:51:37 - preprocessing_pipeline - INFO -   Normalizing 16 columns using robust scaling
+2025-10-20 14:51:37 - preprocessing - INFO - Normalizing columns: ['avg_monthly_emplvl', 'month1_emplvl', 'month2_emplvl', 'month3_emplvl', 'employment_prev_quarter', 'employment_qoq_change', 'employment_qoq_pct_change', 'employment_4q_ago', 'employment_yoy_change', 'employment_yoy_pct_change', 'avg_monthly_emplvl_lag_1', 'avg_monthly_emplvl_lag_2', 'avg_monthly_emplvl_lag_3', 'avg_monthly_emplvl_lag_4', 'total_qtrly_wages', 'avg_wkly_wage']
+2025-10-20 14:51:37 - preprocessing_pipeline - INFO - [OK] Normalization complete
+2025-10-20 14:51:37 - preprocessing_pipeline - INFO - 
+[STAGE 2/5] T055: Handling missing values...
+2025-10-20 14:51:38 - preprocessing_pipeline - INFO -   Found 1,973,152 missing values
+2025-10-20 14:51:38 - preprocessing - INFO - Handling missing values with median strategy
+2025-10-20 14:51:38 - preprocessing_pipeline - INFO - [OK] Missing values handled
+2025-10-20 14:51:38 - preprocessing_pipeline - INFO - 
+[STAGE 3/5] T056: Creating categorical encodings...
+2025-10-20 14:51:38 - preprocessing_pipeline - INFO -   Encoding 3 categorical columns
+2025-10-20 14:51:38 - preprocessing - INFO - Creating categorical encodings for: ['industry_code', 'area_name', 'ownership']
+2025-10-20 14:51:38 - preprocessing_pipeline - INFO - [OK] Categorical encoding complete
+2025-10-20 14:51:38 - preprocessing_pipeline - INFO - 
+[STAGE 4/5] T057: Transforming to sequence format...
+2025-10-20 14:51:38 - preprocessing_pipeline - INFO -   Creating sequences of length 12
+2025-10-20 14:51:38 - preprocessing_pipeline - INFO -   Target column: month1_emplvl
+2025-10-20 14:51:38 - preprocessing - INFO - Transforming data to sequences of length 12
+2025-10-20 14:51:38 - preprocessing - INFO -   Target column: month1_emplvl
+2025-10-20 14:51:38 - preprocessing - INFO -   Feature columns: 18 columns
+2025-10-20 14:51:38 - preprocessing - INFO -   Grouping by: area_name, industry_code
+2025-10-20 14:54:03 - preprocessing - INFO -   Created 2997906 sequences from 80982 groups
+2025-10-20 14:54:13 - preprocessing - INFO -   Sequences shape: (2997906, 12, 18)
+2025-10-20 14:54:13 - preprocessing - INFO -   Targets shape: (2997906,)
+2025-10-20 14:54:17 - preprocessing_pipeline - INFO - [OK] Created 2,997,906 sequences
+2025-10-20 14:54:17 - preprocessing_pipeline - INFO - 
+[STAGE 5/5] T058: Validating preprocessing...
+2025-10-20 14:54:17 - preprocessing - INFO - Validating preprocessing steps...
+2025-10-20 14:54:17 - preprocessing_pipeline - INFO - [OK] Preprocessing validation passed
+2025-10-20 14:54:17 - preprocessing_pipeline - INFO - 
+Saving preprocessed data to: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-10-20 14:55:37 - preprocessing_pipeline - INFO - [OK] Saved preprocessed data: qcew_preprocessed.csv
+2025-10-20 14:56:07 - preprocessing_pipeline - INFO - [OK] Saved sequences: qcew_preprocessed_sequences.npz
+2025-10-20 14:56:07 - preprocessing_pipeline - INFO - 
+================================================================================
+2025-10-20 14:56:07 - preprocessing_pipeline - INFO - PREPROCESSING COMPLETE
+2025-10-20 14:56:07 - preprocessing_pipeline - INFO - Sequences: (2997906, 12, 18)
+2025-10-20 14:56:07 - preprocessing_pipeline - INFO - Targets: (2997906,)
+2025-10-20 14:56:07 - preprocessing_pipeline - INFO - ================================================================================
+
+2025-10-20 14:56:14 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-10-20 14:56:14 - pipeline_orchestrator - INFO - STAGE 6: MODEL TRAINING
+2025-10-20 14:56:14 - pipeline_orchestrator - INFO - ================================================================================
+2025-10-20 14:56:14 - pipeline_orchestrator - ERROR - [ERROR] Stage 6: Model Training not yet implemented
+2025-10-20 14:56:14 - pipeline_orchestrator - ERROR - [ERROR] This stage will be implemented after preprocessing is complete
+2025-10-20 14:56:14 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: Model training stage (T065-T074) not yet implemented
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 201, in run_full_pipeline
+    training_results = self.stage_6_train_model(X_tensor, y_tensor, preprocessor)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 153, in stage_6_train_model
+    raise NotImplementedError("Model training stage (T065-T074) not yet implemented")
+NotImplementedError: Model training stage (T065-T074) not yet implemented

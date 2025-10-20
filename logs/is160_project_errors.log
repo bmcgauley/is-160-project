@@ -76,3 +76,41 @@ Traceback (most recent call last):
   File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 101, in stage_4_feature_engineering
     from feature_pipeline import engineer_features
 ModuleNotFoundError: No module named 'feature_pipeline'
+2025-10-20 14:05:47 - __main__ - WARNING -   WARNING: Found null values in key columns
+2025-10-20 14:08:09 - __main__ - WARNING -   WARNING: Found null values in key columns
+2025-10-20 14:28:40 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 195, in run_full_pipeline
+    df_processed, preprocessor = self.stage_5_preprocessing(df_features)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2025-10-20 14:44:28 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: division by zero
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 192, in run_full_pipeline
+    df_features = self.stage_4_feature_engineering(df_validated)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 123, in stage_4_feature_engineering
+    df_features = engineer_features(
+        df,
+        output_file=self.features_file,
+        feature_eng_dir=self.feature_eng_dir
+    )
+  File "C:\GitHub\is-160-project\src\feature_pipeline.py", line 76, in engineer_features
+    df = data_quality_filter(df, output_dir=feature_eng_dir)
+  File "C:\GitHub\is-160-project\src\feature_engineering.py", line 216, in data_quality_filter
+    removed_pct = (total_removed / initial_count) * 100
+                   ~~~~~~~~~~~~~~^~~~~~~~~~~~~~~
+ZeroDivisionError: division by zero
+2025-10-20 14:50:20 - feature_engineering - WARNING -   [WARN] employment_qoq_pct_change: 12516 infinite values (division by zero)
+2025-10-20 14:50:20 - feature_engineering - WARNING -   [WARN] employment_yoy_pct_change: 12617 infinite values (division by zero)
+2025-10-20 14:56:14 - pipeline_orchestrator - ERROR - [ERROR] Stage 6: Model Training not yet implemented
+2025-10-20 14:56:14 - pipeline_orchestrator - ERROR - [ERROR] This stage will be implemented after preprocessing is complete
+2025-10-20 14:56:14 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: Model training stage (T065-T074) not yet implemented
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 201, in run_full_pipeline
+    training_results = self.stage_6_train_model(X_tensor, y_tensor, preprocessor)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 153, in stage_6_train_model
+    raise NotImplementedError("Model training stage (T065-T074) not yet implemented")
+NotImplementedError: Model training stage (T065-T074) not yet implemented
