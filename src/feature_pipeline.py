@@ -9,6 +9,9 @@ and geographic_features.py modules.
 """
 
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 import logging
 from pathlib import Path
 from typing import Optional
@@ -25,6 +28,77 @@ from feature_engineering import (
 )
 
 logger = logging.getLogger(__name__)
+
+# Set up matplotlib style
+plt.style.use('seaborn-v0_8-darkgrid')
+sns.set_palette("husl")
+
+
+def create_feature_plots(df: pd.DataFrame, plots_dir: Path, stage: str):
+    """
+    Create visualization plots for feature engineering stages.
+    
+    Args:
+        df: Current dataframe
+        plots_dir: Directory to save plots
+        stage: Name of the current stage (for filename)
+    """
+    plots_dir.mkdir(parents=True, exist_ok=True)
+    
+    if stage == "growth_rates":
+        # Plot growth rate distributions
+        fig, axes = plt.subplots(2, 2, figsize=(15, 12))
+        fig.suptitle('Growth Rate Feature Distributions', fontsize=16, fontweight='bold')
+        
+        # QoQ % change
+        axes[0, 0].hist(df['employment_qoq_pct_change'].dropna(), bins=100, edgecolor='black', alpha=0.7)
+        axes[0, 0].set_title('Quarter-over-Quarter % Change')
+        axes[0, 0].set_xlabel('% Change')
+        axes[0, 0].set_ylabel('Frequency')
+        axes[0, 0].axvline(0, color='red', linestyle='--', linewidth=2, label='No change')
+        axes[0, 0].legend()
+        
+        # YoY % change
+        axes[0, 1].hist(df['employment_yoy_pct_change'].dropna(), bins=100, edgecolor='black', alpha=0.7)
+        axes[0, 1].set_title('Year-over-Year % Change')
+        axes[0, 1].set_xlabel('% Change')
+        axes[0, 1].set_ylabel('Frequency')
+        axes[0, 1].axvline(0, color='red', linestyle='--', linewidth=2, label='No change')
+        axes[0, 1].legend()
+        
+        # QoQ absolute change
+        axes[1, 0].hist(df['employment_qoq_change'].dropna(), bins=100, edgecolor='black', alpha=0.7)
+        axes[1, 0].set_title('Quarter-over-Quarter Absolute Change')
+        axes[1, 0].set_xlabel('Change in Employment')
+        axes[1, 0].set_ylabel('Frequency')
+        axes[1, 0].axvline(0, color='red', linestyle='--', linewidth=2)
+        
+        # YoY absolute change  
+        axes[1, 1].hist(df['employment_yoy_change'].dropna(), bins=100, edgecolor='black', alpha=0.7)
+        axes[1, 1].set_title('Year-over-Year Absolute Change')
+        axes[1, 1].set_xlabel('Change in Employment')
+        axes[1, 1].set_ylabel('Frequency')
+        axes[1, 1].axvline(0, color='red', linestyle='--', linewidth=2)
+        
+        plt.tight_layout()
+        plt.savefig(plots_dir / 'T038_growth_rates_distribution.png', dpi=300, bbox_inches='tight')
+        plt.close()
+        logger.info(f"  [OK] Saved growth rate plots to {plots_dir / 'T038_growth_rates_distribution.png'}")
+        
+    elif stage == "lag_features":
+        # Plot lag feature correlations
+        lag_cols = [col for col in df.columns if 'lag_' in col]
+        if lag_cols and 'avg_monthly_emplvl' in df.columns:
+            corr_data = df[['avg_monthly_emplvl'] + lag_cols].corr()
+            
+            fig, ax = plt.subplots(figsize=(10, 8))
+            sns.heatmap(corr_data, annot=True, fmt='.3f', cmap='coolwarm', center=0, 
+                       square=True, linewidths=1, cbar_kws={"shrink": 0.8}, ax=ax)
+            ax.set_title('Correlation: Current Employment vs Lag Features', fontsize=14, fontweight='bold')
+            plt.tight_layout()
+            plt.savefig(plots_dir / 'T042_lag_features_correlation.png', dpi=300, bbox_inches='tight')
+            plt.close()
+            logger.info(f"  [OK] Saved lag correlation heatmap to {plots_dir / 'T042_lag_features_correlation.png'}")
 
 
 def engineer_features(df: pd.DataFrame, 
@@ -89,6 +163,16 @@ def engineer_features(df: pd.DataFrame,
     df = calculate_quarterly_growth_rates(df)
     logger.info(f"[OK] Growth rates complete: {len(df):,} records")
     
+    # Create visualization for growth rates
+    plots_dir = feature_eng_dir / 'plots'
+    logger.info("\n[VISUALIZATION] Creating growth rate distribution plots...")
+    try:
+        create_feature_plots(df, plots_dir, "growth_rates")
+        logger.info(f"[OK] Growth rate plots saved to {plots_dir / 'T038_growth_rates_distribution.png'}")
+    except Exception as e:
+        logger.error(f"[ERROR] Failed to create growth rate plots: {e}")
+        logger.exception("Full traceback:")
+    
     # T039: Create seasonal adjustments
     logger.info("\n[STAGE 7/10] T039: Creating seasonal adjustments...")
     logger.info("[PENDING] Seasonal adjustments - advanced feature, will be added in next iteration")
@@ -109,15 +193,36 @@ def engineer_features(df: pd.DataFrame,
     df = generate_lag_features(df)
     logger.info(f"[OK] Lag features complete: {len(df):,} records")
     
+    # Create visualization for lag features
+    logger.info("\n[VISUALIZATION] Creating lag feature correlation heatmap...")
+    try:
+        create_feature_plots(df, plots_dir, "lag_features")
+        logger.info(f"[OK] Lag correlation heatmap saved to {plots_dir / 'T042_lag_features_correlation.png'}")
+    except Exception as e:
+        logger.error(f"[ERROR] Failed to create lag feature plots: {e}")
+        logger.exception("Full traceback:")
+    
     # Save final output
     logger.info(f"\nSaving feature-engineered dataset to: {output_file}")
     df.to_csv(output_file, index=False)
     logger.info(f"[OK] Saved {len(df):,} records to {output_file.name}")
     
+    # Summary of features added
     logger.info("\n" + "="*80)
     logger.info("FEATURE ENGINEERING COMPLETE")
-    logger.info(f"Currently implemented: T032 only")
-    logger.info(f"Pending: T033-T042")
+    logger.info("="*80)
+    logger.info("\nImplemented tasks:")
+    logger.info("  ✓ T032: County-level filtering (removed state/national aggregates)")
+    logger.info("  ✓ T033: Quarterly filtering (removed Annual records)")
+    logger.info("  ✓ T034: Data quality filtering (removed invalid records)")
+    logger.info("  ✓ T038: Growth rates (added 6 columns: QoQ & YoY metrics)")
+    logger.info("  ✓ T042: Lag features (added 4 columns: 1-4 quarters back)")
+    logger.info("\nDeferred tasks (advanced features):")
+    logger.info("  ○ T039: Seasonal adjustments")
+    logger.info("  ○ T040: Industry concentration")
+    logger.info("  ○ T041: Geographic clustering")
+    logger.info("\nTotal new features added: 10 columns")
+    logger.info(f"Final dataset: {len(df):,} records × {len(df.columns)} columns")
     logger.info("="*80 + "\n")
     
     return df

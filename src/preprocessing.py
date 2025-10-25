@@ -43,11 +43,37 @@ class EmploymentDataPreprocessor:
         Returns:
             DataFrame with normalized columns
         """
+        from sklearn.preprocessing import RobustScaler, StandardScaler
+        
         if employment_cols is None:
-            employment_cols = ['total_employment', 'avg_wage']
+            employment_cols = ['avg_monthly_emplvl', 'total_qtrly_wages', 'avg_wkly_wage']
+        
+        # Filter to columns that exist
+        employment_cols = [col for col in employment_cols if col in df.columns]
+        
+        if len(employment_cols) == 0:
+            logger.info("  No employment columns to normalize")
+            return df
 
-        # TODO: Implement normalization
         logger.info(f"Normalizing columns: {employment_cols}")
+        
+        # Choose scaler
+        if self.scaler_type == 'robust':
+            scaler = RobustScaler()
+            logger.info("  Using RobustScaler (resistant to outliers)")
+        else:
+            scaler = StandardScaler()
+            logger.info("  Using StandardScaler")
+        
+        # Apply normalization
+        df[employment_cols] = scaler.fit_transform(df[employment_cols])
+        self.scalers['employment'] = scaler
+        
+        logger.info(f"  Normalized {len(employment_cols)} columns")
+        for col in employment_cols[:3]:  # Show stats for first 3 columns
+            logger.info(f"    {col}: mean={df[col].mean():.3f}, std={df[col].std():.3f}")
+        
+        return df
         return df
 
     def handle_missing_values(self, df: pd.DataFrame,
@@ -62,8 +88,33 @@ class EmploymentDataPreprocessor:
         Returns:
             DataFrame with imputed values
         """
-        # TODO: Implement missing value handling
+        from sklearn.impute import SimpleImputer
+        
         logger.info(f"Handling missing values with {strategy} strategy")
+        
+        # Identify numeric columns
+        numeric_cols = df.select_dtypes(include=['float64', 'int64']).columns.tolist()
+        
+        if len(numeric_cols) == 0:
+            logger.info("  No numeric columns to impute")
+            return df
+        
+        # Count missing values before imputation
+        missing_before = df[numeric_cols].isnull().sum().sum()
+        logger.info(f"  Missing values before imputation: {missing_before:,}")
+        
+        # Apply imputation
+        imputer = SimpleImputer(strategy=strategy)
+        df[numeric_cols] = imputer.fit_transform(df[numeric_cols])
+        
+        # Store imputer for later use
+        self.imputers['numeric'] = imputer
+        
+        # Count missing values after imputation
+        missing_after = df[numeric_cols].isnull().sum().sum()
+        logger.info(f"  Missing values after imputation: {missing_after:,}")
+        logger.info(f"  Imputed {missing_before - missing_after:,} values")
+        
         return df
 
     def create_categorical_encodings(self, df: pd.DataFrame,
@@ -78,11 +129,29 @@ class EmploymentDataPreprocessor:
         Returns:
             DataFrame with encoded categorical columns
         """
+        from sklearn.preprocessing import LabelEncoder
+        
         if categorical_cols is None:
-            categorical_cols = ['industry_code', 'area_fips']
+            categorical_cols = ['industry_code', 'area_name', 'ownership']
+        
+        # Filter to columns that exist in dataframe
+        categorical_cols = [col for col in categorical_cols if col in df.columns]
+        
+        if len(categorical_cols) == 0:
+            logger.info("  No categorical columns to encode")
+            return df
 
-        # TODO: Implement categorical encoding
         logger.info(f"Creating categorical encodings for: {categorical_cols}")
+        
+        for col in categorical_cols:
+            le = LabelEncoder()
+            # Handle NaN values by converting to string first
+            df[col] = df[col].astype(str)
+            df[col] = le.fit_transform(df[col])
+            self.encoders[col] = le
+            logger.info(f"  Encoded {col}: {len(le.classes_)} unique classes")
+        
+        return df
         return df
 
     def transform_to_sequences(self, df: pd.DataFrame,
