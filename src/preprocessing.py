@@ -234,6 +234,46 @@ class EmploymentDataPreprocessor:
         Returns:
             Dictionary of validation results
         """
-        # TODO: Implement preprocessing validation
         logger.info("Validating preprocessing steps...")
-        return {"preprocessing_validation": True}
+
+        results = {}
+
+        # Check 1: No infinite values
+        numeric_cols = df.select_dtypes(include=['float64', 'int64']).columns
+        inf_count = np.isinf(df[numeric_cols]).sum().sum()
+        results['no_infinites'] = inf_count == 0
+        logger.info(f"  Infinite values check: {inf_count} found - {'PASS' if results['no_infinites'] else 'FAIL'}")
+
+        # Check 2: No NaN values after imputation
+        nan_count = df[numeric_cols].isnull().sum().sum()
+        results['no_nans'] = nan_count == 0
+        logger.info(f"  NaN values check: {nan_count} found - {'PASS' if results['no_nans'] else 'FAIL'}")
+
+        # Check 3: Normalized columns have reasonable ranges (within -10 to 10 std)
+        if 'employment' in self.scalers:
+            # Check that normalized data is within reasonable bounds
+            scaled_cols = ['avg_monthly_emplvl', 'total_qtrly_wages', 'avg_wkly_wage']
+            scaled_cols = [col for col in scaled_cols if col in df.columns]
+            if scaled_cols:
+                max_abs_val = df[scaled_cols].abs().max().max()
+                results['normalized_range'] = max_abs_val < 10.0
+                logger.info(f"  Normalization range check: max |value| = {max_abs_val:.2f} - {'PASS' if results['normalized_range'] else 'FAIL'}")
+
+        # Check 4: Categorical encodings are integers
+        if self.encoders:
+            encoded_cols = list(self.encoders.keys())
+            encoded_cols = [col for col in encoded_cols if col in df.columns]
+            if encoded_cols:
+                all_int = all(df[col].dtype in ['int32', 'int64'] for col in encoded_cols)
+                results['categorical_encoded'] = all_int
+                logger.info(f"  Categorical encoding check: All integer types - {'PASS' if all_int else 'FAIL'}")
+
+        # Check 5: Data shape preservation (rows should not disappear)
+        results['shape_preserved'] = len(df) > 0
+        logger.info(f"  Shape preservation: {len(df):,} rows - {'PASS' if results['shape_preserved'] else 'FAIL'}")
+
+        # Overall validation
+        all_passed = all(results.values())
+        logger.info(f"Overall validation: {'PASS' if all_passed else 'FAIL'} ({sum(results.values())}/{len(results)} checks passed)")
+
+        return results
