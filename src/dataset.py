@@ -184,7 +184,7 @@ def create_train_val_splits(sequences: np.ndarray,
     val_dataset = EmploymentDataset(val_seq, val_tgt, augment=False)
     test_dataset = EmploymentDataset(test_seq, test_tgt, augment=False)
 
-    logger.info("  ✓ Datasets created successfully")
+    logger.info("  [OK] Datasets created successfully")
 
     return train_dataset, val_dataset, test_dataset
 
@@ -219,11 +219,11 @@ def validate_batch_processing(dataset: EmploymentDataset,
             batch_count += 1
 
         results['iteration_complete'] = True
-        logger.info(f"  ✓ Iterated through {batch_count} batches")
+        logger.info(f"  [OK] Iterated through {batch_count} batches")
 
         # Test 2: All samples accounted for
         results['all_samples_present'] = (total_samples == len(dataset))
-        logger.info(f"  Samples: {total_samples}/{len(dataset)} - {'✓ PASS' if results['all_samples_present'] else '✗ FAIL'}")
+        logger.info(f"  Samples: {total_samples}/{len(dataset)} - {'[PASS]' if results['all_samples_present'] else '[FAIL]'}")
 
         # Test 3: Batch shapes are consistent
         batch_seq, batch_tgt = next(iter(loader))
@@ -231,7 +231,7 @@ def validate_batch_processing(dataset: EmploymentDataset,
                                        len(batch_tgt.shape) == 1)       # (batch,)
         logger.info(f"  Batch sequence shape: {tuple(batch_seq.shape)}")
         logger.info(f"  Batch target shape: {tuple(batch_tgt.shape)}")
-        logger.info(f"  Shape validation: {'✓ PASS' if results['valid_batch_shape'] else '✗ FAIL'}")
+        logger.info(f"  Shape validation: {'[PASS]' if results['valid_batch_shape'] else '[FAIL]'}")
 
         # Test 4: No NaN or Inf in batches
         has_nan_seq = torch.isnan(batch_seq).any().item()
@@ -240,15 +240,15 @@ def validate_batch_processing(dataset: EmploymentDataset,
         has_inf_tgt = torch.isinf(batch_tgt).any().item()
 
         results['no_nan_inf'] = not (has_nan_seq or has_inf_seq or has_nan_tgt or has_inf_tgt)
-        logger.info(f"  No NaN/Inf: {'✓ PASS' if results['no_nan_inf'] else '✗ FAIL'}")
+        logger.info(f"  No NaN/Inf: {'[PASS]' if results['no_nan_inf'] else '[FAIL]'}")
 
         # Test 5: Data types are correct
         results['correct_dtypes'] = (batch_seq.dtype == torch.float32 and
                                     batch_tgt.dtype == torch.float32)
-        logger.info(f"  Data types: seq={batch_seq.dtype}, tgt={batch_tgt.dtype} - {'✓ PASS' if results['correct_dtypes'] else '✗ FAIL'}")
+        logger.info(f"  Data types: seq={batch_seq.dtype}, tgt={batch_tgt.dtype} - {'[PASS]' if results['correct_dtypes'] else '[FAIL]'}")
 
     except Exception as e:
-        logger.error(f"  ✗ Validation error: {str(e)}")
+        logger.error(f"  [FAIL] Validation error: {str(e)}")
         results['iteration_complete'] = False
         results['all_samples_present'] = False
         results['valid_batch_shape'] = False
@@ -257,6 +257,6 @@ def validate_batch_processing(dataset: EmploymentDataset,
 
     # Overall validation
     all_passed = all(results.values())
-    logger.info(f"Overall validation: {'✓ PASS' if all_passed else '✗ FAIL'} ({sum(results.values())}/{len(results)} checks passed)")
+    logger.info(f"Overall validation: {'[PASS]' if all_passed else '[FAIL]'} ({sum(results.values())}/{len(results)} checks passed)")
 
     return results

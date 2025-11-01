@@ -194,7 +194,7 @@ class EmploymentTrainer:
                 # Save checkpoint if path provided
                 if save_path:
                     self.save_checkpoint(save_path, epoch, val_loss)
-                    logger.info(f"  ✓ New best model saved (val_loss: {val_loss:.6f})")
+                    logger.info(f"  [OK] New best model saved (val_loss: {val_loss:.6f})")
             else:
                 epochs_without_improvement += 1
 

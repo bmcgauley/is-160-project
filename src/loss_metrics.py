@@ -382,18 +382,18 @@ def validate_loss_functions() -> Dict[str, bool]:
         y_pred = np.array([110, 190, 310])
         mape = mean_absolute_percentage_error(y_true, y_pred)
         results['mape_works'] = 0 <= mape <= 100
-        logger.info(f"  MAPE test: {mape:.2f}% - {'✓ PASS' if results['mape_works'] else '✗ FAIL'}")
+        logger.info(f"  MAPE test: {mape:.2f}% - {'[PASS]' if results['mape_works'] else '[FAIL]'}")
 
         # Test 2: Directional accuracy
         y_prev = np.array([90, 210, 290])
         dir_acc = directional_accuracy(y_true, y_pred, y_prev)
         results['directional_accuracy_works'] = 0 <= dir_acc <= 100
-        logger.info(f"  Directional accuracy test: {dir_acc:.2f}% - {'✓ PASS' if results['directional_accuracy_works'] else '✗ FAIL'}")
+        logger.info(f"  Directional accuracy test: {dir_acc:.2f}% - {'[PASS]' if results['directional_accuracy_works'] else '[FAIL]'}")
 
         # Test 3: RMSE calculation
         rmse = root_mean_squared_error(y_true, y_pred)
         results['rmse_works'] = rmse >= 0
-        logger.info(f"  RMSE test: {rmse:.2f} - {'✓ PASS' if results['rmse_works'] else '✗ FAIL'}")
+        logger.info(f"  RMSE test: {rmse:.2f} - {'[PASS]' if results['rmse_works'] else '[FAIL]'}")
 
         # Test 4: Weighted loss
         weighted_loss = WeightedEmploymentLoss()
@@ -401,21 +401,21 @@ def validate_loss_functions() -> Dict[str, bool]:
         target_tensor = torch.tensor([100.0, 200.0, 300.0])
         loss_val = weighted_loss(pred_tensor, target_tensor)
         results['weighted_loss_works'] = not torch.isnan(loss_val).item()
-        logger.info(f"  Weighted loss test: {loss_val:.4f} - {'✓ PASS' if results['weighted_loss_works'] else '✗ FAIL'}")
+        logger.info(f"  Weighted loss test: {loss_val:.4f} - {'[PASS]' if results['weighted_loss_works'] else '[FAIL]'}")
 
         # Test 5: Volatility loss
         vol_loss = VolatilityLoss()
         loss_val = vol_loss(pred_tensor, target_tensor)
         results['volatility_loss_works'] = not torch.isnan(loss_val).item()
-        logger.info(f"  Volatility loss test: {loss_val:.4f} - {'✓ PASS' if results['volatility_loss_works'] else '✗ FAIL'}")
+        logger.info(f"  Volatility loss test: {loss_val:.4f} - {'[PASS]' if results['volatility_loss_works'] else '[FAIL]'}")
 
     except Exception as e:
-        logger.error(f"  ✗ Validation error: {str(e)}")
+        logger.error(f"  [FAIL] Validation error: {str(e)}")
         results = {k: False for k in ['mape_works', 'directional_accuracy_works',
                                      'rmse_works', 'weighted_loss_works', 'volatility_loss_works']}
 
     # Overall validation
     all_passed = all(results.values())
-    logger.info(f"Overall validation: {'✓ PASS' if all_passed else '✗ FAIL'} ({sum(results.values())}/{len(results)} checks passed)")
+    logger.info(f"Overall validation: {'[PASS]' if all_passed else '[FAIL]'} ({sum(results.values())}/{len(results)} checks passed)")
 
     return results

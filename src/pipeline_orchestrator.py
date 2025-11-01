@@ -144,33 +144,234 @@ class QCEWPipeline:
 
     def stage_6_train_model(self, X_tensor, y_tensor, preprocessor) -> dict:
         """Stage 6: Model Training"""
+        import torch
+        from dataset import create_train_val_splits, build_data_loader
+        from lstm_model import EmploymentLSTM, validate_lstm_architecture
+        from training import EmploymentTrainer
+
         logger.info("\n" + "="*80)
         logger.info("STAGE 6: MODEL TRAINING")
         logger.info("="*80)
-        
-        logger.error("[ERROR] Stage 6: Model Training not yet implemented")
-        logger.error("[ERROR] This stage will be implemented after preprocessing is complete")
-        raise NotImplementedError("Model training stage (T065-T074) not yet implemented")
 
-    def stage_7_evaluate_model(self) -> dict:
+        # Get input dimensions
+        num_sequences, seq_length, num_features = X_tensor.shape
+        logger.info(f"  Input shape: {X_tensor.shape}")
+        logger.info(f"  Target shape: {y_tensor.shape}")
+        logger.info(f"  Features: {num_features}, Sequence length: {seq_length}")
+
+        # Create train/val/test splits
+        logger.info("\nCreating data splits...")
+        train_dataset, val_dataset, test_dataset = create_train_val_splits(
+            X_tensor.numpy(),
+            y_tensor.numpy(),
+            val_size=0.2,
+            test_size=0.1,
+            shuffle=False  # Preserve temporal order
+        )
+
+        # Create data loaders
+        logger.info("\nCreating data loaders...")
+        train_loader = build_data_loader(train_dataset, batch_size=32, shuffle=True)
+        val_loader = build_data_loader(val_dataset, batch_size=32, shuffle=False)
+        test_loader = build_data_loader(test_dataset, batch_size=32, shuffle=False)
+
+        # Initialize model
+        logger.info("\nInitializing LSTM model...")
+        model = EmploymentLSTM(
+            input_size=num_features,
+            hidden_size=64,
+            num_layers=2,
+            output_size=1,
+            dropout=0.2
+        )
+
+        # Validate architecture
+        logger.info("\nValidating model architecture...")
+        validation_results = validate_lstm_architecture(
+            model,
+            input_shape=(32, seq_length, num_features),
+            expected_output_size=1
+        )
+
+        if not all(validation_results.values()):
+            logger.error("[ERROR] Model architecture validation failed!")
+            return {"success": False, "validation_results": validation_results}
+
+        # Set device
+        device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        logger.info(f"\nUsing device: {device}")
+
+        # Create trainer
+        logger.info("\nCreating trainer...")
+        trainer = EmploymentTrainer(
+            model=model,
+            train_loader=train_loader,
+            val_loader=val_loader,
+            criterion=torch.nn.MSELoss(),
+            optimizer=torch.optim.Adam(model.parameters(), lr=0.001),
+            device=device
+        )
+
+        # Train model
+        logger.info("\nStarting training...")
+        history = trainer.train_model(
+            num_epochs=self.config.get('num_epochs', 100),
+            patience=self.config.get('patience', 10),
+            save_path=str(self.model_file)
+        )
+
+        # Evaluate on test set
+        logger.info("\nEvaluating on test set...")
+        model.eval()
+        test_loss = 0.0
+        all_predictions = []
+        all_targets = []
+
+        with torch.no_grad():
+            for sequences, targets in test_loader:
+                sequences = sequences.to(device)
+                targets = targets.to(device)
+
+                outputs = model(sequences).squeeze()
+                loss = torch.nn.functional.mse_loss(outputs, targets)
+                test_loss += loss.item()
+
+                all_predictions.extend(outputs.cpu().numpy())
+                all_targets.extend(targets.cpu().numpy())
+
+        test_loss /= len(test_loader)
+        logger.info(f"  Test Loss (MSE): {test_loss:.6f}")
+
+        # Calculate additional metrics
+        from loss_metrics import (mean_absolute_percentage_error,
+                                  directional_accuracy,
+                                  root_mean_squared_error)
+
+        import numpy as np
+        predictions = np.array(all_predictions)
+        targets = np.array(all_targets)
+
+        rmse = root_mean_squared_error(targets, predictions)
+        mape = mean_absolute_percentage_error(targets, predictions)
+        dir_acc = directional_accuracy(targets, predictions)
+
+        logger.info(f"  Test RMSE: {rmse:.6f}")
+        logger.info(f"  Test MAPE: {mape:.2f}%")
+        logger.info(f"  Directional Accuracy: {dir_acc:.2f}%")
+
+        logger.info("\n[OK] Model training complete!")
+
+        results = {
+            "success": True,
+            "history": history,
+            "test_loss": test_loss,
+            "test_rmse": rmse,
+            "test_mape": mape,
+            "directional_accuracy": dir_acc,
+            "model_path": str(self.model_file),
+            "num_epochs": len(history['train_loss']),
+            "best_val_loss": min(history['val_loss'])
+        }
+
+        return results
+
+    def stage_7_evaluate_model(self, training_results: dict) -> dict:
         """Stage 7: Model Evaluation"""
+        import torch
+        import matplotlib.pyplot as plt
+        import numpy as np
+
         logger.info("\n" + "="*80)
         logger.info("STAGE 7: MODEL EVALUATION")
         logger.info("="*80)
-        
-        logger.error("[ERROR] Stage 7: Model Evaluation not yet implemented")
-        logger.error("[ERROR] This stage will be implemented after model training is complete")
-        raise NotImplementedError("Model evaluation stage (T076-T085) not yet implemented")
+
+        if not training_results.get("success", False):
+            logger.error("[ERROR] Cannot evaluate - training failed")
+            return {"success": False, "error": "Training failed"}
+
+        # Create evaluation plots directory
+        eval_plots_dir = self.plots_dir / "evaluation"
+        eval_plots_dir.mkdir(exist_ok=True)
+
+        # Plot training history
+        logger.info("\nGenerating training history plots...")
+        history = training_results['history']
+
+        fig, axes = plt.subplots(1, 2, figsize=(15, 5))
+
+        # Plot 1: Loss curves
+        axes[0].plot(history['train_loss'], label='Training Loss', linewidth=2)
+        axes[0].plot(history['val_loss'], label='Validation Loss', linewidth=2)
+        axes[0].set_xlabel('Epoch', fontsize=12)
+        axes[0].set_ylabel('Loss (MSE)', fontsize=12)
+        axes[0].set_title('Training and Validation Loss', fontsize=14, fontweight='bold')
+        axes[0].legend(fontsize=10)
+        axes[0].grid(True, alpha=0.3)
+
+        # Plot 2: Learning rate schedule
+        axes[1].plot(history['learning_rates'], linewidth=2, color='green')
+        axes[1].set_xlabel('Epoch', fontsize=12)
+        axes[1].set_ylabel('Learning Rate', fontsize=12)
+        axes[1].set_title('Learning Rate Schedule', fontsize=14, fontweight='bold')
+        axes[1].grid(True, alpha=0.3)
+        axes[1].set_yscale('log')
+
+        plt.tight_layout()
+        loss_plot_path = eval_plots_dir / "training_history.png"
+        plt.savefig(loss_plot_path, dpi=300, bbox_inches='tight')
+        plt.close()
+        logger.info(f"  Saved: {loss_plot_path}")
+
+        # Log summary statistics
+        logger.info("\nModel Performance Summary:")
+        logger.info("="*80)
+        logger.info(f"  Training epochs: {training_results['num_epochs']}")
+        logger.info(f"  Best validation loss: {training_results['best_val_loss']:.6f}")
+        logger.info(f"  Test loss (MSE): {training_results['test_loss']:.6f}")
+        logger.info(f"  Test RMSE: {training_results['test_rmse']:.6f}")
+        logger.info(f"  Test MAPE: {training_results['test_mape']:.2f}%")
+        logger.info(f"  Directional Accuracy: {training_results['directional_accuracy']:.2f}%")
+        logger.info(f"  Model saved at: {training_results['model_path']}")
+        logger.info("="*80)
+
+        # Determine model quality
+        mape = training_results['test_mape']
+        dir_acc = training_results['directional_accuracy']
+
+        if mape < 10 and dir_acc > 70:
+            quality = "EXCELLENT"
+        elif mape < 20 and dir_acc > 60:
+            quality = "GOOD"
+        elif mape < 30 and dir_acc > 50:
+            quality = "FAIR"
+        else:
+            quality = "NEEDS IMPROVEMENT"
+
+        logger.info(f"\n  Overall Model Quality: {quality}")
+
+        logger.info("\n[OK] Model evaluation complete!")
+
+        results = {
+            "success": True,
+            "quality": quality,
+            "plots_dir": str(eval_plots_dir),
+            "training_results": training_results
+        }
+
+        return results
 
     def stage_8_prediction_interface(self):
         """Stage 8: Interactive Prediction Interface"""
         logger.info("\n" + "="*80)
         logger.info("STAGE 8: INTERACTIVE PREDICTION INTERFACE")
         logger.info("="*80)
-        
-        logger.error("[ERROR] Stage 8: Prediction Interface not yet implemented")
-        logger.error("[ERROR] This stage will be implemented after model evaluation is complete")
-        raise NotImplementedError("Prediction interface stage (T117-T119) not yet implemented")
+
+        logger.info("[INFO] Prediction interface is a future enhancement")
+        logger.info("[INFO] This stage will be implemented as part of T117-T119")
+        logger.info("[INFO] For now, use the trained model directly for predictions")
+        logger.info(f"[INFO] Model location: {self.model_file}")
+
+        return {"success": True, "status": "not_implemented", "model_path": str(self.model_file)}
 
     def run_full_pipeline(self):
         """Run the complete pipeline from start to finish."""
@@ -201,7 +402,7 @@ class QCEWPipeline:
             training_results = self.stage_6_train_model(X_tensor, y_tensor, preprocessor)
 
             # Stage 7: Evaluate model
-            evaluation_results = self.stage_7_evaluate_model()
+            evaluation_results = self.stage_7_evaluate_model(training_results)
 
             # Stage 8: Launch prediction interface (optional)
             if self.config.get('launch_interface', False):

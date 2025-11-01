@@ -134,3 +134,13 @@ Traceback (most recent call last):
   File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 153, in stage_6_train_model
     raise NotImplementedError("Model training stage (T065-T074) not yet implemented")
 NotImplementedError: Model training stage (T065-T074) not yet implemented
+2025-10-25 15:18:50 - pipeline_orchestrator - ERROR - [ERROR] Stage 6: Model Training not yet implemented
+2025-10-25 15:18:50 - pipeline_orchestrator - ERROR - [ERROR] This stage will be implemented after preprocessing is complete
+2025-10-25 15:18:50 - pipeline_orchestrator - ERROR - 
+[ERROR] Pipeline failed: Model training stage (T065-T074) not yet implemented
+Traceback (most recent call last):
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 201, in run_full_pipeline
+    training_results = self.stage_6_train_model(X_tensor, y_tensor, preprocessor)
+  File "C:\GitHub\is-160-project\src\pipeline_orchestrator.py", line 153, in stage_6_train_model
+    raise NotImplementedError("Model training stage (T065-T074) not yet implemented")
+NotImplementedError: Model training stage (T065-T074) not yet implemented

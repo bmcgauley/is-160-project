@@ -264,34 +264,34 @@ def validate_lstm_architecture(model: nn.Module,
                 output = model(dummy_input)
 
             results['forward_pass'] = True
-            logger.info(f"  ✓ Forward pass successful")
+            logger.info(f"  [OK] Forward pass successful")
 
         # Test 2: Output shape is correct
         expected_batch_size = input_shape[0]
         output_shape_correct = (output.shape[0] == expected_batch_size and
                                output.shape[1] == expected_output_size)
         results['output_shape'] = output_shape_correct
-        logger.info(f"  Output shape: {tuple(output.shape)} - {'✓ PASS' if output_shape_correct else '✗ FAIL'}")
+        logger.info(f"  Output shape: {tuple(output.shape)} - {'[PASS]' if output_shape_correct else '[FAIL]'}")
 
         # Test 3: No NaN or Inf in output
         has_nan = torch.isnan(output).any().item()
         has_inf = torch.isinf(output).any().item()
         results['no_nan_inf'] = not (has_nan or has_inf)
-        logger.info(f"  No NaN/Inf: {'✓ PASS' if results['no_nan_inf'] else '✗ FAIL'}")
+        logger.info(f"  No NaN/Inf: {'[PASS]' if results['no_nan_inf'] else '[FAIL]'}")
 
         # Test 4: Model has trainable parameters
         num_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
         results['has_parameters'] = num_params > 0
-        logger.info(f"  Trainable parameters: {num_params:,} - {'✓ PASS' if results['has_parameters'] else '✗ FAIL'}")
+        logger.info(f"  Trainable parameters: {num_params:,} - {'[PASS]' if results['has_parameters'] else '[FAIL]'}")
 
         # Test 5: Model architecture layers exist
         has_lstm_or_rnn = (hasattr(model, 'lstm') or hasattr(model, 'rnn') or
                           hasattr(model, 'temporal_lstm'))
         results['has_recurrent_layer'] = has_lstm_or_rnn
-        logger.info(f"  Has recurrent layer: {'✓ PASS' if has_lstm_or_rnn else '✗ FAIL'}")
+        logger.info(f"  Has recurrent layer: {'[PASS]' if has_lstm_or_rnn else '[FAIL]'}")
 
     except Exception as e:
-        logger.error(f"  ✗ Validation error: {str(e)}")
+        logger.error(f"  [FAIL] Validation error: {str(e)}")
         results['forward_pass'] = False
         results['output_shape'] = False
         results['no_nan_inf'] = False
@@ -300,6 +300,6 @@ def validate_lstm_architecture(model: nn.Module,
 
     # Overall validation
     all_passed = all(results.values())
-    logger.info(f"Overall validation: {'✓ PASS' if all_passed else '✗ FAIL'} ({sum(results.values())}/{len(results)} checks passed)")
+    logger.info(f"Overall validation: {'[PASS]' if all_passed else '[FAIL]'} ({sum(results.values())}/{len(results)} checks passed)")
 
     return results

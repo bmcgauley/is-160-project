@@ -145,12 +145,35 @@ def run_interactive_menu():
             
             elif choice == '7':
                 print("\n[INFO] Running Model Training...")
-                if not pipeline.preprocessed_file.exists():
+                # Check if sequences file exists
+                sequences_file = pipeline.processed_dir / "qcew_preprocessed_sequences.npz"
+                if not sequences_file.exists():
                     print("[ERROR] Please run Data Preprocessing first (option 6)")
+                    print(f"[ERROR] Sequences file not found: {sequences_file}")
                 else:
-                    import pandas as pd
-                    df = pd.read_csv(pipeline.preprocessed_file)
-                    pipeline.stage_6_train_model(df)
+                    import numpy as np
+                    import torch
+                    from preprocessing import EmploymentDataPreprocessor
+
+                    # Load sequences from .npz file
+                    print(f"[INFO] Loading sequences from: {sequences_file.name}")
+                    data = np.load(sequences_file)
+                    X_sequences = data['X']
+                    y_targets = data['y']
+
+                    # Convert to PyTorch tensors
+                    X_tensor = torch.FloatTensor(X_sequences)
+                    y_tensor = torch.FloatTensor(y_targets)
+
+                    # Create preprocessor instance (needed for metadata)
+                    preprocessor = EmploymentDataPreprocessor(scaler_type='robust')
+
+                    print(f"[INFO] Loaded {len(X_sequences):,} sequences")
+                    print(f"[INFO] Input shape: {X_tensor.shape}")
+                    print(f"[INFO] Target shape: {y_tensor.shape}")
+
+                    # Run training
+                    pipeline.stage_6_train_model(X_tensor, y_tensor, preprocessor)
                 input("\nPress Enter to continue...")
             
             elif choice == '8':
