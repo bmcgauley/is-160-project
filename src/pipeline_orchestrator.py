@@ -6,10 +6,13 @@ all stages of the employment forecasting pipeline.
 """
 
 import pandas as pd
+import numpy as np
 import logging
 from pathlib import Path
 from datetime import datetime
 import warnings
+import torch
+import joblib
 
 # Only import modules that currently exist
 # Other modules will be imported locally when their stages are called
@@ -140,6 +143,51 @@ class QCEWPipeline:
             output_file=self.preprocessed_file,
             sequence_length=12  # 12 quarters = 3 years
         )
+        return X_tensor, y_tensor, preprocessor
+
+    def load_preprocessed_data_for_training(self) -> tuple:
+        """
+        Load preprocessed sequences and preprocessor from disk.
+
+        This helper method is used when running the training stage individually
+        without having run the preprocessing stage in the same session.
+
+        Returns:
+            Tuple of (X_tensor, y_tensor, preprocessor)
+        """
+        logger.info("Loading preprocessed data from disk...")
+
+        # Load sequences from .npz file
+        sequences_file = self.preprocessed_file.parent / (self.preprocessed_file.stem + '_sequences.npz')
+        if not sequences_file.exists():
+            raise FileNotFoundError(
+                f"Sequences file not found: {sequences_file}\n"
+                f"Please run preprocessing stage first: python main.py --stage preprocess"
+            )
+
+        logger.info(f"  Loading sequences from: {sequences_file.name}")
+        data = np.load(sequences_file)
+        X_sequences = data['X']
+        y_targets = data['y']
+        logger.info(f"  Loaded {len(X_sequences):,} sequences")
+
+        # Load preprocessor from .pkl file
+        preprocessor_file = self.preprocessed_file.parent / (self.preprocessed_file.stem + '_preprocessor.pkl')
+        if not preprocessor_file.exists():
+            raise FileNotFoundError(
+                f"Preprocessor file not found: {preprocessor_file}\n"
+                f"Please run preprocessing stage first: python main.py --stage preprocess"
+            )
+
+        logger.info(f"  Loading preprocessor from: {preprocessor_file.name}")
+        preprocessor = joblib.load(preprocessor_file)
+        logger.info("  Preprocessor loaded successfully")
+
+        # Convert to PyTorch tensors
+        X_tensor = torch.FloatTensor(X_sequences)
+        y_tensor = torch.FloatTensor(y_targets)
+
+        logger.info("[OK] Preprocessed data loaded from disk\n")
         return X_tensor, y_tensor, preprocessor
 
     def stage_6_train_model(self, X_tensor, y_tensor, preprocessor) -> dict:
@@ -437,7 +485,7 @@ class QCEWPipeline:
             'validate': lambda: self.stage_3_validate_data(pd.read_csv(self.consolidated_file)),
             'features': lambda: self.stage_4_feature_engineering(pd.read_csv(self.validated_file)),
             'preprocess': lambda: self.stage_5_preprocessing(pd.read_csv(self.features_file)),
-            'train': lambda: self.stage_6_train_model(pd.read_csv(self.preprocessed_file)),
+            'train': lambda: self.stage_6_train_model(*self.load_preprocessed_data_for_training()),
             'evaluate': self.stage_7_evaluate_model,
             'predict': self.stage_8_prediction_interface
         }
