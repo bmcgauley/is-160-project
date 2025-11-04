@@ -55,9 +55,12 @@ class EmploymentTrainer:
 
         self.scheduler = None
 
-    def train_epoch(self) -> float:
+    def train_epoch(self, epoch_num: int = 0) -> float:
         """
         Run one training epoch.
+
+        Args:
+            epoch_num: Current epoch number (for logging)
 
         Returns:
             Average training loss
@@ -65,6 +68,10 @@ class EmploymentTrainer:
         self.model.train()
         total_loss = 0.0
         num_batches = 0
+
+        # Calculate logging interval (log every 5% of batches, or at least every 1000 batches)
+        total_batches = len(self.train_loader)
+        log_interval = max(1000, total_batches // 20)  # Log 20 times per epoch
 
         for batch_idx, (sequences, targets) in enumerate(self.train_loader):
             # Move data to device
@@ -95,12 +102,22 @@ class EmploymentTrainer:
             total_loss += loss.item()
             num_batches += 1
 
+            # Log progress periodically
+            if (batch_idx + 1) % log_interval == 0 or (batch_idx + 1) == total_batches:
+                avg_loss_so_far = total_loss / num_batches
+                progress = (batch_idx + 1) / total_batches * 100
+                logger.info(f"  Epoch {epoch_num} | Batch {batch_idx + 1}/{total_batches} ({progress:.1f}%) | "
+                           f"Loss: {avg_loss_so_far:.6f}")
+
         avg_loss = total_loss / num_batches
         return avg_loss
 
-    def validate_epoch(self) -> float:
+    def validate_epoch(self, epoch_num: int = 0) -> float:
         """
         Run one validation epoch.
+
+        Args:
+            epoch_num: Current epoch number (for logging)
 
         Returns:
             Average validation loss
@@ -108,6 +125,10 @@ class EmploymentTrainer:
         self.model.eval()
         total_loss = 0.0
         num_batches = 0
+
+        # Calculate logging interval
+        total_batches = len(self.val_loader)
+        log_interval = max(500, total_batches // 10)  # Log 10 times during validation
 
         with torch.no_grad():  # No gradient computation during validation
             for batch_idx, (sequences, targets) in enumerate(self.val_loader):
@@ -124,6 +145,13 @@ class EmploymentTrainer:
 
                 total_loss += loss.item()
                 num_batches += 1
+
+                # Log progress periodically
+                if (batch_idx + 1) % log_interval == 0 or (batch_idx + 1) == total_batches:
+                    avg_loss_so_far = total_loss / num_batches
+                    progress = (batch_idx + 1) / total_batches * 100
+                    logger.info(f"  Validation | Batch {batch_idx + 1}/{total_batches} ({progress:.1f}%) | "
+                               f"Loss: {avg_loss_so_far:.6f}")
 
         avg_loss = total_loss / num_batches
         return avg_loss
@@ -163,12 +191,18 @@ class EmploymentTrainer:
         best_model_state = None
 
         for epoch in range(num_epochs):
+            logger.info("\n" + "-"*80)
+            logger.info(f"EPOCH {epoch+1}/{num_epochs}")
+            logger.info("-"*80)
+
             # Train for one epoch
-            train_loss = self.train_epoch()
+            logger.info("Training...")
+            train_loss = self.train_epoch(epoch_num=epoch+1)
             history['train_loss'].append(train_loss)
 
             # Validate
-            val_loss = self.validate_epoch()
+            logger.info("\nValidating...")
+            val_loss = self.validate_epoch(epoch_num=epoch+1)
             history['val_loss'].append(val_loss)
 
             # Get current learning rate
@@ -179,11 +213,13 @@ class EmploymentTrainer:
             if self.scheduler is not None:
                 self.scheduler.step(val_loss)
 
-            # Log progress
-            logger.info(f"Epoch {epoch+1}/{num_epochs} | "
-                       f"Train Loss: {train_loss:.6f} | "
-                       f"Val Loss: {val_loss:.6f} | "
-                       f"LR: {current_lr:.6f}")
+            # Log epoch summary
+            logger.info("\n" + "="*80)
+            logger.info(f"EPOCH {epoch+1}/{num_epochs} SUMMARY")
+            logger.info(f"  Train Loss: {train_loss:.6f}")
+            logger.info(f"  Val Loss:   {val_loss:.6f}")
+            logger.info(f"  LR:         {current_lr:.6f}")
+            logger.info("="*80)
 
             # Check for improvement
             if val_loss < best_val_loss:

@@ -13,6 +13,7 @@ import logging
 from pathlib import Path
 from typing import Tuple, Optional
 import torch
+import joblib
 
 from preprocessing import EmploymentDataPreprocessor
 
@@ -116,7 +117,12 @@ def preprocess_for_lstm(df: pd.DataFrame,
     sequences_file = output_file.parent / (output_file.stem + '_sequences.npz')
     np.savez(sequences_file, X=X_sequences, y=y_targets)
     logger.info(f"[OK] Saved sequences: {sequences_file.name}")
-    
+
+    # Save preprocessor for later use in training
+    preprocessor_file = output_file.parent / (output_file.stem + '_preprocessor.pkl')
+    joblib.dump(preprocessor, preprocessor_file)
+    logger.info(f"[OK] Saved preprocessor: {preprocessor_file.name}")
+
     logger.info("\n" + "="*80)
     logger.info("PREPROCESSING COMPLETE")
     logger.info(f"Sequences: {X_sequences.shape}")
