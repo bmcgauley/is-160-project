@@ -155,18 +155,18 @@ class EmploymentDataPreprocessor:
         return df
 
     def transform_to_sequences(self, df: pd.DataFrame,
-                             sequence_length: int = 12,
-                             target_col: str = 'month1_emplvl') -> Tuple[np.ndarray, np.ndarray]:
+                             sequence_length: int = 8,
+                             target_col: str = 'avg_monthly_emplvl') -> Tuple[np.ndarray, np.ndarray]:
         """
         Transform tabular data into sequence format suitable for RNN/LSTM processing.
-        
+
         Creates sliding window sequences grouped by county and industry.
         Each sequence contains `sequence_length` consecutive quarters of data.
 
         Args:
             df: Input dataframe with columns: year, quarter, area_name, industry_code, employment metrics
-            sequence_length: Length of sequences to create (default 12 = 3 years)
-            target_col: Target column for prediction (default 'month1_emplvl')
+            sequence_length: Length of sequences to create (default 8 = 2 years, reduced from 12)
+            target_col: Target column for prediction (default 'avg_monthly_emplvl')
 
         Returns:
             Tuple of (sequences, targets) as numpy arrays
@@ -175,53 +175,99 @@ class EmploymentDataPreprocessor:
         """
         logger.info(f"Transforming data to sequences of length {sequence_length}")
         logger.info(f"  Target column: {target_col}")
-        
+        logger.info(f"  Available columns: {sorted(df.columns.tolist())[:10]}...")  # Show first 10 columns
+
+        # Check for lag features - they should be included in sequences
+        lag_cols = [col for col in df.columns if 'lag' in col.lower() or col.endswith('_lag')]
+        growth_cols = [col for col in df.columns if 'growth' in col.lower() or 'chg' in col.lower()]
+        logger.info(f"  Lag features found: {len(lag_cols)} ({lag_cols[:5]}...)")
+        logger.info(f"  Growth features found: {len(growth_cols)} ({growth_cols[:5]}...)")
+
         # Identify feature columns (numeric columns excluding identifiers)
+        # CRITICAL FIX: Include lag and growth features explicitly
         exclude_cols = ['year', 'quarter', 'area_name', 'industry_code', 'ownership', 'area_type']
         feature_cols = [col for col in df.columns if col not in exclude_cols and df[col].dtype in ['int64', 'float64']]
-        
-        logger.info(f"  Feature columns: {len(feature_cols)} columns")
+
+        # Prioritize lag and growth features
+        temporal_features = [col for col in feature_cols if 'lag' in col.lower() or 'growth' in col.lower() or 'chg' in col.lower()]
+        other_features = [col for col in feature_cols if col not in temporal_features]
+
+        # Sort features to ensure consistent ordering
+        feature_cols = sorted(temporal_features) + sorted(other_features)
+
+        logger.info(f"  Feature columns: {len(feature_cols)} total")
+        logger.info(f"    - Temporal features: {len(temporal_features)} ({temporal_features[:3]}...)")
+        logger.info(f"    - Other features: {len(other_features)} ({other_features[:3]}...)")
         logger.info(f"  Grouping by: area_name, industry_code")
-        
+
+        # Verify target column exists
+        if target_col not in df.columns:
+            available_targets = [col for col in df.columns if 'emplvl' in col.lower() or 'employment' in col.lower()]
+            logger.warning(f"Target column '{target_col}' not found. Available: {available_targets}")
+            if available_targets:
+                target_col = available_targets[0]
+                logger.info(f"Using target column: {target_col}")
+            else:
+                logger.error("No suitable target column found!")
+                return np.array([]), np.array([])
+
         # Create sequences grouped by county and industry
         sequences = []
         targets = []
-        
+        skipped_groups = 0
+        total_groups = 0
+
         # Group by county and industry
         grouped = df.groupby(['area_name', 'industry_code'])
-        
+
         for (area, industry), group in grouped:
+            total_groups += 1
+
             # Sort by year and quarter
             group = group.sort_values(['year', 'quarter'])
-            
+
             # Skip if group too small
             if len(group) < sequence_length + 1:
+                skipped_groups += 1
                 continue
-            
-            # Extract feature values
-            values = group[feature_cols].values
-            
+
+            # Extract feature values - ensure all feature columns exist in this group
+            group_features = [col for col in feature_cols if col in group.columns]
+            if len(group_features) != len(feature_cols):
+                logger.warning(f"  Group {area}-{industry}: missing {len(feature_cols) - len(group_features)} features")
+                continue
+
+            values = group[group_features].values
+
             # Create sliding window sequences
             for i in range(len(values) - sequence_length):
                 seq = values[i:i+sequence_length]
                 target = group[target_col].iloc[i+sequence_length]
-                
-                sequences.append(seq)
-                targets.append(target)
-        
-        logger.info(f"  Created {len(sequences)} sequences from {len(grouped)} groups")
-        
+
+                # Validate sequence is not all NaN
+                if not np.isnan(seq).all() and not np.isnan(target):
+                    sequences.append(seq)
+                    targets.append(target)
+
+        logger.info(f"  Processed {total_groups} groups, skipped {skipped_groups} (insufficient data)")
+        logger.info(f"  Created {len(sequences)} sequences from {total_groups - skipped_groups} valid groups")
+
         if len(sequences) == 0:
-            logger.warning("[WARN] No sequences created! Check data has sufficient time series length")
+            logger.error("[ERROR] No sequences created! Possible issues:")
+            logger.error("  - Target column missing or all NaN")
+            logger.error("  - Feature columns missing from groups")
+            logger.error("  - Sequence length too long for available data")
+            logger.error("  - All sequences contain NaN values")
             return np.array([]), np.array([])
-        
+
         # Convert to numpy arrays
         X_sequences = np.array(sequences)
         y_targets = np.array(targets)
-        
+
         logger.info(f"  Sequences shape: {X_sequences.shape}")
         logger.info(f"  Targets shape: {y_targets.shape}")
-        
+        logger.info(f"  Target range: [{y_targets.min():.2f}, {y_targets.max():.2f}]")
+
         return X_sequences, y_targets
 
     def validate_preprocessing(self, df: pd.DataFrame) -> Dict[str, bool]:

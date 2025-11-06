@@ -87,17 +87,43 @@ def preprocess_for_lstm(df: pd.DataFrame,
     logger.info("\n[STAGE 4/5] T057: Transforming to sequence format...")
     logger.info(f"  Creating sequences of length {sequence_length}")
     
-    # Determine target column
-    target_col = 'month1_emplvl' if 'month1_emplvl' in df.columns else 'avg_monthly_emplvl'
+    # Determine target column - prioritize the column that feature engineering creates
+    available_targets = [col for col in df.columns if 'emplvl' in col.lower() or 'employment' in col.lower()]
+    logger.info(f"  Available target columns: {available_targets}")
+
+    # Prefer avg_monthly_emplvl as it's most likely to be the final target after feature engineering
+    target_col = 'avg_monthly_emplvl'
+    if target_col not in df.columns and available_targets:
+        target_col = available_targets[0]
+        logger.warning(f"Target column '{target_col}' not found, using '{available_targets[0]}' instead")
+
     if target_col not in df.columns:
-        raise ValueError(f"Target column not found. Available columns: {df.columns.tolist()}")
-    
+        raise ValueError(f"No suitable target column found. Available columns: {df.columns.tolist()}")
+
     logger.info(f"  Target column: {target_col}")
     X_sequences, y_targets = preprocessor.transform_to_sequences(
-        df, 
+        df,
         sequence_length=sequence_length,
         target_col=target_col
     )
+
+    # CRITICAL VALIDATION: Check if sequences were created
+    if len(X_sequences) == 0 or len(y_targets) == 0:
+        logger.error("[ERROR] Sequence creation failed! Debugging info:")
+        logger.error(f"  - DataFrame shape: {df.shape}")
+        logger.error(f"  - Target column '{target_col}' exists: {target_col in df.columns}")
+        if target_col in df.columns:
+            logger.error(f"  - Target values (non-null): {df[target_col].notna().sum()}/{len(df)}")
+        logger.error(f"  - Sequence length: {sequence_length}")
+        logger.error(f"  - Min data points needed: {sequence_length + 1}")
+
+        # Check group sizes
+        grouped = df.groupby(['area_name', 'industry_code'])
+        group_sizes = grouped.size()
+        logger.error(f"  - Total groups: {len(grouped)}")
+        logger.error(f"  - Groups with sufficient data (≥{sequence_length + 1}): {(group_sizes >= sequence_length + 1).sum()}")
+        logger.error(f"  - Largest group size: {group_sizes.max()}")
+        raise ValueError("Failed to create sequences - insufficient data or configuration error")
     logger.info(f"[OK] Created {len(X_sequences):,} sequences")
     
     # T058: Validate preprocessing
