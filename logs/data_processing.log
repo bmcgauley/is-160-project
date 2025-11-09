@@ -1117,3 +1117,106 @@ Saving preprocessed data to: C:\GitHub\is-160-project\data\processed\qcew_prepro
 2025-11-01 10:48:39 - preprocessing_pipeline - INFO - [OK] Saved preprocessed data: qcew_preprocessed.csv
 2025-11-01 10:48:52 - preprocessing_pipeline - INFO - [OK] Saved sequences: qcew_preprocessed_sequences.npz
 2025-11-01 10:48:52 - preprocessing_pipeline - INFO - PREPROCESSING COMPLETE
+2025-11-03 10:55:31 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-03 10:55:31 - pipeline_orchestrator - INFO - Raw data: c:\GitHub\is-160-project\data\raw
+2025-11-03 10:55:31 - pipeline_orchestrator - INFO - Processed data: c:\GitHub\is-160-project\data\processed
+2025-11-03 10:55:31 - pipeline_orchestrator - INFO - Feature engineering: c:\GitHub\is-160-project\data\feature_engineering
+2025-11-03 10:55:31 - pipeline_orchestrator - INFO - Plots: c:\GitHub\is-160-project\data\processed\plots
+2025-11-03 11:06:55 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-03 11:06:55 - pipeline_orchestrator - INFO - Raw data: c:\GitHub\is-160-project\data\raw
+2025-11-03 11:06:55 - pipeline_orchestrator - INFO - Processed data: c:\GitHub\is-160-project\data\processed
+2025-11-03 11:06:55 - pipeline_orchestrator - INFO - Feature engineering: c:\GitHub\is-160-project\data\feature_engineering
+2025-11-03 11:06:55 - pipeline_orchestrator - INFO - Plots: c:\GitHub\is-160-project\data\processed\plots
+2025-11-03 11:06:55 - pipeline_orchestrator - INFO - 
+Running stage: preprocess
+2025-11-03 11:07:12 - pipeline_orchestrator - INFO - STAGE 5: DATA PREPROCESSING
+2025-11-03 11:07:12 - preprocessing_pipeline - INFO - PREPROCESSING PIPELINE FOR LSTM
+2025-11-03 11:07:12 - preprocessing_pipeline - INFO - 
+[STAGE 1/5] T054: Normalizing employment and wage data...
+2025-11-03 11:07:35 - preprocessing - INFO - Transforming data to sequences of length 12
+2025-11-03 11:10:44 - preprocessing_pipeline - INFO - 
+[STAGE 5/5] T058: Validating preprocessing...
+2025-11-03 11:10:44 - preprocessing - INFO - Validating preprocessing steps...
+2025-11-03 11:10:52 - preprocessing_pipeline - INFO - [OK] Preprocessing validation passed
+2025-11-03 11:10:52 - preprocessing_pipeline - INFO - 
+Saving preprocessed data to: c:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-03 11:13:32 - preprocessing_pipeline - INFO - [OK] Saved preprocessed data: qcew_preprocessed.csv
+2025-11-03 11:56:09 - preprocessing_pipeline - INFO - [OK] Saved sequences: qcew_preprocessed_sequences.npz
+2025-11-03 11:56:10 - preprocessing_pipeline - INFO - [OK] Saved preprocessor: qcew_preprocessed_preprocessor.pkl
+2025-11-03 11:56:10 - preprocessing_pipeline - INFO - PREPROCESSING COMPLETE
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - Raw data: c:\GitHub\is-160-project\data\raw
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - Processed data: c:\GitHub\is-160-project\data\processed
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - Feature engineering: c:\GitHub\is-160-project\data\feature_engineering
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - Plots: c:\GitHub\is-160-project\data\processed\plots
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - Loading preprocessed data from disk...
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO -   Loading sequences from: qcew_preprocessed_sequences.npz
+2025-11-03 11:57:15 - pipeline_orchestrator - INFO -   Loading preprocessor from: qcew_preprocessed_preprocessor.pkl
+2025-11-03 11:57:15 - pipeline_orchestrator - INFO -   Preprocessor loaded successfully
+2025-11-03 11:57:25 - pipeline_orchestrator - INFO - [OK] Preprocessed data loaded from disk
+
+2025-11-03 11:57:26 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-03 11:57:26 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-03 11:57:26 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-03 11:57:26 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-03 11:57:26 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-03 11:57:26 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 11:57:26 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-03 11:57:26 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 11:57:26 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-03 13:59:51 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-03 13:59:51 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-03 13:59:51 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-03 13:59:51 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-03 13:59:51 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-03 14:01:00 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-03 14:01:01 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-03 14:01:01 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-03 14:01:01 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-03 14:01:01 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-03 14:01:01 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 14:01:01 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-03 14:01:01 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 14:01:01 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - Raw data: c:\GitHub\is-160-project\data\raw
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - Processed data: c:\GitHub\is-160-project\data\processed
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - Feature engineering: c:\GitHub\is-160-project\data\feature_engineering
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - Plots: c:\GitHub\is-160-project\data\processed\plots
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - Loading preprocessed data from disk...
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO -   Loading sequences from: qcew_preprocessed_sequences.npz
+2025-11-03 14:10:55 - pipeline_orchestrator - INFO -   Loading preprocessor from: qcew_preprocessed_preprocessor.pkl
+2025-11-03 14:10:55 - pipeline_orchestrator - INFO -   Preprocessor loaded successfully
+2025-11-03 14:11:14 - pipeline_orchestrator - INFO - [OK] Preprocessed data loaded from disk
+
+2025-11-03 14:11:16 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-03 14:11:16 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-03 14:11:16 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-03 14:11:16 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-03 14:11:16 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-03 14:11:16 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 14:11:16 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-03 14:11:16 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 14:11:16 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-03 14:18:54 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-03 14:18:54 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-03 14:18:54 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-03 14:18:54 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-03 14:18:54 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-03 16:01:24 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-03 16:01:24 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-03 16:01:24 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-03 16:01:24 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-03 16:01:24 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-03 16:01:24 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 16:01:24 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-03 16:01:24 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 16:01:24 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches

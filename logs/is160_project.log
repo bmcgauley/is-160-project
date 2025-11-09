@@ -4569,3 +4569,411 @@ Saving preprocessed data to: C:\GitHub\is-160-project\data\processed\qcew_prepro
 2025-11-01 10:48:52 - preprocessing_pipeline - INFO - Targets: (2997906,)
 2025-11-01 10:48:52 - preprocessing_pipeline - INFO - ================================================================================
 
+2025-11-03 10:55:31 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 10:55:31 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-03 10:55:31 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 10:55:31 - pipeline_orchestrator - INFO - Base directory: c:\GitHub\is-160-project
+2025-11-03 10:55:31 - pipeline_orchestrator - INFO - Raw data: c:\GitHub\is-160-project\data\raw
+2025-11-03 10:55:31 - pipeline_orchestrator - INFO - Processed data: c:\GitHub\is-160-project\data\processed
+2025-11-03 10:55:31 - pipeline_orchestrator - INFO - Feature engineering: c:\GitHub\is-160-project\data\feature_engineering
+2025-11-03 10:55:31 - pipeline_orchestrator - INFO - Plots: c:\GitHub\is-160-project\data\processed\plots
+2025-11-03 10:55:31 - pipeline_orchestrator - INFO - 
+Running stage: train
+2025-11-03 11:06:55 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 11:06:55 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-03 11:06:55 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 11:06:55 - pipeline_orchestrator - INFO - Base directory: c:\GitHub\is-160-project
+2025-11-03 11:06:55 - pipeline_orchestrator - INFO - Raw data: c:\GitHub\is-160-project\data\raw
+2025-11-03 11:06:55 - pipeline_orchestrator - INFO - Processed data: c:\GitHub\is-160-project\data\processed
+2025-11-03 11:06:55 - pipeline_orchestrator - INFO - Feature engineering: c:\GitHub\is-160-project\data\feature_engineering
+2025-11-03 11:06:55 - pipeline_orchestrator - INFO - Plots: c:\GitHub\is-160-project\data\processed\plots
+2025-11-03 11:06:55 - pipeline_orchestrator - INFO - 
+Running stage: preprocess
+2025-11-03 11:07:12 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-03 11:07:12 - pipeline_orchestrator - INFO - STAGE 5: DATA PREPROCESSING
+2025-11-03 11:07:12 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 11:07:12 - preprocessing_pipeline - INFO - 
+================================================================================
+2025-11-03 11:07:12 - preprocessing_pipeline - INFO - PREPROCESSING PIPELINE FOR LSTM
+2025-11-03 11:07:12 - preprocessing_pipeline - INFO - ================================================================================
+2025-11-03 11:07:12 - preprocessing_pipeline - INFO - 
+[STAGE 1/5] T054: Normalizing employment and wage data...
+2025-11-03 11:07:12 - preprocessing_pipeline - INFO -   Normalizing 16 columns using robust scaling
+2025-11-03 11:07:12 - preprocessing - INFO - Normalizing columns: ['avg_monthly_emplvl', 'month1_emplvl', 'month2_emplvl', 'month3_emplvl', 'employment_prev_quarter', 'employment_qoq_change', 'employment_qoq_pct_change', 'employment_4q_ago', 'employment_yoy_change', 'employment_yoy_pct_change', 'avg_monthly_emplvl_lag_1', 'avg_monthly_emplvl_lag_2', 'avg_monthly_emplvl_lag_3', 'avg_monthly_emplvl_lag_4', 'total_qtrly_wages', 'avg_wkly_wage']
+2025-11-03 11:07:12 - preprocessing - INFO -   Using RobustScaler (resistant to outliers)
+2025-11-03 11:07:15 - preprocessing - INFO -   Normalized 16 columns
+2025-11-03 11:07:15 - preprocessing - INFO -     avg_monthly_emplvl: mean=3.482, std=48.066
+2025-11-03 11:07:15 - preprocessing - INFO -     month1_emplvl: mean=3.474, std=47.979
+2025-11-03 11:07:16 - preprocessing - INFO -     month2_emplvl: mean=3.481, std=48.054
+2025-11-03 11:07:16 - preprocessing_pipeline - INFO - [OK] Normalization complete
+2025-11-03 11:07:16 - preprocessing_pipeline - INFO - 
+[STAGE 2/5] T055: Handling missing values...
+2025-11-03 11:07:17 - preprocessing_pipeline - INFO -   Found 1,948,019 missing values
+2025-11-03 11:07:17 - preprocessing - INFO - Handling missing values with median strategy
+2025-11-03 11:07:18 - preprocessing - INFO -   Missing values before imputation: 1,948,019
+2025-11-03 11:07:32 - preprocessing - INFO -   Missing values after imputation: 0
+2025-11-03 11:07:32 - preprocessing - INFO -   Imputed 1,948,019 values
+2025-11-03 11:07:32 - preprocessing_pipeline - INFO - [OK] Missing values handled
+2025-11-03 11:07:32 - preprocessing_pipeline - INFO - 
+[STAGE 3/5] T056: Creating categorical encodings...
+2025-11-03 11:07:32 - preprocessing_pipeline - INFO -   Encoding 3 categorical columns
+2025-11-03 11:07:32 - preprocessing - INFO - Creating categorical encodings for: ['industry_code', 'area_name', 'ownership']
+2025-11-03 11:07:34 - preprocessing - INFO -   Encoded industry_code: 2648 unique classes
+2025-11-03 11:07:35 - preprocessing - INFO -   Encoded area_name: 58 unique classes
+2025-11-03 11:07:35 - preprocessing - INFO -   Encoded ownership: 5 unique classes
+2025-11-03 11:07:35 - preprocessing_pipeline - INFO - [OK] Categorical encoding complete
+2025-11-03 11:07:35 - preprocessing_pipeline - INFO - 
+[STAGE 4/5] T057: Transforming to sequence format...
+2025-11-03 11:07:35 - preprocessing_pipeline - INFO -   Creating sequences of length 12
+2025-11-03 11:07:35 - preprocessing_pipeline - INFO -   Target column: month1_emplvl
+2025-11-03 11:07:35 - preprocessing - INFO - Transforming data to sequences of length 12
+2025-11-03 11:07:35 - preprocessing - INFO -   Target column: month1_emplvl
+2025-11-03 11:07:35 - preprocessing - INFO -   Feature columns: 18 columns
+2025-11-03 11:07:35 - preprocessing - INFO -   Grouping by: area_name, industry_code
+2025-11-03 11:10:36 - preprocessing - INFO -   Created 2997906 sequences from 80982 groups
+2025-11-03 11:10:42 - preprocessing - INFO -   Sequences shape: (2997906, 12, 18)
+2025-11-03 11:10:42 - preprocessing - INFO -   Targets shape: (2997906,)
+2025-11-03 11:10:44 - preprocessing_pipeline - INFO - [OK] Created 2,997,906 sequences
+2025-11-03 11:10:44 - preprocessing_pipeline - INFO - 
+[STAGE 5/5] T058: Validating preprocessing...
+2025-11-03 11:10:44 - preprocessing - INFO - Validating preprocessing steps...
+2025-11-03 11:10:51 - preprocessing - INFO -   Infinite values check: 0 found - PASS
+2025-11-03 11:10:52 - preprocessing - INFO -   NaN values check: 0 found - PASS
+2025-11-03 11:10:52 - preprocessing - INFO -   Normalization range check: max |value| = 10284.94 - FAIL
+2025-11-03 11:10:52 - preprocessing - INFO -   Categorical encoding check: All integer types - PASS
+2025-11-03 11:10:52 - preprocessing - INFO -   Shape preservation: 3,777,920 rows - PASS
+2025-11-03 11:10:52 - preprocessing - INFO - Overall validation: FAIL (4/5 checks passed)
+2025-11-03 11:10:52 - preprocessing_pipeline - INFO - [OK] Preprocessing validation passed
+2025-11-03 11:10:52 - preprocessing_pipeline - INFO - 
+Saving preprocessed data to: c:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-03 11:13:32 - preprocessing_pipeline - INFO - [OK] Saved preprocessed data: qcew_preprocessed.csv
+2025-11-03 11:56:09 - preprocessing_pipeline - INFO - [OK] Saved sequences: qcew_preprocessed_sequences.npz
+2025-11-03 11:56:10 - preprocessing_pipeline - INFO - [OK] Saved preprocessor: qcew_preprocessed_preprocessor.pkl
+2025-11-03 11:56:10 - preprocessing_pipeline - INFO - 
+================================================================================
+2025-11-03 11:56:10 - preprocessing_pipeline - INFO - PREPROCESSING COMPLETE
+2025-11-03 11:56:10 - preprocessing_pipeline - INFO - Sequences: (2997906, 12, 18)
+2025-11-03 11:56:10 - preprocessing_pipeline - INFO - Targets: (2997906,)
+2025-11-03 11:56:10 - preprocessing_pipeline - INFO - ================================================================================
+
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - Base directory: c:\GitHub\is-160-project
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - Raw data: c:\GitHub\is-160-project\data\raw
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - Processed data: c:\GitHub\is-160-project\data\processed
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - Feature engineering: c:\GitHub\is-160-project\data\feature_engineering
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - Plots: c:\GitHub\is-160-project\data\processed\plots
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - 
+Running stage: train
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO - Loading preprocessed data from disk...
+2025-11-03 11:57:05 - pipeline_orchestrator - INFO -   Loading sequences from: qcew_preprocessed_sequences.npz
+2025-11-03 11:57:15 - pipeline_orchestrator - INFO -   Loaded 2,997,906 sequences
+2025-11-03 11:57:15 - pipeline_orchestrator - INFO -   Loading preprocessor from: qcew_preprocessed_preprocessor.pkl
+2025-11-03 11:57:15 - pipeline_orchestrator - INFO -   Preprocessor loaded successfully
+2025-11-03 11:57:25 - pipeline_orchestrator - INFO - [OK] Preprocessed data loaded from disk
+
+2025-11-03 11:57:26 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-03 11:57:26 - pipeline_orchestrator - INFO - STAGE 6: MODEL TRAINING
+2025-11-03 11:57:26 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 11:57:26 - pipeline_orchestrator - INFO -   Input shape: torch.Size([2997906, 12, 18])
+2025-11-03 11:57:26 - pipeline_orchestrator - INFO -   Target shape: torch.Size([2997906])
+2025-11-03 11:57:26 - pipeline_orchestrator - INFO -   Features: 18, Sequence length: 12
+2025-11-03 11:57:26 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-03 11:57:26 - dataset - INFO - Creating train/validation/test splits...
+2025-11-03 11:57:26 - dataset - INFO -   Total samples: 2,997,906
+2025-11-03 11:57:26 - dataset - INFO -   Val size: 20.0%, Test size: 10.0%
+2025-11-03 11:57:26 - dataset - INFO -   Shuffle: False (recommended: False for time series)
+2025-11-03 11:57:26 - dataset - INFO -   Train samples: 2,098,535
+2025-11-03 11:57:26 - dataset - INFO -   Val samples: 599,581
+2025-11-03 11:57:26 - dataset - INFO -   Test samples: 299,790
+2025-11-03 11:57:26 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-03 11:57:26 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-03 11:57:26 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-03 11:57:26 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-03 11:57:26 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 11:57:26 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-03 11:57:26 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 11:57:26 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-03 11:57:26 - pipeline_orchestrator - INFO - 
+Initializing LSTM model...
+2025-11-03 11:57:26 - pipeline_orchestrator - INFO - 
+Validating model architecture...
+2025-11-03 11:57:26 - lstm_model - INFO - Validating LSTM architecture dimensions...
+2025-11-03 11:57:26 - lstm_model - INFO -   Input shape: (32, 12, 18)
+2025-11-03 11:57:26 - lstm_model - INFO -   Expected output size: 1
+2025-11-03 11:57:26 - lstm_model - INFO -   [OK] Forward pass successful
+2025-11-03 11:57:26 - lstm_model - INFO -   Output shape: (32, 1) - [PASS]
+2025-11-03 11:57:26 - lstm_model - INFO -   No NaN/Inf: [PASS]
+2025-11-03 11:57:26 - lstm_model - INFO -   Trainable parameters: 54,977 - [PASS]
+2025-11-03 11:57:26 - lstm_model - INFO -   Has recurrent layer: [PASS]
+2025-11-03 11:57:26 - lstm_model - INFO - Overall validation: [PASS] (5/5 checks passed)
+2025-11-03 11:57:26 - pipeline_orchestrator - INFO - 
+Using device: cpu
+2025-11-03 11:57:26 - pipeline_orchestrator - INFO - 
+Creating trainer...
+2025-11-03 11:57:43 - pipeline_orchestrator - INFO - 
+Starting training...
+2025-11-03 11:57:43 - training - INFO - ================================================================================
+2025-11-03 11:57:43 - training - INFO - TRAINING EMPLOYMENT FORECASTING MODEL
+2025-11-03 11:57:43 - training - INFO - ================================================================================
+2025-11-03 11:57:43 - training - INFO -   Max epochs: 100
+2025-11-03 11:57:43 - training - INFO -   Early stopping patience: 10
+2025-11-03 11:57:43 - training - INFO -   Device: cpu
+2025-11-03 11:57:43 - training - INFO -   Optimizer: Adam
+2025-11-03 11:57:43 - training - INFO -   Loss function: MSELoss
+2025-11-03 13:59:51 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 13:59:51 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-03 13:59:51 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 13:59:51 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-03 13:59:51 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-03 13:59:51 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-03 13:59:51 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-03 13:59:51 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-03 14:01:00 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-03 14:01:00 - pipeline_orchestrator - INFO - STAGE 6: MODEL TRAINING
+2025-11-03 14:01:00 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 14:01:00 - pipeline_orchestrator - INFO -   Input shape: torch.Size([2997906, 12, 18])
+2025-11-03 14:01:00 - pipeline_orchestrator - INFO -   Target shape: torch.Size([2997906])
+2025-11-03 14:01:00 - pipeline_orchestrator - INFO -   Features: 18, Sequence length: 12
+2025-11-03 14:01:00 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-03 14:01:01 - dataset - INFO - Creating train/validation/test splits...
+2025-11-03 14:01:01 - dataset - INFO -   Total samples: 2,997,906
+2025-11-03 14:01:01 - dataset - INFO -   Val size: 20.0%, Test size: 10.0%
+2025-11-03 14:01:01 - dataset - INFO -   Shuffle: False (recommended: False for time series)
+2025-11-03 14:01:01 - dataset - INFO -   Train samples: 2,098,535
+2025-11-03 14:01:01 - dataset - INFO -   Val samples: 599,581
+2025-11-03 14:01:01 - dataset - INFO -   Test samples: 299,790
+2025-11-03 14:01:01 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-03 14:01:01 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-03 14:01:01 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-03 14:01:01 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-03 14:01:01 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 14:01:01 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-03 14:01:01 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 14:01:01 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-03 14:01:01 - pipeline_orchestrator - INFO - 
+Initializing LSTM model...
+2025-11-03 14:01:01 - pipeline_orchestrator - INFO - 
+Validating model architecture...
+2025-11-03 14:01:01 - lstm_model - INFO - Validating LSTM architecture dimensions...
+2025-11-03 14:01:01 - lstm_model - INFO -   Input shape: (32, 12, 18)
+2025-11-03 14:01:01 - lstm_model - INFO -   Expected output size: 1
+2025-11-03 14:01:01 - lstm_model - INFO -   [OK] Forward pass successful
+2025-11-03 14:01:01 - lstm_model - INFO -   Output shape: (32, 1) - [PASS]
+2025-11-03 14:01:01 - lstm_model - INFO -   No NaN/Inf: [PASS]
+2025-11-03 14:01:01 - lstm_model - INFO -   Trainable parameters: 54,977 - [PASS]
+2025-11-03 14:01:01 - lstm_model - INFO -   Has recurrent layer: [PASS]
+2025-11-03 14:01:01 - lstm_model - INFO - Overall validation: [PASS] (5/5 checks passed)
+2025-11-03 14:01:01 - pipeline_orchestrator - INFO - 
+Using device: cpu
+2025-11-03 14:01:01 - pipeline_orchestrator - INFO - 
+Creating trainer...
+2025-11-03 14:01:24 - pipeline_orchestrator - INFO - 
+Starting training...
+2025-11-03 14:01:24 - training - INFO - ================================================================================
+2025-11-03 14:01:24 - training - INFO - TRAINING EMPLOYMENT FORECASTING MODEL
+2025-11-03 14:01:24 - training - INFO - ================================================================================
+2025-11-03 14:01:24 - training - INFO -   Max epochs: 100
+2025-11-03 14:01:24 - training - INFO -   Early stopping patience: 10
+2025-11-03 14:01:24 - training - INFO -   Device: cpu
+2025-11-03 14:01:24 - training - INFO -   Optimizer: Adam
+2025-11-03 14:01:24 - training - INFO -   Loss function: MSELoss
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - Base directory: c:\GitHub\is-160-project
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - Raw data: c:\GitHub\is-160-project\data\raw
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - Processed data: c:\GitHub\is-160-project\data\processed
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - Feature engineering: c:\GitHub\is-160-project\data\feature_engineering
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - Plots: c:\GitHub\is-160-project\data\processed\plots
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - 
+Running stage: train
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO - Loading preprocessed data from disk...
+2025-11-03 14:10:27 - pipeline_orchestrator - INFO -   Loading sequences from: qcew_preprocessed_sequences.npz
+2025-11-03 14:10:55 - pipeline_orchestrator - INFO -   Loaded 2,997,906 sequences
+2025-11-03 14:10:55 - pipeline_orchestrator - INFO -   Loading preprocessor from: qcew_preprocessed_preprocessor.pkl
+2025-11-03 14:10:55 - pipeline_orchestrator - INFO -   Preprocessor loaded successfully
+2025-11-03 14:11:14 - pipeline_orchestrator - INFO - [OK] Preprocessed data loaded from disk
+
+2025-11-03 14:11:16 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-03 14:11:16 - pipeline_orchestrator - INFO - STAGE 6: MODEL TRAINING
+2025-11-03 14:11:16 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 14:11:16 - pipeline_orchestrator - INFO -   Input shape: torch.Size([2997906, 12, 18])
+2025-11-03 14:11:16 - pipeline_orchestrator - INFO -   Target shape: torch.Size([2997906])
+2025-11-03 14:11:16 - pipeline_orchestrator - INFO -   Features: 18, Sequence length: 12
+2025-11-03 14:11:16 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-03 14:11:16 - dataset - INFO - Creating train/validation/test splits...
+2025-11-03 14:11:16 - dataset - INFO -   Total samples: 2,997,906
+2025-11-03 14:11:16 - dataset - INFO -   Val size: 20.0%, Test size: 10.0%
+2025-11-03 14:11:16 - dataset - INFO -   Shuffle: False (recommended: False for time series)
+2025-11-03 14:11:16 - dataset - INFO -   Train samples: 2,098,535
+2025-11-03 14:11:16 - dataset - INFO -   Val samples: 599,581
+2025-11-03 14:11:16 - dataset - INFO -   Test samples: 299,790
+2025-11-03 14:11:16 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-03 14:11:16 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-03 14:11:16 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-03 14:11:16 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-03 14:11:16 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 14:11:16 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-03 14:11:16 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 14:11:16 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-03 14:11:16 - pipeline_orchestrator - INFO - 
+Initializing LSTM model...
+2025-11-03 14:11:16 - pipeline_orchestrator - INFO - 
+Validating model architecture...
+2025-11-03 14:11:16 - lstm_model - INFO - Validating LSTM architecture dimensions...
+2025-11-03 14:11:16 - lstm_model - INFO -   Input shape: (32, 12, 18)
+2025-11-03 14:11:16 - lstm_model - INFO -   Expected output size: 1
+2025-11-03 14:11:16 - lstm_model - INFO -   [OK] Forward pass successful
+2025-11-03 14:11:16 - lstm_model - INFO -   Output shape: (32, 1) - [PASS]
+2025-11-03 14:11:16 - lstm_model - INFO -   No NaN/Inf: [PASS]
+2025-11-03 14:11:16 - lstm_model - INFO -   Trainable parameters: 54,977 - [PASS]
+2025-11-03 14:11:16 - lstm_model - INFO -   Has recurrent layer: [PASS]
+2025-11-03 14:11:16 - lstm_model - INFO - Overall validation: [PASS] (5/5 checks passed)
+2025-11-03 14:11:16 - pipeline_orchestrator - INFO - 
+Using device: cpu
+2025-11-03 14:11:16 - pipeline_orchestrator - INFO - 
+Creating trainer...
+2025-11-03 14:11:24 - pipeline_orchestrator - INFO - 
+Starting training...
+2025-11-03 14:11:24 - training - INFO - ================================================================================
+2025-11-03 14:11:24 - training - INFO - TRAINING EMPLOYMENT FORECASTING MODEL
+2025-11-03 14:11:24 - training - INFO - ================================================================================
+2025-11-03 14:11:24 - training - INFO -   Max epochs: 100
+2025-11-03 14:11:24 - training - INFO -   Early stopping patience: 10
+2025-11-03 14:11:24 - training - INFO -   Device: cpu
+2025-11-03 14:11:24 - training - INFO -   Optimizer: Adam
+2025-11-03 14:11:24 - training - INFO -   Loss function: MSELoss
+2025-11-03 14:11:24 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-03 14:11:24 - training - INFO - EPOCH 1/100
+2025-11-03 14:11:24 - training - INFO - --------------------------------------------------------------------------------
+2025-11-03 14:11:24 - training - INFO - Training...
+2025-11-03 14:13:55 - training - INFO -   Epoch 1 | Batch 3279/65580 (5.0%) | Loss: 4030.555331
+2025-11-03 14:18:54 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 14:18:54 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-03 14:18:54 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 14:18:54 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-03 14:18:54 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-03 14:18:54 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-03 14:18:54 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-03 14:18:54 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-03 16:01:24 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-03 16:01:24 - pipeline_orchestrator - INFO - STAGE 6: MODEL TRAINING
+2025-11-03 16:01:24 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-03 16:01:24 - pipeline_orchestrator - INFO -   Input shape: torch.Size([2997906, 12, 18])
+2025-11-03 16:01:24 - pipeline_orchestrator - INFO -   Target shape: torch.Size([2997906])
+2025-11-03 16:01:24 - pipeline_orchestrator - INFO -   Features: 18, Sequence length: 12
+2025-11-03 16:01:24 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-03 16:01:24 - dataset - INFO - Creating train/validation/test splits...
+2025-11-03 16:01:24 - dataset - INFO -   Total samples: 2,997,906
+2025-11-03 16:01:24 - dataset - INFO -   Val size: 20.0%, Test size: 10.0%
+2025-11-03 16:01:24 - dataset - INFO -   Shuffle: False (recommended: False for time series)
+2025-11-03 16:01:24 - dataset - INFO -   Train samples: 2,098,535
+2025-11-03 16:01:24 - dataset - INFO -   Val samples: 599,581
+2025-11-03 16:01:24 - dataset - INFO -   Test samples: 299,790
+2025-11-03 16:01:24 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-03 16:01:24 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-03 16:01:24 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-03 16:01:24 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-03 16:01:24 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 16:01:24 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-03 16:01:24 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-03 16:01:24 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-03 16:01:24 - pipeline_orchestrator - INFO - 
+Initializing LSTM model...
+2025-11-03 16:01:25 - pipeline_orchestrator - INFO - 
+Validating model architecture...
+2025-11-03 16:01:25 - lstm_model - INFO - Validating LSTM architecture dimensions...
+2025-11-03 16:01:25 - lstm_model - INFO -   Input shape: (32, 12, 18)
+2025-11-03 16:01:25 - lstm_model - INFO -   Expected output size: 1
+2025-11-03 16:01:25 - lstm_model - INFO -   [OK] Forward pass successful
+2025-11-03 16:01:25 - lstm_model - INFO -   Output shape: (32, 1) - [PASS]
+2025-11-03 16:01:25 - lstm_model - INFO -   No NaN/Inf: [PASS]
+2025-11-03 16:01:25 - lstm_model - INFO -   Trainable parameters: 54,977 - [PASS]
+2025-11-03 16:01:25 - lstm_model - INFO -   Has recurrent layer: [PASS]
+2025-11-03 16:01:25 - lstm_model - INFO - Overall validation: [PASS] (5/5 checks passed)
+2025-11-03 16:01:25 - pipeline_orchestrator - INFO - 
+Using device: cpu
+2025-11-03 16:01:25 - pipeline_orchestrator - INFO - 
+Creating trainer...
+2025-11-03 16:01:52 - pipeline_orchestrator - INFO - 
+Starting training...
+2025-11-03 16:01:52 - training - INFO - ================================================================================
+2025-11-03 16:01:52 - training - INFO - TRAINING EMPLOYMENT FORECASTING MODEL
+2025-11-03 16:01:52 - training - INFO - ================================================================================
+2025-11-03 16:01:52 - training - INFO -   Max epochs: 100
+2025-11-03 16:01:52 - training - INFO -   Early stopping patience: 10
+2025-11-03 16:01:52 - training - INFO -   Device: cpu
+2025-11-03 16:01:52 - training - INFO -   Optimizer: Adam
+2025-11-03 16:01:52 - training - INFO -   Loss function: MSELoss
+2025-11-03 16:01:52 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-03 16:01:52 - training - INFO - EPOCH 1/100
+2025-11-03 16:01:52 - training - INFO - --------------------------------------------------------------------------------
+2025-11-03 16:01:52 - training - INFO - Training...
+2025-11-03 16:03:11 - training - INFO -   Epoch 1 | Batch 3279/65580 (5.0%) | Loss: 3280.532917
+2025-11-03 16:04:19 - training - INFO -   Epoch 1 | Batch 6558/65580 (10.0%) | Loss: 3302.748751
+2025-11-03 16:05:24 - training - INFO -   Epoch 1 | Batch 9837/65580 (15.0%) | Loss: 3896.183209
+2025-11-03 16:06:22 - training - INFO -   Epoch 1 | Batch 13116/65580 (20.0%) | Loss: 3986.609498
+2025-11-03 16:07:18 - training - INFO -   Epoch 1 | Batch 16395/65580 (25.0%) | Loss: 3874.918531
+2025-11-03 16:08:16 - training - INFO -   Epoch 1 | Batch 19674/65580 (30.0%) | Loss: 3978.529481
+2025-11-03 16:09:09 - training - INFO -   Epoch 1 | Batch 22953/65580 (35.0%) | Loss: 3826.647537
+2025-11-03 16:10:02 - training - INFO -   Epoch 1 | Batch 26232/65580 (40.0%) | Loss: 3879.629683
+2025-11-03 16:10:52 - training - INFO -   Epoch 1 | Batch 29511/65580 (45.0%) | Loss: 3833.114030
+2025-11-03 16:11:41 - training - INFO -   Epoch 1 | Batch 32790/65580 (50.0%) | Loss: 3738.757938
+2025-11-03 16:12:29 - training - INFO -   Epoch 1 | Batch 36069/65580 (55.0%) | Loss: 3689.409563
+2025-11-03 16:13:18 - training - INFO -   Epoch 1 | Batch 39348/65580 (60.0%) | Loss: 3788.932142
+2025-11-03 16:14:07 - training - INFO -   Epoch 1 | Batch 42627/65580 (65.0%) | Loss: 3726.993740
+2025-11-03 16:14:55 - training - INFO -   Epoch 1 | Batch 45906/65580 (70.0%) | Loss: 3665.639816
+2025-11-03 16:15:41 - training - INFO -   Epoch 1 | Batch 49185/65580 (75.0%) | Loss: 3593.532747
+2025-11-03 16:16:29 - training - INFO -   Epoch 1 | Batch 52464/65580 (80.0%) | Loss: 3567.428414
+2025-11-03 16:17:14 - training - INFO -   Epoch 1 | Batch 55743/65580 (85.0%) | Loss: 3482.000744
+2025-11-03 16:17:59 - training - INFO -   Epoch 1 | Batch 59022/65580 (90.0%) | Loss: 3500.573085
+2025-11-03 16:18:42 - training - INFO -   Epoch 1 | Batch 62301/65580 (95.0%) | Loss: 3507.533352
+2025-11-03 16:19:27 - training - INFO -   Epoch 1 | Batch 65580/65580 (100.0%) | Loss: 3491.436330
+2025-11-03 16:19:27 - training - INFO - 
+Validating...
+2025-11-03 16:19:31 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 23.733149
+2025-11-03 16:19:36 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 102.220991
+2025-11-03 16:19:41 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 1368.044361
+2025-11-03 16:19:47 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 1063.733770
+2025-11-03 16:19:52 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 862.297617
+2025-11-03 16:19:57 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 722.442463
+2025-11-03 16:20:02 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 628.658551
+2025-11-03 16:20:07 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 567.122247
+2025-11-03 16:20:12 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 517.359655
+2025-11-03 16:20:18 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 466.831462
+2025-11-03 16:20:18 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 466.659754
+2025-11-03 16:20:18 - training - INFO - 
+================================================================================
+2025-11-03 16:20:18 - training - INFO - EPOCH 1/100 SUMMARY
+2025-11-03 16:20:18 - training - INFO -   Train Loss: 3491.436330
+2025-11-03 16:20:18 - training - INFO -   Val Loss:   466.659754
+2025-11-03 16:20:18 - training - INFO -   LR:         0.001000
+2025-11-03 16:20:18 - training - INFO - ================================================================================
+2025-11-03 16:20:18 - training - INFO -   [OK] New best model saved (val_loss: 466.659754)
+2025-11-03 16:20:18 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-03 16:20:18 - training - INFO - EPOCH 2/100
+2025-11-03 16:20:18 - training - INFO - --------------------------------------------------------------------------------
+2025-11-03 16:20:18 - training - INFO - Training...
+2025-11-03 16:21:17 - training - INFO -   Epoch 2 | Batch 3279/65580 (5.0%) | Loss: 3767.186436
+2025-11-03 16:22:25 - training - INFO -   Epoch 2 | Batch 6558/65580 (10.0%) | Loss: 3579.678823
+2025-11-03 16:23:38 - training - INFO -   Epoch 2 | Batch 9837/65580 (15.0%) | Loss: 3430.705185
+2025-11-03 16:24:49 - training - INFO -   Epoch 2 | Batch 13116/65580 (20.0%) | Loss: 3309.435427
+2025-11-03 16:26:27 - training - INFO -   Epoch 2 | Batch 16395/65580 (25.0%) | Loss: 3119.807518
