@@ -4569,3 +4569,1312 @@ Saving preprocessed data to: C:\GitHub\is-160-project\data\processed\qcew_prepro
 2025-11-01 10:48:52 - preprocessing_pipeline - INFO - Targets: (2997906,)
 2025-11-01 10:48:52 - preprocessing_pipeline - INFO - ================================================================================
 
+2025-11-08 19:24:24 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-08 19:24:24 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-08 19:24:24 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-08 19:24:24 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-08 19:24:24 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-08 19:24:24 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-08 19:24:24 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-08 19:24:24 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-08 19:25:55 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-11-08 19:25:54
+2025-11-08 19:25:55 - consolidation - INFO - 
+================================================================================
+2025-11-08 19:25:55 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-11-08 19:25:55 - consolidation - INFO - ================================================================================
+2025-11-08 19:25:55 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-08 19:26:07 - consolidation - INFO - Loaded 5,430,384 records from consolidated file
+2025-11-08 19:26:13 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-08 19:26:13 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-11-08 19:26:13 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-08 19:26:13 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-11-08 19:26:14 - exploration - INFO -   Filtering to county-level records: 4,732,218 of 5,430,384 total records
+2025-11-08 19:26:16 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 15 columns
+2025-11-08 19:26:16 - exploration - INFO - County-Level Records: 4,732,218 rows
+2025-11-08 19:26:16 - exploration - INFO - Date Range: 2004 - 2024
+2025-11-08 19:26:16 - exploration - INFO - 
+Employment Statistics (County-Level Only):
+2025-11-08 19:26:16 - exploration - INFO -   avg_monthly_emplvl:
+2025-11-08 19:26:16 - exploration - INFO -     Mean: 3,004
+2025-11-08 19:26:16 - exploration - INFO -     Median: 213
+2025-11-08 19:26:16 - exploration - INFO -     Min: 0
+2025-11-08 19:26:16 - exploration - INFO -     Max: 4,583,485
+2025-11-08 19:26:16 - exploration - INFO -   month1_emplvl:
+2025-11-08 19:26:16 - exploration - INFO -     Mean: 2,392
+2025-11-08 19:26:16 - exploration - INFO -     Median: 112
+2025-11-08 19:26:16 - exploration - INFO -     Min: 0
+2025-11-08 19:26:16 - exploration - INFO -     Max: 4,563,073
+2025-11-08 19:26:16 - exploration - INFO -   month2_emplvl:
+2025-11-08 19:26:16 - exploration - INFO -     Mean: 2,405
+2025-11-08 19:26:16 - exploration - INFO -     Median: 112
+2025-11-08 19:26:16 - exploration - INFO -     Min: 0
+2025-11-08 19:26:16 - exploration - INFO -     Max: 4,608,275
+2025-11-08 19:26:16 - exploration - INFO - 
+Wage Statistics (County-Level Only):
+2025-11-08 19:26:16 - exploration - INFO -   total_qtrly_wages:
+2025-11-08 19:26:16 - exploration - INFO -     Mean: $76,419,401.10
+2025-11-08 19:26:16 - exploration - INFO -     Median: $3,155,335.50
+2025-11-08 19:26:17 - exploration - INFO -   avg_wkly_wage:
+2025-11-08 19:26:17 - exploration - INFO -     Mean: $1,018.95
+2025-11-08 19:26:17 - exploration - INFO -     Median: $875.00
+2025-11-08 19:26:17 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-11-08 19:26:18 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-11-08 19:26:18 - exploration - INFO -   - Creating employment trends plot...
+2025-11-08 19:26:20 - exploration - INFO -   - Creating quarterly distribution plot...
+2025-11-08 19:26:21 - exploration - INFO -   - Creating wage trends plot...
+2025-11-08 19:26:22 - exploration - INFO -   - Creating top industries plot...
+2025-11-08 19:26:25 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-11-08 19:26:25 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-08 19:26:25 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-11-08 19:26:25 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-08 19:26:25 - validation - INFO - Validating data quality for 5,430,384 records
+2025-11-08 19:26:25 - validation - INFO - Running employment range validation...
+2025-11-08 19:26:25 - validation - INFO - Running wage consistency validation...
+2025-11-08 19:26:26 - validation - INFO - Running statistical anomaly detection...
+2025-11-08 19:26:30 - validation - INFO - Generating quality scorecards...
+2025-11-08 19:26:52 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-11-08 19:26:52 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-11-08 19:27:37 - validation - INFO - 
+[OK] Validation complete!
+2025-11-08 19:27:37 - validation - INFO - Overall Quality Score: 0.859
+2025-11-08 19:27:37 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-11-08 19:27:37 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-11-08 19:27:51 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-08 19:27:51 - pipeline_orchestrator - INFO - STAGE 4: FEATURE ENGINEERING
+2025-11-08 19:27:51 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-08 19:27:51 - feature_pipeline - INFO - 
+================================================================================
+2025-11-08 19:27:51 - feature_pipeline - INFO - FEATURE ENGINEERING PIPELINE
+2025-11-08 19:27:51 - feature_pipeline - INFO - ================================================================================
+2025-11-08 19:27:51 - feature_pipeline - INFO - 
+[STAGE 1/10] T032: Filtering to county-level records...
+2025-11-08 19:27:51 - feature_engineering - INFO - 
+================================================================================
+2025-11-08 19:27:51 - feature_engineering - INFO - T032: FILTERING TO COUNTY-LEVEL RECORDS
+2025-11-08 19:27:51 - feature_engineering - INFO - ================================================================================
+2025-11-08 19:27:51 - feature_engineering - INFO - Initial dataset: 5,430,384 records
+2025-11-08 19:27:51 - feature_engineering - INFO - 
+Area type distribution BEFORE filtering:
+2025-11-08 19:27:51 - feature_engineering - INFO -   County: 4,732,218 records (87.1%)
+2025-11-08 19:27:51 - feature_engineering - INFO -   United States: 399,362 records (7.4%)
+2025-11-08 19:27:51 - feature_engineering - INFO -   California - Statewide: 298,804 records (5.5%)
+2025-11-08 19:27:53 - feature_engineering - INFO - 
+Filtering results:
+2025-11-08 19:27:53 - feature_engineering - INFO -   Retained (County): 4,732,218 records
+2025-11-08 19:27:53 - feature_engineering - INFO -   Removed (State + National): 698,166 records (12.9%)
+2025-11-08 19:27:53 - feature_engineering - INFO -   Unique counties: 58
+2025-11-08 19:27:53 - feature_engineering - INFO -   Year range: 2004-2024
+2025-11-08 19:27:53 - feature_engineering - INFO - 
+[SUCCESS] County-level filtering completed successfully
+2025-11-08 19:27:53 - feature_engineering - INFO - ================================================================================
+
+2025-11-08 19:27:53 - feature_engineering - INFO - Saving county-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T032_county_filtered.csv
+2025-11-08 19:28:31 - feature_engineering - INFO - [OK] Saved 4,732,218 records to T032_county_filtered.csv
+2025-11-08 19:28:31 - feature_pipeline - INFO - [OK] County filtering complete: 4,732,218 records
+2025-11-08 19:28:31 - feature_pipeline - INFO - 
+[STAGE 2/10] T033: Handling Annual vs quarterly records...
+2025-11-08 19:28:31 - feature_engineering - INFO - 
+================================================================================
+2025-11-08 19:28:31 - feature_engineering - INFO - T033: FILTERING TO QUARTERLY RECORDS ONLY
+2025-11-08 19:28:31 - feature_engineering - INFO - ================================================================================
+2025-11-08 19:28:31 - feature_engineering - INFO - Initial dataset: 4,732,218 records
+2025-11-08 19:28:31 - feature_engineering - INFO - 
+Quarter distribution BEFORE filtering:
+2025-11-08 19:28:32 - feature_engineering - INFO -   1st Qtr: 944,965 records (20.0%)
+2025-11-08 19:28:32 - feature_engineering - INFO -   2nd Qtr: 949,400 records (20.1%)
+2025-11-08 19:28:32 - feature_engineering - INFO -   3rd Qtr: 956,056 records (20.2%)
+2025-11-08 19:28:32 - feature_engineering - INFO -   4th Qtr: 927,499 records (19.6%)
+2025-11-08 19:28:32 - feature_engineering - INFO -   Annual: 954,298 records (20.2%)
+2025-11-08 19:28:33 - feature_engineering - INFO - 
+Filtering results:
+2025-11-08 19:28:33 - feature_engineering - INFO -   Retained (Quarterly): 3,777,920 records
+2025-11-08 19:28:33 - feature_engineering - INFO -   Removed (Annual): 954,298 records (20.2%)
+2025-11-08 19:28:33 - feature_engineering - INFO -   [OK] All annual records successfully removed
+2025-11-08 19:28:33 - feature_engineering - INFO - 
+[SUCCESS] Quarterly filtering completed successfully
+2025-11-08 19:28:33 - feature_engineering - INFO - ================================================================================
+2025-11-08 19:28:33 - feature_engineering - INFO - Saving quarterly-only data to: C:\GitHub\is-160-project\data\feature_engineering\T033_quarterly_only.csv
+2025-11-08 19:29:07 - feature_engineering - INFO - [OK] Saved 3,777,920 records to T033_quarterly_only.csv
+2025-11-08 19:29:07 - feature_pipeline - INFO - [OK] Quarterly filtering complete: 3,777,920 records
+2025-11-08 19:29:07 - feature_pipeline - INFO - 
+[STAGE 3/10] T034: Data quality filtering...
+2025-11-08 19:29:07 - feature_engineering - INFO - 
+================================================================================
+2025-11-08 19:29:07 - feature_engineering - INFO - T034: DATA QUALITY FILTERING
+2025-11-08 19:29:07 - feature_engineering - INFO - ================================================================================
+2025-11-08 19:29:07 - feature_engineering - INFO - Initial dataset: 3,777,920 records
+2025-11-08 19:29:08 - feature_engineering - INFO - 
+Rule 1: Negative employment
+2025-11-08 19:29:08 - feature_engineering - INFO -   Removed: 0 records
+2025-11-08 19:29:08 - feature_engineering - INFO - 
+Rule 2: Negative wages
+2025-11-08 19:29:08 - feature_engineering - INFO -   Removed: 0 records
+2025-11-08 19:29:08 - feature_engineering - INFO - 
+Filtering summary:
+2025-11-08 19:29:08 - feature_engineering - INFO -   Initial records: 3,777,920
+2025-11-08 19:29:08 - feature_engineering - INFO -   Final records: 3,777,920
+2025-11-08 19:29:08 - feature_engineering - INFO -   Total removed: 0 records (0.00%)
+2025-11-08 19:29:08 - feature_engineering - INFO - 
+[SUCCESS] Data quality filtering completed successfully
+2025-11-08 19:29:08 - feature_engineering - INFO - ================================================================================
+2025-11-08 19:29:08 - feature_engineering - INFO - Saving quality-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T034_quality_filtered.csv
+2025-11-08 19:29:38 - feature_engineering - INFO - [OK] Saved 3,777,920 records to T034_quality_filtered.csv
+2025-11-08 19:29:38 - feature_pipeline - INFO - [OK] Quality filtering complete: 3,777,920 records
+2025-11-08 19:29:38 - feature_pipeline - INFO - 
+[STAGE 4/10] T035: Central Valley counties subset...
+2025-11-08 19:29:38 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-11-08 19:29:38 - feature_pipeline - INFO - 
+[STAGE 5/10] T036: All California counties processing...
+2025-11-08 19:29:38 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-11-08 19:29:38 - feature_pipeline - INFO - 
+[STAGE 6/10] T038: Calculating quarterly growth rates...
+2025-11-08 19:29:38 - feature_engineering - INFO - 
+================================================================================
+2025-11-08 19:29:38 - feature_engineering - INFO - T038: CALCULATING QUARTERLY GROWTH RATES
+2025-11-08 19:29:38 - feature_engineering - INFO - ================================================================================
+2025-11-08 19:29:38 - feature_engineering - INFO - Employment column: avg_monthly_emplvl
+2025-11-08 19:29:38 - feature_engineering - INFO - Grouping by: ['area_name', 'industry_code']
+2025-11-08 19:29:42 - feature_engineering - INFO - 
+Growth rate statistics:
+2025-11-08 19:29:42 - feature_engineering - INFO -   QoQ % change - Mean: inf%
+2025-11-08 19:29:42 - feature_engineering - INFO -   QoQ % change - Std: nan%
+2025-11-08 19:29:42 - feature_engineering - INFO -   YoY % change - Mean: inf%
+2025-11-08 19:29:42 - feature_engineering - INFO -   YoY % change - Std: nan%
+2025-11-08 19:29:42 - feature_engineering - INFO -   Handling employment_qoq_pct_change: 12,516 infinite values (division by zero) - replacing with 0.0
+2025-11-08 19:29:43 - feature_engineering - INFO -   Handling employment_yoy_pct_change: 12,617 infinite values (division by zero) - replacing with 0.0
+2025-11-08 19:29:43 - feature_engineering - INFO - 
+Final growth rate statistics (after cleaning):
+2025-11-08 19:29:43 - feature_engineering - INFO -   employment_qoq_pct_change:
+2025-11-08 19:29:43 - feature_engineering - INFO -     Valid values: 3,673,235
+2025-11-08 19:29:43 - feature_engineering - INFO -     Null values: 104,685
+2025-11-08 19:29:43 - feature_engineering - INFO -     Mean: 2981.09%
+2025-11-08 19:29:43 - feature_engineering - INFO -     Median: 0.00%
+2025-11-08 19:29:43 - feature_engineering - INFO -     Min: -100.00%
+2025-11-08 19:29:43 - feature_engineering - INFO -     Max: 32237100.00%
+2025-11-08 19:29:43 - feature_engineering - INFO -   employment_yoy_pct_change:
+2025-11-08 19:29:43 - feature_engineering - INFO -     Valid values: 3,479,344
+2025-11-08 19:29:43 - feature_engineering - INFO -     Null values: 298,576
+2025-11-08 19:29:43 - feature_engineering - INFO -     Mean: 2136.00%
+2025-11-08 19:29:43 - feature_engineering - INFO -     Median: 0.00%
+2025-11-08 19:29:43 - feature_engineering - INFO -     Min: -100.00%
+2025-11-08 19:29:43 - feature_engineering - INFO -     Max: 32237100.00%
+2025-11-08 19:29:43 - feature_engineering - INFO - 
+[SUCCESS] Growth rate calculations completed
+2025-11-08 19:29:43 - feature_engineering - INFO - ================================================================================
+2025-11-08 19:29:43 - feature_pipeline - INFO - [OK] Growth rates complete: 3,777,920 records
+2025-11-08 19:29:43 - feature_pipeline - INFO - 
+[VISUALIZATION] Creating growth rate distribution plots...
+2025-11-08 19:29:47 - feature_pipeline - INFO -   [OK] Saved growth rate plots to C:\GitHub\is-160-project\data\feature_engineering\plots\T038_growth_rates_distribution.png
+2025-11-08 19:29:47 - feature_pipeline - INFO - [OK] Growth rate plots saved to C:\GitHub\is-160-project\data\feature_engineering\plots\T038_growth_rates_distribution.png
+2025-11-08 19:29:47 - feature_pipeline - INFO - 
+[STAGE 7/10] T039: Creating seasonal adjustments...
+2025-11-08 19:29:47 - feature_pipeline - INFO - [PENDING] Seasonal adjustments - advanced feature, will be added in next iteration
+2025-11-08 19:29:47 - feature_pipeline - INFO - 
+[STAGE 8/10] T040: Calculating industry concentration...
+2025-11-08 19:29:47 - feature_pipeline - INFO - [PENDING] Industry concentration - advanced feature, will be added in next iteration
+2025-11-08 19:29:47 - feature_pipeline - INFO - 
+[STAGE 9/10] T041: Building geographic clustering...
+2025-11-08 19:29:47 - feature_pipeline - INFO - [PENDING] Geographic clustering - advanced feature, will be added in next iteration
+2025-11-08 19:29:47 - feature_pipeline - INFO - 
+[STAGE 10/10] T042: Generating lag features...
+2025-11-08 19:29:47 - feature_engineering - INFO - 
+================================================================================
+2025-11-08 19:29:47 - feature_engineering - INFO - T042: GENERATING LAG FEATURES
+2025-11-08 19:29:47 - feature_engineering - INFO - ================================================================================
+2025-11-08 19:29:47 - feature_engineering - INFO - Value column: avg_monthly_emplvl
+2025-11-08 19:29:47 - feature_engineering - INFO - Lag periods: [1, 2, 3, 4]
+2025-11-08 19:29:47 - feature_engineering - INFO - Grouping by: ['area_name', 'industry_code']
+2025-11-08 19:29:50 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_1: 80,982 null values (beginning of series)
+2025-11-08 19:29:51 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_2: 156,223 null values (beginning of series)
+2025-11-08 19:29:52 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_3: 225,823 null values (beginning of series)
+2025-11-08 19:29:53 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_4: 292,033 null values (beginning of series)
+2025-11-08 19:29:53 - feature_engineering - INFO - 
+Lag feature statistics:
+2025-11-08 19:29:53 - feature_engineering - INFO -   avg_monthly_emplvl_lag_1:
+2025-11-08 19:29:53 - feature_engineering - INFO -     Valid values: 3,696,938
+2025-11-08 19:29:53 - feature_engineering - INFO -     Mean: 3048.61
+2025-11-08 19:29:53 - feature_engineering - INFO -     Median: 218.00
+2025-11-08 19:29:53 - feature_engineering - INFO -     Min: 0
+2025-11-08 19:29:53 - feature_engineering - INFO -     Max: 4583485
+2025-11-08 19:29:53 - feature_engineering - INFO -   avg_monthly_emplvl_lag_2:
+2025-11-08 19:29:53 - feature_engineering - INFO -     Valid values: 3,621,697
+2025-11-08 19:29:53 - feature_engineering - INFO -     Mean: 3088.33
+2025-11-08 19:29:53 - feature_engineering - INFO -     Median: 222.00
+2025-11-08 19:29:53 - feature_engineering - INFO -     Min: 0
+2025-11-08 19:29:53 - feature_engineering - INFO -     Max: 4583485
+2025-11-08 19:29:53 - feature_engineering - INFO -   avg_monthly_emplvl_lag_3:
+2025-11-08 19:29:53 - feature_engineering - INFO -     Valid values: 3,552,097
+2025-11-08 19:29:53 - feature_engineering - INFO -     Mean: 3124.69
+2025-11-08 19:29:53 - feature_engineering - INFO -     Median: 226.00
+2025-11-08 19:29:53 - feature_engineering - INFO -     Min: 0
+2025-11-08 19:29:53 - feature_engineering - INFO -     Max: 4583485
+2025-11-08 19:29:53 - feature_engineering - INFO -   avg_monthly_emplvl_lag_4:
+2025-11-08 19:29:53 - feature_engineering - INFO -     Valid values: 3,485,887
+2025-11-08 19:29:53 - feature_engineering - INFO -     Mean: 3157.84
+2025-11-08 19:29:53 - feature_engineering - INFO -     Median: 229.00
+2025-11-08 19:29:53 - feature_engineering - INFO -     Min: 0
+2025-11-08 19:29:53 - feature_engineering - INFO -     Max: 4583485
+2025-11-08 19:29:53 - feature_engineering - INFO - 
+[SUCCESS] Generated 4 lag features
+2025-11-08 19:29:53 - feature_engineering - INFO - ================================================================================
+2025-11-08 19:29:53 - feature_pipeline - INFO - [OK] Lag features complete: 3,777,920 records
+2025-11-08 19:29:53 - feature_pipeline - INFO - 
+[VISUALIZATION] Creating lag feature correlation heatmap...
+2025-11-08 19:29:54 - feature_pipeline - INFO -   [OK] Saved lag correlation heatmap to C:\GitHub\is-160-project\data\feature_engineering\plots\T042_lag_features_correlation.png
+2025-11-08 19:29:54 - feature_pipeline - INFO - [OK] Lag correlation heatmap saved to C:\GitHub\is-160-project\data\feature_engineering\plots\T042_lag_features_correlation.png
+2025-11-08 19:29:54 - feature_pipeline - INFO - 
+Saving feature-engineered dataset to: C:\GitHub\is-160-project\data\feature_engineering\final_features.csv
+2025-11-08 19:31:12 - feature_pipeline - INFO - [OK] Saved 3,777,920 records to final_features.csv
+2025-11-08 19:31:12 - feature_pipeline - INFO - 
+================================================================================
+2025-11-08 19:31:12 - feature_pipeline - INFO - FEATURE ENGINEERING COMPLETE
+2025-11-08 19:31:12 - feature_pipeline - INFO - ================================================================================
+2025-11-08 19:31:12 - feature_pipeline - INFO - 
+Implemented tasks:
+2025-11-08 19:31:12 - feature_pipeline - INFO -   [X] T032: County-level filtering (removed state/national aggregates)
+2025-11-08 19:31:12 - feature_pipeline - INFO -   [X] T033: Quarterly filtering (removed Annual records)
+2025-11-08 19:31:12 - feature_pipeline - INFO -   [X] T034: Data quality filtering (removed invalid records)
+2025-11-08 19:31:12 - feature_pipeline - INFO -   [X] T038: Growth rates (added 6 columns: QoQ & YoY metrics)
+2025-11-08 19:31:12 - feature_pipeline - INFO -   [X] T042: Lag features (added 4 columns: 1-4 quarters back)
+2025-11-08 19:31:12 - feature_pipeline - INFO - 
+Deferred tasks (advanced features):
+2025-11-08 19:31:12 - feature_pipeline - INFO -   [ ] T039: Seasonal adjustments
+2025-11-08 19:31:12 - feature_pipeline - INFO -   [ ] T040: Industry concentration
+2025-11-08 19:31:12 - feature_pipeline - INFO -   [ ] T041: Geographic clustering
+2025-11-08 19:31:12 - feature_pipeline - INFO - 
+Total new features added: 10 columns
+2025-11-08 19:31:12 - feature_pipeline - INFO - Final dataset: 3,777,920 records × 26 columns
+2025-11-08 19:31:12 - feature_pipeline - INFO - ================================================================================
+
+2025-11-08 19:31:12 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-08 19:31:12 - pipeline_orchestrator - INFO - STAGE 5: DATA PREPROCESSING
+2025-11-08 19:31:12 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-08 19:31:12 - preprocessing_pipeline - INFO - 
+================================================================================
+2025-11-08 19:31:12 - preprocessing_pipeline - INFO - PREPROCESSING PIPELINE FOR LSTM
+2025-11-08 19:31:12 - preprocessing_pipeline - INFO - ================================================================================
+2025-11-08 19:31:12 - preprocessing_pipeline - INFO - 
+[STAGE 1/5] T054: Normalizing employment and wage data...
+2025-11-08 19:31:12 - preprocessing_pipeline - INFO -   Normalizing 16 columns using robust scaling
+2025-11-08 19:31:12 - preprocessing - INFO - Normalizing columns: ['avg_monthly_emplvl', 'month1_emplvl', 'month2_emplvl', 'month3_emplvl', 'employment_prev_quarter', 'employment_qoq_change', 'employment_qoq_pct_change', 'employment_4q_ago', 'employment_yoy_change', 'employment_yoy_pct_change', 'avg_monthly_emplvl_lag_1', 'avg_monthly_emplvl_lag_2', 'avg_monthly_emplvl_lag_3', 'avg_monthly_emplvl_lag_4', 'total_qtrly_wages', 'avg_wkly_wage']
+2025-11-08 19:31:12 - preprocessing - INFO -   Using RobustScaler (resistant to outliers)
+2025-11-08 19:31:18 - preprocessing - INFO -   Normalized 16 columns
+2025-11-08 19:31:18 - preprocessing - INFO -     avg_monthly_emplvl: mean=3.482, std=48.066
+2025-11-08 19:31:18 - preprocessing - INFO -     month1_emplvl: mean=3.474, std=47.979
+2025-11-08 19:31:18 - preprocessing - INFO -     month2_emplvl: mean=3.481, std=48.054
+2025-11-08 19:31:18 - preprocessing_pipeline - INFO - [OK] Normalization complete
+2025-11-08 19:31:18 - preprocessing_pipeline - INFO - 
+[STAGE 2/5] T055: Handling missing values...
+2025-11-08 19:31:21 - preprocessing_pipeline - INFO -   Found 1,948,019 missing values
+2025-11-08 19:31:21 - preprocessing - INFO - Handling missing values with median strategy
+2025-11-08 19:31:24 - preprocessing - INFO -   Missing values before imputation: 1,948,019
+2025-11-08 19:31:45 - preprocessing - INFO -   Missing values after imputation: 0
+2025-11-08 19:31:45 - preprocessing - INFO -   Imputed 1,948,019 values
+2025-11-08 19:31:45 - preprocessing_pipeline - INFO - [OK] Missing values handled
+2025-11-08 19:31:45 - preprocessing_pipeline - INFO - 
+[STAGE 3/5] T056: Creating categorical encodings...
+2025-11-08 19:31:45 - preprocessing_pipeline - INFO -   Encoding 3 categorical columns
+2025-11-08 19:31:45 - preprocessing - INFO - Creating categorical encodings for: ['industry_code', 'area_name', 'ownership']
+2025-11-08 19:31:47 - preprocessing - INFO -   Encoded industry_code: 2648 unique classes
+2025-11-08 19:31:48 - preprocessing - INFO -   Encoded area_name: 58 unique classes
+2025-11-08 19:31:49 - preprocessing - INFO -   Encoded ownership: 5 unique classes
+2025-11-08 19:31:49 - preprocessing_pipeline - INFO - [OK] Categorical encoding complete
+2025-11-08 19:31:49 - preprocessing_pipeline - INFO - 
+[STAGE 4/5] T057: Transforming to sequence format...
+2025-11-08 19:31:49 - preprocessing_pipeline - INFO -   Creating sequences of length 12
+2025-11-08 19:31:49 - preprocessing_pipeline - INFO -   Available target columns: ['avg_monthly_emplvl', 'month1_emplvl', 'month2_emplvl', 'month3_emplvl', 'employment_prev_quarter', 'employment_qoq_change', 'employment_qoq_pct_change', 'employment_4q_ago', 'employment_yoy_change', 'employment_yoy_pct_change', 'avg_monthly_emplvl_lag_1', 'avg_monthly_emplvl_lag_2', 'avg_monthly_emplvl_lag_3', 'avg_monthly_emplvl_lag_4']
+2025-11-08 19:31:49 - preprocessing_pipeline - INFO -   Target column: avg_monthly_emplvl
+2025-11-08 19:31:49 - preprocessing - INFO - Transforming data to sequences of length 12
+2025-11-08 19:31:49 - preprocessing - INFO -   Target column: avg_monthly_emplvl
+2025-11-08 19:31:49 - preprocessing - INFO -   Available columns: ['area_name', 'area_type', 'avg_monthly_emplvl', 'avg_monthly_emplvl_lag_1', 'avg_monthly_emplvl_lag_2', 'avg_monthly_emplvl_lag_3', 'avg_monthly_emplvl_lag_4', 'avg_wkly_wage', 'employment_4q_ago', 'employment_prev_quarter']...
+2025-11-08 19:31:49 - preprocessing - INFO -   Lag features found: 4 (['avg_monthly_emplvl_lag_1', 'avg_monthly_emplvl_lag_2', 'avg_monthly_emplvl_lag_3', 'avg_monthly_emplvl_lag_4']...)
+2025-11-08 19:31:49 - preprocessing - INFO -   Growth features found: 0 ([]...)
+2025-11-08 19:31:49 - preprocessing - INFO -   Feature columns: 18 total
+2025-11-08 19:31:49 - preprocessing - INFO -     - Temporal features: 4 (['avg_monthly_emplvl_lag_1', 'avg_monthly_emplvl_lag_2', 'avg_monthly_emplvl_lag_3']...)
+2025-11-08 19:31:49 - preprocessing - INFO -     - Other features: 14 (['naics_level', 'qtrly_estabs', 'avg_monthly_emplvl']...)
+2025-11-08 19:31:49 - preprocessing - INFO -   Grouping by: area_name, industry_code
+2025-11-08 19:35:51 - preprocessing - INFO -   Processed 80982 groups, skipped 28343 (insufficient data)
+2025-11-08 19:35:51 - preprocessing - INFO -   Created 2997906 sequences from 52639 valid groups
+2025-11-08 19:36:19 - preprocessing - INFO -   Sequences shape: (2997906, 12, 18)
+2025-11-08 19:36:20 - preprocessing - INFO -   Targets shape: (2997906,)
+2025-11-08 19:36:20 - preprocessing - INFO -   Target range: [-0.27, 5707.68]
+2025-11-08 19:36:27 - preprocessing_pipeline - INFO - [OK] Created 2,997,906 sequences
+2025-11-08 19:36:27 - preprocessing_pipeline - INFO - 
+[STAGE 5/5] T058: Validating preprocessing...
+2025-11-08 19:36:27 - preprocessing - INFO - Validating preprocessing steps...
+2025-11-08 19:36:38 - preprocessing - INFO -   Infinite values check: 0 found - PASS
+2025-11-08 19:36:39 - preprocessing - INFO -   NaN values check: 0 found - PASS
+2025-11-08 19:36:39 - preprocessing - INFO -   Normalization range check: max |value| = 10284.94 - FAIL
+2025-11-08 19:36:39 - preprocessing - INFO -   Categorical encoding check: All integer types - PASS
+2025-11-08 19:36:39 - preprocessing - INFO -   Shape preservation: 3,777,920 rows - PASS
+2025-11-08 19:36:39 - preprocessing - INFO - Overall validation: FAIL (4/5 checks passed)
+2025-11-08 19:36:39 - preprocessing_pipeline - INFO - [OK] Preprocessing validation passed
+2025-11-08 19:36:39 - preprocessing_pipeline - INFO - 
+Saving preprocessed data to: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-08 19:39:41 - preprocessing_pipeline - INFO - [OK] Saved preprocessed data: qcew_preprocessed.csv
+2025-11-08 19:40:32 - preprocessing_pipeline - INFO - [OK] Saved sequences: qcew_preprocessed_sequences.npz
+2025-11-08 19:40:33 - preprocessing_pipeline - INFO - [OK] Saved preprocessor: qcew_preprocessed_preprocessor.pkl
+2025-11-08 19:40:33 - preprocessing_pipeline - INFO - 
+================================================================================
+2025-11-08 19:40:33 - preprocessing_pipeline - INFO - PREPROCESSING COMPLETE
+2025-11-08 19:40:33 - preprocessing_pipeline - INFO - Sequences: (2997906, 12, 18)
+2025-11-08 19:40:33 - preprocessing_pipeline - INFO - Targets: (2997906,)
+2025-11-08 19:40:33 - preprocessing_pipeline - INFO - ================================================================================
+
+2025-11-08 19:40:55 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-08 19:40:55 - pipeline_orchestrator - INFO - STAGE 6: MODEL TRAINING
+2025-11-08 19:40:55 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-08 19:40:55 - pipeline_orchestrator - INFO -   Input shape: torch.Size([2997906, 12, 18])
+2025-11-08 19:40:55 - pipeline_orchestrator - INFO -   Target shape: torch.Size([2997906])
+2025-11-08 19:40:55 - pipeline_orchestrator - INFO -   Features: 18, Sequence length: 12
+2025-11-08 19:40:55 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-08 19:40:55 - dataset - INFO - Creating train/validation/test splits...
+2025-11-08 19:40:55 - dataset - INFO -   Total samples: 2,997,906
+2025-11-08 19:40:55 - dataset - INFO -   Val size: 20.0%, Test size: 10.0%
+2025-11-08 19:40:55 - dataset - INFO -   Shuffle: False (recommended: False for time series)
+2025-11-08 19:40:55 - dataset - INFO -   Train samples: 2,098,535
+2025-11-08 19:40:55 - dataset - INFO -   Val samples: 599,581
+2025-11-08 19:40:55 - dataset - INFO -   Test samples: 299,790
+2025-11-08 19:40:55 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-08 19:40:55 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-08 19:40:55 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-08 19:40:55 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-08 19:40:55 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-08 19:40:55 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-08 19:40:55 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-08 19:40:55 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-08 19:40:55 - pipeline_orchestrator - INFO - 
+Initializing LSTM model...
+2025-11-08 19:40:55 - pipeline_orchestrator - INFO - 
+Validating model architecture...
+2025-11-08 19:40:55 - lstm_model - INFO - Validating LSTM architecture dimensions...
+2025-11-08 19:40:55 - lstm_model - INFO -   Input shape: (32, 12, 18)
+2025-11-08 19:40:55 - lstm_model - INFO -   Expected output size: 1
+2025-11-08 19:40:56 - lstm_model - INFO -   [OK] Forward pass successful
+2025-11-08 19:40:56 - lstm_model - INFO -   Output shape: (32, 1) - [PASS]
+2025-11-08 19:40:56 - lstm_model - INFO -   No NaN/Inf: [PASS]
+2025-11-08 19:40:56 - lstm_model - INFO -   Trainable parameters: 54,977 - [PASS]
+2025-11-08 19:40:56 - lstm_model - INFO -   Has recurrent layer: [PASS]
+2025-11-08 19:40:56 - lstm_model - INFO - Overall validation: [PASS] (5/5 checks passed)
+2025-11-08 19:40:56 - pipeline_orchestrator - INFO - 
+Using device: cpu
+2025-11-08 19:40:56 - pipeline_orchestrator - INFO - 
+Creating trainer...
+2025-11-08 19:41:18 - pipeline_orchestrator - INFO - 
+Starting training...
+2025-11-08 19:41:18 - training - INFO - ================================================================================
+2025-11-08 19:41:18 - training - INFO - TRAINING EMPLOYMENT FORECASTING MODEL
+2025-11-08 19:41:18 - training - INFO - ================================================================================
+2025-11-08 19:41:18 - training - INFO -   Max epochs: 100
+2025-11-08 19:41:18 - training - INFO -   Early stopping patience: 10
+2025-11-08 19:41:18 - training - INFO -   Device: cpu
+2025-11-08 19:41:18 - training - INFO -   Optimizer: Adam
+2025-11-08 19:41:18 - training - INFO -   Loss function: MSELoss
+2025-11-08 19:41:18 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-08 19:41:18 - training - INFO - EPOCH 1/100
+2025-11-08 19:41:18 - training - INFO - --------------------------------------------------------------------------------
+2025-11-08 19:41:18 - training - INFO - Training...
+2025-11-08 19:42:15 - training - INFO -   Epoch 1 | Batch 3279/65580 (5.0%) | Loss: 3817.379146
+2025-11-08 19:43:10 - training - INFO -   Epoch 1 | Batch 6558/65580 (10.0%) | Loss: 3349.540871
+2025-11-08 19:44:06 - training - INFO -   Epoch 1 | Batch 9837/65580 (15.0%) | Loss: 3745.294333
+2025-11-08 19:45:03 - training - INFO -   Epoch 1 | Batch 13116/65580 (20.0%) | Loss: 3395.232327
+2025-11-08 19:45:59 - training - INFO -   Epoch 1 | Batch 16395/65580 (25.0%) | Loss: 3296.532001
+2025-11-08 19:46:53 - training - INFO -   Epoch 1 | Batch 19674/65580 (30.0%) | Loss: 3092.786774
+2025-11-08 20:26:27 - __main__ - INFO - 
+================================================================================
+2025-11-08 20:26:27 - __main__ - INFO - BASELINE MODELS TEST SUITE (T092-T095)
+2025-11-08 20:26:27 - __main__ - INFO - ================================================================================
+2025-11-08 20:26:27 - __main__ - INFO - 
+================================================================================
+2025-11-08 20:26:27 - __main__ - INFO - TESTING T092: ARIMA FORECASTING MODEL
+2025-11-08 20:26:27 - __main__ - INFO - ================================================================================
+2025-11-08 20:26:27 - __main__ - INFO - Created synthetic time series with 50 data points
+2025-11-08 20:26:27 - __main__ - INFO - 
+Testing ARIMA(1, 1, 1)...
+2025-11-08 20:26:27 - src.baselines - INFO - T092: Implementing ARIMA(1, 1, 1) model...
+2025-11-08 20:26:27 - src.baselines - INFO - [OK] ARIMA model fitted successfully (AIC: 754.19, BIC: 759.87)
+2025-11-08 20:26:27 - __main__ - INFO - 
+[CHECK 1] Model fitting:
+2025-11-08 20:26:27 - __main__ - INFO -   PASS: Model fitted successfully
+2025-11-08 20:26:27 - __main__ - INFO - 
+[CHECK 2] Predictions:
+2025-11-08 20:26:27 - __main__ - INFO -   PASS: Generated 4 predictions: [15036.3253438  15000.88341136 14989.57370807 14985.96472347]
+2025-11-08 20:26:27 - __main__ - INFO - 
+[CHECK 3] Diagnostics:
+2025-11-08 20:26:27 - __main__ - INFO -   PASS: AIC=754.19, BIC=759.87
+2025-11-08 20:26:27 - __main__ - INFO - 
+[CHECK 4] Fitted values:
+2025-11-08 20:26:27 - __main__ - INFO -   PASS: 50 fitted values generated
+2025-11-08 20:26:27 - __main__ - INFO - 
+Testing ARIMA(2, 1, 2)...
+2025-11-08 20:26:27 - src.baselines - INFO - T092: Implementing ARIMA(2, 1, 2) model...
+2025-11-08 20:26:28 - src.baselines - INFO - [OK] ARIMA model fitted successfully (AIC: 704.28, BIC: 713.74)
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 1] Model fitting:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: Model fitted successfully
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 2] Predictions:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: Generated 4 predictions: [14759.17029026 14357.42848866 14739.08974984 15141.94599986]
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 3] Diagnostics:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: AIC=704.28, BIC=713.74
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 4] Fitted values:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: 50 fitted values generated
+2025-11-08 20:26:28 - __main__ - INFO - 
+Testing ARIMA(1, 0, 1)...
+2025-11-08 20:26:28 - src.baselines - INFO - T092: Implementing ARIMA(1, 0, 1) model...
+2025-11-08 20:26:28 - src.baselines - INFO - [OK] ARIMA model fitted successfully (AIC: 771.76, BIC: 779.41)
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 1] Model fitting:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: Model fitted successfully
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 2] Predictions:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: Generated 4 predictions: [14916.69005175 14901.22623564 14885.859956   14870.59059764]
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 3] Diagnostics:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: AIC=771.76, BIC=779.41
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 4] Fitted values:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: 50 fitted values generated
+2025-11-08 20:26:28 - __main__ - INFO - 
+[PASS] T092: ARIMA model implementation successful
+2025-11-08 20:26:28 - __main__ - INFO - 
+================================================================================
+2025-11-08 20:26:28 - __main__ - INFO - TESTING T093: EXPONENTIAL SMOOTHING MODEL
+2025-11-08 20:26:28 - __main__ - INFO - ================================================================================
+2025-11-08 20:26:28 - __main__ - INFO - Created synthetic time series with 50 data points
+2025-11-08 20:26:28 - __main__ - INFO - 
+Testing Exponential Smoothing with seasonal components...
+2025-11-08 20:26:28 - src.baselines - INFO - T093: Implementing exponential smoothing with 4 seasonal periods...
+2025-11-08 20:26:28 - src.baselines - INFO - [OK] Exponential smoothing fitted (alpha: 0.0000)
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 1] Model fitting:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: Model fitted successfully
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 2] Predictions:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: Generated 4 predictions: [14980.34108247 14649.57190778 15227.17042574 15732.18893591]
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 3] Smoothing parameters:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: alpha=0.0000
+2025-11-08 20:26:28 - __main__ - INFO -         beta=0.0000
+2025-11-08 20:26:28 - __main__ - INFO -         gamma=0.0000
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 4] Fitted values:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: 50 fitted values generated
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 5] Handling insufficient data:
+2025-11-08 20:26:28 - src.baselines - INFO - T093: Implementing exponential smoothing with 4 seasonal periods...
+2025-11-08 20:26:28 - src.baselines - WARNING - Insufficient data points (5) for seasonal model. Need at least 8.
+2025-11-08 20:26:28 - src.baselines - INFO - [OK] Exponential smoothing fitted (alpha: 1.0000)
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: Gracefully handled insufficient data (fell back to simple smoothing)
+2025-11-08 20:26:28 - __main__ - INFO - 
+[PASS] T093: Exponential smoothing implementation successful
+2025-11-08 20:26:28 - __main__ - INFO - 
+================================================================================
+2025-11-08 20:26:28 - __main__ - INFO - TESTING T094: PERFORMANCE COMPARISON FRAMEWORK
+2025-11-08 20:26:28 - __main__ - INFO - ================================================================================
+2025-11-08 20:26:28 - __main__ - INFO - Created test predictions for 20 data points
+2025-11-08 20:26:28 - src.baselines - INFO - T094: Comparing LSTM performance against baselines...
+2025-11-08 20:26:28 - src.baselines - INFO - [OK] Performance comparison completed for 2 baseline models
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 1] LSTM metrics calculated:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: RMSE=98.03
+2025-11-08 20:26:28 - __main__ - INFO -         MAPE=0.62%
+2025-11-08 20:26:28 - __main__ - INFO -         Directional Accuracy=89.47%
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 2] Baseline metrics calculated:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: arima
+2025-11-08 20:26:28 - __main__ - INFO -         RMSE=240.15
+2025-11-08 20:26:28 - __main__ - INFO -         MAPE=1.64%
+2025-11-08 20:26:28 - __main__ - INFO -         Directional Accuracy=89.47%
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: exp_smoothing
+2025-11-08 20:26:28 - __main__ - INFO -         RMSE=271.10
+2025-11-08 20:26:28 - __main__ - INFO -         MAPE=1.68%
+2025-11-08 20:26:28 - __main__ - INFO -         Directional Accuracy=84.21%
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 3] Relative performance calculated:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: arima_vs_lstm
+2025-11-08 20:26:28 - __main__ - INFO -         RMSE improvement: 59.18%
+2025-11-08 20:26:28 - __main__ - INFO -         MAPE improvement: 61.86%
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: exp_smoothing_vs_lstm
+2025-11-08 20:26:28 - __main__ - INFO -         RMSE improvement: 63.84%
+2025-11-08 20:26:28 - __main__ - INFO -         MAPE improvement: 62.88%
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 4] Metrics are valid numbers:
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: All metrics are valid numbers
+2025-11-08 20:26:28 - __main__ - INFO - 
+[PASS] T094: Performance comparison framework successful
+2025-11-08 20:26:28 - __main__ - INFO - 
+================================================================================
+2025-11-08 20:26:28 - __main__ - INFO - TESTING T095: COMPUTATIONAL EFFICIENCY BENCHMARKING
+2025-11-08 20:26:28 - __main__ - INFO - ================================================================================
+2025-11-08 20:26:28 - __main__ - INFO - Created synthetic time series with 50 data points
+2025-11-08 20:26:28 - __main__ - INFO - 
+Benchmarking 2 models with 3 runs each...
+2025-11-08 20:26:28 - src.baselines - INFO - T095: Benchmarking computational efficiency (3 runs)...
+2025-11-08 20:26:28 - src.baselines - INFO - Benchmarking arima_111...
+2025-11-08 20:26:28 - src.baselines - INFO - [OK] arima_111: 0.1249s total (0.1218s train, 0.0030s predict)
+2025-11-08 20:26:28 - src.baselines - INFO - Benchmarking exp_smoothing...
+2025-11-08 20:26:29 - src.baselines - INFO - [OK] exp_smoothing: 0.1536s total (0.1512s train, 0.0024s predict)
+2025-11-08 20:26:29 - __main__ - INFO - 
+[CHECK 1] Results for all models:
+2025-11-08 20:26:29 - __main__ - INFO -   PASS: arima_111 benchmarked
+2025-11-08 20:26:29 - __main__ - INFO -   PASS: exp_smoothing benchmarked
+2025-11-08 20:26:29 - __main__ - INFO - 
+[CHECK 2] Timing metrics:
+2025-11-08 20:26:29 - __main__ - INFO - 
+  arima_111:
+2025-11-08 20:26:29 - __main__ - INFO -     training_time_mean: 0.121841
+2025-11-08 20:26:29 - __main__ - INFO -     prediction_time_mean: 0.003018
+2025-11-08 20:26:29 - __main__ - INFO -     total_time: 0.124859
+2025-11-08 20:26:29 - __main__ - INFO -     throughput: 32.036133
+2025-11-08 20:26:29 - __main__ - INFO - 
+  exp_smoothing:
+2025-11-08 20:26:29 - __main__ - INFO -     training_time_mean: 0.151188
+2025-11-08 20:26:29 - __main__ - INFO -     prediction_time_mean: 0.002392
+2025-11-08 20:26:29 - __main__ - INFO -     total_time: 0.153580
+2025-11-08 20:26:29 - __main__ - INFO -     throughput: 26.045080
+2025-11-08 20:26:29 - __main__ - INFO - 
+[CHECK 3] Timing values are reasonable:
+2025-11-08 20:26:29 - __main__ - INFO -   PASS: arima_111 training time: 0.1218s
+2025-11-08 20:26:29 - __main__ - INFO -   PASS: arima_111 prediction time: 0.0030s
+2025-11-08 20:26:29 - __main__ - INFO -   PASS: exp_smoothing training time: 0.1512s
+2025-11-08 20:26:29 - __main__ - INFO -   PASS: exp_smoothing prediction time: 0.0024s
+2025-11-08 20:26:29 - __main__ - INFO - 
+[CHECK 4] Throughput calculated:
+2025-11-08 20:26:29 - __main__ - INFO -   PASS: arima_111 throughput: 32.04 predictions/second
+2025-11-08 20:26:29 - __main__ - INFO -   PASS: exp_smoothing throughput: 26.05 predictions/second
+2025-11-08 20:26:29 - __main__ - INFO - 
+[PASS] T095: Computational efficiency benchmarking successful
+2025-11-08 20:26:29 - __main__ - INFO - 
+================================================================================
+2025-11-08 20:26:29 - __main__ - INFO - TESTING: VALIDATE LSTM IMPROVEMENT
+2025-11-08 20:26:29 - __main__ - INFO - ================================================================================
+2025-11-08 20:26:29 - src.baselines - INFO - Validating LSTM improvement over baselines...
+2025-11-08 20:26:29 - src.baselines - INFO - [OK] arima validation: RMSE=33.33%, MAPE=37.50%
+2025-11-08 20:26:29 - src.baselines - INFO - [OK] exp_smoothing validation: RMSE=16.67%, MAPE=16.67%
+2025-11-08 20:26:29 - __main__ - INFO - 
+[CHECK 1] Validation results for ARIMA:
+2025-11-08 20:26:29 - __main__ - INFO -   RMSE improved: True (33.33%)
+2025-11-08 20:26:29 - __main__ - INFO -   MAPE improved: True (37.50%)
+2025-11-08 20:26:29 - __main__ - INFO -   Overall improved: True
+2025-11-08 20:26:29 - __main__ - INFO -   PASS: ARIMA validation successful
+2025-11-08 20:26:29 - __main__ - INFO - 
+[CHECK 2] Validation results for exp_smoothing:
+2025-11-08 20:26:29 - __main__ - INFO -   RMSE improved: True (16.67%)
+2025-11-08 20:26:29 - __main__ - INFO -   MAPE improved: True (16.67%)
+2025-11-08 20:26:29 - __main__ - INFO -   Overall improved: True
+2025-11-08 20:26:29 - __main__ - INFO -   PASS: Exponential smoothing validation successful
+2025-11-08 20:26:29 - __main__ - INFO - 
+[PASS] Validate LSTM improvement function successful
+2025-11-08 20:26:29 - __main__ - INFO - 
+================================================================================
+2025-11-08 20:26:29 - __main__ - INFO - TEST SUITE SUMMARY
+2025-11-08 20:26:29 - __main__ - INFO - ================================================================================
+2025-11-08 20:26:29 - __main__ - INFO -   [PASS] T092 - ARIMA Model
+2025-11-08 20:26:29 - __main__ - INFO -   [PASS] T093 - Exponential Smoothing
+2025-11-08 20:26:29 - __main__ - INFO -   [PASS] T094 - Performance Comparison
+2025-11-08 20:26:29 - __main__ - INFO -   [PASS] T095 - Computational Efficiency
+2025-11-08 20:26:29 - __main__ - INFO -   [PASS] Validate Improvement
+2025-11-08 20:26:29 - __main__ - INFO - 
+--------------------------------------------------------------------------------
+2025-11-08 20:26:29 - __main__ - INFO - Results: 5/5 tests passed
+2025-11-08 20:26:29 - __main__ - INFO - 
+*** ALL BASELINE MODEL TESTS PASSED ***
+2025-11-08 20:26:29 - __main__ - INFO - ================================================================================
+
+2025-11-10 15:25:00 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-10 15:25:00 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-10 15:25:00 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-10 15:25:00 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-10 15:25:00 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-10 15:25:00 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-10 15:25:00 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-10 15:25:00 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-10 15:25:22 - pipeline_orchestrator - INFO - 
+Pipeline started at: 2025-11-10 15:25:22
+2025-11-10 15:25:22 - consolidation - INFO - 
+================================================================================
+2025-11-10 15:25:22 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-11-10 15:25:22 - consolidation - INFO - ================================================================================
+2025-11-10 15:25:22 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-10 15:25:33 - consolidation - INFO - Loaded 5,430,384 records from consolidated file
+2025-11-10 15:25:40 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-10 15:25:40 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-11-10 15:25:40 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-10 15:25:40 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-11-10 15:25:41 - exploration - INFO -   Filtering to county-level records: 4,732,218 of 5,430,384 total records
+2025-11-10 15:25:43 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 15 columns
+2025-11-10 15:25:43 - exploration - INFO - County-Level Records: 4,732,218 rows
+2025-11-10 15:25:43 - exploration - INFO - Date Range: 2004 - 2024
+2025-11-10 15:25:43 - exploration - INFO - 
+Employment Statistics (County-Level Only):
+2025-11-10 15:25:43 - exploration - INFO -   avg_monthly_emplvl:
+2025-11-10 15:25:43 - exploration - INFO -     Mean: 3,004
+2025-11-10 15:25:43 - exploration - INFO -     Median: 213
+2025-11-10 15:25:43 - exploration - INFO -     Min: 0
+2025-11-10 15:25:43 - exploration - INFO -     Max: 4,583,485
+2025-11-10 15:25:44 - exploration - INFO -   month1_emplvl:
+2025-11-10 15:25:44 - exploration - INFO -     Mean: 2,392
+2025-11-10 15:25:44 - exploration - INFO -     Median: 112
+2025-11-10 15:25:44 - exploration - INFO -     Min: 0
+2025-11-10 15:25:44 - exploration - INFO -     Max: 4,563,073
+2025-11-10 15:25:44 - exploration - INFO -   month2_emplvl:
+2025-11-10 15:25:44 - exploration - INFO -     Mean: 2,405
+2025-11-10 15:25:44 - exploration - INFO -     Median: 112
+2025-11-10 15:25:44 - exploration - INFO -     Min: 0
+2025-11-10 15:25:44 - exploration - INFO -     Max: 4,608,275
+2025-11-10 15:25:44 - exploration - INFO - 
+Wage Statistics (County-Level Only):
+2025-11-10 15:25:44 - exploration - INFO -   total_qtrly_wages:
+2025-11-10 15:25:44 - exploration - INFO -     Mean: $76,419,401.10
+2025-11-10 15:25:44 - exploration - INFO -     Median: $3,155,335.50
+2025-11-10 15:25:44 - exploration - INFO -   avg_wkly_wage:
+2025-11-10 15:25:44 - exploration - INFO -     Mean: $1,018.95
+2025-11-10 15:25:44 - exploration - INFO -     Median: $875.00
+2025-11-10 15:25:44 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-11-10 15:25:46 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-11-10 15:25:46 - exploration - INFO -   - Creating employment trends plot...
+2025-11-10 15:25:47 - exploration - INFO -   - Creating quarterly distribution plot...
+2025-11-10 15:25:48 - exploration - INFO -   - Creating wage trends plot...
+2025-11-10 15:25:49 - exploration - INFO -   - Creating top industries plot...
+2025-11-10 15:25:52 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-11-10 15:25:53 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-10 15:25:53 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-11-10 15:25:53 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-10 15:25:53 - validation - INFO - Validating data quality for 5,430,384 records
+2025-11-10 15:25:53 - validation - INFO - Running employment range validation...
+2025-11-10 15:25:53 - validation - INFO - Running wage consistency validation...
+2025-11-10 15:25:54 - validation - INFO - Running statistical anomaly detection...
+2025-11-10 15:25:57 - validation - INFO - Generating quality scorecards...
+2025-11-10 15:26:18 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-11-10 15:26:18 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-11-10 15:27:09 - validation - INFO - 
+[OK] Validation complete!
+2025-11-10 15:27:09 - validation - INFO - Overall Quality Score: 0.859
+2025-11-10 15:27:09 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-11-10 15:27:09 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-11-10 15:27:21 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-10 15:27:21 - pipeline_orchestrator - INFO - STAGE 4: FEATURE ENGINEERING
+2025-11-10 15:27:21 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-10 15:27:21 - feature_pipeline - INFO - 
+================================================================================
+2025-11-10 15:27:21 - feature_pipeline - INFO - FEATURE ENGINEERING PIPELINE
+2025-11-10 15:27:21 - feature_pipeline - INFO - ================================================================================
+2025-11-10 15:27:21 - feature_pipeline - INFO - 
+[STAGE 1/10] T032: Filtering to county-level records...
+2025-11-10 15:27:21 - feature_engineering - INFO - 
+================================================================================
+2025-11-10 15:27:21 - feature_engineering - INFO - T032: FILTERING TO COUNTY-LEVEL RECORDS
+2025-11-10 15:27:21 - feature_engineering - INFO - ================================================================================
+2025-11-10 15:27:21 - feature_engineering - INFO - Initial dataset: 5,430,384 records
+2025-11-10 15:27:22 - feature_engineering - INFO - 
+Area type distribution BEFORE filtering:
+2025-11-10 15:27:22 - feature_engineering - INFO -   County: 4,732,218 records (87.1%)
+2025-11-10 15:27:22 - feature_engineering - INFO -   United States: 399,362 records (7.4%)
+2025-11-10 15:27:22 - feature_engineering - INFO -   California - Statewide: 298,804 records (5.5%)
+2025-11-10 15:27:23 - feature_engineering - INFO - 
+Filtering results:
+2025-11-10 15:27:23 - feature_engineering - INFO -   Retained (County): 4,732,218 records
+2025-11-10 15:27:23 - feature_engineering - INFO -   Removed (State + National): 698,166 records (12.9%)
+2025-11-10 15:27:23 - feature_engineering - INFO -   Unique counties: 58
+2025-11-10 15:27:23 - feature_engineering - INFO -   Year range: 2004-2024
+2025-11-10 15:27:23 - feature_engineering - INFO - 
+[SUCCESS] County-level filtering completed successfully
+2025-11-10 15:27:23 - feature_engineering - INFO - ================================================================================
+
+2025-11-10 15:27:23 - feature_engineering - INFO - Saving county-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T032_county_filtered.csv
+2025-11-10 15:28:20 - feature_engineering - INFO - [OK] Saved 4,732,218 records to T032_county_filtered.csv
+2025-11-10 15:28:20 - feature_pipeline - INFO - [OK] County filtering complete: 4,732,218 records
+2025-11-10 15:28:20 - feature_pipeline - INFO - 
+[STAGE 2/10] T033: Handling Annual vs quarterly records...
+2025-11-10 15:28:20 - feature_engineering - INFO - 
+================================================================================
+2025-11-10 15:28:20 - feature_engineering - INFO - T033: FILTERING TO QUARTERLY RECORDS ONLY
+2025-11-10 15:28:20 - feature_engineering - INFO - ================================================================================
+2025-11-10 15:28:20 - feature_engineering - INFO - Initial dataset: 4,732,218 records
+2025-11-10 15:28:20 - feature_engineering - INFO - 
+Quarter distribution BEFORE filtering:
+2025-11-10 15:28:20 - feature_engineering - INFO -   1st Qtr: 944,965 records (20.0%)
+2025-11-10 15:28:20 - feature_engineering - INFO -   2nd Qtr: 949,400 records (20.1%)
+2025-11-10 15:28:20 - feature_engineering - INFO -   3rd Qtr: 956,056 records (20.2%)
+2025-11-10 15:28:20 - feature_engineering - INFO -   4th Qtr: 927,499 records (19.6%)
+2025-11-10 15:28:20 - feature_engineering - INFO -   Annual: 954,298 records (20.2%)
+2025-11-10 15:28:22 - feature_engineering - INFO - 
+Filtering results:
+2025-11-10 15:28:22 - feature_engineering - INFO -   Retained (Quarterly): 3,777,920 records
+2025-11-10 15:28:22 - feature_engineering - INFO -   Removed (Annual): 954,298 records (20.2%)
+2025-11-10 15:28:22 - feature_engineering - INFO -   [OK] All annual records successfully removed
+2025-11-10 15:28:22 - feature_engineering - INFO - 
+[SUCCESS] Quarterly filtering completed successfully
+2025-11-10 15:28:22 - feature_engineering - INFO - ================================================================================
+2025-11-10 15:28:22 - feature_engineering - INFO - Saving quarterly-only data to: C:\GitHub\is-160-project\data\feature_engineering\T033_quarterly_only.csv
+2025-11-10 15:28:53 - feature_engineering - INFO - [OK] Saved 3,777,920 records to T033_quarterly_only.csv
+2025-11-10 15:28:53 - feature_pipeline - INFO - [OK] Quarterly filtering complete: 3,777,920 records
+2025-11-10 15:28:53 - feature_pipeline - INFO - 
+[STAGE 3/10] T034: Data quality filtering...
+2025-11-10 15:28:53 - feature_engineering - INFO - 
+================================================================================
+2025-11-10 15:28:53 - feature_engineering - INFO - T034: DATA QUALITY FILTERING
+2025-11-10 15:28:53 - feature_engineering - INFO - ================================================================================
+2025-11-10 15:28:53 - feature_engineering - INFO - Initial dataset: 3,777,920 records
+2025-11-10 15:28:53 - feature_engineering - INFO - 
+Rule 1: Negative employment
+2025-11-10 15:28:53 - feature_engineering - INFO -   Removed: 0 records
+2025-11-10 15:28:54 - feature_engineering - INFO - 
+Rule 2: Negative wages
+2025-11-10 15:28:54 - feature_engineering - INFO -   Removed: 0 records
+2025-11-10 15:28:54 - feature_engineering - INFO - 
+Filtering summary:
+2025-11-10 15:28:54 - feature_engineering - INFO -   Initial records: 3,777,920
+2025-11-10 15:28:54 - feature_engineering - INFO -   Final records: 3,777,920
+2025-11-10 15:28:54 - feature_engineering - INFO -   Total removed: 0 records (0.00%)
+2025-11-10 15:28:54 - feature_engineering - INFO - 
+[SUCCESS] Data quality filtering completed successfully
+2025-11-10 15:28:54 - feature_engineering - INFO - ================================================================================
+2025-11-10 15:28:54 - feature_engineering - INFO - Saving quality-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T034_quality_filtered.csv
+2025-11-10 15:29:25 - feature_engineering - INFO - [OK] Saved 3,777,920 records to T034_quality_filtered.csv
+2025-11-10 15:29:25 - feature_pipeline - INFO - [OK] Quality filtering complete: 3,777,920 records
+2025-11-10 15:29:25 - feature_pipeline - INFO - 
+[STAGE 4/10] T035: Central Valley counties subset...
+2025-11-10 15:29:25 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-11-10 15:29:25 - feature_pipeline - INFO - 
+[STAGE 5/10] T036: All California counties processing...
+2025-11-10 15:29:25 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-11-10 15:29:25 - feature_pipeline - INFO - 
+[STAGE 6/10] T038: Calculating quarterly growth rates...
+2025-11-10 15:29:25 - feature_engineering - INFO - 
+================================================================================
+2025-11-10 15:29:25 - feature_engineering - INFO - T038: CALCULATING QUARTERLY GROWTH RATES
+2025-11-10 15:29:25 - feature_engineering - INFO - ================================================================================
+2025-11-10 15:29:25 - feature_engineering - INFO - Employment column: avg_monthly_emplvl
+2025-11-10 15:29:25 - feature_engineering - INFO - Grouping by: ['area_name', 'industry_code']
+2025-11-10 15:29:30 - feature_engineering - INFO - 
+Growth rate statistics:
+2025-11-10 15:29:30 - feature_engineering - INFO -   QoQ % change - Mean: inf%
+2025-11-10 15:29:30 - feature_engineering - INFO -   QoQ % change - Std: nan%
+2025-11-10 15:29:30 - feature_engineering - INFO -   YoY % change - Mean: inf%
+2025-11-10 15:29:30 - feature_engineering - INFO -   YoY % change - Std: nan%
+2025-11-10 15:29:30 - feature_engineering - INFO -   Handling employment_qoq_pct_change: 12,516 infinite values (division by zero) - replacing with 0.0
+2025-11-10 15:29:30 - feature_engineering - INFO -   Handling employment_yoy_pct_change: 12,617 infinite values (division by zero) - replacing with 0.0
+2025-11-10 15:29:30 - feature_engineering - INFO - 
+Final growth rate statistics (after cleaning):
+2025-11-10 15:29:30 - feature_engineering - INFO -   employment_qoq_pct_change:
+2025-11-10 15:29:30 - feature_engineering - INFO -     Valid values: 3,673,235
+2025-11-10 15:29:30 - feature_engineering - INFO -     Null values: 104,685
+2025-11-10 15:29:30 - feature_engineering - INFO -     Mean: 2981.09%
+2025-11-10 15:29:30 - feature_engineering - INFO -     Median: 0.00%
+2025-11-10 15:29:30 - feature_engineering - INFO -     Min: -100.00%
+2025-11-10 15:29:30 - feature_engineering - INFO -     Max: 32237100.00%
+2025-11-10 15:29:30 - feature_engineering - INFO -   employment_yoy_pct_change:
+2025-11-10 15:29:30 - feature_engineering - INFO -     Valid values: 3,479,344
+2025-11-10 15:29:30 - feature_engineering - INFO -     Null values: 298,576
+2025-11-10 15:29:30 - feature_engineering - INFO -     Mean: 2136.00%
+2025-11-10 15:29:30 - feature_engineering - INFO -     Median: 0.00%
+2025-11-10 15:29:30 - feature_engineering - INFO -     Min: -100.00%
+2025-11-10 15:29:30 - feature_engineering - INFO -     Max: 32237100.00%
+2025-11-10 15:29:30 - feature_engineering - INFO - 
+[SUCCESS] Growth rate calculations completed
+2025-11-10 15:29:30 - feature_engineering - INFO - ================================================================================
+2025-11-10 15:29:30 - feature_pipeline - INFO - [OK] Growth rates complete: 3,777,920 records
+2025-11-10 15:29:30 - feature_pipeline - INFO - 
+[VISUALIZATION] Creating growth rate distribution plots...
+2025-11-10 15:29:34 - feature_pipeline - INFO -   [OK] Saved growth rate plots to C:\GitHub\is-160-project\data\feature_engineering\plots\T038_growth_rates_distribution.png
+2025-11-10 15:29:34 - feature_pipeline - INFO - [OK] Growth rate plots saved to C:\GitHub\is-160-project\data\feature_engineering\plots\T038_growth_rates_distribution.png
+2025-11-10 15:29:34 - feature_pipeline - INFO - 
+[STAGE 7/10] T039: Creating seasonal adjustments...
+2025-11-10 15:29:34 - feature_pipeline - INFO - [PENDING] Seasonal adjustments - advanced feature, will be added in next iteration
+2025-11-10 15:29:34 - feature_pipeline - INFO - 
+[STAGE 8/10] T040: Calculating industry concentration...
+2025-11-10 15:29:34 - feature_pipeline - INFO - [PENDING] Industry concentration - advanced feature, will be added in next iteration
+2025-11-10 15:29:34 - feature_pipeline - INFO - 
+[STAGE 9/10] T041: Building geographic clustering...
+2025-11-10 15:29:34 - feature_pipeline - INFO - [PENDING] Geographic clustering - advanced feature, will be added in next iteration
+2025-11-10 15:29:34 - feature_pipeline - INFO - 
+[STAGE 10/10] T042: Generating lag features...
+2025-11-10 15:29:34 - feature_engineering - INFO - 
+================================================================================
+2025-11-10 15:29:34 - feature_engineering - INFO - T042: GENERATING LAG FEATURES
+2025-11-10 15:29:34 - feature_engineering - INFO - ================================================================================
+2025-11-10 15:29:34 - feature_engineering - INFO - Value column: avg_monthly_emplvl
+2025-11-10 15:29:34 - feature_engineering - INFO - Lag periods: [1, 2, 3, 4]
+2025-11-10 15:29:34 - feature_engineering - INFO - Grouping by: ['area_name', 'industry_code']
+2025-11-10 15:29:37 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_1: 80,982 null values (beginning of series)
+2025-11-10 15:29:38 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_2: 156,223 null values (beginning of series)
+2025-11-10 15:29:39 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_3: 225,823 null values (beginning of series)
+2025-11-10 15:29:40 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_4: 292,033 null values (beginning of series)
+2025-11-10 15:29:40 - feature_engineering - INFO - 
+Lag feature statistics:
+2025-11-10 15:29:40 - feature_engineering - INFO -   avg_monthly_emplvl_lag_1:
+2025-11-10 15:29:40 - feature_engineering - INFO -     Valid values: 3,696,938
+2025-11-10 15:29:40 - feature_engineering - INFO -     Mean: 3048.61
+2025-11-10 15:29:40 - feature_engineering - INFO -     Median: 218.00
+2025-11-10 15:29:40 - feature_engineering - INFO -     Min: 0
+2025-11-10 15:29:40 - feature_engineering - INFO -     Max: 4583485
+2025-11-10 15:29:40 - feature_engineering - INFO -   avg_monthly_emplvl_lag_2:
+2025-11-10 15:29:40 - feature_engineering - INFO -     Valid values: 3,621,697
+2025-11-10 15:29:40 - feature_engineering - INFO -     Mean: 3088.33
+2025-11-10 15:29:40 - feature_engineering - INFO -     Median: 222.00
+2025-11-10 15:29:40 - feature_engineering - INFO -     Min: 0
+2025-11-10 15:29:40 - feature_engineering - INFO -     Max: 4583485
+2025-11-10 15:29:40 - feature_engineering - INFO -   avg_monthly_emplvl_lag_3:
+2025-11-10 15:29:40 - feature_engineering - INFO -     Valid values: 3,552,097
+2025-11-10 15:29:40 - feature_engineering - INFO -     Mean: 3124.69
+2025-11-10 15:29:40 - feature_engineering - INFO -     Median: 226.00
+2025-11-10 15:29:40 - feature_engineering - INFO -     Min: 0
+2025-11-10 15:29:40 - feature_engineering - INFO -     Max: 4583485
+2025-11-10 15:29:40 - feature_engineering - INFO -   avg_monthly_emplvl_lag_4:
+2025-11-10 15:29:40 - feature_engineering - INFO -     Valid values: 3,485,887
+2025-11-10 15:29:40 - feature_engineering - INFO -     Mean: 3157.84
+2025-11-10 15:29:40 - feature_engineering - INFO -     Median: 229.00
+2025-11-10 15:29:40 - feature_engineering - INFO -     Min: 0
+2025-11-10 15:29:40 - feature_engineering - INFO -     Max: 4583485
+2025-11-10 15:29:40 - feature_engineering - INFO - 
+[SUCCESS] Generated 4 lag features
+2025-11-10 15:29:41 - feature_engineering - INFO - ================================================================================
+2025-11-10 15:29:41 - feature_pipeline - INFO - [OK] Lag features complete: 3,777,920 records
+2025-11-10 15:29:41 - feature_pipeline - INFO - 
+[VISUALIZATION] Creating lag feature correlation heatmap...
+2025-11-10 15:29:42 - feature_pipeline - INFO -   [OK] Saved lag correlation heatmap to C:\GitHub\is-160-project\data\feature_engineering\plots\T042_lag_features_correlation.png
+2025-11-10 15:29:42 - feature_pipeline - INFO - [OK] Lag correlation heatmap saved to C:\GitHub\is-160-project\data\feature_engineering\plots\T042_lag_features_correlation.png
+2025-11-10 15:29:42 - feature_pipeline - INFO - 
+Saving feature-engineered dataset to: C:\GitHub\is-160-project\data\feature_engineering\final_features.csv
+2025-11-10 15:31:03 - feature_pipeline - INFO - [OK] Saved 3,777,920 records to final_features.csv
+2025-11-10 15:31:03 - feature_pipeline - INFO - 
+================================================================================
+2025-11-10 15:31:03 - feature_pipeline - INFO - FEATURE ENGINEERING COMPLETE
+2025-11-10 15:31:03 - feature_pipeline - INFO - ================================================================================
+2025-11-10 15:31:03 - feature_pipeline - INFO - 
+Implemented tasks:
+2025-11-10 15:31:03 - feature_pipeline - INFO -   [X] T032: County-level filtering (removed state/national aggregates)
+2025-11-10 15:31:03 - feature_pipeline - INFO -   [X] T033: Quarterly filtering (removed Annual records)
+2025-11-10 15:31:03 - feature_pipeline - INFO -   [X] T034: Data quality filtering (removed invalid records)
+2025-11-10 15:31:03 - feature_pipeline - INFO -   [X] T038: Growth rates (added 6 columns: QoQ & YoY metrics)
+2025-11-10 15:31:03 - feature_pipeline - INFO -   [X] T042: Lag features (added 4 columns: 1-4 quarters back)
+2025-11-10 15:31:03 - feature_pipeline - INFO - 
+Deferred tasks (advanced features):
+2025-11-10 15:31:03 - feature_pipeline - INFO -   [ ] T039: Seasonal adjustments
+2025-11-10 15:31:03 - feature_pipeline - INFO -   [ ] T040: Industry concentration
+2025-11-10 15:31:03 - feature_pipeline - INFO -   [ ] T041: Geographic clustering
+2025-11-10 15:31:03 - feature_pipeline - INFO - 
+Total new features added: 10 columns
+2025-11-10 15:31:03 - feature_pipeline - INFO - Final dataset: 3,777,920 records × 26 columns
+2025-11-10 15:31:03 - feature_pipeline - INFO - ================================================================================
+
+2025-11-10 15:31:03 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-10 15:31:03 - pipeline_orchestrator - INFO - STAGE 5: DATA PREPROCESSING
+2025-11-10 15:31:03 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-10 15:31:03 - preprocessing_pipeline - INFO - 
+================================================================================
+2025-11-10 15:31:03 - preprocessing_pipeline - INFO - PREPROCESSING PIPELINE FOR LSTM
+2025-11-10 15:31:03 - preprocessing_pipeline - INFO - ================================================================================
+2025-11-10 15:31:03 - preprocessing_pipeline - INFO - 
+[STAGE 1/5] T054: Normalizing employment and wage data...
+2025-11-10 15:31:03 - preprocessing_pipeline - INFO -   Normalizing 16 columns using robust scaling
+2025-11-10 15:31:03 - preprocessing - INFO - Normalizing columns: ['avg_monthly_emplvl', 'month1_emplvl', 'month2_emplvl', 'month3_emplvl', 'employment_prev_quarter', 'employment_qoq_change', 'employment_qoq_pct_change', 'employment_4q_ago', 'employment_yoy_change', 'employment_yoy_pct_change', 'avg_monthly_emplvl_lag_1', 'avg_monthly_emplvl_lag_2', 'avg_monthly_emplvl_lag_3', 'avg_monthly_emplvl_lag_4', 'total_qtrly_wages', 'avg_wkly_wage']
+2025-11-10 15:31:03 - preprocessing - INFO -   Using RobustScaler (resistant to outliers)
+2025-11-10 15:31:07 - preprocessing - INFO -   Normalized 16 columns
+2025-11-10 15:31:07 - preprocessing - INFO -     avg_monthly_emplvl: mean=3.482, std=48.066
+2025-11-10 15:31:07 - preprocessing - INFO -     month1_emplvl: mean=3.474, std=47.979
+2025-11-10 15:31:07 - preprocessing - INFO -     month2_emplvl: mean=3.481, std=48.054
+2025-11-10 15:31:07 - preprocessing_pipeline - INFO - [OK] Normalization complete
+2025-11-10 15:31:07 - preprocessing_pipeline - INFO - 
+[STAGE 2/5] T055: Handling missing values...
+2025-11-10 15:31:09 - preprocessing_pipeline - INFO -   Found 1,948,019 missing values
+2025-11-10 15:31:09 - preprocessing - INFO - Handling missing values with median strategy
+2025-11-10 15:31:10 - preprocessing - INFO -   Missing values before imputation: 1,948,019
+2025-11-10 15:31:24 - preprocessing - INFO -   Missing values after imputation: 0
+2025-11-10 15:31:24 - preprocessing - INFO -   Imputed 1,948,019 values
+2025-11-10 15:31:24 - preprocessing_pipeline - INFO - [OK] Missing values handled
+2025-11-10 15:31:24 - preprocessing_pipeline - INFO - 
+[STAGE 3/5] T056: Creating categorical encodings...
+2025-11-10 15:31:24 - preprocessing_pipeline - INFO -   Encoding 3 categorical columns
+2025-11-10 15:31:24 - preprocessing - INFO - Creating categorical encodings for: ['industry_code', 'area_name', 'ownership']
+2025-11-10 15:31:25 - preprocessing - INFO -   Encoded industry_code: 2648 unique classes
+2025-11-10 15:31:26 - preprocessing - INFO -   Encoded area_name: 58 unique classes
+2025-11-10 15:31:27 - preprocessing - INFO -   Encoded ownership: 5 unique classes
+2025-11-10 15:31:27 - preprocessing_pipeline - INFO - [OK] Categorical encoding complete
+2025-11-10 15:31:27 - preprocessing_pipeline - INFO - 
+[STAGE 4/5] T057: Transforming to sequence format...
+2025-11-10 15:31:27 - preprocessing_pipeline - INFO -   Creating sequences of length 12
+2025-11-10 15:31:27 - preprocessing_pipeline - INFO -   Target column: month1_emplvl
+2025-11-10 15:31:27 - preprocessing - INFO - Transforming data to sequences of length 12
+2025-11-10 15:31:27 - preprocessing - INFO -   Target column: month1_emplvl
+2025-11-10 15:31:27 - preprocessing - INFO -   Feature columns: 18 columns
+2025-11-10 15:31:27 - preprocessing - INFO -   Grouping by: area_name, industry_code
+2025-11-10 15:33:52 - preprocessing - INFO -   Created 2997906 sequences from 80982 groups
+2025-11-10 15:34:07 - preprocessing - INFO -   Sequences shape: (2997906, 12, 18)
+2025-11-10 15:34:07 - preprocessing - INFO -   Targets shape: (2997906,)
+2025-11-10 15:34:11 - preprocessing_pipeline - INFO - [OK] Created 2,997,906 sequences
+2025-11-10 15:34:11 - preprocessing_pipeline - INFO - 
+[STAGE 5/5] T058: Validating preprocessing...
+2025-11-10 15:34:11 - preprocessing - INFO - Validating preprocessing steps...
+2025-11-10 15:34:17 - preprocessing - INFO -   Infinite values check: 0 found - PASS
+2025-11-10 15:34:17 - preprocessing - INFO -   NaN values check: 0 found - PASS
+2025-11-10 15:34:17 - preprocessing - INFO -   Normalization range check: max |value| = 10284.94 - FAIL
+2025-11-10 15:34:17 - preprocessing - INFO -   Categorical encoding check: All integer types - PASS
+2025-11-10 15:34:17 - preprocessing - INFO -   Shape preservation: 3,777,920 rows - PASS
+2025-11-10 15:34:17 - preprocessing - INFO - Overall validation: FAIL (4/5 checks passed)
+2025-11-10 15:34:17 - preprocessing_pipeline - INFO - [OK] Preprocessing validation passed
+2025-11-10 15:34:17 - preprocessing_pipeline - INFO - 
+Saving preprocessed data to: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-10 15:36:44 - preprocessing_pipeline - INFO - [OK] Saved preprocessed data: qcew_preprocessed.csv
+2025-11-10 15:40:17 - preprocessing_pipeline - INFO - [OK] Saved sequences: qcew_preprocessed_sequences.npz
+2025-11-10 15:40:36 - preprocessing_pipeline - INFO - [OK] Saved preprocessor: qcew_preprocessed_preprocessor.pkl
+2025-11-10 15:40:36 - preprocessing_pipeline - INFO - 
+================================================================================
+2025-11-10 15:40:36 - preprocessing_pipeline - INFO - PREPROCESSING COMPLETE
+2025-11-10 15:40:36 - preprocessing_pipeline - INFO - Sequences: (2997906, 12, 18)
+2025-11-10 15:40:36 - preprocessing_pipeline - INFO - Targets: (2997906,)
+2025-11-10 15:40:36 - preprocessing_pipeline - INFO - ================================================================================
+
+2025-11-10 15:41:19 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-10 15:41:19 - pipeline_orchestrator - INFO - STAGE 6: MODEL TRAINING
+2025-11-10 15:41:19 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-10 15:41:19 - pipeline_orchestrator - INFO -   Input shape: torch.Size([2997906, 12, 18])
+2025-11-10 15:41:19 - pipeline_orchestrator - INFO -   Target shape: torch.Size([2997906])
+2025-11-10 15:41:19 - pipeline_orchestrator - INFO -   Features: 18, Sequence length: 12
+2025-11-10 15:41:19 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-10 15:41:19 - dataset - INFO - Creating train/validation/test splits...
+2025-11-10 15:41:19 - dataset - INFO -   Total samples: 2,997,906
+2025-11-10 15:41:19 - dataset - INFO -   Val size: 20.0%, Test size: 10.0%
+2025-11-10 15:41:19 - dataset - INFO -   Shuffle: False (recommended: False for time series)
+2025-11-10 15:41:19 - dataset - INFO -   Train samples: 2,098,535
+2025-11-10 15:41:19 - dataset - INFO -   Val samples: 599,581
+2025-11-10 15:41:19 - dataset - INFO -   Test samples: 299,790
+2025-11-10 15:41:19 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-10 15:41:19 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-10 15:41:19 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-10 15:41:19 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-10 15:41:19 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-10 15:41:19 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-10 15:41:19 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-10 15:41:19 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-10 15:41:19 - pipeline_orchestrator - INFO - 
+Initializing LSTM model...
+2025-11-10 15:41:19 - pipeline_orchestrator - INFO - 
+Validating model architecture...
+2025-11-10 15:41:19 - lstm_model - INFO - Validating LSTM architecture dimensions...
+2025-11-10 15:41:19 - lstm_model - INFO -   Input shape: (32, 12, 18)
+2025-11-10 15:41:19 - lstm_model - INFO -   Expected output size: 1
+2025-11-10 15:41:19 - lstm_model - INFO -   [OK] Forward pass successful
+2025-11-10 15:41:19 - lstm_model - INFO -   Output shape: (32, 1) - [PASS]
+2025-11-10 15:41:19 - lstm_model - INFO -   No NaN/Inf: [PASS]
+2025-11-10 15:41:19 - lstm_model - INFO -   Trainable parameters: 54,977 - [PASS]
+2025-11-10 15:41:19 - lstm_model - INFO -   Has recurrent layer: [PASS]
+2025-11-10 15:41:19 - lstm_model - INFO - Overall validation: [PASS] (5/5 checks passed)
+2025-11-10 15:41:19 - pipeline_orchestrator - INFO - 
+Using device: cpu
+2025-11-10 15:41:19 - pipeline_orchestrator - INFO - 
+Creating trainer...
+2025-11-10 15:41:46 - pipeline_orchestrator - INFO - 
+Starting training...
+2025-11-10 15:41:46 - training - INFO - ================================================================================
+2025-11-10 15:41:46 - training - INFO - TRAINING EMPLOYMENT FORECASTING MODEL
+2025-11-10 15:41:46 - training - INFO - ================================================================================
+2025-11-10 15:41:46 - training - INFO -   Max epochs: 100
+2025-11-10 15:41:46 - training - INFO -   Early stopping patience: 10
+2025-11-10 15:41:46 - training - INFO -   Device: cpu
+2025-11-10 15:41:46 - training - INFO -   Optimizer: Adam
+2025-11-10 15:41:46 - training - INFO -   Loss function: MSELoss
+2025-11-10 15:41:46 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-10 15:41:46 - training - INFO - EPOCH 1/100
+2025-11-10 15:41:46 - training - INFO - --------------------------------------------------------------------------------
+2025-11-10 15:41:46 - training - INFO - Training...
+2025-11-10 15:42:33 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-10 15:42:33 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-10 15:42:33 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-10 15:42:33 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-10 15:42:33 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-10 15:42:33 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-10 15:42:33 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-10 15:42:33 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-10 15:43:07 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-10 15:43:07 - pipeline_orchestrator - INFO - STAGE 6: MODEL TRAINING
+2025-11-10 15:43:07 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-10 15:43:07 - pipeline_orchestrator - INFO -   Input shape: torch.Size([2997906, 12, 18])
+2025-11-10 15:43:07 - pipeline_orchestrator - INFO -   Target shape: torch.Size([2997906])
+2025-11-10 15:43:07 - pipeline_orchestrator - INFO -   Features: 18, Sequence length: 12
+2025-11-10 15:43:07 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-10 15:43:07 - dataset - INFO - Creating train/validation/test splits...
+2025-11-10 15:43:07 - dataset - INFO -   Total samples: 2,997,906
+2025-11-10 15:43:07 - dataset - INFO -   Val size: 20.0%, Test size: 10.0%
+2025-11-10 15:43:07 - dataset - INFO -   Shuffle: False (recommended: False for time series)
+2025-11-10 15:43:07 - dataset - INFO -   Train samples: 2,098,535
+2025-11-10 15:43:07 - dataset - INFO -   Val samples: 599,581
+2025-11-10 15:43:07 - dataset - INFO -   Test samples: 299,790
+2025-11-10 15:43:07 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-10 15:43:07 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-10 15:43:07 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-10 15:43:07 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-10 15:43:07 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-10 15:43:07 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-10 15:43:07 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-10 15:43:07 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-10 15:43:07 - pipeline_orchestrator - INFO - 
+Initializing LSTM model...
+2025-11-10 15:43:07 - pipeline_orchestrator - INFO - 
+Validating model architecture...
+2025-11-10 15:43:07 - lstm_model - INFO - Validating LSTM architecture dimensions...
+2025-11-10 15:43:07 - lstm_model - INFO -   Input shape: (32, 12, 18)
+2025-11-10 15:43:07 - lstm_model - INFO -   Expected output size: 1
+2025-11-10 15:43:08 - lstm_model - INFO -   [OK] Forward pass successful
+2025-11-10 15:43:08 - lstm_model - INFO -   Output shape: (32, 1) - [PASS]
+2025-11-10 15:43:08 - lstm_model - INFO -   No NaN/Inf: [PASS]
+2025-11-10 15:43:08 - lstm_model - INFO -   Trainable parameters: 54,977 - [PASS]
+2025-11-10 15:43:08 - lstm_model - INFO -   Has recurrent layer: [PASS]
+2025-11-10 15:43:08 - lstm_model - INFO - Overall validation: [PASS] (5/5 checks passed)
+2025-11-10 15:43:08 - pipeline_orchestrator - INFO - 
+Using device: cpu
+2025-11-10 15:43:08 - pipeline_orchestrator - INFO - 
+Creating trainer...
+2025-11-10 15:43:19 - pipeline_orchestrator - INFO - 
+Starting training...
+2025-11-10 15:43:19 - training - INFO - ================================================================================
+2025-11-10 15:43:19 - training - INFO - TRAINING EMPLOYMENT FORECASTING MODEL
+2025-11-10 15:43:19 - training - INFO - ================================================================================
+2025-11-10 15:43:19 - training - INFO -   Max epochs: 100
+2025-11-10 15:43:19 - training - INFO -   Early stopping patience: 10
+2025-11-10 15:43:19 - training - INFO -   Device: cpu
+2025-11-10 15:43:19 - training - INFO -   Optimizer: Adam
+2025-11-10 15:43:19 - training - INFO -   Loss function: MSELoss
+2025-11-10 15:43:19 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-10 15:43:19 - training - INFO - EPOCH 1/100
+2025-11-10 15:43:19 - training - INFO - --------------------------------------------------------------------------------
+2025-11-10 15:43:19 - training - INFO - Training...
+2025-11-10 15:44:17 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-10 15:44:17 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-10 15:44:17 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-10 15:44:17 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-10 15:44:17 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-10 15:44:17 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-10 15:44:17 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-10 15:44:17 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-10 15:44:54 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-10 15:44:54 - pipeline_orchestrator - INFO - STAGE 6: MODEL TRAINING
+2025-11-10 15:44:54 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-10 15:44:54 - pipeline_orchestrator - INFO -   Input shape: torch.Size([2997906, 12, 18])
+2025-11-10 15:44:54 - pipeline_orchestrator - INFO -   Target shape: torch.Size([2997906])
+2025-11-10 15:44:54 - pipeline_orchestrator - INFO -   Features: 18, Sequence length: 12
+2025-11-10 15:44:54 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-10 15:44:54 - dataset - INFO - Creating train/validation/test splits...
+2025-11-10 15:44:54 - dataset - INFO -   Total samples: 2,997,906
+2025-11-10 15:44:54 - dataset - INFO -   Val size: 20.0%, Test size: 10.0%
+2025-11-10 15:44:54 - dataset - INFO -   Shuffle: False (recommended: False for time series)
+2025-11-10 15:44:54 - dataset - INFO -   Train samples: 2,098,535
+2025-11-10 15:44:54 - dataset - INFO -   Val samples: 599,581
+2025-11-10 15:44:54 - dataset - INFO -   Test samples: 299,790
+2025-11-10 15:44:54 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-10 15:44:54 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-10 15:44:54 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-10 15:44:54 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-10 15:44:54 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-10 15:44:54 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-10 15:44:54 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-10 15:44:54 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-10 15:44:54 - pipeline_orchestrator - INFO - 
+Initializing LSTM model...
+2025-11-10 15:44:54 - pipeline_orchestrator - INFO - 
+Validating model architecture...
+2025-11-10 15:44:54 - lstm_model - INFO - Validating LSTM architecture dimensions...
+2025-11-10 15:44:54 - lstm_model - INFO -   Input shape: (32, 12, 18)
+2025-11-10 15:44:54 - lstm_model - INFO -   Expected output size: 1
+2025-11-10 15:44:54 - lstm_model - INFO -   [OK] Forward pass successful
+2025-11-10 15:44:54 - lstm_model - INFO -   Output shape: (32, 1) - [PASS]
+2025-11-10 15:44:54 - lstm_model - INFO -   No NaN/Inf: [PASS]
+2025-11-10 15:44:54 - lstm_model - INFO -   Trainable parameters: 54,977 - [PASS]
+2025-11-10 15:44:54 - lstm_model - INFO -   Has recurrent layer: [PASS]
+2025-11-10 15:44:54 - lstm_model - INFO - Overall validation: [PASS] (5/5 checks passed)
+2025-11-10 15:44:54 - pipeline_orchestrator - INFO - 
+Using device: cpu
+2025-11-10 15:44:54 - pipeline_orchestrator - INFO - 
+Creating trainer...
+2025-11-10 15:45:34 - pipeline_orchestrator - INFO - 
+Starting training...
+2025-11-10 15:45:34 - training - INFO - ================================================================================
+2025-11-10 15:45:34 - training - INFO - TRAINING EMPLOYMENT FORECASTING MODEL
+2025-11-10 15:45:34 - training - INFO - ================================================================================
+2025-11-10 15:45:34 - training - INFO -   Max epochs: 100
+2025-11-10 15:45:34 - training - INFO -   Early stopping patience: 10
+2025-11-10 15:45:34 - training - INFO -   Device: cpu
+2025-11-10 15:45:34 - training - INFO -   Optimizer: Adam
+2025-11-10 15:45:34 - training - INFO -   Loss function: MSELoss
+2025-11-10 15:45:34 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-10 15:45:34 - training - INFO - EPOCH 1/100
+2025-11-10 15:45:34 - training - INFO - --------------------------------------------------------------------------------
+2025-11-10 15:45:34 - training - INFO - Training...
+2025-11-11 09:43:48 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-11 09:43:48 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-11 09:43:48 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-11 09:43:48 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-11 09:43:48 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-11 09:43:48 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-11 09:43:48 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-11 09:43:48 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-11 09:55:50 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-11 09:55:50 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-11 09:55:50 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-11 09:55:50 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-11 09:55:50 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-11 09:55:50 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-11 09:55:50 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-11 09:55:50 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-11 09:56:10 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-11 09:56:10 - pipeline_orchestrator - INFO - STAGE 6: MODEL TRAINING
+2025-11-11 09:56:10 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-11 09:56:10 - pipeline_orchestrator - INFO -   Input shape: torch.Size([2997906, 12, 18])
+2025-11-11 09:56:10 - pipeline_orchestrator - INFO -   Target shape: torch.Size([2997906])
+2025-11-11 09:56:10 - pipeline_orchestrator - INFO -   Features: 18, Sequence length: 12
+2025-11-11 09:56:10 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-11 09:56:10 - dataset - INFO - Creating train/validation/test splits...
+2025-11-11 09:56:10 - dataset - INFO -   Total samples: 2,997,906
+2025-11-11 09:56:10 - dataset - INFO -   Val size: 20.0%, Test size: 10.0%
+2025-11-11 09:56:10 - dataset - INFO -   Shuffle: False (recommended: False for time series)
+2025-11-11 09:56:10 - dataset - INFO -   Train samples: 2,098,535
+2025-11-11 09:56:10 - dataset - INFO -   Val samples: 599,581
+2025-11-11 09:56:10 - dataset - INFO -   Test samples: 299,790
+2025-11-11 09:56:10 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-11 09:56:10 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-11 09:56:10 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-11 09:56:10 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-11 09:56:10 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-11 09:56:10 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-11 09:56:10 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-11 09:56:10 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-11 09:56:10 - pipeline_orchestrator - INFO - 
+Initializing LSTM model...
+2025-11-11 09:56:10 - pipeline_orchestrator - INFO - 
+Validating model architecture...
+2025-11-11 09:56:10 - lstm_model - INFO - Validating LSTM architecture dimensions...
+2025-11-11 09:56:10 - lstm_model - INFO -   Input shape: (32, 12, 18)
+2025-11-11 09:56:10 - lstm_model - INFO -   Expected output size: 1
+2025-11-11 09:56:10 - lstm_model - INFO -   [OK] Forward pass successful
+2025-11-11 09:56:10 - lstm_model - INFO -   Output shape: (32, 1) - [PASS]
+2025-11-11 09:56:10 - lstm_model - INFO -   No NaN/Inf: [PASS]
+2025-11-11 09:56:10 - lstm_model - INFO -   Trainable parameters: 54,977 - [PASS]
+2025-11-11 09:56:10 - lstm_model - INFO -   Has recurrent layer: [PASS]
+2025-11-11 09:56:10 - lstm_model - INFO - Overall validation: [PASS] (5/5 checks passed)
+2025-11-11 09:56:10 - pipeline_orchestrator - INFO - 
+Using device: cpu
+2025-11-11 09:56:10 - pipeline_orchestrator - INFO - 
+Creating trainer...
+2025-11-11 09:56:23 - pipeline_orchestrator - INFO - 
+Starting training...
+2025-11-11 09:56:23 - training - INFO - ================================================================================
+2025-11-11 09:56:23 - training - INFO - TRAINING EMPLOYMENT FORECASTING MODEL
+2025-11-11 09:56:23 - training - INFO - ================================================================================
+2025-11-11 09:56:23 - training - INFO -   Max epochs: 100
+2025-11-11 09:56:23 - training - INFO -   Early stopping patience: 10
+2025-11-11 09:56:23 - training - INFO -   Device: cpu
+2025-11-11 09:56:23 - training - INFO -   Optimizer: Adam
+2025-11-11 09:56:23 - training - INFO -   Loss function: MSELoss
+2025-11-11 09:56:23 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-11 09:56:23 - training - INFO - EPOCH 1/100
+2025-11-11 09:56:23 - training - INFO - --------------------------------------------------------------------------------
+2025-11-11 09:56:23 - training - INFO - Training...
+2025-11-11 09:57:45 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-11 09:57:45 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-11 09:57:45 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-11 09:57:45 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-11 09:57:45 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-11 09:57:45 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-11 09:57:45 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-11 09:57:45 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-11 09:57:57 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-11 09:57:57 - pipeline_orchestrator - INFO - STAGE 6: MODEL TRAINING
+2025-11-11 09:57:57 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-11 09:57:57 - pipeline_orchestrator - INFO -   Input shape: torch.Size([2997906, 12, 18])
+2025-11-11 09:57:57 - pipeline_orchestrator - INFO -   Target shape: torch.Size([2997906])
+2025-11-11 09:57:57 - pipeline_orchestrator - INFO -   Features: 18, Sequence length: 12
+2025-11-11 09:57:57 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-11 09:57:57 - dataset - INFO - Creating train/validation/test splits...
+2025-11-11 09:57:57 - dataset - INFO -   Total samples: 2,997,906
+2025-11-11 09:57:57 - dataset - INFO -   Val size: 20.0%, Test size: 10.0%
+2025-11-11 09:57:57 - dataset - INFO -   Shuffle: False (recommended: False for time series)
+2025-11-11 09:57:57 - dataset - INFO -   Train samples: 2,098,535
+2025-11-11 09:57:57 - dataset - INFO -   Val samples: 599,581
+2025-11-11 09:57:57 - dataset - INFO -   Test samples: 299,790
+2025-11-11 09:57:57 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-11 09:57:57 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-11 09:57:57 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-11 09:57:57 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-11 09:57:57 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-11 09:57:58 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-11 09:57:58 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-11 09:57:58 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-11 09:57:58 - pipeline_orchestrator - INFO - 
+Initializing LSTM model...
+2025-11-11 09:57:58 - pipeline_orchestrator - INFO - 
+Validating model architecture...
+2025-11-11 09:57:58 - lstm_model - INFO - Validating LSTM architecture dimensions...
+2025-11-11 09:57:58 - lstm_model - INFO -   Input shape: (32, 12, 18)
+2025-11-11 09:57:58 - lstm_model - INFO -   Expected output size: 1
+2025-11-11 09:57:58 - lstm_model - INFO -   [OK] Forward pass successful
+2025-11-11 09:57:58 - lstm_model - INFO -   Output shape: (32, 1) - [PASS]
+2025-11-11 09:57:58 - lstm_model - INFO -   No NaN/Inf: [PASS]
+2025-11-11 09:57:58 - lstm_model - INFO -   Trainable parameters: 54,977 - [PASS]
+2025-11-11 09:57:58 - lstm_model - INFO -   Has recurrent layer: [PASS]
+2025-11-11 09:57:58 - lstm_model - INFO - Overall validation: [PASS] (5/5 checks passed)
+2025-11-11 09:57:58 - pipeline_orchestrator - INFO - 
+Using device: cpu
+2025-11-11 09:57:58 - pipeline_orchestrator - INFO - 
+Creating trainer...
+2025-11-11 09:58:00 - pipeline_orchestrator - INFO - 
+Starting training...
+2025-11-11 09:58:00 - training - INFO - ================================================================================
+2025-11-11 09:58:00 - training - INFO - TRAINING EMPLOYMENT FORECASTING MODEL
+2025-11-11 09:58:00 - training - INFO - ================================================================================
+2025-11-11 09:58:00 - training - INFO -   Max epochs: 10
+2025-11-11 09:58:00 - training - INFO -   Early stopping patience: 1
+2025-11-11 09:58:00 - training - INFO -   Device: cpu
+2025-11-11 09:58:00 - training - INFO -   Optimizer: Adam
+2025-11-11 09:58:00 - training - INFO -   Loss function: MSELoss
+2025-11-11 09:58:00 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-11 09:58:00 - training - INFO - EPOCH 1/10
+2025-11-11 09:58:00 - training - INFO - --------------------------------------------------------------------------------
+2025-11-11 09:58:00 - training - INFO - Training...
+2025-11-11 09:58:40 - training - INFO -   Epoch 1 | Batch 3279/65580 (5.0%) | Loss: 4603.160343
+2025-11-11 09:59:18 - training - INFO -   Epoch 1 | Batch 6558/65580 (10.0%) | Loss: 4285.668934
+2025-11-11 09:59:55 - training - INFO -   Epoch 1 | Batch 9837/65580 (15.0%) | Loss: 4090.234797
+2025-11-11 10:00:33 - training - INFO -   Epoch 1 | Batch 13116/65580 (20.0%) | Loss: 3976.566970
+2025-11-11 10:01:11 - training - INFO -   Epoch 1 | Batch 16395/65580 (25.0%) | Loss: 3883.271682
