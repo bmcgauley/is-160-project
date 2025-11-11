@@ -13,6 +13,11 @@ from datetime import datetime
 import warnings
 import torch
 import joblib
+import sys
+
+# Add config directory to path
+sys.path.insert(0, str(Path(__file__).parent.parent / 'config'))
+from hyperparameters import ModelConfig, TrainingConfig, DataConfig
 
 # Only import modules that currently exist
 # Other modules will be imported locally when their stages are called
@@ -139,9 +144,9 @@ class QCEWPipeline:
         logger.info("="*80)
         
         X_tensor, y_tensor, preprocessor = preprocess_for_lstm(
-            df, 
+            df,
             output_file=self.preprocessed_file,
-            sequence_length=12  # 12 quarters = 3 years
+            sequence_length=DataConfig.SEQUENCE_LENGTH
         )
         return X_tensor, y_tensor, preprocessor
 
@@ -212,25 +217,25 @@ class QCEWPipeline:
         train_dataset, val_dataset, test_dataset = create_train_val_splits(
             X_tensor.numpy(),
             y_tensor.numpy(),
-            val_size=0.2,
-            test_size=0.1,
+            val_size=DataConfig.VAL_SIZE,
+            test_size=DataConfig.TEST_SIZE,
             shuffle=False  # Preserve temporal order
         )
 
         # Create data loaders
         logger.info("\nCreating data loaders...")
-        train_loader = build_data_loader(train_dataset, batch_size=32, shuffle=True)
-        val_loader = build_data_loader(val_dataset, batch_size=32, shuffle=False)
-        test_loader = build_data_loader(test_dataset, batch_size=32, shuffle=False)
+        train_loader = build_data_loader(train_dataset, batch_size=DataConfig.BATCH_SIZE, shuffle=DataConfig.SHUFFLE_TRAIN)
+        val_loader = build_data_loader(val_dataset, batch_size=DataConfig.BATCH_SIZE, shuffle=DataConfig.SHUFFLE_VAL)
+        test_loader = build_data_loader(test_dataset, batch_size=DataConfig.BATCH_SIZE, shuffle=DataConfig.SHUFFLE_VAL)
 
         # Initialize model
         logger.info("\nInitializing LSTM model...")
         model = EmploymentLSTM(
             input_size=num_features,
-            hidden_size=64,
-            num_layers=2,
-            output_size=1,
-            dropout=0.2
+            hidden_size=ModelConfig.HIDDEN_SIZE,
+            num_layers=ModelConfig.NUM_LAYERS,
+            output_size=ModelConfig.OUTPUT_SIZE,
+            dropout=ModelConfig.DROPOUT
         )
 
         # Validate architecture
@@ -256,15 +261,19 @@ class QCEWPipeline:
             train_loader=train_loader,
             val_loader=val_loader,
             criterion=torch.nn.MSELoss(),
-            optimizer=torch.optim.Adam(model.parameters(), lr=0.001),
+            optimizer=torch.optim.Adam(
+                model.parameters(),
+                lr=TrainingConfig.LEARNING_RATE,
+                weight_decay=TrainingConfig.WEIGHT_DECAY
+            ),
             device=device
         )
 
         # Train model
         logger.info("\nStarting training...")
         history = trainer.train_model(
-            num_epochs=self.config.get('num_epochs', 100),
-            patience=self.config.get('patience', 10),
+            num_epochs=TrainingConfig.NUM_EPOCHS,
+            patience=TrainingConfig.PATIENCE,
             save_path=str(self.model_file)
         )
 

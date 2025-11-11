@@ -13,6 +13,11 @@ from typing import Dict, List, Tuple, Optional, Union
 import logging
 import numpy as np
 from pathlib import Path
+import sys
+
+# Add config directory to path
+sys.path.insert(0, str(Path(__file__).parent.parent / 'config'))
+from hyperparameters import TrainingConfig
 
 logger = logging.getLogger(__name__)
 
@@ -49,7 +54,11 @@ class EmploymentTrainer:
             self.criterion = criterion
 
         if optimizer is None:
-            self.optimizer = optim.Adam(model.parameters(), lr=0.001)
+            self.optimizer = optim.Adam(
+                model.parameters(),
+                lr=TrainingConfig.LEARNING_RATE,
+                weight_decay=TrainingConfig.WEIGHT_DECAY
+            )
         else:
             self.optimizer = optimizer
 
@@ -94,7 +103,7 @@ class EmploymentTrainer:
             loss.backward()
 
             # Gradient clipping to prevent exploding gradients
-            torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
+            torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=TrainingConfig.GRADIENT_CLIP_NORM)
 
             # Update weights
             self.optimizer.step()
@@ -157,20 +166,26 @@ class EmploymentTrainer:
         return avg_loss
 
     def train_model(self,
-                   num_epochs: int = 100,
-                   patience: int = 10,
+                   num_epochs: int = None,
+                   patience: int = None,
                    save_path: Optional[str] = None) -> Dict[str, List[float]]:
         """
         Train the model with early stopping and checkpointing.
 
         Args:
-            num_epochs: Maximum number of epochs
-            patience: Early stopping patience
+            num_epochs: Maximum number of epochs (defaults to TrainingConfig.NUM_EPOCHS)
+            patience: Early stopping patience (defaults to TrainingConfig.PATIENCE)
             save_path: Path to save model checkpoints
 
         Returns:
             Dictionary with training history
         """
+        # Use config defaults if not provided
+        if num_epochs is None:
+            num_epochs = TrainingConfig.NUM_EPOCHS
+        if patience is None:
+            patience = TrainingConfig.PATIENCE
+
         logger.info("="*80)
         logger.info("TRAINING EMPLOYMENT FORECASTING MODEL")
         logger.info("="*80)

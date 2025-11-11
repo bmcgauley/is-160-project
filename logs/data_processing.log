@@ -1117,3 +1117,245 @@ Saving preprocessed data to: C:\GitHub\is-160-project\data\processed\qcew_prepro
 2025-11-01 10:48:39 - preprocessing_pipeline - INFO - [OK] Saved preprocessed data: qcew_preprocessed.csv
 2025-11-01 10:48:52 - preprocessing_pipeline - INFO - [OK] Saved sequences: qcew_preprocessed_sequences.npz
 2025-11-01 10:48:52 - preprocessing_pipeline - INFO - PREPROCESSING COMPLETE
+2025-11-08 19:24:24 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-08 19:24:24 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-08 19:24:24 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-08 19:24:24 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-08 19:24:24 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-08 19:25:55 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-11-08 19:25:55 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-08 19:26:13 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-11-08 19:26:13 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-11-08 19:26:16 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 15 columns
+2025-11-08 19:26:17 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-11-08 19:26:18 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-11-08 19:26:25 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-11-08 19:26:25 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-11-08 19:26:25 - validation - INFO - Validating data quality for 5,430,384 records
+2025-11-08 19:26:25 - validation - INFO - Running employment range validation...
+2025-11-08 19:26:25 - validation - INFO - Running wage consistency validation...
+2025-11-08 19:26:26 - validation - INFO - Running statistical anomaly detection...
+2025-11-08 19:26:30 - validation - INFO - Generating quality scorecards...
+2025-11-08 19:26:52 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-11-08 19:26:52 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-11-08 19:27:37 - validation - INFO - 
+[OK] Validation complete!
+2025-11-08 19:27:37 - validation - INFO - Overall Quality Score: 0.859
+2025-11-08 19:27:37 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-11-08 19:27:37 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-11-08 19:27:51 - feature_engineering - INFO - Initial dataset: 5,430,384 records
+2025-11-08 19:27:53 - feature_engineering - INFO - Saving county-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T032_county_filtered.csv
+2025-11-08 19:28:31 - feature_engineering - INFO - [OK] Saved 4,732,218 records to T032_county_filtered.csv
+2025-11-08 19:28:31 - feature_engineering - INFO - Initial dataset: 4,732,218 records
+2025-11-08 19:28:33 - feature_engineering - INFO - Saving quarterly-only data to: C:\GitHub\is-160-project\data\feature_engineering\T033_quarterly_only.csv
+2025-11-08 19:29:07 - feature_engineering - INFO - [OK] Saved 3,777,920 records to T033_quarterly_only.csv
+2025-11-08 19:29:07 - feature_pipeline - INFO - 
+[STAGE 3/10] T034: Data quality filtering...
+2025-11-08 19:29:07 - feature_engineering - INFO - T034: DATA QUALITY FILTERING
+2025-11-08 19:29:07 - feature_engineering - INFO - Initial dataset: 3,777,920 records
+2025-11-08 19:29:08 - feature_engineering - INFO - 
+[SUCCESS] Data quality filtering completed successfully
+2025-11-08 19:29:08 - feature_engineering - INFO - Saving quality-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T034_quality_filtered.csv
+2025-11-08 19:29:38 - feature_engineering - INFO - [OK] Saved 3,777,920 records to T034_quality_filtered.csv
+2025-11-08 19:29:38 - feature_pipeline - INFO - 
+[STAGE 5/10] T036: All California counties processing...
+2025-11-08 19:29:47 - feature_pipeline - INFO -   [OK] Saved growth rate plots to C:\GitHub\is-160-project\data\feature_engineering\plots\T038_growth_rates_distribution.png
+2025-11-08 19:29:47 - feature_pipeline - INFO - [OK] Growth rate plots saved to C:\GitHub\is-160-project\data\feature_engineering\plots\T038_growth_rates_distribution.png
+2025-11-08 19:29:54 - feature_pipeline - INFO -   [OK] Saved lag correlation heatmap to C:\GitHub\is-160-project\data\feature_engineering\plots\T042_lag_features_correlation.png
+2025-11-08 19:29:54 - feature_pipeline - INFO - [OK] Lag correlation heatmap saved to C:\GitHub\is-160-project\data\feature_engineering\plots\T042_lag_features_correlation.png
+2025-11-08 19:29:54 - feature_pipeline - INFO - 
+Saving feature-engineered dataset to: C:\GitHub\is-160-project\data\feature_engineering\final_features.csv
+2025-11-08 19:31:12 - feature_pipeline - INFO - [OK] Saved 3,777,920 records to final_features.csv
+2025-11-08 19:31:12 - feature_pipeline - INFO -   [X] T034: Data quality filtering (removed invalid records)
+2025-11-08 19:31:12 - feature_pipeline - INFO - Final dataset: 3,777,920 records × 26 columns
+2025-11-08 19:31:12 - pipeline_orchestrator - INFO - STAGE 5: DATA PREPROCESSING
+2025-11-08 19:31:12 - preprocessing_pipeline - INFO - PREPROCESSING PIPELINE FOR LSTM
+2025-11-08 19:31:12 - preprocessing_pipeline - INFO - 
+[STAGE 1/5] T054: Normalizing employment and wage data...
+2025-11-08 19:31:49 - preprocessing - INFO - Transforming data to sequences of length 12
+2025-11-08 19:35:51 - preprocessing - INFO -   Processed 80982 groups, skipped 28343 (insufficient data)
+2025-11-08 19:36:27 - preprocessing_pipeline - INFO - 
+[STAGE 5/5] T058: Validating preprocessing...
+2025-11-08 19:36:27 - preprocessing - INFO - Validating preprocessing steps...
+2025-11-08 19:36:39 - preprocessing_pipeline - INFO - [OK] Preprocessing validation passed
+2025-11-08 19:36:39 - preprocessing_pipeline - INFO - 
+Saving preprocessed data to: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-08 19:39:41 - preprocessing_pipeline - INFO - [OK] Saved preprocessed data: qcew_preprocessed.csv
+2025-11-08 19:40:32 - preprocessing_pipeline - INFO - [OK] Saved sequences: qcew_preprocessed_sequences.npz
+2025-11-08 19:40:33 - preprocessing_pipeline - INFO - [OK] Saved preprocessor: qcew_preprocessed_preprocessor.pkl
+2025-11-08 19:40:33 - preprocessing_pipeline - INFO - PREPROCESSING COMPLETE
+2025-11-08 19:40:55 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-08 19:40:55 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-08 19:40:55 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-08 19:40:55 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-08 19:40:55 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-08 19:40:55 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-08 19:40:55 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-08 19:40:55 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-08 19:40:55 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-08 20:26:27 - __main__ - INFO - Created synthetic time series with 50 data points
+2025-11-08 20:26:28 - __main__ - INFO - Created synthetic time series with 50 data points
+2025-11-08 20:26:28 - __main__ - INFO - 
+[CHECK 5] Handling insufficient data:
+2025-11-08 20:26:28 - src.baselines - WARNING - Insufficient data points (5) for seasonal model. Need at least 8.
+2025-11-08 20:26:28 - __main__ - INFO -   PASS: Gracefully handled insufficient data (fell back to simple smoothing)
+2025-11-08 20:26:28 - __main__ - INFO - Created test predictions for 20 data points
+2025-11-08 20:26:28 - __main__ - INFO - Created synthetic time series with 50 data points
+2025-11-08 20:26:29 - __main__ - INFO - TESTING: VALIDATE LSTM IMPROVEMENT
+2025-11-08 20:26:29 - __main__ - INFO - 
+[PASS] Validate LSTM improvement function successful
+2025-11-08 20:26:29 - __main__ - INFO -   [PASS] Validate Improvement
+2025-11-10 15:25:00 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-10 15:25:00 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-10 15:25:00 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-10 15:25:00 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-10 15:25:00 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-10 15:25:22 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-11-10 15:25:22 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-10 15:25:40 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-11-10 15:25:40 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-11-10 15:25:43 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 15 columns
+2025-11-10 15:25:44 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-11-10 15:25:46 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-11-10 15:25:52 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-11-10 15:25:53 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-11-10 15:25:53 - validation - INFO - Validating data quality for 5,430,384 records
+2025-11-10 15:25:53 - validation - INFO - Running employment range validation...
+2025-11-10 15:25:53 - validation - INFO - Running wage consistency validation...
+2025-11-10 15:25:54 - validation - INFO - Running statistical anomaly detection...
+2025-11-10 15:25:57 - validation - INFO - Generating quality scorecards...
+2025-11-10 15:26:18 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-11-10 15:26:18 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-11-10 15:27:09 - validation - INFO - 
+[OK] Validation complete!
+2025-11-10 15:27:09 - validation - INFO - Overall Quality Score: 0.859
+2025-11-10 15:27:09 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-11-10 15:27:09 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-11-10 15:27:21 - feature_engineering - INFO - Initial dataset: 5,430,384 records
+2025-11-10 15:27:23 - feature_engineering - INFO - Saving county-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T032_county_filtered.csv
+2025-11-10 15:28:20 - feature_engineering - INFO - [OK] Saved 4,732,218 records to T032_county_filtered.csv
+2025-11-10 15:28:20 - feature_engineering - INFO - Initial dataset: 4,732,218 records
+2025-11-10 15:28:22 - feature_engineering - INFO - Saving quarterly-only data to: C:\GitHub\is-160-project\data\feature_engineering\T033_quarterly_only.csv
+2025-11-10 15:28:53 - feature_engineering - INFO - [OK] Saved 3,777,920 records to T033_quarterly_only.csv
+2025-11-10 15:28:53 - feature_pipeline - INFO - 
+[STAGE 3/10] T034: Data quality filtering...
+2025-11-10 15:28:53 - feature_engineering - INFO - T034: DATA QUALITY FILTERING
+2025-11-10 15:28:53 - feature_engineering - INFO - Initial dataset: 3,777,920 records
+2025-11-10 15:28:54 - feature_engineering - INFO - 
+[SUCCESS] Data quality filtering completed successfully
+2025-11-10 15:28:54 - feature_engineering - INFO - Saving quality-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T034_quality_filtered.csv
+2025-11-10 15:29:25 - feature_engineering - INFO - [OK] Saved 3,777,920 records to T034_quality_filtered.csv
+2025-11-10 15:29:25 - feature_pipeline - INFO - 
+[STAGE 5/10] T036: All California counties processing...
+2025-11-10 15:29:34 - feature_pipeline - INFO -   [OK] Saved growth rate plots to C:\GitHub\is-160-project\data\feature_engineering\plots\T038_growth_rates_distribution.png
+2025-11-10 15:29:34 - feature_pipeline - INFO - [OK] Growth rate plots saved to C:\GitHub\is-160-project\data\feature_engineering\plots\T038_growth_rates_distribution.png
+2025-11-10 15:29:42 - feature_pipeline - INFO -   [OK] Saved lag correlation heatmap to C:\GitHub\is-160-project\data\feature_engineering\plots\T042_lag_features_correlation.png
+2025-11-10 15:29:42 - feature_pipeline - INFO - [OK] Lag correlation heatmap saved to C:\GitHub\is-160-project\data\feature_engineering\plots\T042_lag_features_correlation.png
+2025-11-10 15:29:42 - feature_pipeline - INFO - 
+Saving feature-engineered dataset to: C:\GitHub\is-160-project\data\feature_engineering\final_features.csv
+2025-11-10 15:31:03 - feature_pipeline - INFO - [OK] Saved 3,777,920 records to final_features.csv
+2025-11-10 15:31:03 - feature_pipeline - INFO -   [X] T034: Data quality filtering (removed invalid records)
+2025-11-10 15:31:03 - feature_pipeline - INFO - Final dataset: 3,777,920 records × 26 columns
+2025-11-10 15:31:03 - pipeline_orchestrator - INFO - STAGE 5: DATA PREPROCESSING
+2025-11-10 15:31:03 - preprocessing_pipeline - INFO - PREPROCESSING PIPELINE FOR LSTM
+2025-11-10 15:31:03 - preprocessing_pipeline - INFO - 
+[STAGE 1/5] T054: Normalizing employment and wage data...
+2025-11-10 15:31:27 - preprocessing - INFO - Transforming data to sequences of length 12
+2025-11-10 15:34:11 - preprocessing_pipeline - INFO - 
+[STAGE 5/5] T058: Validating preprocessing...
+2025-11-10 15:34:11 - preprocessing - INFO - Validating preprocessing steps...
+2025-11-10 15:34:17 - preprocessing_pipeline - INFO - [OK] Preprocessing validation passed
+2025-11-10 15:34:17 - preprocessing_pipeline - INFO - 
+Saving preprocessed data to: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-10 15:36:44 - preprocessing_pipeline - INFO - [OK] Saved preprocessed data: qcew_preprocessed.csv
+2025-11-10 15:40:17 - preprocessing_pipeline - INFO - [OK] Saved sequences: qcew_preprocessed_sequences.npz
+2025-11-10 15:40:36 - preprocessing_pipeline - INFO - [OK] Saved preprocessor: qcew_preprocessed_preprocessor.pkl
+2025-11-10 15:40:36 - preprocessing_pipeline - INFO - PREPROCESSING COMPLETE
+2025-11-10 15:41:19 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-10 15:41:19 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-10 15:41:19 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-10 15:41:19 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-10 15:41:19 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-10 15:41:19 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-10 15:41:19 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-10 15:41:19 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-10 15:41:19 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-10 15:42:33 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-10 15:42:33 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-10 15:42:33 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-10 15:42:33 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-10 15:42:33 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-10 15:43:07 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-10 15:43:07 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-10 15:43:07 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-10 15:43:07 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-10 15:43:07 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-10 15:43:07 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-10 15:43:07 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-10 15:43:07 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-10 15:43:07 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-10 15:44:17 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-10 15:44:17 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-10 15:44:17 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-10 15:44:17 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-10 15:44:17 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-10 15:44:54 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-10 15:44:54 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-10 15:44:54 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-10 15:44:54 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-10 15:44:54 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-10 15:44:54 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-10 15:44:54 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-10 15:44:54 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-10 15:44:54 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-11 09:43:48 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-11 09:43:48 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-11 09:43:48 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-11 09:43:48 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-11 09:43:48 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-11 09:55:50 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-11 09:55:50 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-11 09:55:50 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-11 09:55:50 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-11 09:55:50 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-11 09:56:10 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-11 09:56:10 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-11 09:56:10 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-11 09:56:10 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-11 09:56:10 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-11 09:56:10 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-11 09:56:10 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-11 09:56:10 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-11 09:56:10 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-11 09:57:45 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-11 09:57:45 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-11 09:57:45 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-11 09:57:45 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-11 09:57:45 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-11 09:57:57 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-11 09:57:57 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-11 09:57:57 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-11 09:57:57 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-11 09:57:57 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-11 09:57:57 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-11 09:57:58 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-11 09:57:58 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-11 09:57:58 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches

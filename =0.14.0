@@ -1,0 +1,19 @@
+Defaulting to user installation because normal site-packages is not writeable
+Collecting statsmodels
+  Downloading statsmodels-0.14.5-cp313-cp313-win_amd64.whl.metadata (9.8 kB)
+Requirement already satisfied: numpy<3,>=1.22.3 in c:\users\brian\appdata\local\packages\pythonsoftwarefoundation.python.3.13_qbz5n2kfra8p0\localcache\local-packages\python313\site-packages (from statsmodels) (2.2.6)
+Requirement already satisfied: scipy!=1.9.2,>=1.8 in c:\users\brian\appdata\local\packages\pythonsoftwarefoundation.python.3.13_qbz5n2kfra8p0\localcache\local-packages\python313\site-packages (from statsmodels) (1.16.1)
+Requirement already satisfied: pandas!=2.1.0,>=1.4 in c:\users\brian\appdata\local\packages\pythonsoftwarefoundation.python.3.13_qbz5n2kfra8p0\localcache\local-packages\python313\site-packages (from statsmodels) (2.3.2)
+Collecting patsy>=0.5.6 (from statsmodels)
+  Downloading patsy-1.0.2-py2.py3-none-any.whl.metadata (3.6 kB)
+Requirement already satisfied: packaging>=21.3 in c:\users\brian\appdata\local\packages\pythonsoftwarefoundation.python.3.13_qbz5n2kfra8p0\localcache\local-packages\python313\site-packages (from statsmodels) (25.0)
+Requirement already satisfied: python-dateutil>=2.8.2 in c:\users\brian\appdata\local\packages\pythonsoftwarefoundation.python.3.13_qbz5n2kfra8p0\localcache\local-packages\python313\site-packages (from pandas!=2.1.0,>=1.4->statsmodels) (2.8.2)
+Requirement already satisfied: pytz>=2020.1 in c:\users\brian\appdata\local\packages\pythonsoftwarefoundation.python.3.13_qbz5n2kfra8p0\localcache\local-packages\python313\site-packages (from pandas!=2.1.0,>=1.4->statsmodels) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in c:\users\brian\appdata\local\packages\pythonsoftwarefoundation.python.3.13_qbz5n2kfra8p0\localcache\local-packages\python313\site-packages (from pandas!=2.1.0,>=1.4->statsmodels) (2025.2)
+Requirement already satisfied: six>=1.5 in c:\users\brian\appdata\local\packages\pythonsoftwarefoundation.python.3.13_qbz5n2kfra8p0\localcache\local-packages\python313\site-packages (from python-dateutil>=2.8.2->pandas!=2.1.0,>=1.4->statsmodels) (1.17.0)
+Downloading statsmodels-0.14.5-cp313-cp313-win_amd64.whl (9.6 MB)
+   ---------------------------------------- 9.6/9.6 MB 47.8 MB/s  0:00:00
+Downloading patsy-1.0.2-py2.py3-none-any.whl (233 kB)
+Installing collected packages: patsy, statsmodels
+
+Successfully installed patsy-1.0.2 statsmodels-0.14.5

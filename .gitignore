@@ -35,3 +35,4 @@ data/validated/qcew_california_validated_2004_2025.csv
 !data/*/*/README.md
 !data/validated/validation_report.txt
 nul
+src/__pycache__/pipeline_orchestrator.cpython-313.pyc
