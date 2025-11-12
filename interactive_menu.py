@@ -181,7 +181,61 @@ def run_interactive_menu():
                 if not pipeline.model_file.exists():
                     print("[ERROR] Please train the model first (option 7)")
                 else:
-                    pipeline.stage_7_evaluate_model()
+                    # Load model and create training results for evaluation
+                    import numpy as np
+                    import torch
+                    from sklearn.metrics import mean_squared_error
+
+                    # Load test data (from sequences file)
+                    sequences_file = pipeline.processed_dir / "qcew_preprocessed_sequences.npz"
+                    if not sequences_file.exists():
+                        print("[ERROR] Sequences file not found. Please run preprocessing first.")
+                    else:
+                        # Load sequences
+                        data = np.load(sequences_file)
+                        X_sequences = data['X']
+                        y_targets = data['y']
+
+                        # Use last 20% as test set
+                        split_idx = int(len(X_sequences) * 0.8)
+                        X_test = X_sequences[split_idx:]
+                        y_test = y_targets[split_idx:]
+
+                        # Load model and make predictions
+                        from lstm_model import EmploymentLSTM
+                        device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
+                        checkpoint = torch.load(pipeline.model_file, map_location=device)
+                        model = EmploymentLSTM(
+                            input_size=X_sequences.shape[2],
+                            hidden_size=64,
+                            num_layers=2,
+                            dropout=0.2
+                        ).to(device)
+                        model.load_state_dict(checkpoint['model_state_dict'])
+                        model.eval()
+
+                        # Make predictions
+                        with torch.no_grad():
+                            X_test_tensor = torch.FloatTensor(X_test).to(device)
+                            predictions = model(X_test_tensor).cpu().numpy().squeeze()
+
+                        # Create training_results dict
+                        training_results = {
+                            "success": True,
+                            "history": checkpoint.get('history', {'train_loss': [], 'val_loss': [], 'learning_rates': []}),
+                            "test_loss": mean_squared_error(y_test, predictions),
+                            "test_rmse": np.sqrt(mean_squared_error(y_test, predictions)),
+                            "test_mape": 0.0,  # Will be calculated in evaluation
+                            "directional_accuracy": 0.0,  # Will be calculated in evaluation
+                            "model_path": str(pipeline.model_file),
+                            "num_epochs": checkpoint.get('epoch', 0),
+                            "best_val_loss": checkpoint.get('val_loss', 0),
+                            "test_predictions": predictions,
+                            "test_targets": y_test
+                        }
+
+                        pipeline.stage_7_evaluate_model(training_results)
                 input("\nPress Enter to continue...")
             
             elif choice == '9':

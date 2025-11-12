@@ -67,7 +67,11 @@ class EmploymentDataPreprocessor:
         
         # Apply normalization
         df[employment_cols] = scaler.fit_transform(df[employment_cols])
-        self.scalers['employment'] = scaler
+        # Store scaler with metadata about which columns were normalized
+        self.scalers['employment'] = {
+            'scaler': scaler,
+            'columns': employment_cols
+        }
         
         logger.info(f"  Normalized {len(employment_cols)} columns")
         for col in employment_cols[:3]:  # Show stats for first 3 columns
@@ -251,13 +255,22 @@ class EmploymentDataPreprocessor:
 
         # Check 3: Normalized columns have reasonable ranges (within -10 to 10 std)
         if 'employment' in self.scalers:
-            # Check that normalized data is within reasonable bounds
-            scaled_cols = ['avg_monthly_emplvl', 'total_qtrly_wages', 'avg_wkly_wage']
+            # Get the actual columns that were normalized from scaler metadata
+            scaler_info = self.scalers['employment']
+            if isinstance(scaler_info, dict) and 'columns' in scaler_info:
+                scaled_cols = scaler_info['columns']
+            else:
+                # Fallback for old format (just the scaler object)
+                scaled_cols = ['avg_monthly_emplvl', 'total_qtrly_wages', 'avg_wkly_wage']
+
+            # Check only columns that exist and were normalized
             scaled_cols = [col for col in scaled_cols if col in df.columns]
             if scaled_cols:
                 max_abs_val = df[scaled_cols].abs().max().max()
                 results['normalized_range'] = max_abs_val < 10.0
                 logger.info(f"  Normalization range check: max |value| = {max_abs_val:.2f} - {'PASS' if results['normalized_range'] else 'FAIL'}")
+                if not results['normalized_range']:
+                    logger.info(f"    Checked columns: {scaled_cols}")
 
         # Check 4: Categorical encodings are integers
         if self.encoders:

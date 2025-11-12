@@ -3,6 +3,8 @@ Training Module for QCEW Employment Data Analysis
 
 This module contains training loops, validation functions,
 and training utilities for LSTM models.
+
+Enhanced with TensorBoard integration for live training monitoring.
 """
 
 import torch
@@ -14,6 +16,15 @@ import logging
 import numpy as np
 from pathlib import Path
 import sys
+from datetime import datetime
+
+# Try to import TensorBoard (optional dependency)
+try:
+    from torch.utils.tensorboard import SummaryWriter
+    TENSORBOARD_AVAILABLE = True
+except ImportError:
+    TENSORBOARD_AVAILABLE = False
+    SummaryWriter = None
 
 # Add config directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent / 'config'))
@@ -31,7 +42,8 @@ class EmploymentTrainer:
                  val_loader: DataLoader,
                  criterion: nn.Module = None,
                  optimizer: optim.Optimizer = None,
-                 device: str = 'cpu'):
+                 device: str = 'cpu',
+                 tensorboard_writer = None):
         """
         Initialize the trainer.
 
@@ -42,11 +54,13 @@ class EmploymentTrainer:
             criterion: Loss function
             optimizer: Optimizer
             device: Device to train on
+            tensorboard_writer: Optional TensorBoard writer for live monitoring
         """
         self.model = model.to(device)
         self.train_loader = train_loader
         self.val_loader = val_loader
         self.device = device
+        self.writer = tensorboard_writer if TENSORBOARD_AVAILABLE else None
 
         if criterion is None:
             self.criterion = nn.MSELoss()
@@ -118,6 +132,11 @@ class EmploymentTrainer:
                 logger.info(f"  Epoch {epoch_num} | Batch {batch_idx + 1}/{total_batches} ({progress:.1f}%) | "
                            f"Loss: {avg_loss_so_far:.6f}")
 
+                # TensorBoard: Log batch-level training loss (shows as smooth line)
+                if self.writer is not None:
+                    global_step = (epoch_num - 1) * total_batches + (batch_idx + 1)
+                    self.writer.add_scalar('Loss_Batch/train', avg_loss_so_far, global_step)
+
         avg_loss = total_loss / num_batches
         return avg_loss
 
@@ -161,6 +180,11 @@ class EmploymentTrainer:
                     progress = (batch_idx + 1) / total_batches * 100
                     logger.info(f"  Validation | Batch {batch_idx + 1}/{total_batches} ({progress:.1f}%) | "
                                f"Loss: {avg_loss_so_far:.6f}")
+
+                    # TensorBoard: Log batch-level validation loss (shows as smooth line)
+                    if self.writer is not None:
+                        global_step = (epoch_num - 1) * total_batches + (batch_idx + 1)
+                        self.writer.add_scalar('Loss_Batch/validation', avg_loss_so_far, global_step)
 
         avg_loss = total_loss / num_batches
         return avg_loss
@@ -236,8 +260,27 @@ class EmploymentTrainer:
             logger.info(f"  LR:         {current_lr:.6f}")
             logger.info("="*80)
 
-            # Check for improvement
-            if val_loss < best_val_loss:
+            # TensorBoard logging
+            if self.writer is not None:
+                self.writer.add_scalar('Loss/train', train_loss, epoch + 1)
+                self.writer.add_scalar('Loss/validation', val_loss, epoch + 1)
+                self.writer.add_scalar('Learning_Rate', current_lr, epoch + 1)
+                self.writer.add_scalar('Improvement/epochs_without_improvement',
+                                      epochs_without_improvement, epoch + 1)
+
+                # Log train/val loss ratio (overfitting indicator)
+                if val_loss > 0:
+                    ratio = train_loss / val_loss
+                    self.writer.add_scalar('Metrics/train_val_ratio', ratio, epoch + 1)
+
+                self.writer.flush()
+
+            # Check for improvement (with minimum delta threshold)
+            min_delta = TrainingConfig.MIN_DELTA
+            improvement = best_val_loss - val_loss
+
+            if improvement > min_delta:
+                # Significant improvement
                 best_val_loss = val_loss
                 epochs_without_improvement = 0
                 best_model_state = self.model.state_dict().copy()
@@ -245,9 +288,11 @@ class EmploymentTrainer:
                 # Save checkpoint if path provided
                 if save_path:
                     self.save_checkpoint(save_path, epoch, val_loss)
-                    logger.info(f"  [OK] New best model saved (val_loss: {val_loss:.6f})")
+                    logger.info(f"  [OK] New best model saved (val_loss: {val_loss:.6f}, improvement: {improvement:.6f})")
             else:
                 epochs_without_improvement += 1
+                if improvement > 0:
+                    logger.info(f"  [INFO] Small improvement ({improvement:.6f}) below threshold ({min_delta})")
 
             # Early stopping check
             if epochs_without_improvement >= patience:
@@ -406,8 +451,7 @@ def build_learning_rate_scheduler(optimizer: optim.Optimizer,
             optimizer,
             mode='min',
             factor=kwargs.get('factor', 0.5),
-            patience=kwargs.get('patience', 5),
-            verbose=True
+            patience=kwargs.get('patience', 5)
         )
         logger.info(f"  ReduceLROnPlateau: factor={kwargs.get('factor', 0.5)}, patience={kwargs.get('patience', 5)}")
 

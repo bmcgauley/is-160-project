@@ -29,8 +29,9 @@ class TrainingConfig:
     """Training loop hyperparameters"""
 
     # Training iterations
-    NUM_EPOCHS: int = 10           # Maximum number of training epochs
-    PATIENCE: int = 1              # Early stopping patience (epochs)
+    NUM_EPOCHS: int = 100           # Maximum number of training epochs
+    PATIENCE: int = 15              # Early stopping patience (epochs) - increased from 10
+    MIN_DELTA: float = 1.0          # Minimum improvement required to reset patience
 
     # Optimizer settings
     LEARNING_RATE: float = 0.001    # Initial learning rate

@@ -110,7 +110,10 @@ def mean_absolute_percentage_error(y_true: Union[np.ndarray, torch.Tensor],
                                    y_pred: Union[np.ndarray, torch.Tensor],
                                    epsilon: float = 1e-8) -> float:
     """
-    Calculate MAPE for employment predictions.
+    Calculate Symmetric MAPE (sMAPE) for employment predictions.
+
+    Uses symmetric MAPE to handle normalized/scaled data more robustly.
+    sMAPE is bounded between 0 and 200% and doesn't explode when actual values are near zero.
 
     Args:
         y_true: Ground truth values
@@ -118,7 +121,7 @@ def mean_absolute_percentage_error(y_true: Union[np.ndarray, torch.Tensor],
         epsilon: Small constant to avoid division by zero
 
     Returns:
-        MAPE value as percentage
+        sMAPE value as percentage (0-200%)
     """
     # Convert to numpy if tensor
     if isinstance(y_true, torch.Tensor):
@@ -127,11 +130,17 @@ def mean_absolute_percentage_error(y_true: Union[np.ndarray, torch.Tensor],
         y_pred = y_pred.detach().cpu().numpy()
 
     # Avoid division by zero
-    y_true = np.array(y_true)
-    y_pred = np.array(y_pred)
+    y_true = np.array(y_true).flatten()
+    y_pred = np.array(y_pred).flatten()
 
-    # Calculate MAPE
-    mape = np.mean(np.abs((y_true - y_pred) / (y_true + epsilon))) * 100
+    # Use Symmetric MAPE (sMAPE) which is more stable for normalized/scaled data
+    # sMAPE = mean(|actual - predicted| / ((|actual| + |predicted|) / 2 + epsilon)) * 100
+    # This prevents extremely large errors when actual values are near zero
+    numerator = np.abs(y_true - y_pred)
+    denominator = (np.abs(y_true) + np.abs(y_pred)) / 2.0 + epsilon
+
+    # Calculate SMAPE
+    mape = np.mean(numerator / denominator) * 100
 
     return mape
 
