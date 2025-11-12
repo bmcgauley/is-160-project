@@ -17,7 +17,7 @@ import sys
 
 # Add config directory to path
 sys.path.insert(0, str(Path(__file__).parent.parent / 'config'))
-from hyperparameters import ModelConfig, TrainingConfig, DataConfig
+from hyperparameters import ModelConfig, TrainingConfig, DataConfig, ExperimentConfig
 
 # Only import modules that currently exist
 # Other modules will be imported locally when their stages are called
@@ -250,23 +250,73 @@ class QCEWPipeline:
             logger.error("[ERROR] Model architecture validation failed!")
             return {"success": False, "validation_results": validation_results}
 
-        # Set device
-        device = 'cuda' if torch.cuda.is_available() else 'cpu'
-        logger.info(f"\nUsing device: {device}")
+        # Set device - smart selection based on config and availability
+        if ExperimentConfig.DEVICE == 'auto':
+            device = 'cuda' if torch.cuda.is_available() else 'cpu'
+        elif ExperimentConfig.DEVICE == 'cuda':
+            if torch.cuda.is_available():
+                device = 'cuda'
+            else:
+                logger.warning("CUDA requested but not available, falling back to CPU")
+                device = 'cpu'
+        else:
+            device = ExperimentConfig.DEVICE
+
+        # Log detailed device information
+        logger.info(f"\nDevice Selection:")
+        logger.info(f"  Config setting: {ExperimentConfig.DEVICE}")
+        logger.info(f"  Selected device: {device}")
+        if device == 'cuda':
+            logger.info(f"  GPU: {torch.cuda.get_device_name(0)}")
+            logger.info(f"  CUDA version: {torch.version.cuda}")
+            logger.info(f"  Available GPU memory: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.2f} GB")
+        else:
+            if torch.cuda.is_available():
+                logger.info(f"  Note: CUDA is available but not selected")
+            else:
+                logger.info(f"  Note: CUDA not available (CPU-only PyTorch or no GPU detected)")
+
+        # Create TensorBoard writer for live monitoring (optional)
+        writer = None
+        tensorboard_dir = None
+        try:
+            from torch.utils.tensorboard import SummaryWriter
+            from datetime import datetime
+            timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+            tensorboard_dir = self.base_dir / 'runs' / f'employment_lstm_{timestamp}'
+            tensorboard_dir.mkdir(parents=True, exist_ok=True)
+            writer = SummaryWriter(str(tensorboard_dir))
+            logger.info(f"\nTensorBoard logging enabled: {tensorboard_dir}")
+            logger.info("  To view live training: tensorboard --logdir=runs")
+        except ImportError:
+            logger.info("\nTensorBoard not available (install with: pip install tensorboard)")
+            logger.info("  Training will proceed without live monitoring")
 
         # Create trainer
         logger.info("\nCreating trainer...")
+        optimizer = torch.optim.Adam(
+            model.parameters(),
+            lr=TrainingConfig.LEARNING_RATE,
+            weight_decay=TrainingConfig.WEIGHT_DECAY
+        )
+
         trainer = EmploymentTrainer(
             model=model,
             train_loader=train_loader,
             val_loader=val_loader,
             criterion=torch.nn.MSELoss(),
-            optimizer=torch.optim.Adam(
-                model.parameters(),
-                lr=TrainingConfig.LEARNING_RATE,
-                weight_decay=TrainingConfig.WEIGHT_DECAY
-            ),
-            device=device
+            optimizer=optimizer,
+            device=device,
+            tensorboard_writer=writer
+        )
+
+        # Add learning rate scheduler
+        from training import build_learning_rate_scheduler
+        trainer.scheduler = build_learning_rate_scheduler(
+            optimizer,
+            scheduler_type=TrainingConfig.LR_SCHEDULER_TYPE,
+            factor=TrainingConfig.LR_FACTOR,
+            patience=TrainingConfig.LR_PATIENCE
         )
 
         # Train model
@@ -316,6 +366,15 @@ class QCEWPipeline:
         logger.info(f"  Test MAPE: {mape:.2f}%")
         logger.info(f"  Directional Accuracy: {dir_acc:.2f}%")
 
+        # Log test metrics to TensorBoard (if available)
+        if writer is not None:
+            writer.add_scalar('Test/loss', test_loss, 0)
+            writer.add_scalar('Test/rmse', rmse, 0)
+            writer.add_scalar('Test/mape', mape, 0)
+            writer.add_scalar('Test/directional_accuracy', dir_acc, 0)
+            writer.close()
+            logger.info("\n[OK] TensorBoard logs saved")
+
         logger.info("\n[OK] Model training complete!")
 
         results = {
@@ -327,7 +386,10 @@ class QCEWPipeline:
             "directional_accuracy": dir_acc,
             "model_path": str(self.model_file),
             "num_epochs": len(history['train_loss']),
-            "best_val_loss": min(history['val_loss'])
+            "best_val_loss": min(history['val_loss']),
+            "test_predictions": predictions,  # Add for visualization
+            "test_targets": targets,  # Add for visualization
+            "tensorboard_dir": str(tensorboard_dir) if tensorboard_dir else None  # Add for user reference
         }
 
         return results
@@ -350,34 +412,28 @@ class QCEWPipeline:
         eval_plots_dir = self.plots_dir / "evaluation"
         eval_plots_dir.mkdir(exist_ok=True)
 
-        # Plot training history
-        logger.info("\nGenerating training history plots...")
+        # Plot training history using enhanced visualization
+        logger.info("\nGenerating enhanced training history plots...")
+        from visualization import plot_enhanced_training_history, plot_prediction_analysis
+
         history = training_results['history']
 
-        fig, axes = plt.subplots(1, 2, figsize=(15, 5))
+        # Determine best epoch (where validation loss was lowest)
+        best_epoch = np.argmin(history['val_loss']) + 1  # +1 because epochs are 1-indexed
 
-        # Plot 1: Loss curves
-        axes[0].plot(history['train_loss'], label='Training Loss', linewidth=2)
-        axes[0].plot(history['val_loss'], label='Validation Loss', linewidth=2)
-        axes[0].set_xlabel('Epoch', fontsize=12)
-        axes[0].set_ylabel('Loss (MSE)', fontsize=12)
-        axes[0].set_title('Training and Validation Loss', fontsize=14, fontweight='bold')
-        axes[0].legend(fontsize=10)
-        axes[0].grid(True, alpha=0.3)
-
-        # Plot 2: Learning rate schedule
-        axes[1].plot(history['learning_rates'], linewidth=2, color='green')
-        axes[1].set_xlabel('Epoch', fontsize=12)
-        axes[1].set_ylabel('Learning Rate', fontsize=12)
-        axes[1].set_title('Learning Rate Schedule', fontsize=14, fontweight='bold')
-        axes[1].grid(True, alpha=0.3)
-        axes[1].set_yscale('log')
-
-        plt.tight_layout()
+        # Create enhanced training history plot
         loss_plot_path = eval_plots_dir / "training_history.png"
-        plt.savefig(loss_plot_path, dpi=300, bbox_inches='tight')
-        plt.close()
-        logger.info(f"  Saved: {loss_plot_path}")
+        plot_enhanced_training_history(history, loss_plot_path, best_epoch=best_epoch)
+
+        # Create prediction analysis plots if we have test predictions
+        if 'test_predictions' in training_results and 'test_targets' in training_results:
+            logger.info("\nGenerating prediction analysis plots...")
+            plot_prediction_analysis(
+                y_true=training_results['test_targets'],
+                y_pred=training_results['test_predictions'],
+                save_dir=eval_plots_dir,
+                sample_size=5000  # Sample 5000 points for visualization
+            )
 
         # Log summary statistics
         logger.info("\nModel Performance Summary:")
@@ -406,29 +462,113 @@ class QCEWPipeline:
 
         logger.info(f"\n  Overall Model Quality: {quality}")
 
-        logger.info("\n[OK] Model evaluation complete!")
+        # Comprehensive evaluation with baselines
+        logger.info("\n" + "="*80)
+        logger.info("COMPREHENSIVE MODEL EVALUATION WITH BASELINES")
+        logger.info("="*80)
+
+        from comprehensive_evaluation import (
+            evaluate_against_baselines,
+            generate_naivebaselines,
+            generate_evaluation_report,
+            plot_model_comparison
+        )
+
+        y_true = training_results['test_targets']
+        y_pred = training_results['test_predictions']
+
+        # Generate naive baselines for comparison
+        # Use full dataset for historical context (if available)
+        historical_data = None
+        if hasattr(self, 'preprocessed_data') and self.preprocessed_data is not None:
+            # Try to get historical employment data for baselines
+            try:
+                historical_data = self.preprocessed_data['AvgAnnualEmployment'].values
+                logger.info(f"Using {len(historical_data)} historical data points for baseline generation")
+            except:
+                logger.warning("Could not extract historical data; using test set for baselines")
+
+        baseline_predictions = generate_naivebaselines(y_true, historical_data)
+
+        # Evaluate LSTM against baselines
+        eval_results = evaluate_against_baselines(y_true, y_pred, baseline_predictions)
+
+        # Generate comprehensive evaluation report
+        report_path = eval_plots_dir / "comprehensive_evaluation_report.txt"
+        model_info = {
+            "Model Type": "LSTM",
+            "Training Epochs": training_results['num_epochs'],
+            "Best Val Loss": f"{training_results['best_val_loss']:.6f}",
+            "Test Samples": len(y_true),
+            "Model Path": training_results['model_path']
+        }
+        generate_evaluation_report(eval_results, report_path, model_info)
+
+        # Generate model comparison plot
+        comparison_plot_path = eval_plots_dir / "model_comparison.png"
+        plot_model_comparison(eval_results, comparison_plot_path)
+
+        logger.info("\n[OK] Comprehensive model evaluation complete!")
 
         results = {
             "success": True,
             "quality": quality,
             "plots_dir": str(eval_plots_dir),
-            "training_results": training_results
+            "training_results": training_results,
+            "eval_results": eval_results,
+            "report_path": str(report_path)
         }
 
         return results
 
-    def stage_8_prediction_interface(self):
+    def stage_8_prediction_interface(self, training_results: dict = None):
         """Stage 8: Interactive Prediction Interface"""
         logger.info("\n" + "="*80)
         logger.info("STAGE 8: INTERACTIVE PREDICTION INTERFACE")
         logger.info("="*80)
 
-        logger.info("[INFO] Prediction interface is a future enhancement")
-        logger.info("[INFO] This stage will be implemented as part of T117-T119")
-        logger.info("[INFO] For now, use the trained model directly for predictions")
-        logger.info(f"[INFO] Model location: {self.model_file}")
+        # Check if model exists
+        if not self.model_file.exists():
+            logger.error("[ERROR] Model file not found. Please run training first.")
+            return {"success": False, "error": "Model not found"}
 
-        return {"success": True, "status": "not_implemented", "model_path": str(self.model_file)}
+        # Check if preprocessor exists
+        if not self.preprocessor_file.exists():
+            logger.error("[ERROR] Preprocessor file not found. Please run preprocessing first.")
+            return {"success": False, "error": "Preprocessor not found"}
+
+        logger.info(f"Model path: {self.model_file}")
+        logger.info(f"Preprocessor path: {self.preprocessor_file}")
+
+        # Ask user if they want to run interactive mode
+        print("\n" + "="*80)
+        print("INTERACTIVE PREDICTION INTERFACE")
+        print("="*80)
+        print("\nThe prediction interface allows you to:")
+        print("  - Make predictions for specific counties/industries")
+        print("  - Run batch predictions from CSV files")
+        print("  - Export prediction results")
+        print("\nWould you like to launch the interactive prediction interface?")
+        response = input("Enter 'y' to launch, or any other key to skip: ").strip().lower()
+
+        if response == 'y':
+            from prediction_interface import run_prediction_interface
+            result = run_prediction_interface(
+                model_path=str(self.model_file),
+                preprocessor_path=str(self.preprocessor_file)
+            )
+            return result
+        else:
+            logger.info("\n[INFO] Skipping interactive mode")
+            logger.info(f"[INFO] You can launch it later with:")
+            logger.info(f"[INFO]   python src/prediction_interface.py {self.model_file} {self.preprocessor_file}")
+
+            return {
+                "success": True,
+                "status": "skipped",
+                "model_path": str(self.model_file),
+                "preprocessor_path": str(self.preprocessor_file)
+            }
 
     def run_full_pipeline(self):
         """Run the complete pipeline from start to finish."""
@@ -462,8 +602,7 @@ class QCEWPipeline:
             evaluation_results = self.stage_7_evaluate_model(training_results)
 
             # Stage 8: Launch prediction interface (optional)
-            if self.config.get('launch_interface', False):
-                self.stage_8_prediction_interface()
+            prediction_results = self.stage_8_prediction_interface(training_results)
 
             # Pipeline complete
             end_time = datetime.now()

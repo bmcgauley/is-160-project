@@ -18,9 +18,21 @@ python -m venv .venv
 python -m venv .venv
 source .venv/bin/activate
 
-# Install dependencies
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+# Install PyTorch with CUDA support (for GPU training)
+# For CUDA 11.8 (compatible with GTX 1070, RTX series)
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+# For CUDA 12.1 (newer GPUs)
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# For CPU-only (no GPU)
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+# Install remaining dependencies
 pip install -r requirements.txt
+
+# Verify GPU detection (should show True if GPU is available)
+python -c "import torch; print(f'CUDA available: {torch.cuda.is_available()}'); print(f'GPU: {torch.cuda.get_device_name(0) if torch.cuda.is_available() else \"N/A\"}')"
 ```
 
 ### Running the Pipeline
