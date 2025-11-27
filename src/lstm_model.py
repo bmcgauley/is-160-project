@@ -34,8 +34,13 @@ class EmploymentLSTM(nn.Module):
             dropout: Dropout probability
         """
         super(EmploymentLSTM, self).__init__()
+
+        # Store architecture parameters for checkpoint saving/loading
+        self.input_size = input_size
         self.hidden_size = hidden_size
         self.num_layers = num_layers
+        self.output_size = output_size
+        self.dropout_prob = dropout
 
         # TODO: Define LSTM layers
         self.lstm = nn.LSTM(input_size, hidden_size, num_layers,

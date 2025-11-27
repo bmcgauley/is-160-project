@@ -74,6 +74,7 @@ class QCEWPipeline:
         self.validated_file = self.validated_dir / "qcew_validated.csv"
         self.features_file = self.feature_eng_dir / "final_features.csv"
         self.preprocessed_file = self.processed_dir / "qcew_preprocessed.csv"
+        self.preprocessor_file = self.processed_dir / "qcew_preprocessed_preprocessor.pkl"
         self.model_file = self.processed_dir / "lstm_model.pt"
 
         logger.info("="*80)
@@ -419,7 +420,13 @@ class QCEWPipeline:
         history = training_results['history']
 
         # Determine best epoch (where validation loss was lowest)
-        best_epoch = np.argmin(history['val_loss']) + 1  # +1 because epochs are 1-indexed
+        # Handle case where history might be empty (when loading from old checkpoints)
+        if history.get('val_loss') and len(history['val_loss']) > 0:
+            best_epoch = np.argmin(history['val_loss']) + 1  # +1 because epochs are 1-indexed
+        else:
+            # Fallback: use num_epochs or 1
+            best_epoch = training_results.get('num_epochs', 1)
+            logger.warning("No validation loss history found; using fallback for best_epoch")
 
         # Create enhanced training history plot
         loss_plot_path = eval_plots_dir / "training_history.png"

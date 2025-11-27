@@ -4,7 +4,11 @@ Prediction Visuals Module for QCEW Employment Data Analysis
 This module contains functions for creating visual predictions vs actuals plots.
 """
 
+# Configure matplotlib to use non-interactive backend (must be before importing pyplot)
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+
 import pandas as pd
 import numpy as np
 from typing import Dict, List, Tuple, Optional, Union

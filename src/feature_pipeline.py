@@ -10,7 +10,12 @@ and geographic_features.py modules.
 
 import pandas as pd
 import numpy as np
+
+# Configure matplotlib to use non-interactive backend (must be before importing pyplot)
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+
 import seaborn as sns
 import logging
 from pathlib import Path
