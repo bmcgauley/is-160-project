@@ -1,0 +1,56 @@
+================================================================================
+COMPREHENSIVE MODEL EVALUATION REPORT
+================================================================================
+Generated: 2025-11-25 18:38:12
+
+Model Information:
+  Model Type: LSTM
+  Training Epochs: 4
+  Best Val Loss: 507.378567
+  Test Samples: 599582
+  Model Path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+
+================================================================================
+MODEL PERFORMANCE METRICS
+================================================================================
+
+LSTM Model:
+----------------------------------------
+  RMSE                     :    10.0498
+  MAE                      :     1.8930
+  MAPE                     :   157.1092
+  R2                       :     0.0984
+  DIRECTIONAL_ACCURACY     :    91.9752
+
+================================================================================
+BASELINE MODEL COMPARISONS
+================================================================================
+
+MEAN Baseline:
+----------------------------------------
+  RMSE                     :    10.5841 ([+]  +5.05% vs LSTM)
+  MAE                      :     2.2375 ([+] +15.39% vs LSTM)
+  MAPE                     :   161.6174 ([+]  +2.79% vs LSTM)
+  R2                       :     0.0000 ([-]  +0.00% vs LSTM)
+  DIRECTIONAL_ACCURACY     :     0.0000 ([-]  +0.00% vs LSTM)
+
+================================================================================
+PERFORMANCE SUMMARY
+================================================================================
+
+Overall Model Quality: ❌ NEEDS IMPROVEMENT
+  MAPE: 157.11% (target: <20%)
+  Directional Accuracy: 91.98% (target: >60%)
+  R² Score: 0.0984 (target: >0.5)
+
+================================================================================
+RECOMMENDATIONS
+================================================================================
+  • High MAPE indicates large prediction errors
+    - Consider: more training data, feature engineering, hyperparameter tuning
+  • Low R² indicates poor overall fit
+    - Consider: more complex model, better feature selection
+
+================================================================================
+END OF REPORT
+================================================================================
