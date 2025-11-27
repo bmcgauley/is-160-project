@@ -10,7 +10,12 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import confusion_matrix, mean_squared_error, mean_absolute_error
 from typing import Dict, List, Tuple, Optional, Union
+
+# Configure matplotlib to use non-interactive backend (must be before importing pyplot)
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+
 import logging
 
 logger = logging.getLogger(__name__)

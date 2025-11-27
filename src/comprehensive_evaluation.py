@@ -12,7 +12,12 @@ Stage 8 of the pipeline.
 
 import numpy as np
 import pandas as pd
+
+# Configure matplotlib to use non-interactive backend (must be before importing pyplot)
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+
 import seaborn as sns
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
@@ -78,7 +83,7 @@ def evaluate_against_baselines(y_true: np.ndarray,
                 lstm_val = lstm_metrics[metric]
                 improvement = ((baseline_metrics[metric] - lstm_val) / baseline_metrics[metric] * 100
                               if baseline_metrics[metric] != 0 else 0)
-                symbol = "✓" if improvement > 0 else "✗"
+                symbol = "[+]" if improvement > 0 else "[-]"
                 logger.info(f"  {metric.upper()}: {value:.4f} ({symbol} {improvement:+.2f}% vs LSTM)")
 
     return results
@@ -224,7 +229,7 @@ def generate_evaluation_report(results: Dict,
             for metric, value in results[model_name].items():
                 lstm_val = results['lstm'][metric]
                 improvement = ((value - lstm_val) / value * 100 if value != 0 else 0)
-                symbol = "✓" if improvement > 0 else "✗"
+                symbol = "[+]" if improvement > 0 else "[-]"
                 report_lines.append(f"  {metric.upper():25s}: {value:10.4f} ({symbol} {improvement:+6.2f}% vs LSTM)")
 
     # Performance Summary
@@ -282,7 +287,7 @@ def generate_evaluation_report(results: Dict,
 
     # Save report
     report_text = "\n".join(report_lines)
-    with open(save_path, 'w') as f:
+    with open(save_path, 'w', encoding='utf-8') as f:
         f.write(report_text)
 
     logger.info(f"[OK] Evaluation report saved: {save_path}")

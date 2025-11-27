@@ -7,7 +7,12 @@ and employment status visualizations.
 
 import pandas as pd
 import numpy as np
+
+# Configure matplotlib to use non-interactive backend (must be before importing pyplot)
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+
 import seaborn as sns
 from typing import Dict, List, Tuple, Optional, Union
 import logging

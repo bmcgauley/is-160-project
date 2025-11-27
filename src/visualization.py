@@ -7,6 +7,10 @@ feature importance, and employment prediction results.
 Enhanced with comprehensive training history and prediction analysis plots.
 """
 
+# Configure matplotlib to use non-interactive backend (must be before importing pyplot)
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend that doesn't require Tcl/Tk
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
@@ -125,6 +129,19 @@ def plot_enhanced_training_history(history: Dict[str, List[float]],
         save_path: Path to save the figure
         best_epoch: Epoch number with best validation loss (for marking)
     """
+    # Validate that we have training history data
+    if not history or 'train_loss' not in history or len(history.get('train_loss', [])) == 0:
+        logger.warning("No training history available - skipping training history plot")
+        # Create a simple placeholder plot
+        fig = plt.figure(figsize=(10, 6))
+        plt.text(0.5, 0.5, 'No Training History Available\n\nModel may have been loaded from checkpoint without history',
+                ha='center', va='center', fontsize=16, bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+        plt.axis('off')
+        plt.savefig(save_path, dpi=300, bbox_inches='tight')
+        plt.close()
+        logger.info(f"[OK] Saved placeholder training history plot: {save_path}")
+        return
+
     fig = plt.figure(figsize=(18, 10))
     gs = fig.add_gridspec(2, 3, hspace=0.3, wspace=0.3)
 
@@ -134,10 +151,15 @@ def plot_enhanced_training_history(history: Dict[str, List[float]],
     ax1 = fig.add_subplot(gs[0, :2])
     ax1.plot(epochs, history['train_loss'], label='Training Loss',
              linewidth=2, marker='o', markersize=4, alpha=0.8, color='#3498db')
-    ax1.plot(epochs, history['val_loss'], label='Validation Loss',
-             linewidth=2, marker='s', markersize=4, alpha=0.8, color='#e74c3c')
 
-    if best_epoch is not None:
+    # Only plot validation loss if it exists and has data
+    has_val_loss = 'val_loss' in history and len(history['val_loss']) > 0
+    if has_val_loss:
+        ax1.plot(epochs, history['val_loss'], label='Validation Loss',
+                 linewidth=2, marker='s', markersize=4, alpha=0.8, color='#e74c3c')
+
+    # Only mark best epoch if we have validation loss data
+    if best_epoch is not None and has_val_loss and best_epoch <= len(history['val_loss']):
         ax1.axvline(x=best_epoch, color='green', linestyle='--',
                     linewidth=2, alpha=0.7, label=f'Best Epoch ({best_epoch})')
         ax1.plot(best_epoch, history['val_loss'][best_epoch-1],
@@ -152,19 +174,26 @@ def plot_enhanced_training_history(history: Dict[str, List[float]],
     ax1.grid(True, alpha=0.3, linestyle='--')
 
     final_train = history['train_loss'][-1]
-    final_val = history['val_loss'][-1]
-    ax1.text(0.02, 0.98, f'Final Train Loss: {final_train:.2f}\nFinal Val Loss: {final_val:.2f}',
-             transform=ax1.transAxes, fontsize=10, verticalalignment='top',
-             bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+    if has_val_loss:
+        final_val = history['val_loss'][-1]
+        ax1.text(0.02, 0.98, f'Final Train Loss: {final_train:.2f}\nFinal Val Loss: {final_val:.2f}',
+                 transform=ax1.transAxes, fontsize=10, verticalalignment='top',
+                 bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+    else:
+        ax1.text(0.02, 0.98, f'Final Train Loss: {final_train:.2f}',
+                 transform=ax1.transAxes, fontsize=10, verticalalignment='top',
+                 bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
 
     # Plot 2: Loss Curves (Log Scale)
     ax2 = fig.add_subplot(gs[1, :2])
     ax2.plot(epochs, history['train_loss'], label='Training Loss',
              linewidth=2, alpha=0.8, color='#3498db')
-    ax2.plot(epochs, history['val_loss'], label='Validation Loss',
-             linewidth=2, alpha=0.8, color='#e74c3c')
 
-    if best_epoch is not None:
+    if has_val_loss:
+        ax2.plot(epochs, history['val_loss'], label='Validation Loss',
+                 linewidth=2, alpha=0.8, color='#e74c3c')
+
+    if best_epoch is not None and has_val_loss:
         ax2.axvline(x=best_epoch, color='green', linestyle='--',
                     linewidth=2, alpha=0.7)
 
@@ -179,30 +208,44 @@ def plot_enhanced_training_history(history: Dict[str, List[float]],
 
     # Plot 3: Learning Rate Schedule
     ax3 = fig.add_subplot(gs[0, 2])
-    ax3.plot(epochs, history['learning_rates'], linewidth=2.5,
-             color='#2ecc71', marker='o', markersize=5)
+    has_lr = 'learning_rates' in history and len(history['learning_rates']) > 0
+
+    if has_lr:
+        ax3.plot(epochs, history['learning_rates'], linewidth=2.5,
+                 color='#2ecc71', marker='o', markersize=5)
+
+        # Mark LR changes
+        lrs = history['learning_rates']
+        for i in range(1, len(lrs)):
+            if lrs[i] != lrs[i-1]:
+                ax3.axvline(x=i+1, color='red', linestyle=':', alpha=0.5, linewidth=1)
+                ax3.text(i+1, lrs[i], f'  {lrs[i]:.2e}', fontsize=8, color='red')
+        ax3.set_yscale('log')
+    else:
+        ax3.text(0.5, 0.5, 'No Learning Rate Data Available',
+                transform=ax3.transAxes, fontsize=14, ha='center', va='center')
+
     ax3.set_xlabel('Epoch', fontsize=12, fontweight='bold')
     ax3.set_ylabel('Learning Rate', fontsize=12, fontweight='bold')
     ax3.set_title('Learning Rate Schedule\n' +
                   'Adaptive: Decreases when\nvalidation loss plateaus',
                   fontsize=12, fontweight='bold')
     ax3.grid(True, alpha=0.3, linestyle='--')
-    ax3.set_yscale('log')
-
-    # Mark LR changes
-    lrs = history['learning_rates']
-    for i in range(1, len(lrs)):
-        if lrs[i] != lrs[i-1]:
-            ax3.axvline(x=i+1, color='red', linestyle=':', alpha=0.5, linewidth=1)
-            ax3.text(i+1, lrs[i], f'  {lrs[i]:.2e}', fontsize=8, color='red')
 
     # Plot 4: Overfitting Monitor
     ax4 = fig.add_subplot(gs[1, 2])
-    train_val_ratio = [t/v if v > 0 else 1.0
-                       for t, v in zip(history['train_loss'], history['val_loss'])]
-    ax4.plot(epochs, train_val_ratio, linewidth=2, color='#9b59b6', marker='d', markersize=4)
-    ax4.axhline(y=1.0, color='gray', linestyle='--', linewidth=1.5, alpha=0.7, label='Perfect Fit')
-    ax4.fill_between(epochs, 0.8, 1.2, alpha=0.2, color='green', label='Good Range')
+
+    if has_val_loss:
+        train_val_ratio = [t/v if v > 0 else 1.0
+                           for t, v in zip(history['train_loss'], history['val_loss'])]
+        ax4.plot(epochs, train_val_ratio, linewidth=2, color='#9b59b6', marker='d', markersize=4)
+        ax4.axhline(y=1.0, color='gray', linestyle='--', linewidth=1.5, alpha=0.7, label='Perfect Fit')
+        ax4.fill_between(epochs, 0.8, 1.2, alpha=0.2, color='green', label='Good Range')
+        ax4.set_ylim([0, min(3, max(train_val_ratio) * 1.1)])
+    else:
+        # No validation data - just show a message
+        ax4.text(0.5, 0.5, 'No Validation Data Available',
+                transform=ax4.transAxes, fontsize=14, ha='center', va='center')
 
     ax4.set_xlabel('Epoch', fontsize=12, fontweight='bold')
     ax4.set_ylabel('Train/Val Loss Ratio', fontsize=12, fontweight='bold')
@@ -211,7 +254,6 @@ def plot_enhanced_training_history(history: Dict[str, List[float]],
                   fontsize=12, fontweight='bold')
     ax4.legend(fontsize=9, loc='upper right')
     ax4.grid(True, alpha=0.3, linestyle='--')
-    ax4.set_ylim([0, min(3, max(train_val_ratio) * 1.1)])
 
     plt.savefig(save_path, dpi=300, bbox_inches='tight')
     plt.close()
@@ -355,7 +397,11 @@ def plot_live_training_update(history: Dict[str, List[float]],
     epochs = range(1, len(history['train_loss']) + 1)
 
     ax1.plot(epochs, history['train_loss'], label='Train', linewidth=2, color='blue')
-    ax1.plot(epochs, history['val_loss'], label='Val', linewidth=2, color='red')
+
+    # Only plot validation loss if it exists and has data
+    if 'val_loss' in history and len(history['val_loss']) > 0:
+        ax1.plot(epochs, history['val_loss'], label='Val', linewidth=2, color='red')
+
     ax1.set_xlabel('Epoch', fontsize=11)
     ax1.set_ylabel('Loss', fontsize=11)
     ax1.set_title(f'Training Progress (Epoch {epoch})', fontsize=12, fontweight='bold')

@@ -287,7 +287,7 @@ class EmploymentTrainer:
 
                 # Save checkpoint if path provided
                 if save_path:
-                    self.save_checkpoint(save_path, epoch, val_loss)
+                    self.save_checkpoint(save_path, epoch, val_loss, history)
                     logger.info(f"  [OK] New best model saved (val_loss: {val_loss:.6f}, improvement: {improvement:.6f})")
             else:
                 epochs_without_improvement += 1
@@ -313,7 +313,7 @@ class EmploymentTrainer:
 
         return history
 
-    def save_checkpoint(self, save_path: str, epoch: int, val_loss: float):
+    def save_checkpoint(self, save_path: str, epoch: int, val_loss: float, history: dict = None):
         """Save model checkpoint."""
         checkpoint = {
             'epoch': epoch,
@@ -323,6 +323,18 @@ class EmploymentTrainer:
         }
         if self.scheduler is not None:
             checkpoint['scheduler_state_dict'] = self.scheduler.state_dict()
+
+        # Save model architecture parameters for easier loading
+        if hasattr(self.model, 'input_size'):
+            checkpoint['input_size'] = self.model.input_size
+            checkpoint['hidden_size'] = self.model.hidden_size
+            checkpoint['num_layers'] = self.model.num_layers
+            checkpoint['output_size'] = self.model.output_size
+            checkpoint['dropout'] = self.model.dropout_prob
+
+        # Save training history if provided
+        if history is not None:
+            checkpoint['history'] = history
 
         # Ensure directory exists
         Path(save_path).parent.mkdir(parents=True, exist_ok=True)

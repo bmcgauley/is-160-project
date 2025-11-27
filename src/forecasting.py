@@ -8,7 +8,12 @@ with uncertainty estimation.
 import torch
 import numpy as np
 import pandas as pd
+
+# Configure matplotlib to use non-interactive backend (must be before importing pyplot)
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+
 from typing import Dict, List, Tuple, Optional, Union
 import logging
 

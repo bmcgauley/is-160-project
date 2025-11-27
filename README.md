@@ -37,8 +37,47 @@ The LSTM architecture is specifically designed for time-series forecasting, capt
 git clone https://github.com/bmcgauley/is-160-project.git
 cd is-160-project
 
+# Create virtual environment
+python -m venv .venv
+
+# Activate virtual environment
+# Windows (PowerShell):
+.venv\Scripts\Activate.ps1
+# Windows (CMD):
+.venv\Scripts\activate.bat
+# Linux/Mac:
+source .venv/bin/activate
+
 # Install dependencies
 pip install -r requirements.txt
+```
+
+### Quick Start Commands
+
+**Activate Virtual Environment:**
+```bash
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+
+# Linux/Mac
+source .venv/bin/activate
+```
+
+**Run the Pipeline:**
+```bash
+# Interactive menu (recommended)
+python main.py
+
+# Full pipeline via CLI
+python main.py --cli
+```
+
+**Monitor Training with TensorBoard:**
+```bash
+# Start TensorBoard (run in separate terminal while training)
+tensorboard --logdir=runs
+
+# Then open browser to: http://localhost:6006
 ```
 
 ### Data Setup
