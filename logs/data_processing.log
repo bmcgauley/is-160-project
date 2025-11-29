@@ -1668,3 +1668,295 @@ Creating data loaders...
 2025-11-12 08:03:26 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
 2025-11-12 08:03:26 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
 2025-11-12 08:03:26 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-13 09:48:33 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-13 09:48:33 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-13 09:48:33 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-13 09:48:33 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-13 09:48:33 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-13 10:49:23 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-13 10:49:23 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-13 10:49:23 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-13 10:49:23 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-13 10:49:23 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 11:03:56 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 11:03:56 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 11:03:56 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 11:03:56 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 11:03:56 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 15:39:23 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 15:39:23 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 15:39:23 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 15:39:23 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 15:39:23 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 16:12:01 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 16:12:01 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 16:12:01 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 16:12:01 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 16:12:01 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 16:43:54 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 16:43:54 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 16:43:54 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 16:43:54 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 16:43:54 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 16:59:29 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 16:59:29 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 16:59:29 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 16:59:29 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 16:59:29 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 17:00:02 - visualization - INFO - [OK] Saved placeholder training history plot: C:\GitHub\is-160-project\data\processed\plots\evaluation\training_history.png
+2025-11-25 17:00:03 - visualization - INFO - [OK] Saved prediction analysis: C:\GitHub\is-160-project\data\processed\plots\evaluation\prediction_analysis.png
+2025-11-25 17:00:03 - pipeline_orchestrator - INFO -   Model saved at: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 17:00:03 - comprehensive_evaluation - WARNING -   No historical data provided; using test set mean as baseline
+2025-11-25 18:37:35 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 18:37:35 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 18:37:35 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 18:37:35 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 18:37:35 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 18:38:09 - visualization - INFO - [OK] Saved placeholder training history plot: C:\GitHub\is-160-project\data\processed\plots\evaluation\training_history.png
+2025-11-25 18:38:11 - visualization - INFO - [OK] Saved prediction analysis: C:\GitHub\is-160-project\data\processed\plots\evaluation\prediction_analysis.png
+2025-11-25 18:38:11 - pipeline_orchestrator - INFO -   Model saved at: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 18:38:11 - comprehensive_evaluation - WARNING -   No historical data provided; using test set mean as baseline
+2025-11-25 18:38:12 - comprehensive_evaluation - INFO - [OK] Evaluation report saved: C:\GitHub\is-160-project\data\processed\plots\evaluation\comprehensive_evaluation_report.txt
+2025-11-25 18:38:13 - comprehensive_evaluation - INFO - [OK] Model comparison plot saved: C:\GitHub\is-160-project\data\processed\plots\evaluation\model_comparison.png
+2025-11-25 18:41:31 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 18:41:31 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 18:41:39 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 18:50:07 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 18:50:07 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 18:50:10 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 18:50:27 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 18:50:27 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 18:50:27 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 18:50:27 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 18:50:27 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 18:50:30 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 18:50:30 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 18:50:33 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 18:50:33 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-25 18:50:33 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-25 18:50:33 - prediction_interface - ERROR - [ERROR] Prediction interface failed: 'EmploymentDataPreprocessor' object has no attribute 'feature_names_'
+2025-11-25 18:58:49 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 18:58:49 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 18:58:49 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 18:58:49 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 18:58:49 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 18:59:31 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 18:59:31 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 18:59:34 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 18:59:34 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-25 18:59:34 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-25 18:59:34 - prediction_interface - INFO -   Preprocessor type: EmploymentDataPreprocessor
+2025-11-25 19:10:11 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 19:10:11 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 19:10:11 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 19:10:11 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 19:10:11 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 19:10:17 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 19:10:17 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 19:10:42 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 19:10:42 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-25 19:10:42 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-25 19:10:42 - prediction_interface - INFO -   Preprocessor type: EmploymentDataPreprocessor
+2025-11-25 19:10:42 - prediction_interface - INFO - 
+Loading reference data...
+2025-11-25 19:10:42 - prediction_interface - INFO -   Loading from: qcew_preprocessed.csv
+2025-11-25 19:11:03 - prediction_interface - INFO - [OK] Reference data loaded: 3777920 records
+2025-11-25 19:16:06 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 19:16:06 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 19:16:06 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 19:16:06 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 19:16:06 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 19:17:47 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 19:17:47 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 19:17:50 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 19:17:50 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-25 19:17:50 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-25 19:17:50 - prediction_interface - INFO -   Preprocessor type: EmploymentDataPreprocessor
+2025-11-25 19:17:50 - prediction_interface - INFO - 
+Loading reference data...
+2025-11-25 19:17:50 - prediction_interface - INFO -   Base directory: C:\GitHub\is-160-project\data
+2025-11-25 19:17:50 - prediction_interface - INFO -   Trying: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-25 19:17:50 - prediction_interface - INFO -   Loading from: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-25 19:18:10 - prediction_interface - INFO - [OK] Reference data loaded successfully
+2025-11-25 22:33:04 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 22:33:04 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 22:33:04 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 22:33:04 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 22:33:04 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 22:33:09 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 22:33:09 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 22:33:11 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 22:33:11 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-25 22:33:11 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-25 22:33:11 - prediction_interface - INFO -   Preprocessor type: EmploymentDataPreprocessor
+2025-11-25 22:33:11 - prediction_interface - INFO - 
+Loading reference data...
+2025-11-25 22:33:11 - prediction_interface - INFO -   Base directory: C:\GitHub\is-160-project\data
+2025-11-25 22:33:11 - prediction_interface - INFO -   Trying: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-25 22:33:11 - prediction_interface - INFO -   Loading from: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-25 22:33:34 - prediction_interface - INFO - [OK] Reference data loaded successfully
+2025-11-25 22:36:09 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 22:36:09 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 22:36:09 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 22:36:09 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 22:36:09 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 22:36:12 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 22:36:12 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 22:36:13 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 22:36:13 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-25 22:36:13 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-25 22:36:13 - prediction_interface - INFO -   Preprocessor type: EmploymentDataPreprocessor
+2025-11-25 22:36:13 - prediction_interface - INFO - 
+Loading reference data...
+2025-11-25 22:36:13 - prediction_interface - INFO -   Base directory: C:\GitHub\is-160-project\data
+2025-11-25 22:36:13 - prediction_interface - INFO -   Trying: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-25 22:36:13 - prediction_interface - INFO -   Loading from: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-25 22:36:30 - prediction_interface - INFO - [OK] Reference data loaded successfully
+2025-11-27 11:11:48 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-27 11:11:48 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-27 11:11:48 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-27 11:11:48 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-27 11:11:48 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-27 13:59:36 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-27 13:59:36 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-27 13:59:42 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-27 13:59:42 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-27 13:59:42 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-27 13:59:42 - prediction_interface - INFO -   Preprocessor type: EmploymentDataPreprocessor
+2025-11-27 13:59:42 - prediction_interface - INFO - 
+Loading reference data...
+2025-11-27 13:59:42 - prediction_interface - INFO -   Base directory: C:\GitHub\is-160-project\data
+2025-11-27 13:59:42 - prediction_interface - INFO -   Trying: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-27 13:59:42 - prediction_interface - INFO -   Loading from: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-27 13:59:57 - prediction_interface - INFO - [OK] Reference data loaded successfully
+2025-11-27 14:15:51 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-27 14:15:51 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-27 14:15:51 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-27 14:15:51 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-27 14:15:51 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-27 15:09:17 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-11-27 15:09:17 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-27 15:13:55 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-11-27 15:13:55 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-11-27 15:13:58 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 15 columns
+2025-11-27 15:13:59 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-11-27 15:14:00 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-11-27 15:14:07 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-11-27 15:17:53 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-11-27 15:17:53 - validation - INFO - Validating data quality for 5,430,384 records
+2025-11-27 15:17:53 - validation - INFO - Running employment range validation...
+2025-11-27 15:17:53 - validation - INFO - Running wage consistency validation...
+2025-11-27 15:17:54 - validation - INFO - Running statistical anomaly detection...
+2025-11-27 15:17:57 - validation - INFO - Generating quality scorecards...
+2025-11-27 15:18:17 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-11-27 15:18:17 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-11-27 15:19:12 - validation - INFO - 
+[OK] Validation complete!
+2025-11-27 15:19:12 - validation - INFO - Overall Quality Score: 0.859
+2025-11-27 15:19:12 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-11-27 15:19:12 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-11-27 16:52:39 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-27 16:52:39 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-27 16:52:39 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-27 16:52:39 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-27 16:52:39 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-27 16:53:04 - feature_engineering - INFO - Initial dataset: 5,430,384 records
+2025-11-27 16:53:06 - feature_engineering - INFO - Saving county-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T032_county_filtered.csv
+2025-11-27 16:53:43 - feature_engineering - INFO - [OK] Saved 4,732,218 records to T032_county_filtered.csv
+2025-11-27 16:53:43 - feature_engineering - INFO - Initial dataset: 4,732,218 records
+2025-11-27 16:53:44 - feature_engineering - INFO - Saving quarterly-only data to: C:\GitHub\is-160-project\data\feature_engineering\T033_quarterly_only.csv
+2025-11-27 16:54:22 - feature_engineering - INFO - [OK] Saved 3,777,920 records to T033_quarterly_only.csv
+2025-11-27 16:54:23 - feature_pipeline - INFO - 
+[STAGE 3/10] T034: Data quality filtering...
+2025-11-27 16:54:23 - feature_engineering - INFO - T034: DATA QUALITY FILTERING
+2025-11-27 16:54:23 - feature_engineering - INFO - Initial dataset: 3,777,920 records
+2025-11-27 16:54:24 - feature_engineering - INFO - 
+[SUCCESS] Data quality filtering completed successfully
+2025-11-27 16:54:24 - feature_engineering - INFO - Saving quality-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T034_quality_filtered.csv
+2025-11-27 16:55:02 - feature_engineering - INFO - [OK] Saved 3,777,920 records to T034_quality_filtered.csv
+2025-11-27 16:55:02 - feature_pipeline - INFO - 
+[STAGE 5/10] T036: All California counties processing...
+2025-11-27 16:55:11 - feature_pipeline - INFO -   [OK] Saved growth rate plots to C:\GitHub\is-160-project\data\feature_engineering\plots\T038_growth_rates_distribution.png
+2025-11-27 16:55:11 - feature_pipeline - INFO - [OK] Growth rate plots saved to C:\GitHub\is-160-project\data\feature_engineering\plots\T038_growth_rates_distribution.png
+2025-11-27 16:55:20 - feature_pipeline - INFO -   [OK] Saved lag correlation heatmap to C:\GitHub\is-160-project\data\feature_engineering\plots\T042_lag_features_correlation.png
+2025-11-27 16:55:20 - feature_pipeline - INFO - [OK] Lag correlation heatmap saved to C:\GitHub\is-160-project\data\feature_engineering\plots\T042_lag_features_correlation.png
+2025-11-27 16:55:20 - feature_pipeline - INFO - 
+Saving feature-engineered dataset to: C:\GitHub\is-160-project\data\feature_engineering\final_features.csv
+2025-11-27 16:56:40 - feature_pipeline - INFO - [OK] Saved 3,777,920 records to final_features.csv
+2025-11-27 16:56:40 - feature_pipeline - INFO -   [X] T034: Data quality filtering (removed invalid records)
+2025-11-27 16:56:40 - feature_pipeline - INFO - Final dataset: 3,777,920 records × 26 columns
+2025-11-27 23:14:13 - pipeline_orchestrator - INFO - STAGE 5: DATA PREPROCESSING
+2025-11-27 23:14:13 - preprocessing_pipeline - INFO - PREPROCESSING PIPELINE FOR LSTM
+2025-11-27 23:14:13 - preprocessing_pipeline - INFO - 
+[STAGE 1/5] T054: Normalizing employment and wage data...
+2025-11-27 23:14:35 - preprocessing - INFO - Transforming data to sequences of length 12
+2025-11-27 23:17:03 - preprocessing_pipeline - INFO - 
+[STAGE 5/5] T058: Validating preprocessing...
+2025-11-27 23:17:03 - preprocessing - INFO - Validating preprocessing steps...
+2025-11-27 23:17:07 - preprocessing_pipeline - INFO - [OK] Preprocessing validation passed
+2025-11-27 23:17:07 - preprocessing_pipeline - INFO - 
+Saving preprocessed data to: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-27 23:19:47 - preprocessing_pipeline - INFO - [OK] Saved preprocessed data: qcew_preprocessed.csv
+2025-11-27 23:23:09 - preprocessing_pipeline - INFO - [OK] Saved sequences: qcew_preprocessed_sequences.npz
+2025-11-27 23:23:09 - preprocessing_pipeline - INFO - [OK] Saved preprocessor: qcew_preprocessed_preprocessor.pkl
+2025-11-27 23:23:09 - preprocessing_pipeline - INFO - PREPROCESSING COMPLETE
+2025-11-28 00:19:52 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-28 00:19:52 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-28 00:19:52 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-28 00:19:52 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-28 00:19:52 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-28 00:30:07 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-28 00:30:07 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-28 00:30:07 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-28 00:30:07 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-28 00:30:08 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-28 00:30:08 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-28 00:30:08 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-28 00:30:08 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-28 00:30:08 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-28 14:23:34 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-28 14:23:34 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-28 14:23:34 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-28 14:23:34 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-28 14:23:34 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-28 14:24:06 - visualization - INFO - [OK] Saved enhanced training history: C:\GitHub\is-160-project\data\processed\plots\evaluation\training_history.png
+2025-11-28 14:24:08 - visualization - INFO - [OK] Saved prediction analysis: C:\GitHub\is-160-project\data\processed\plots\evaluation\prediction_analysis.png
+2025-11-28 14:24:08 - pipeline_orchestrator - INFO -   Model saved at: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-28 14:24:08 - comprehensive_evaluation - WARNING -   No historical data provided; using test set mean as baseline
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO - [OK] Evaluation report saved: C:\GitHub\is-160-project\data\processed\plots\evaluation\comprehensive_evaluation_report.txt
+2025-11-28 14:24:09 - comprehensive_evaluation - INFO - [OK] Model comparison plot saved: C:\GitHub\is-160-project\data\processed\plots\evaluation\model_comparison.png
+2025-11-28 14:55:33 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-28 14:55:33 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-28 14:55:41 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-28 14:55:41 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-28 14:55:41 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-28 14:55:41 - prediction_interface - INFO -   Preprocessor type: EmploymentDataPreprocessor
+2025-11-28 14:55:41 - prediction_interface - INFO - 
+Loading reference data...
+2025-11-28 14:55:41 - prediction_interface - INFO -   Base directory: C:\GitHub\is-160-project\data
+2025-11-28 14:55:41 - prediction_interface - INFO -   Trying: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-28 14:55:41 - prediction_interface - INFO -   Loading from: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-28 14:55:55 - prediction_interface - INFO - [OK] Reference data loaded successfully

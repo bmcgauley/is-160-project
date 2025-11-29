@@ -177,3 +177,22 @@ Traceback (most recent call last):
   File "C:\GitHub\is-160-project\src\exploration.py", line 13, in <module>
     import seaborn as sns
 ModuleNotFoundError: No module named 'seaborn'
+2025-11-25 16:03:05 - pipeline_orchestrator - WARNING - No validation loss history found; using fallback for best_epoch
+2025-11-25 16:09:43 - pipeline_orchestrator - WARNING - No validation loss history found; using fallback for best_epoch
+2025-11-25 16:12:36 - pipeline_orchestrator - WARNING - No validation loss history found; using fallback for best_epoch
+2025-11-25 16:43:05 - pipeline_orchestrator - WARNING - No validation loss history found; using fallback for best_epoch
+2025-11-25 16:44:13 - pipeline_orchestrator - WARNING - No validation loss history found; using fallback for best_epoch
+2025-11-25 17:00:01 - pipeline_orchestrator - WARNING - No validation loss history found; using fallback for best_epoch
+2025-11-25 17:00:01 - visualization - WARNING - No training history available - skipping training history plot
+2025-11-25 17:00:03 - comprehensive_evaluation - WARNING -   No historical data provided; using test set mean as baseline
+2025-11-25 18:38:08 - pipeline_orchestrator - WARNING - No validation loss history found; using fallback for best_epoch
+2025-11-25 18:38:08 - visualization - WARNING - No training history available - skipping training history plot
+2025-11-25 18:38:11 - comprehensive_evaluation - WARNING -   No historical data provided; using test set mean as baseline
+2025-11-25 18:41:39 - prediction_interface - ERROR - [ERROR] Prediction interface failed: Error(s) in loading state_dict for EmploymentLSTM:
+	size mismatch for lstm.weight_ih_l0: copying a param with shape torch.Size([256, 18]) from checkpoint, the shape in current model is torch.Size([256, 24]).
+2025-11-25 18:50:10 - prediction_interface - ERROR - [ERROR] Prediction interface failed: Error(s) in loading state_dict for EmploymentLSTM:
+	size mismatch for lstm.weight_ih_l0: copying a param with shape torch.Size([256, 18]) from checkpoint, the shape in current model is torch.Size([256, 24]).
+2025-11-25 18:50:33 - prediction_interface - ERROR - [ERROR] Prediction interface failed: 'EmploymentDataPreprocessor' object has no attribute 'feature_names_'
+2025-11-25 19:18:10 - prediction_interface - WARNING -   No area name column found. Columns: ['area_type', 'area_name', 'year', 'quarter', 'ownership', 'naics_level', 'industry_code', 'industry_name', 'qtrly_estabs', 'avg_monthly_emplvl', 'month1_emplvl', 'month2_emplvl', 'month3_emplvl', 'total_qtrly_wages', 'avg_wkly_wage', 'quarter_label', 'employment_prev_quarter', 'employment_qoq_change', 'employment_qoq_pct_change', 'employment_4q_ago', 'employment_yoy_change', 'employment_yoy_pct_change', 'avg_monthly_emplvl_lag_1', 'avg_monthly_emplvl_lag_2', 'avg_monthly_emplvl_lag_3', 'avg_monthly_emplvl_lag_4']
+2025-11-25 19:18:10 - prediction_interface - WARNING -   No industry code column found
+2025-11-28 14:24:08 - comprehensive_evaluation - WARNING -   No historical data provided; using test set mean as baseline
