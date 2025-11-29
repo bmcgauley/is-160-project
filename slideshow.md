@@ -103,7 +103,6 @@ Time span: 2004-2024 (20+ years)
 
 ### Section 2: Problem & Context (Slides 4-6)
 
-#### Slide 4: The Business Problem
 **Content:**
 - Why employment forecasting matters
 - California's complex labor market (diverse industries, geographic spread)
@@ -710,7 +709,7 @@ RECOMMENDATIONS:
 **Content:**
 - Successfully processed 5.4M+ records
 - Built production-grade 8-stage pipeline
-- Achieved 91.98% directional accuracy
+- Achieved 91.38% directional accuracy
 - Comprehensive baseline comparisons
 - Interactive user interface
 

@@ -1,0 +1,163 @@
+{
+  "metadata": {
+    "generated_at": "2025-11-28T14:56:42.073167",
+    "county": "Fresno County",
+    "industry_code": "62",
+    "forecast_horizon_quarters": 20,
+    "target_year": 2030,
+    "target_quarter": 4
+  },
+  "summary": {
+    "final_prediction": {
+      "quarter": "2030 Q3",
+      "predicted_employment": 18893,
+      "confidence_low": 17288,
+      "confidence_high": 20498,
+      "quarters_ahead": 20
+    },
+    "trend": "Growing",
+    "total_change_percent": 14.288306817494403
+  },
+  "time_series": [
+    {
+      "quarter": "2025 Q4",
+      "predicted_employment": 16531,
+      "confidence_low": 15707,
+      "confidence_high": 17354,
+      "quarters_ahead": 1
+    },
+    {
+      "quarter": "2026 Q1",
+      "predicted_employment": 17460,
+      "confidence_low": 16595,
+      "confidence_high": 18324,
+      "quarters_ahead": 2
+    },
+    {
+      "quarter": "2026 Q2",
+      "predicted_employment": 16955,
+      "confidence_low": 16050,
+      "confidence_high": 17861,
+      "quarters_ahead": 3
+    },
+    {
+      "quarter": "2026 Q3",
+      "predicted_employment": 15467,
+      "confidence_low": 14520,
+      "confidence_high": 16413,
+      "quarters_ahead": 4
+    },
+    {
+      "quarter": "2026 Q4",
+      "predicted_employment": 16594,
+      "confidence_low": 15606,
+      "confidence_high": 17582,
+      "quarters_ahead": 5
+    },
+    {
+      "quarter": "2027 Q1",
+      "predicted_employment": 18153,
+      "confidence_low": 17124,
+      "confidence_high": 19182,
+      "quarters_ahead": 6
+    },
+    {
+      "quarter": "2027 Q2",
+      "predicted_employment": 17377,
+      "confidence_low": 16307,
+      "confidence_high": 18447,
+      "quarters_ahead": 7
+    },
+    {
+      "quarter": "2027 Q3",
+      "predicted_employment": 16962,
+      "confidence_low": 15851,
+      "confidence_high": 18073,
+      "quarters_ahead": 8
+    },
+    {
+      "quarter": "2027 Q4",
+      "predicted_employment": 17377,
+      "confidence_low": 16225,
+      "confidence_high": 18530,
+      "quarters_ahead": 9
+    },
+    {
+      "quarter": "2028 Q1",
+      "predicted_employment": 18531,
+      "confidence_low": 17337,
+      "confidence_high": 19724,
+      "quarters_ahead": 10
+    },
+    {
+      "quarter": "2028 Q2",
+      "predicted_employment": 17490,
+      "confidence_low": 16255,
+      "confidence_high": 18725,
+      "quarters_ahead": 11
+    },
+    {
+      "quarter": "2028 Q3",
+      "predicted_employment": 17065,
+      "confidence_low": 15789,
+      "confidence_high": 18341,
+      "quarters_ahead": 12
+    },
+    {
+      "quarter": "2028 Q4",
+      "predicted_employment": 17981,
+      "confidence_low": 16664,
+      "confidence_high": 19298,
+      "quarters_ahead": 13
+    },
+    {
+      "quarter": "2029 Q1",
+      "predicted_employment": 18907,
+      "confidence_low": 17548,
+      "confidence_high": 20265,
+      "quarters_ahead": 14
+    },
+    {
+      "quarter": "2029 Q2",
+      "predicted_employment": 18430,
+      "confidence_low": 17030,
+      "confidence_high": 19829,
+      "quarters_ahead": 15
+    },
+    {
+      "quarter": "2029 Q3",
+      "predicted_employment": 17401,
+      "confidence_low": 15960,
+      "confidence_high": 18841,
+      "quarters_ahead": 16
+    },
+    {
+      "quarter": "2029 Q4",
+      "predicted_employment": 19314,
+      "confidence_low": 17832,
+      "confidence_high": 20795,
+      "quarters_ahead": 17
+    },
+    {
+      "quarter": "2030 Q1",
+      "predicted_employment": 20393,
+      "confidence_low": 18870,
+      "confidence_high": 21916,
+      "quarters_ahead": 18
+    },
+    {
+      "quarter": "2030 Q2",
+      "predicted_employment": 19230,
+      "confidence_low": 17666,
+      "confidence_high": 20794,
+      "quarters_ahead": 19
+    },
+    {
+      "quarter": "2030 Q3",
+      "predicted_employment": 18893,
+      "confidence_low": 17288,
+      "confidence_high": 20498,
+      "quarters_ahead": 20
+    }
+  ]
+}
