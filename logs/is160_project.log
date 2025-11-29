@@ -8892,3 +8892,1816 @@ Generating enhanced training history plots...
 ================================================================================
 2025-11-12 08:04:36 - pipeline_orchestrator - INFO - STAGE 8: INTERACTIVE PREDICTION INTERFACE
 2025-11-12 08:04:36 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-13 09:48:33 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-13 09:48:33 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-13 09:48:33 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-13 09:48:33 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-13 09:48:33 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-13 09:48:33 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-13 09:48:33 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-13 09:48:33 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-13 09:49:42 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-13 09:49:42 - pipeline_orchestrator - INFO - STAGE 7: MODEL EVALUATION
+2025-11-13 09:49:42 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-13 09:49:42 - pipeline_orchestrator - INFO - 
+Generating enhanced training history plots...
+2025-11-13 09:49:54 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-13 09:49:54 - pipeline_orchestrator - INFO - STAGE 8: INTERACTIVE PREDICTION INTERFACE
+2025-11-13 09:49:54 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-13 10:49:23 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-13 10:49:23 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-13 10:49:23 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-13 10:49:23 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-13 10:49:23 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-13 10:49:23 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-13 10:49:23 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-13 10:49:23 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 11:03:56 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 11:03:56 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 11:03:56 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 11:03:56 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-25 11:03:56 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 11:03:56 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 11:03:56 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 11:03:56 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 15:39:23 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 15:39:23 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 15:39:23 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 15:39:23 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-25 15:39:23 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 15:39:23 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 15:39:23 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 15:39:23 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 16:02:41 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 16:02:41 - pipeline_orchestrator - INFO - STAGE 7: MODEL EVALUATION
+2025-11-25 16:02:41 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 16:02:41 - pipeline_orchestrator - INFO - 
+Generating enhanced training history plots...
+2025-11-25 16:03:05 - pipeline_orchestrator - WARNING - No validation loss history found; using fallback for best_epoch
+2025-11-25 16:09:42 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 16:09:42 - pipeline_orchestrator - INFO - STAGE 7: MODEL EVALUATION
+2025-11-25 16:09:42 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 16:09:42 - pipeline_orchestrator - INFO - 
+Generating enhanced training history plots...
+2025-11-25 16:09:43 - pipeline_orchestrator - WARNING - No validation loss history found; using fallback for best_epoch
+2025-11-25 16:12:01 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 16:12:01 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 16:12:01 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 16:12:01 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-25 16:12:01 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 16:12:01 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 16:12:01 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 16:12:01 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 16:12:33 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 16:12:33 - pipeline_orchestrator - INFO - STAGE 7: MODEL EVALUATION
+2025-11-25 16:12:33 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 16:12:33 - pipeline_orchestrator - INFO - 
+Generating enhanced training history plots...
+2025-11-25 16:12:36 - pipeline_orchestrator - WARNING - No validation loss history found; using fallback for best_epoch
+2025-11-25 16:43:05 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 16:43:05 - pipeline_orchestrator - INFO - STAGE 7: MODEL EVALUATION
+2025-11-25 16:43:05 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 16:43:05 - pipeline_orchestrator - INFO - 
+Generating enhanced training history plots...
+2025-11-25 16:43:05 - pipeline_orchestrator - WARNING - No validation loss history found; using fallback for best_epoch
+2025-11-25 16:43:54 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 16:43:54 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 16:43:54 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 16:43:54 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-25 16:43:54 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 16:43:54 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 16:43:54 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 16:43:54 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 16:44:11 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 16:44:11 - pipeline_orchestrator - INFO - STAGE 7: MODEL EVALUATION
+2025-11-25 16:44:11 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 16:44:11 - pipeline_orchestrator - INFO - 
+Generating enhanced training history plots...
+2025-11-25 16:44:13 - pipeline_orchestrator - WARNING - No validation loss history found; using fallback for best_epoch
+2025-11-25 16:59:29 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 16:59:29 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 16:59:29 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 16:59:29 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-25 16:59:29 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 16:59:29 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 16:59:29 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 16:59:29 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 16:59:55 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 16:59:55 - pipeline_orchestrator - INFO - STAGE 7: MODEL EVALUATION
+2025-11-25 16:59:55 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 16:59:55 - pipeline_orchestrator - INFO - 
+Generating enhanced training history plots...
+2025-11-25 17:00:01 - pipeline_orchestrator - WARNING - No validation loss history found; using fallback for best_epoch
+2025-11-25 17:00:01 - visualization - WARNING - No training history available - skipping training history plot
+2025-11-25 17:00:02 - visualization - INFO - [OK] Saved placeholder training history plot: C:\GitHub\is-160-project\data\processed\plots\evaluation\training_history.png
+2025-11-25 17:00:02 - pipeline_orchestrator - INFO - 
+Generating prediction analysis plots...
+2025-11-25 17:00:03 - visualization - INFO - [OK] Saved prediction analysis: C:\GitHub\is-160-project\data\processed\plots\evaluation\prediction_analysis.png
+2025-11-25 17:00:03 - pipeline_orchestrator - INFO - 
+Model Performance Summary:
+2025-11-25 17:00:03 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 17:00:03 - pipeline_orchestrator - INFO -   Training epochs: 4
+2025-11-25 17:00:03 - pipeline_orchestrator - INFO -   Best validation loss: 507.378567
+2025-11-25 17:00:03 - pipeline_orchestrator - INFO -   Test loss (MSE): 100.998113
+2025-11-25 17:00:03 - pipeline_orchestrator - INFO -   Test RMSE: 10.049782
+2025-11-25 17:00:03 - pipeline_orchestrator - INFO -   Test MAPE: 0.00%
+2025-11-25 17:00:03 - pipeline_orchestrator - INFO -   Directional Accuracy: 0.00%
+2025-11-25 17:00:03 - pipeline_orchestrator - INFO -   Model saved at: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 17:00:03 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 17:00:03 - pipeline_orchestrator - INFO - 
+  Overall Model Quality: NEEDS IMPROVEMENT
+2025-11-25 17:00:03 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 17:00:03 - pipeline_orchestrator - INFO - COMPREHENSIVE MODEL EVALUATION WITH BASELINES
+2025-11-25 17:00:03 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 17:00:03 - comprehensive_evaluation - INFO - 
+Generating naive baseline predictions...
+2025-11-25 17:00:03 - comprehensive_evaluation - WARNING -   No historical data provided; using test set mean as baseline
+2025-11-25 17:00:03 - comprehensive_evaluation - INFO - ================================================================================
+2025-11-25 17:00:03 - comprehensive_evaluation - INFO - STAGE 8: COMPREHENSIVE MODEL EVALUATION
+2025-11-25 17:00:03 - comprehensive_evaluation - INFO - ================================================================================
+2025-11-25 17:00:04 - comprehensive_evaluation - INFO - 
+LSTM Model Performance:
+2025-11-25 17:00:04 - comprehensive_evaluation - INFO -   RMSE: 10.0498
+2025-11-25 17:00:04 - comprehensive_evaluation - INFO -   MAE: 1.8930
+2025-11-25 17:00:04 - comprehensive_evaluation - INFO -   MAPE: 157.1092
+2025-11-25 17:00:04 - comprehensive_evaluation - INFO -   R2: 0.0984
+2025-11-25 17:00:04 - comprehensive_evaluation - INFO -   DIRECTIONAL_ACCURACY: 91.9752
+2025-11-25 17:00:04 - comprehensive_evaluation - INFO - 
+Baseline Model Comparisons:
+2025-11-25 17:00:04 - comprehensive_evaluation - INFO - 
+MEAN Model:
+2025-11-25 17:00:04 - comprehensive_evaluation - INFO - 
+Generating comprehensive evaluation report...
+2025-11-25 18:37:35 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 18:37:35 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 18:37:35 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 18:37:35 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-25 18:37:35 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 18:37:35 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 18:37:35 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 18:37:35 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 18:38:03 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 18:38:03 - pipeline_orchestrator - INFO - STAGE 7: MODEL EVALUATION
+2025-11-25 18:38:03 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 18:38:03 - pipeline_orchestrator - INFO - 
+Generating enhanced training history plots...
+2025-11-25 18:38:08 - pipeline_orchestrator - WARNING - No validation loss history found; using fallback for best_epoch
+2025-11-25 18:38:08 - visualization - WARNING - No training history available - skipping training history plot
+2025-11-25 18:38:09 - visualization - INFO - [OK] Saved placeholder training history plot: C:\GitHub\is-160-project\data\processed\plots\evaluation\training_history.png
+2025-11-25 18:38:09 - pipeline_orchestrator - INFO - 
+Generating prediction analysis plots...
+2025-11-25 18:38:11 - visualization - INFO - [OK] Saved prediction analysis: C:\GitHub\is-160-project\data\processed\plots\evaluation\prediction_analysis.png
+2025-11-25 18:38:11 - pipeline_orchestrator - INFO - 
+Model Performance Summary:
+2025-11-25 18:38:11 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 18:38:11 - pipeline_orchestrator - INFO -   Training epochs: 4
+2025-11-25 18:38:11 - pipeline_orchestrator - INFO -   Best validation loss: 507.378567
+2025-11-25 18:38:11 - pipeline_orchestrator - INFO -   Test loss (MSE): 100.998113
+2025-11-25 18:38:11 - pipeline_orchestrator - INFO -   Test RMSE: 10.049782
+2025-11-25 18:38:11 - pipeline_orchestrator - INFO -   Test MAPE: 0.00%
+2025-11-25 18:38:11 - pipeline_orchestrator - INFO -   Directional Accuracy: 0.00%
+2025-11-25 18:38:11 - pipeline_orchestrator - INFO -   Model saved at: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 18:38:11 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 18:38:11 - pipeline_orchestrator - INFO - 
+  Overall Model Quality: NEEDS IMPROVEMENT
+2025-11-25 18:38:11 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 18:38:11 - pipeline_orchestrator - INFO - COMPREHENSIVE MODEL EVALUATION WITH BASELINES
+2025-11-25 18:38:11 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 18:38:11 - comprehensive_evaluation - INFO - 
+Generating naive baseline predictions...
+2025-11-25 18:38:11 - comprehensive_evaluation - WARNING -   No historical data provided; using test set mean as baseline
+2025-11-25 18:38:11 - comprehensive_evaluation - INFO - ================================================================================
+2025-11-25 18:38:11 - comprehensive_evaluation - INFO - STAGE 8: COMPREHENSIVE MODEL EVALUATION
+2025-11-25 18:38:11 - comprehensive_evaluation - INFO - ================================================================================
+2025-11-25 18:38:11 - comprehensive_evaluation - INFO - 
+LSTM Model Performance:
+2025-11-25 18:38:11 - comprehensive_evaluation - INFO -   RMSE: 10.0498
+2025-11-25 18:38:11 - comprehensive_evaluation - INFO -   MAE: 1.8930
+2025-11-25 18:38:11 - comprehensive_evaluation - INFO -   MAPE: 157.1092
+2025-11-25 18:38:11 - comprehensive_evaluation - INFO -   R2: 0.0984
+2025-11-25 18:38:11 - comprehensive_evaluation - INFO -   DIRECTIONAL_ACCURACY: 91.9752
+2025-11-25 18:38:11 - comprehensive_evaluation - INFO - 
+Baseline Model Comparisons:
+2025-11-25 18:38:12 - comprehensive_evaluation - INFO - 
+MEAN Model:
+2025-11-25 18:38:12 - comprehensive_evaluation - INFO -   RMSE: 10.5841 ([+] +5.05% vs LSTM)
+2025-11-25 18:38:12 - comprehensive_evaluation - INFO -   MAE: 2.2375 ([+] +15.39% vs LSTM)
+2025-11-25 18:38:12 - comprehensive_evaluation - INFO -   MAPE: 161.6174 ([+] +2.79% vs LSTM)
+2025-11-25 18:38:12 - comprehensive_evaluation - INFO -   R2: 0.0000 ([-] +0.00% vs LSTM)
+2025-11-25 18:38:12 - comprehensive_evaluation - INFO -   DIRECTIONAL_ACCURACY: 0.0000 ([-] +0.00% vs LSTM)
+2025-11-25 18:38:12 - comprehensive_evaluation - INFO - 
+Generating comprehensive evaluation report...
+2025-11-25 18:38:12 - comprehensive_evaluation - INFO - [OK] Evaluation report saved: C:\GitHub\is-160-project\data\processed\plots\evaluation\comprehensive_evaluation_report.txt
+2025-11-25 18:38:12 - comprehensive_evaluation - INFO - 
+Creating model comparison visualizations...
+2025-11-25 18:38:13 - comprehensive_evaluation - INFO - [OK] Model comparison plot saved: C:\GitHub\is-160-project\data\processed\plots\evaluation\model_comparison.png
+2025-11-25 18:38:13 - pipeline_orchestrator - INFO - 
+[OK] Comprehensive model evaluation complete!
+2025-11-25 18:41:31 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 18:41:31 - pipeline_orchestrator - INFO - STAGE 8: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 18:41:31 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 18:41:31 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 18:41:31 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 18:41:39 - prediction_interface - INFO - ================================================================================
+2025-11-25 18:41:39 - prediction_interface - INFO - STAGE 9: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 18:41:39 - prediction_interface - INFO - ================================================================================
+2025-11-25 18:41:39 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 18:41:39 - prediction_interface - ERROR - [ERROR] Prediction interface failed: Error(s) in loading state_dict for EmploymentLSTM:
+	size mismatch for lstm.weight_ih_l0: copying a param with shape torch.Size([256, 18]) from checkpoint, the shape in current model is torch.Size([256, 24]).
+2025-11-25 18:50:07 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 18:50:07 - pipeline_orchestrator - INFO - STAGE 8: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 18:50:07 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 18:50:07 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 18:50:07 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 18:50:10 - prediction_interface - INFO - ================================================================================
+2025-11-25 18:50:10 - prediction_interface - INFO - STAGE 9: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 18:50:10 - prediction_interface - INFO - ================================================================================
+2025-11-25 18:50:10 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 18:50:10 - prediction_interface - ERROR - [ERROR] Prediction interface failed: Error(s) in loading state_dict for EmploymentLSTM:
+	size mismatch for lstm.weight_ih_l0: copying a param with shape torch.Size([256, 18]) from checkpoint, the shape in current model is torch.Size([256, 24]).
+2025-11-25 18:50:27 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 18:50:27 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 18:50:27 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 18:50:27 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-25 18:50:27 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 18:50:27 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 18:50:27 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 18:50:27 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 18:50:30 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 18:50:30 - pipeline_orchestrator - INFO - STAGE 8: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 18:50:30 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 18:50:30 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 18:50:30 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 18:50:33 - prediction_interface - INFO - ================================================================================
+2025-11-25 18:50:33 - prediction_interface - INFO - STAGE 9: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 18:50:33 - prediction_interface - INFO - ================================================================================
+2025-11-25 18:50:33 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 18:50:33 - prediction_interface - INFO -   Inferred model architecture from checkpoint: input_size=18, hidden_size=64
+2025-11-25 18:50:33 - prediction_interface - INFO - [OK] Model loaded successfully
+2025-11-25 18:50:33 - prediction_interface - INFO -   Device: cpu
+2025-11-25 18:50:33 - prediction_interface - INFO -   Model architecture: input_size=18, hidden_size=64
+2025-11-25 18:50:33 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-25 18:50:33 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-25 18:50:33 - prediction_interface - ERROR - [ERROR] Prediction interface failed: 'EmploymentDataPreprocessor' object has no attribute 'feature_names_'
+2025-11-25 18:58:49 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 18:58:49 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 18:58:49 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 18:58:49 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-25 18:58:49 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 18:58:49 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 18:58:49 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 18:58:49 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 18:59:31 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 18:59:31 - pipeline_orchestrator - INFO - STAGE 8: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 18:59:31 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 18:59:31 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 18:59:31 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 18:59:34 - prediction_interface - INFO - ================================================================================
+2025-11-25 18:59:34 - prediction_interface - INFO - STAGE 9: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 18:59:34 - prediction_interface - INFO - ================================================================================
+2025-11-25 18:59:34 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 18:59:34 - prediction_interface - INFO -   Inferred model architecture from checkpoint: input_size=18, hidden_size=64
+2025-11-25 18:59:34 - prediction_interface - INFO - [OK] Model loaded successfully
+2025-11-25 18:59:34 - prediction_interface - INFO -   Device: cpu
+2025-11-25 18:59:34 - prediction_interface - INFO -   Model architecture: input_size=18, hidden_size=64
+2025-11-25 18:59:34 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-25 18:59:34 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-25 18:59:34 - prediction_interface - INFO -   Preprocessor type: EmploymentDataPreprocessor
+2025-11-25 18:59:34 - prediction_interface - INFO - 
+================================================================================
+2025-11-25 18:59:34 - prediction_interface - INFO - INTERACTIVE PREDICTION MODE
+2025-11-25 18:59:34 - prediction_interface - INFO - ================================================================================
+2025-11-25 19:10:11 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 19:10:11 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 19:10:11 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 19:10:11 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-25 19:10:11 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 19:10:11 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 19:10:11 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 19:10:11 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 19:10:17 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 19:10:17 - pipeline_orchestrator - INFO - STAGE 8: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 19:10:17 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 19:10:17 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 19:10:17 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 19:10:42 - prediction_interface - INFO - ================================================================================
+2025-11-25 19:10:42 - prediction_interface - INFO - STAGE 9: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 19:10:42 - prediction_interface - INFO - ================================================================================
+2025-11-25 19:10:42 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 19:10:42 - prediction_interface - INFO -   Inferred model architecture from checkpoint: input_size=18, hidden_size=64
+2025-11-25 19:10:42 - prediction_interface - INFO - [OK] Model loaded successfully
+2025-11-25 19:10:42 - prediction_interface - INFO -   Device: cpu
+2025-11-25 19:10:42 - prediction_interface - INFO -   Model architecture: input_size=18, hidden_size=64
+2025-11-25 19:10:42 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-25 19:10:42 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-25 19:10:42 - prediction_interface - INFO -   Preprocessor type: EmploymentDataPreprocessor
+2025-11-25 19:10:42 - prediction_interface - INFO - 
+Loading reference data...
+2025-11-25 19:10:42 - prediction_interface - INFO -   Loading from: qcew_preprocessed.csv
+2025-11-25 19:11:03 - prediction_interface - INFO - [OK] Reference data loaded: 3777920 records
+2025-11-25 19:11:03 - prediction_interface - INFO - 
+================================================================================
+2025-11-25 19:11:03 - prediction_interface - INFO - INTERACTIVE PREDICTION MODE
+2025-11-25 19:11:03 - prediction_interface - INFO - ================================================================================
+2025-11-25 19:16:06 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 19:16:06 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 19:16:06 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 19:16:06 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-25 19:16:06 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 19:16:06 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 19:16:06 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 19:16:06 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 19:17:47 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 19:17:47 - pipeline_orchestrator - INFO - STAGE 8: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 19:17:47 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 19:17:47 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 19:17:47 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 19:17:50 - prediction_interface - INFO - ================================================================================
+2025-11-25 19:17:50 - prediction_interface - INFO - STAGE 9: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 19:17:50 - prediction_interface - INFO - ================================================================================
+2025-11-25 19:17:50 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 19:17:50 - prediction_interface - INFO -   Inferred model architecture from checkpoint: input_size=18, hidden_size=64
+2025-11-25 19:17:50 - prediction_interface - INFO - [OK] Model loaded successfully
+2025-11-25 19:17:50 - prediction_interface - INFO -   Device: cpu
+2025-11-25 19:17:50 - prediction_interface - INFO -   Model architecture: input_size=18, hidden_size=64
+2025-11-25 19:17:50 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-25 19:17:50 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-25 19:17:50 - prediction_interface - INFO -   Preprocessor type: EmploymentDataPreprocessor
+2025-11-25 19:17:50 - prediction_interface - INFO - 
+Loading reference data...
+2025-11-25 19:17:50 - prediction_interface - INFO -   Base directory: C:\GitHub\is-160-project\data
+2025-11-25 19:17:50 - prediction_interface - INFO -   Trying: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-25 19:17:50 - prediction_interface - INFO -   Loading from: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-25 19:18:10 - prediction_interface - INFO -   Loaded 3777920 records
+2025-11-25 19:18:10 - prediction_interface - INFO -   Columns: ['area_type', 'area_name', 'year', 'quarter', 'ownership', 'naics_level', 'industry_code', 'industry_name', 'qtrly_estabs', 'avg_monthly_emplvl']
+2025-11-25 19:18:10 - prediction_interface - WARNING -   No area name column found. Columns: ['area_type', 'area_name', 'year', 'quarter', 'ownership', 'naics_level', 'industry_code', 'industry_name', 'qtrly_estabs', 'avg_monthly_emplvl', 'month1_emplvl', 'month2_emplvl', 'month3_emplvl', 'total_qtrly_wages', 'avg_wkly_wage', 'quarter_label', 'employment_prev_quarter', 'employment_qoq_change', 'employment_qoq_pct_change', 'employment_4q_ago', 'employment_yoy_change', 'employment_yoy_pct_change', 'avg_monthly_emplvl_lag_1', 'avg_monthly_emplvl_lag_2', 'avg_monthly_emplvl_lag_3', 'avg_monthly_emplvl_lag_4']
+2025-11-25 19:18:10 - prediction_interface - WARNING -   No industry code column found
+2025-11-25 19:18:10 - prediction_interface - INFO - [OK] Reference data loaded successfully
+2025-11-25 19:18:10 - prediction_interface - INFO - 
+================================================================================
+2025-11-25 19:18:10 - prediction_interface - INFO - INTERACTIVE PREDICTION MODE
+2025-11-25 19:18:10 - prediction_interface - INFO - ================================================================================
+2025-11-25 22:33:04 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 22:33:04 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 22:33:04 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 22:33:04 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-25 22:33:04 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 22:33:04 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 22:33:04 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 22:33:04 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 22:33:09 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 22:33:09 - pipeline_orchestrator - INFO - STAGE 8: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 22:33:09 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 22:33:09 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 22:33:09 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 22:33:11 - prediction_interface - INFO - ================================================================================
+2025-11-25 22:33:11 - prediction_interface - INFO - STAGE 9: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 22:33:11 - prediction_interface - INFO - ================================================================================
+2025-11-25 22:33:11 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 22:33:11 - prediction_interface - INFO -   Inferred model architecture from checkpoint: input_size=18, hidden_size=64
+2025-11-25 22:33:11 - prediction_interface - INFO - [OK] Model loaded successfully
+2025-11-25 22:33:11 - prediction_interface - INFO -   Device: cpu
+2025-11-25 22:33:11 - prediction_interface - INFO -   Model architecture: input_size=18, hidden_size=64
+2025-11-25 22:33:11 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-25 22:33:11 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-25 22:33:11 - prediction_interface - INFO -   Preprocessor type: EmploymentDataPreprocessor
+2025-11-25 22:33:11 - prediction_interface - INFO - 
+Loading reference data...
+2025-11-25 22:33:11 - prediction_interface - INFO -   Base directory: C:\GitHub\is-160-project\data
+2025-11-25 22:33:11 - prediction_interface - INFO -   Trying: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-25 22:33:11 - prediction_interface - INFO -   Loading from: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-25 22:33:32 - prediction_interface - INFO -   Loaded 3777920 records
+2025-11-25 22:33:32 - prediction_interface - INFO -   Columns: ['area_type', 'area_name', 'year', 'quarter', 'ownership', 'naics_level', 'industry_code', 'industry_name', 'qtrly_estabs', 'avg_monthly_emplvl']
+2025-11-25 22:33:33 - prediction_interface - INFO -   Filtered to 3777920 county records
+2025-11-25 22:33:33 - prediction_interface - INFO -   Found 58 unique counties
+2025-11-25 22:33:34 - prediction_interface - INFO -   Found 2648 industry codes
+2025-11-25 22:33:34 - prediction_interface - INFO - [OK] Reference data loaded successfully
+2025-11-25 22:33:34 - prediction_interface - INFO - 
+================================================================================
+2025-11-25 22:33:34 - prediction_interface - INFO - INTERACTIVE PREDICTION MODE
+2025-11-25 22:33:34 - prediction_interface - INFO - ================================================================================
+2025-11-25 22:36:09 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 22:36:09 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-25 22:36:09 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 22:36:09 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-25 22:36:09 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-25 22:36:09 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-25 22:36:09 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-25 22:36:09 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-25 22:36:12 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-25 22:36:12 - pipeline_orchestrator - INFO - STAGE 8: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 22:36:12 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-25 22:36:12 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-25 22:36:12 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-25 22:36:13 - prediction_interface - INFO - ================================================================================
+2025-11-25 22:36:13 - prediction_interface - INFO - STAGE 9: INTERACTIVE PREDICTION INTERFACE
+2025-11-25 22:36:13 - prediction_interface - INFO - ================================================================================
+2025-11-25 22:36:13 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-25 22:36:13 - prediction_interface - INFO -   Inferred model architecture from checkpoint: input_size=18, hidden_size=64
+2025-11-25 22:36:13 - prediction_interface - INFO - [OK] Model loaded successfully
+2025-11-25 22:36:13 - prediction_interface - INFO -   Device: cpu
+2025-11-25 22:36:13 - prediction_interface - INFO -   Model architecture: input_size=18, hidden_size=64
+2025-11-25 22:36:13 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-25 22:36:13 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-25 22:36:13 - prediction_interface - INFO -   Preprocessor type: EmploymentDataPreprocessor
+2025-11-25 22:36:13 - prediction_interface - INFO - 
+Loading reference data...
+2025-11-25 22:36:13 - prediction_interface - INFO -   Base directory: C:\GitHub\is-160-project\data
+2025-11-25 22:36:13 - prediction_interface - INFO -   Trying: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-25 22:36:13 - prediction_interface - INFO -   Loading from: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-25 22:36:26 - prediction_interface - INFO -   Loaded 5430384 records
+2025-11-25 22:36:26 - prediction_interface - INFO -   Columns: ['area_type', 'area_name', 'year', 'quarter', 'ownership', 'naics_level', 'industry_code', 'industry_name', 'qtrly_estabs', 'avg_monthly_emplvl']
+2025-11-25 22:36:29 - prediction_interface - INFO -   Filtered to 4732218 county records
+2025-11-25 22:36:29 - prediction_interface - INFO -   Found 58 unique counties
+2025-11-25 22:36:30 - prediction_interface - INFO -   Found 2674 industry codes
+2025-11-25 22:36:30 - prediction_interface - INFO - [OK] Reference data loaded successfully
+2025-11-25 22:36:30 - prediction_interface - INFO - 
+================================================================================
+2025-11-25 22:36:30 - prediction_interface - INFO - INTERACTIVE PREDICTION MODE
+2025-11-25 22:36:30 - prediction_interface - INFO - ================================================================================
+2025-11-27 11:11:48 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-27 11:11:48 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-27 11:11:48 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-27 11:11:48 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-27 11:11:48 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-27 11:11:48 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-27 11:11:48 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-27 11:11:48 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-27 13:59:36 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-27 13:59:36 - pipeline_orchestrator - INFO - STAGE 8: INTERACTIVE PREDICTION INTERFACE
+2025-11-27 13:59:36 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-27 13:59:36 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-27 13:59:36 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-27 13:59:42 - prediction_interface - INFO - ================================================================================
+2025-11-27 13:59:42 - prediction_interface - INFO - STAGE 9: INTERACTIVE PREDICTION INTERFACE
+2025-11-27 13:59:42 - prediction_interface - INFO - ================================================================================
+2025-11-27 13:59:42 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-27 13:59:42 - prediction_interface - INFO -   Inferred model architecture from checkpoint: input_size=18, hidden_size=64
+2025-11-27 13:59:42 - prediction_interface - INFO - [OK] Model loaded successfully
+2025-11-27 13:59:42 - prediction_interface - INFO -   Device: cpu
+2025-11-27 13:59:42 - prediction_interface - INFO -   Model architecture: input_size=18, hidden_size=64
+2025-11-27 13:59:42 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-27 13:59:42 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-27 13:59:42 - prediction_interface - INFO -   Preprocessor type: EmploymentDataPreprocessor
+2025-11-27 13:59:42 - prediction_interface - INFO - 
+Loading reference data...
+2025-11-27 13:59:42 - prediction_interface - INFO -   Base directory: C:\GitHub\is-160-project\data
+2025-11-27 13:59:42 - prediction_interface - INFO -   Trying: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-27 13:59:42 - prediction_interface - INFO -   Loading from: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-27 13:59:53 - prediction_interface - INFO -   Loaded 5430384 records
+2025-11-27 13:59:53 - prediction_interface - INFO -   Columns: ['area_type', 'area_name', 'year', 'quarter', 'ownership', 'naics_level', 'industry_code', 'industry_name', 'qtrly_estabs', 'avg_monthly_emplvl']
+2025-11-27 13:59:55 - prediction_interface - INFO -   Filtered to 4732218 county records
+2025-11-27 13:59:56 - prediction_interface - INFO -   Found 58 unique counties
+2025-11-27 13:59:57 - prediction_interface - INFO -   Found 2674 industry codes
+2025-11-27 13:59:57 - prediction_interface - INFO - [OK] Reference data loaded successfully
+2025-11-27 13:59:57 - prediction_interface - INFO - 
+================================================================================
+2025-11-27 13:59:57 - prediction_interface - INFO - INTERACTIVE PREDICTION MODE
+2025-11-27 13:59:57 - prediction_interface - INFO - ================================================================================
+2025-11-27 14:15:51 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-27 14:15:51 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-27 14:15:51 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-27 14:15:51 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-27 14:15:51 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-27 14:15:51 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-27 14:15:51 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-27 14:15:51 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-27 15:09:17 - consolidation - INFO - 
+================================================================================
+2025-11-27 15:09:17 - consolidation - INFO - STAGE 1: DATA CONSOLIDATION
+2025-11-27 15:09:17 - consolidation - INFO - ================================================================================
+2025-11-27 15:09:17 - consolidation - INFO - Loading existing consolidated file: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-27 15:09:31 - consolidation - INFO - Loaded 5,430,384 records from consolidated file
+2025-11-27 15:13:55 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-27 15:13:55 - pipeline_orchestrator - INFO - STAGE 2: DATA EXPLORATION
+2025-11-27 15:13:55 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-27 15:13:55 - exploration - INFO - 
+Performing exploratory data analysis...
+2025-11-27 15:13:56 - exploration - INFO -   Filtering to county-level records: 4,732,218 of 5,430,384 total records
+2025-11-27 15:13:58 - exploration - INFO - 
+Dataset Shape: 5,430,384 rows x 15 columns
+2025-11-27 15:13:58 - exploration - INFO - County-Level Records: 4,732,218 rows
+2025-11-27 15:13:58 - exploration - INFO - Date Range: 2004 - 2024
+2025-11-27 15:13:58 - exploration - INFO - 
+Employment Statistics (County-Level Only):
+2025-11-27 15:13:58 - exploration - INFO -   avg_monthly_emplvl:
+2025-11-27 15:13:58 - exploration - INFO -     Mean: 3,004
+2025-11-27 15:13:58 - exploration - INFO -     Median: 213
+2025-11-27 15:13:58 - exploration - INFO -     Min: 0
+2025-11-27 15:13:58 - exploration - INFO -     Max: 4,583,485
+2025-11-27 15:13:58 - exploration - INFO -   month1_emplvl:
+2025-11-27 15:13:58 - exploration - INFO -     Mean: 2,392
+2025-11-27 15:13:58 - exploration - INFO -     Median: 112
+2025-11-27 15:13:58 - exploration - INFO -     Min: 0
+2025-11-27 15:13:58 - exploration - INFO -     Max: 4,563,073
+2025-11-27 15:13:58 - exploration - INFO -   month2_emplvl:
+2025-11-27 15:13:58 - exploration - INFO -     Mean: 2,405
+2025-11-27 15:13:58 - exploration - INFO -     Median: 112
+2025-11-27 15:13:58 - exploration - INFO -     Min: 0
+2025-11-27 15:13:58 - exploration - INFO -     Max: 4,608,275
+2025-11-27 15:13:58 - exploration - INFO - 
+Wage Statistics (County-Level Only):
+2025-11-27 15:13:59 - exploration - INFO -   total_qtrly_wages:
+2025-11-27 15:13:59 - exploration - INFO -     Mean: $76,419,401.10
+2025-11-27 15:13:59 - exploration - INFO -     Median: $3,155,335.50
+2025-11-27 15:13:59 - exploration - INFO -   avg_wkly_wage:
+2025-11-27 15:13:59 - exploration - INFO -     Mean: $1,018.95
+2025-11-27 15:13:59 - exploration - INFO -     Median: $875.00
+2025-11-27 15:13:59 - exploration - INFO - 
+Generating visualizations in C:\GitHub\is-160-project\data\processed\plots...
+2025-11-27 15:14:00 - exploration - INFO -   Using county-level data for plots (4,732,218 records)
+2025-11-27 15:14:00 - exploration - INFO -   - Creating employment trends plot...
+2025-11-27 15:14:02 - exploration - INFO -   - Creating quarterly distribution plot...
+2025-11-27 15:14:03 - exploration - INFO -   - Creating wage trends plot...
+2025-11-27 15:14:04 - exploration - INFO -   - Creating top industries plot...
+2025-11-27 15:14:07 - exploration - INFO -   [OK] All plots saved to C:\GitHub\is-160-project\data\processed\plots
+2025-11-27 15:17:53 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-27 15:17:53 - pipeline_orchestrator - INFO - STAGE 3: DATA VALIDATION
+2025-11-27 15:17:53 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-27 15:17:53 - validation - INFO - Validating data quality for 5,430,384 records
+2025-11-27 15:17:53 - validation - INFO - Running employment range validation...
+2025-11-27 15:17:53 - validation - INFO - Running wage consistency validation...
+2025-11-27 15:17:54 - validation - INFO - Running statistical anomaly detection...
+2025-11-27 15:17:57 - validation - INFO - Generating quality scorecards...
+2025-11-27 15:18:17 - validation - INFO - Detailed validation report saved to C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-11-27 15:18:17 - validation - INFO - Saving validated data to C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-11-27 15:19:12 - validation - INFO - 
+[OK] Validation complete!
+2025-11-27 15:19:12 - validation - INFO - Overall Quality Score: 0.859
+2025-11-27 15:19:12 - validation - INFO - Validated data saved to: C:\GitHub\is-160-project\data\validated\qcew_validated.csv
+2025-11-27 15:19:12 - validation - INFO - Report saved to: C:\GitHub\is-160-project\data\validated\validation_report.txt
+2025-11-27 16:52:39 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-27 16:52:39 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-27 16:52:39 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-27 16:52:39 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-27 16:52:39 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-27 16:52:39 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-27 16:52:39 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-27 16:52:39 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-27 16:53:04 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-27 16:53:04 - pipeline_orchestrator - INFO - STAGE 4: FEATURE ENGINEERING
+2025-11-27 16:53:04 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-27 16:53:04 - feature_pipeline - INFO - 
+================================================================================
+2025-11-27 16:53:04 - feature_pipeline - INFO - FEATURE ENGINEERING PIPELINE
+2025-11-27 16:53:04 - feature_pipeline - INFO - ================================================================================
+2025-11-27 16:53:04 - feature_pipeline - INFO - 
+[STAGE 1/10] T032: Filtering to county-level records...
+2025-11-27 16:53:04 - feature_engineering - INFO - 
+================================================================================
+2025-11-27 16:53:04 - feature_engineering - INFO - T032: FILTERING TO COUNTY-LEVEL RECORDS
+2025-11-27 16:53:04 - feature_engineering - INFO - ================================================================================
+2025-11-27 16:53:04 - feature_engineering - INFO - Initial dataset: 5,430,384 records
+2025-11-27 16:53:05 - feature_engineering - INFO - 
+Area type distribution BEFORE filtering:
+2025-11-27 16:53:05 - feature_engineering - INFO -   County: 4,732,218 records (87.1%)
+2025-11-27 16:53:05 - feature_engineering - INFO -   United States: 399,362 records (7.4%)
+2025-11-27 16:53:05 - feature_engineering - INFO -   California - Statewide: 298,804 records (5.5%)
+2025-11-27 16:53:06 - feature_engineering - INFO - 
+Filtering results:
+2025-11-27 16:53:06 - feature_engineering - INFO -   Retained (County): 4,732,218 records
+2025-11-27 16:53:06 - feature_engineering - INFO -   Removed (State + National): 698,166 records (12.9%)
+2025-11-27 16:53:06 - feature_engineering - INFO -   Unique counties: 58
+2025-11-27 16:53:06 - feature_engineering - INFO -   Year range: 2004-2024
+2025-11-27 16:53:06 - feature_engineering - INFO - 
+[SUCCESS] County-level filtering completed successfully
+2025-11-27 16:53:06 - feature_engineering - INFO - ================================================================================
+
+2025-11-27 16:53:06 - feature_engineering - INFO - Saving county-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T032_county_filtered.csv
+2025-11-27 16:53:43 - feature_engineering - INFO - [OK] Saved 4,732,218 records to T032_county_filtered.csv
+2025-11-27 16:53:43 - feature_pipeline - INFO - [OK] County filtering complete: 4,732,218 records
+2025-11-27 16:53:43 - feature_pipeline - INFO - 
+[STAGE 2/10] T033: Handling Annual vs quarterly records...
+2025-11-27 16:53:43 - feature_engineering - INFO - 
+================================================================================
+2025-11-27 16:53:43 - feature_engineering - INFO - T033: FILTERING TO QUARTERLY RECORDS ONLY
+2025-11-27 16:53:43 - feature_engineering - INFO - ================================================================================
+2025-11-27 16:53:43 - feature_engineering - INFO - Initial dataset: 4,732,218 records
+2025-11-27 16:53:43 - feature_engineering - INFO - 
+Quarter distribution BEFORE filtering:
+2025-11-27 16:53:43 - feature_engineering - INFO -   1st Qtr: 944,965 records (20.0%)
+2025-11-27 16:53:43 - feature_engineering - INFO -   2nd Qtr: 949,400 records (20.1%)
+2025-11-27 16:53:43 - feature_engineering - INFO -   3rd Qtr: 956,056 records (20.2%)
+2025-11-27 16:53:43 - feature_engineering - INFO -   4th Qtr: 927,499 records (19.6%)
+2025-11-27 16:53:43 - feature_engineering - INFO -   Annual: 954,298 records (20.2%)
+2025-11-27 16:53:44 - feature_engineering - INFO - 
+Filtering results:
+2025-11-27 16:53:44 - feature_engineering - INFO -   Retained (Quarterly): 3,777,920 records
+2025-11-27 16:53:44 - feature_engineering - INFO -   Removed (Annual): 954,298 records (20.2%)
+2025-11-27 16:53:44 - feature_engineering - INFO -   [OK] All annual records successfully removed
+2025-11-27 16:53:44 - feature_engineering - INFO - 
+[SUCCESS] Quarterly filtering completed successfully
+2025-11-27 16:53:44 - feature_engineering - INFO - ================================================================================
+2025-11-27 16:53:44 - feature_engineering - INFO - Saving quarterly-only data to: C:\GitHub\is-160-project\data\feature_engineering\T033_quarterly_only.csv
+2025-11-27 16:54:22 - feature_engineering - INFO - [OK] Saved 3,777,920 records to T033_quarterly_only.csv
+2025-11-27 16:54:23 - feature_pipeline - INFO - [OK] Quarterly filtering complete: 3,777,920 records
+2025-11-27 16:54:23 - feature_pipeline - INFO - 
+[STAGE 3/10] T034: Data quality filtering...
+2025-11-27 16:54:23 - feature_engineering - INFO - 
+================================================================================
+2025-11-27 16:54:23 - feature_engineering - INFO - T034: DATA QUALITY FILTERING
+2025-11-27 16:54:23 - feature_engineering - INFO - ================================================================================
+2025-11-27 16:54:23 - feature_engineering - INFO - Initial dataset: 3,777,920 records
+2025-11-27 16:54:23 - feature_engineering - INFO - 
+Rule 1: Negative employment
+2025-11-27 16:54:23 - feature_engineering - INFO -   Removed: 0 records
+2025-11-27 16:54:24 - feature_engineering - INFO - 
+Rule 2: Negative wages
+2025-11-27 16:54:24 - feature_engineering - INFO -   Removed: 0 records
+2025-11-27 16:54:24 - feature_engineering - INFO - 
+Filtering summary:
+2025-11-27 16:54:24 - feature_engineering - INFO -   Initial records: 3,777,920
+2025-11-27 16:54:24 - feature_engineering - INFO -   Final records: 3,777,920
+2025-11-27 16:54:24 - feature_engineering - INFO -   Total removed: 0 records (0.00%)
+2025-11-27 16:54:24 - feature_engineering - INFO - 
+[SUCCESS] Data quality filtering completed successfully
+2025-11-27 16:54:24 - feature_engineering - INFO - ================================================================================
+2025-11-27 16:54:24 - feature_engineering - INFO - Saving quality-filtered data to: C:\GitHub\is-160-project\data\feature_engineering\T034_quality_filtered.csv
+2025-11-27 16:55:02 - feature_engineering - INFO - [OK] Saved 3,777,920 records to T034_quality_filtered.csv
+2025-11-27 16:55:02 - feature_pipeline - INFO - [OK] Quality filtering complete: 3,777,920 records
+2025-11-27 16:55:02 - feature_pipeline - INFO - 
+[STAGE 4/10] T035: Central Valley counties subset...
+2025-11-27 16:55:02 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-11-27 16:55:02 - feature_pipeline - INFO - 
+[STAGE 5/10] T036: All California counties processing...
+2025-11-27 16:55:02 - feature_pipeline - INFO - [PENDING] Not yet implemented - will be added in next iteration
+2025-11-27 16:55:02 - feature_pipeline - INFO - 
+[STAGE 6/10] T038: Calculating quarterly growth rates...
+2025-11-27 16:55:02 - feature_engineering - INFO - 
+================================================================================
+2025-11-27 16:55:02 - feature_engineering - INFO - T038: CALCULATING QUARTERLY GROWTH RATES
+2025-11-27 16:55:02 - feature_engineering - INFO - ================================================================================
+2025-11-27 16:55:02 - feature_engineering - INFO - Employment column: avg_monthly_emplvl
+2025-11-27 16:55:02 - feature_engineering - INFO - Grouping by: ['area_name', 'industry_code']
+2025-11-27 16:55:07 - feature_engineering - INFO - 
+Growth rate statistics:
+2025-11-27 16:55:07 - feature_engineering - INFO -   QoQ % change - Mean: inf%
+2025-11-27 16:55:07 - feature_engineering - INFO -   QoQ % change - Std: nan%
+2025-11-27 16:55:07 - feature_engineering - INFO -   YoY % change - Mean: inf%
+2025-11-27 16:55:07 - feature_engineering - INFO -   YoY % change - Std: nan%
+2025-11-27 16:55:07 - feature_engineering - INFO -   Handling employment_qoq_pct_change: 12,516 infinite values (division by zero) - replacing with 0.0
+2025-11-27 16:55:07 - feature_engineering - INFO -   Handling employment_yoy_pct_change: 12,617 infinite values (division by zero) - replacing with 0.0
+2025-11-27 16:55:08 - feature_engineering - INFO - 
+Final growth rate statistics (after cleaning):
+2025-11-27 16:55:08 - feature_engineering - INFO -   employment_qoq_pct_change:
+2025-11-27 16:55:08 - feature_engineering - INFO -     Valid values: 3,673,235
+2025-11-27 16:55:08 - feature_engineering - INFO -     Null values: 104,685
+2025-11-27 16:55:08 - feature_engineering - INFO -     Mean: 2981.09%
+2025-11-27 16:55:08 - feature_engineering - INFO -     Median: 0.00%
+2025-11-27 16:55:08 - feature_engineering - INFO -     Min: -100.00%
+2025-11-27 16:55:08 - feature_engineering - INFO -     Max: 32237100.00%
+2025-11-27 16:55:08 - feature_engineering - INFO -   employment_yoy_pct_change:
+2025-11-27 16:55:08 - feature_engineering - INFO -     Valid values: 3,479,344
+2025-11-27 16:55:08 - feature_engineering - INFO -     Null values: 298,576
+2025-11-27 16:55:08 - feature_engineering - INFO -     Mean: 2136.00%
+2025-11-27 16:55:08 - feature_engineering - INFO -     Median: 0.00%
+2025-11-27 16:55:08 - feature_engineering - INFO -     Min: -100.00%
+2025-11-27 16:55:08 - feature_engineering - INFO -     Max: 32237100.00%
+2025-11-27 16:55:08 - feature_engineering - INFO - 
+[SUCCESS] Growth rate calculations completed
+2025-11-27 16:55:08 - feature_engineering - INFO - ================================================================================
+2025-11-27 16:55:08 - feature_pipeline - INFO - [OK] Growth rates complete: 3,777,920 records
+2025-11-27 16:55:08 - feature_pipeline - INFO - 
+[VISUALIZATION] Creating growth rate distribution plots...
+2025-11-27 16:55:11 - feature_pipeline - INFO -   [OK] Saved growth rate plots to C:\GitHub\is-160-project\data\feature_engineering\plots\T038_growth_rates_distribution.png
+2025-11-27 16:55:11 - feature_pipeline - INFO - [OK] Growth rate plots saved to C:\GitHub\is-160-project\data\feature_engineering\plots\T038_growth_rates_distribution.png
+2025-11-27 16:55:11 - feature_pipeline - INFO - 
+[STAGE 7/10] T039: Creating seasonal adjustments...
+2025-11-27 16:55:11 - feature_pipeline - INFO - [PENDING] Seasonal adjustments - advanced feature, will be added in next iteration
+2025-11-27 16:55:11 - feature_pipeline - INFO - 
+[STAGE 8/10] T040: Calculating industry concentration...
+2025-11-27 16:55:11 - feature_pipeline - INFO - [PENDING] Industry concentration - advanced feature, will be added in next iteration
+2025-11-27 16:55:11 - feature_pipeline - INFO - 
+[STAGE 9/10] T041: Building geographic clustering...
+2025-11-27 16:55:11 - feature_pipeline - INFO - [PENDING] Geographic clustering - advanced feature, will be added in next iteration
+2025-11-27 16:55:11 - feature_pipeline - INFO - 
+[STAGE 10/10] T042: Generating lag features...
+2025-11-27 16:55:11 - feature_engineering - INFO - 
+================================================================================
+2025-11-27 16:55:11 - feature_engineering - INFO - T042: GENERATING LAG FEATURES
+2025-11-27 16:55:11 - feature_engineering - INFO - ================================================================================
+2025-11-27 16:55:11 - feature_engineering - INFO - Value column: avg_monthly_emplvl
+2025-11-27 16:55:11 - feature_engineering - INFO - Lag periods: [1, 2, 3, 4]
+2025-11-27 16:55:11 - feature_engineering - INFO - Grouping by: ['area_name', 'industry_code']
+2025-11-27 16:55:15 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_1: 80,982 null values (beginning of series)
+2025-11-27 16:55:16 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_2: 156,223 null values (beginning of series)
+2025-11-27 16:55:17 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_3: 225,823 null values (beginning of series)
+2025-11-27 16:55:18 - feature_engineering - INFO -   Created avg_monthly_emplvl_lag_4: 292,033 null values (beginning of series)
+2025-11-27 16:55:18 - feature_engineering - INFO - 
+Lag feature statistics:
+2025-11-27 16:55:18 - feature_engineering - INFO -   avg_monthly_emplvl_lag_1:
+2025-11-27 16:55:18 - feature_engineering - INFO -     Valid values: 3,696,938
+2025-11-27 16:55:18 - feature_engineering - INFO -     Mean: 3048.61
+2025-11-27 16:55:18 - feature_engineering - INFO -     Median: 218.00
+2025-11-27 16:55:18 - feature_engineering - INFO -     Min: 0
+2025-11-27 16:55:18 - feature_engineering - INFO -     Max: 4583485
+2025-11-27 16:55:18 - feature_engineering - INFO -   avg_monthly_emplvl_lag_2:
+2025-11-27 16:55:18 - feature_engineering - INFO -     Valid values: 3,621,697
+2025-11-27 16:55:18 - feature_engineering - INFO -     Mean: 3088.33
+2025-11-27 16:55:18 - feature_engineering - INFO -     Median: 222.00
+2025-11-27 16:55:18 - feature_engineering - INFO -     Min: 0
+2025-11-27 16:55:18 - feature_engineering - INFO -     Max: 4583485
+2025-11-27 16:55:18 - feature_engineering - INFO -   avg_monthly_emplvl_lag_3:
+2025-11-27 16:55:18 - feature_engineering - INFO -     Valid values: 3,552,097
+2025-11-27 16:55:18 - feature_engineering - INFO -     Mean: 3124.69
+2025-11-27 16:55:18 - feature_engineering - INFO -     Median: 226.00
+2025-11-27 16:55:18 - feature_engineering - INFO -     Min: 0
+2025-11-27 16:55:18 - feature_engineering - INFO -     Max: 4583485
+2025-11-27 16:55:18 - feature_engineering - INFO -   avg_monthly_emplvl_lag_4:
+2025-11-27 16:55:18 - feature_engineering - INFO -     Valid values: 3,485,887
+2025-11-27 16:55:18 - feature_engineering - INFO -     Mean: 3157.84
+2025-11-27 16:55:18 - feature_engineering - INFO -     Median: 229.00
+2025-11-27 16:55:18 - feature_engineering - INFO -     Min: 0
+2025-11-27 16:55:18 - feature_engineering - INFO -     Max: 4583485
+2025-11-27 16:55:18 - feature_engineering - INFO - 
+[SUCCESS] Generated 4 lag features
+2025-11-27 16:55:18 - feature_engineering - INFO - ================================================================================
+2025-11-27 16:55:19 - feature_pipeline - INFO - [OK] Lag features complete: 3,777,920 records
+2025-11-27 16:55:19 - feature_pipeline - INFO - 
+[VISUALIZATION] Creating lag feature correlation heatmap...
+2025-11-27 16:55:20 - feature_pipeline - INFO -   [OK] Saved lag correlation heatmap to C:\GitHub\is-160-project\data\feature_engineering\plots\T042_lag_features_correlation.png
+2025-11-27 16:55:20 - feature_pipeline - INFO - [OK] Lag correlation heatmap saved to C:\GitHub\is-160-project\data\feature_engineering\plots\T042_lag_features_correlation.png
+2025-11-27 16:55:20 - feature_pipeline - INFO - 
+Saving feature-engineered dataset to: C:\GitHub\is-160-project\data\feature_engineering\final_features.csv
+2025-11-27 16:56:40 - feature_pipeline - INFO - [OK] Saved 3,777,920 records to final_features.csv
+2025-11-27 16:56:40 - feature_pipeline - INFO - 
+================================================================================
+2025-11-27 16:56:40 - feature_pipeline - INFO - FEATURE ENGINEERING COMPLETE
+2025-11-27 16:56:40 - feature_pipeline - INFO - ================================================================================
+2025-11-27 16:56:40 - feature_pipeline - INFO - 
+Implemented tasks:
+2025-11-27 16:56:40 - feature_pipeline - INFO -   [X] T032: County-level filtering (removed state/national aggregates)
+2025-11-27 16:56:40 - feature_pipeline - INFO -   [X] T033: Quarterly filtering (removed Annual records)
+2025-11-27 16:56:40 - feature_pipeline - INFO -   [X] T034: Data quality filtering (removed invalid records)
+2025-11-27 16:56:40 - feature_pipeline - INFO -   [X] T038: Growth rates (added 6 columns: QoQ & YoY metrics)
+2025-11-27 16:56:40 - feature_pipeline - INFO -   [X] T042: Lag features (added 4 columns: 1-4 quarters back)
+2025-11-27 16:56:40 - feature_pipeline - INFO - 
+Deferred tasks (advanced features):
+2025-11-27 16:56:40 - feature_pipeline - INFO -   [ ] T039: Seasonal adjustments
+2025-11-27 16:56:40 - feature_pipeline - INFO -   [ ] T040: Industry concentration
+2025-11-27 16:56:40 - feature_pipeline - INFO -   [ ] T041: Geographic clustering
+2025-11-27 16:56:40 - feature_pipeline - INFO - 
+Total new features added: 10 columns
+2025-11-27 16:56:40 - feature_pipeline - INFO - Final dataset: 3,777,920 records × 26 columns
+2025-11-27 16:56:40 - feature_pipeline - INFO - ================================================================================
+
+2025-11-27 23:14:13 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-27 23:14:13 - pipeline_orchestrator - INFO - STAGE 5: DATA PREPROCESSING
+2025-11-27 23:14:13 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-27 23:14:13 - preprocessing_pipeline - INFO - 
+================================================================================
+2025-11-27 23:14:13 - preprocessing_pipeline - INFO - PREPROCESSING PIPELINE FOR LSTM
+2025-11-27 23:14:13 - preprocessing_pipeline - INFO - ================================================================================
+2025-11-27 23:14:13 - preprocessing_pipeline - INFO - 
+[STAGE 1/5] T054: Normalizing employment and wage data...
+2025-11-27 23:14:13 - preprocessing_pipeline - INFO -   Normalizing 16 columns using robust scaling
+2025-11-27 23:14:13 - preprocessing - INFO - Normalizing columns: ['avg_monthly_emplvl', 'month1_emplvl', 'month2_emplvl', 'month3_emplvl', 'employment_prev_quarter', 'employment_qoq_change', 'employment_qoq_pct_change', 'employment_4q_ago', 'employment_yoy_change', 'employment_yoy_pct_change', 'avg_monthly_emplvl_lag_1', 'avg_monthly_emplvl_lag_2', 'avg_monthly_emplvl_lag_3', 'avg_monthly_emplvl_lag_4', 'total_qtrly_wages', 'avg_wkly_wage']
+2025-11-27 23:14:13 - preprocessing - INFO -   Using RobustScaler (resistant to outliers)
+2025-11-27 23:14:17 - preprocessing - INFO -   Normalized 16 columns
+2025-11-27 23:14:17 - preprocessing - INFO -     avg_monthly_emplvl: mean=3.482, std=48.066
+2025-11-27 23:14:17 - preprocessing - INFO -     month1_emplvl: mean=3.474, std=47.979
+2025-11-27 23:14:17 - preprocessing - INFO -     month2_emplvl: mean=3.481, std=48.054
+2025-11-27 23:14:17 - preprocessing_pipeline - INFO - [OK] Normalization complete
+2025-11-27 23:14:17 - preprocessing_pipeline - INFO - 
+[STAGE 2/5] T055: Handling missing values...
+2025-11-27 23:14:19 - preprocessing_pipeline - INFO -   Found 1,948,019 missing values
+2025-11-27 23:14:19 - preprocessing - INFO - Handling missing values with median strategy
+2025-11-27 23:14:20 - preprocessing - INFO -   Missing values before imputation: 1,948,019
+2025-11-27 23:14:33 - preprocessing - INFO -   Missing values after imputation: 0
+2025-11-27 23:14:33 - preprocessing - INFO -   Imputed 1,948,019 values
+2025-11-27 23:14:33 - preprocessing_pipeline - INFO - [OK] Missing values handled
+2025-11-27 23:14:33 - preprocessing_pipeline - INFO - 
+[STAGE 3/5] T056: Creating categorical encodings...
+2025-11-27 23:14:33 - preprocessing_pipeline - INFO -   Encoding 3 categorical columns
+2025-11-27 23:14:33 - preprocessing - INFO - Creating categorical encodings for: ['industry_code', 'area_name', 'ownership']
+2025-11-27 23:14:34 - preprocessing - INFO -   Encoded industry_code: 2648 unique classes
+2025-11-27 23:14:35 - preprocessing - INFO -   Encoded area_name: 58 unique classes
+2025-11-27 23:14:35 - preprocessing - INFO -   Encoded ownership: 5 unique classes
+2025-11-27 23:14:35 - preprocessing_pipeline - INFO - [OK] Categorical encoding complete
+2025-11-27 23:14:35 - preprocessing_pipeline - INFO - 
+[STAGE 4/5] T057: Transforming to sequence format...
+2025-11-27 23:14:35 - preprocessing_pipeline - INFO -   Creating sequences of length 12
+2025-11-27 23:14:35 - preprocessing_pipeline - INFO -   Target column: month1_emplvl
+2025-11-27 23:14:35 - preprocessing - INFO - Transforming data to sequences of length 12
+2025-11-27 23:14:35 - preprocessing - INFO -   Target column: month1_emplvl
+2025-11-27 23:14:35 - preprocessing - INFO -   Feature columns: 18 columns
+2025-11-27 23:14:35 - preprocessing - INFO -   Grouping by: area_name, industry_code
+2025-11-27 23:16:55 - preprocessing - INFO -   Created 2997906 sequences from 80982 groups
+2025-11-27 23:17:01 - preprocessing - INFO -   Sequences shape: (2997906, 12, 18)
+2025-11-27 23:17:01 - preprocessing - INFO -   Targets shape: (2997906,)
+2025-11-27 23:17:03 - preprocessing_pipeline - INFO - [OK] Created 2,997,906 sequences
+2025-11-27 23:17:03 - preprocessing_pipeline - INFO - 
+[STAGE 5/5] T058: Validating preprocessing...
+2025-11-27 23:17:03 - preprocessing - INFO - Validating preprocessing steps...
+2025-11-27 23:17:05 - preprocessing - INFO -   Infinite values check: 0 found - PASS
+2025-11-27 23:17:06 - preprocessing - INFO -   NaN values check: 0 found - PASS
+2025-11-27 23:17:07 - preprocessing - INFO -   Normalization range check: max |value| = 3008796.00 - FAIL
+2025-11-27 23:17:07 - preprocessing - INFO -     Checked columns: ['avg_monthly_emplvl', 'month1_emplvl', 'month2_emplvl', 'month3_emplvl', 'employment_prev_quarter', 'employment_qoq_change', 'employment_qoq_pct_change', 'employment_4q_ago', 'employment_yoy_change', 'employment_yoy_pct_change', 'avg_monthly_emplvl_lag_1', 'avg_monthly_emplvl_lag_2', 'avg_monthly_emplvl_lag_3', 'avg_monthly_emplvl_lag_4', 'total_qtrly_wages', 'avg_wkly_wage']
+2025-11-27 23:17:07 - preprocessing - INFO -   Categorical encoding check: All integer types - PASS
+2025-11-27 23:17:07 - preprocessing - INFO -   Shape preservation: 3,777,920 rows - PASS
+2025-11-27 23:17:07 - preprocessing - INFO - Overall validation: FAIL (4/5 checks passed)
+2025-11-27 23:17:07 - preprocessing_pipeline - INFO - [OK] Preprocessing validation passed
+2025-11-27 23:17:07 - preprocessing_pipeline - INFO - 
+Saving preprocessed data to: C:\GitHub\is-160-project\data\processed\qcew_preprocessed.csv
+2025-11-27 23:19:47 - preprocessing_pipeline - INFO - [OK] Saved preprocessed data: qcew_preprocessed.csv
+2025-11-27 23:23:09 - preprocessing_pipeline - INFO - [OK] Saved sequences: qcew_preprocessed_sequences.npz
+2025-11-27 23:23:09 - preprocessing_pipeline - INFO - [OK] Saved preprocessor: qcew_preprocessed_preprocessor.pkl
+2025-11-27 23:23:09 - preprocessing_pipeline - INFO - 
+================================================================================
+2025-11-27 23:23:09 - preprocessing_pipeline - INFO - PREPROCESSING COMPLETE
+2025-11-27 23:23:09 - preprocessing_pipeline - INFO - Sequences: (2997906, 12, 18)
+2025-11-27 23:23:09 - preprocessing_pipeline - INFO - Targets: (2997906,)
+2025-11-27 23:23:09 - preprocessing_pipeline - INFO - ================================================================================
+
+2025-11-28 00:19:52 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-28 00:19:52 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-28 00:19:52 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-28 00:19:52 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-28 00:19:52 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-28 00:19:52 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-28 00:19:52 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-28 00:19:52 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-28 00:30:07 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-28 00:30:07 - pipeline_orchestrator - INFO - STAGE 6: MODEL TRAINING
+2025-11-28 00:30:07 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-28 00:30:07 - pipeline_orchestrator - INFO -   Input shape: torch.Size([2997906, 12, 18])
+2025-11-28 00:30:07 - pipeline_orchestrator - INFO -   Target shape: torch.Size([2997906])
+2025-11-28 00:30:07 - pipeline_orchestrator - INFO -   Features: 18, Sequence length: 12
+2025-11-28 00:30:07 - pipeline_orchestrator - INFO - 
+Creating data splits...
+2025-11-28 00:30:07 - dataset - INFO - Creating train/validation/test splits...
+2025-11-28 00:30:07 - dataset - INFO -   Total samples: 2,997,906
+2025-11-28 00:30:07 - dataset - INFO -   Val size: 20.0%, Test size: 10.0%
+2025-11-28 00:30:07 - dataset - INFO -   Shuffle: False (recommended: False for time series)
+2025-11-28 00:30:07 - dataset - INFO -   Train samples: 2,098,535
+2025-11-28 00:30:07 - dataset - INFO -   Val samples: 599,581
+2025-11-28 00:30:07 - dataset - INFO -   Test samples: 299,790
+2025-11-28 00:30:07 - dataset - INFO -   [OK] Datasets created successfully
+2025-11-28 00:30:07 - pipeline_orchestrator - INFO - 
+Creating data loaders...
+2025-11-28 00:30:07 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=True
+2025-11-28 00:30:08 - dataset - INFO -   Created DataLoader with 2098535 samples in 65580 batches
+2025-11-28 00:30:08 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-28 00:30:08 - dataset - INFO -   Created DataLoader with 599581 samples in 18737 batches
+2025-11-28 00:30:08 - dataset - INFO - Building DataLoader with batch_size=32, shuffle=False
+2025-11-28 00:30:08 - dataset - INFO -   Created DataLoader with 299790 samples in 9369 batches
+2025-11-28 00:30:08 - pipeline_orchestrator - INFO - 
+Initializing LSTM model...
+2025-11-28 00:30:08 - pipeline_orchestrator - INFO - 
+Validating model architecture...
+2025-11-28 00:30:08 - lstm_model - INFO - Validating LSTM architecture dimensions...
+2025-11-28 00:30:08 - lstm_model - INFO -   Input shape: (32, 12, 18)
+2025-11-28 00:30:08 - lstm_model - INFO -   Expected output size: 1
+2025-11-28 00:30:08 - lstm_model - INFO -   [OK] Forward pass successful
+2025-11-28 00:30:08 - lstm_model - INFO -   Output shape: (32, 1) - [PASS]
+2025-11-28 00:30:08 - lstm_model - INFO -   No NaN/Inf: [PASS]
+2025-11-28 00:30:08 - lstm_model - INFO -   Trainable parameters: 54,977 - [PASS]
+2025-11-28 00:30:08 - lstm_model - INFO -   Has recurrent layer: [PASS]
+2025-11-28 00:30:08 - lstm_model - INFO - Overall validation: [PASS] (5/5 checks passed)
+2025-11-28 00:30:08 - pipeline_orchestrator - INFO - 
+Device Selection:
+2025-11-28 00:30:08 - pipeline_orchestrator - INFO -   Config setting: auto
+2025-11-28 00:30:08 - pipeline_orchestrator - INFO -   Selected device: cpu
+2025-11-28 00:30:08 - pipeline_orchestrator - INFO -   Note: CUDA not available (CPU-only PyTorch or no GPU detected)
+2025-11-28 00:30:08 - pipeline_orchestrator - INFO - 
+TensorBoard logging enabled: C:\GitHub\is-160-project\runs\employment_lstm_20251128_003008
+2025-11-28 00:30:08 - pipeline_orchestrator - INFO -   To view live training: tensorboard --logdir=runs
+2025-11-28 00:30:08 - pipeline_orchestrator - INFO - 
+Creating trainer...
+2025-11-28 00:30:41 - training - INFO - Building reduce_on_plateau learning rate scheduler
+2025-11-28 00:30:41 - training - INFO -   ReduceLROnPlateau: factor=0.5, patience=5
+2025-11-28 00:30:41 - pipeline_orchestrator - INFO - 
+Starting training...
+2025-11-28 00:30:41 - training - INFO - ================================================================================
+2025-11-28 00:30:41 - training - INFO - TRAINING EMPLOYMENT FORECASTING MODEL
+2025-11-28 00:30:41 - training - INFO - ================================================================================
+2025-11-28 00:30:41 - training - INFO -   Max epochs: 100
+2025-11-28 00:30:41 - training - INFO -   Early stopping patience: 15
+2025-11-28 00:30:41 - training - INFO -   Device: cpu
+2025-11-28 00:30:41 - training - INFO -   Optimizer: Adam
+2025-11-28 00:30:41 - training - INFO -   Loss function: MSELoss
+2025-11-28 00:30:41 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 00:30:41 - training - INFO - EPOCH 1/100
+2025-11-28 00:30:41 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 00:30:41 - training - INFO - Training...
+2025-11-28 00:31:23 - training - INFO -   Epoch 1 | Batch 3279/65580 (5.0%) | Loss: 2790.387183
+2025-11-28 00:32:02 - training - INFO -   Epoch 1 | Batch 6558/65580 (10.0%) | Loss: 3468.537917
+2025-11-28 00:32:38 - training - INFO -   Epoch 1 | Batch 9837/65580 (15.0%) | Loss: 3673.598722
+2025-11-28 00:33:13 - training - INFO -   Epoch 1 | Batch 13116/65580 (20.0%) | Loss: 3422.958878
+2025-11-28 00:33:50 - training - INFO -   Epoch 1 | Batch 16395/65580 (25.0%) | Loss: 3723.708273
+2025-11-28 00:34:26 - training - INFO -   Epoch 1 | Batch 19674/65580 (30.0%) | Loss: 3643.404536
+2025-11-28 00:35:02 - training - INFO -   Epoch 1 | Batch 22953/65580 (35.0%) | Loss: 3762.070127
+2025-11-28 00:35:38 - training - INFO -   Epoch 1 | Batch 26232/65580 (40.0%) | Loss: 3580.704929
+2025-11-28 00:36:14 - training - INFO -   Epoch 1 | Batch 29511/65580 (45.0%) | Loss: 3602.707926
+2025-11-28 00:36:49 - training - INFO -   Epoch 1 | Batch 32790/65580 (50.0%) | Loss: 3591.733401
+2025-11-28 00:37:24 - training - INFO -   Epoch 1 | Batch 36069/65580 (55.0%) | Loss: 3527.005418
+2025-11-28 00:37:59 - training - INFO -   Epoch 1 | Batch 39348/65580 (60.0%) | Loss: 3576.434510
+2025-11-28 00:38:35 - training - INFO -   Epoch 1 | Batch 42627/65580 (65.0%) | Loss: 3542.946521
+2025-11-28 00:39:10 - training - INFO -   Epoch 1 | Batch 45906/65580 (70.0%) | Loss: 3494.620224
+2025-11-28 00:39:45 - training - INFO -   Epoch 1 | Batch 49185/65580 (75.0%) | Loss: 3561.168946
+2025-11-28 00:40:21 - training - INFO -   Epoch 1 | Batch 52464/65580 (80.0%) | Loss: 3542.477616
+2025-11-28 00:40:54 - training - INFO -   Epoch 1 | Batch 55743/65580 (85.0%) | Loss: 3527.082180
+2025-11-28 00:41:28 - training - INFO -   Epoch 1 | Batch 59022/65580 (90.0%) | Loss: 3499.000558
+2025-11-28 00:42:03 - training - INFO -   Epoch 1 | Batch 62301/65580 (95.0%) | Loss: 3492.158478
+2025-11-28 00:42:39 - training - INFO -   Epoch 1 | Batch 65580/65580 (100.0%) | Loss: 3492.661585
+2025-11-28 00:42:39 - training - INFO - 
+Validating...
+2025-11-28 00:42:43 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 34.211442
+2025-11-28 00:42:47 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 101.174765
+2025-11-28 00:42:51 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 1429.123828
+2025-11-28 00:42:55 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 1116.992321
+2025-11-28 00:42:58 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 908.591572
+2025-11-28 00:43:02 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 762.273969
+2025-11-28 00:43:06 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 664.695602
+2025-11-28 00:43:10 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 602.895143
+2025-11-28 00:43:13 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 553.093446
+2025-11-28 00:43:17 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 499.723507
+2025-11-28 00:43:17 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 499.540944
+2025-11-28 00:43:17 - training - INFO - 
+================================================================================
+2025-11-28 00:43:17 - training - INFO - EPOCH 1/100 SUMMARY
+2025-11-28 00:43:17 - training - INFO -   Train Loss: 3492.661585
+2025-11-28 00:43:17 - training - INFO -   Val Loss:   499.540944
+2025-11-28 00:43:17 - training - INFO -   LR:         0.001000
+2025-11-28 00:43:17 - training - INFO - ================================================================================
+2025-11-28 00:43:18 - training - INFO -   [OK] New best model saved (val_loss: 499.540944, improvement: inf)
+2025-11-28 00:43:18 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 00:43:18 - training - INFO - EPOCH 2/100
+2025-11-28 00:43:18 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 00:43:18 - training - INFO - Training...
+2025-11-28 00:43:55 - training - INFO -   Epoch 2 | Batch 3279/65580 (5.0%) | Loss: 2903.085829
+2025-11-28 00:44:31 - training - INFO -   Epoch 2 | Batch 6558/65580 (10.0%) | Loss: 3087.813462
+2025-11-28 00:45:08 - training - INFO -   Epoch 2 | Batch 9837/65580 (15.0%) | Loss: 3347.219304
+2025-11-28 00:45:47 - training - INFO -   Epoch 2 | Batch 13116/65580 (20.0%) | Loss: 3417.651654
+2025-11-28 00:46:23 - training - INFO -   Epoch 2 | Batch 16395/65580 (25.0%) | Loss: 3337.343707
+2025-11-28 00:46:59 - training - INFO -   Epoch 2 | Batch 19674/65580 (30.0%) | Loss: 3350.638419
+2025-11-28 00:47:34 - training - INFO -   Epoch 2 | Batch 22953/65580 (35.0%) | Loss: 3437.309957
+2025-11-28 00:48:12 - training - INFO -   Epoch 2 | Batch 26232/65580 (40.0%) | Loss: 3396.346484
+2025-11-28 00:48:49 - training - INFO -   Epoch 2 | Batch 29511/65580 (45.0%) | Loss: 3530.056379
+2025-11-28 00:49:25 - training - INFO -   Epoch 2 | Batch 32790/65580 (50.0%) | Loss: 3419.336197
+2025-11-28 00:50:03 - training - INFO -   Epoch 2 | Batch 36069/65580 (55.0%) | Loss: 3494.220812
+2025-11-28 00:50:40 - training - INFO -   Epoch 2 | Batch 39348/65580 (60.0%) | Loss: 3450.469876
+2025-11-28 00:51:16 - training - INFO -   Epoch 2 | Batch 42627/65580 (65.0%) | Loss: 3478.642517
+2025-11-28 00:51:53 - training - INFO -   Epoch 2 | Batch 45906/65580 (70.0%) | Loss: 3457.091894
+2025-11-28 00:52:29 - training - INFO -   Epoch 2 | Batch 49185/65580 (75.0%) | Loss: 3427.549417
+2025-11-28 00:53:06 - training - INFO -   Epoch 2 | Batch 52464/65580 (80.0%) | Loss: 3349.613437
+2025-11-28 00:53:41 - training - INFO -   Epoch 2 | Batch 55743/65580 (85.0%) | Loss: 3363.396482
+2025-11-28 00:54:17 - training - INFO -   Epoch 2 | Batch 59022/65580 (90.0%) | Loss: 3359.146566
+2025-11-28 00:54:52 - training - INFO -   Epoch 2 | Batch 62301/65580 (95.0%) | Loss: 3341.155616
+2025-11-28 00:55:26 - training - INFO -   Epoch 2 | Batch 65580/65580 (100.0%) | Loss: 3343.375621
+2025-11-28 00:55:26 - training - INFO - 
+Validating...
+2025-11-28 00:55:30 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 17.268797
+2025-11-28 00:55:34 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 79.591630
+2025-11-28 00:55:37 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 1335.273953
+2025-11-28 00:55:41 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 1035.625822
+2025-11-28 00:55:45 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 838.491829
+2025-11-28 00:55:48 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 701.641462
+2025-11-28 00:55:52 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 609.631405
+2025-11-28 00:55:56 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 550.548145
+2025-11-28 00:56:00 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 502.001915
+2025-11-28 00:56:03 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 452.475252
+2025-11-28 00:56:03 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 452.307151
+2025-11-28 00:56:03 - training - INFO - 
+================================================================================
+2025-11-28 00:56:03 - training - INFO - EPOCH 2/100 SUMMARY
+2025-11-28 00:56:03 - training - INFO -   Train Loss: 3343.375621
+2025-11-28 00:56:03 - training - INFO -   Val Loss:   452.307151
+2025-11-28 00:56:03 - training - INFO -   LR:         0.001000
+2025-11-28 00:56:03 - training - INFO - ================================================================================
+2025-11-28 00:56:03 - training - INFO -   [OK] New best model saved (val_loss: 452.307151, improvement: 47.233794)
+2025-11-28 00:56:03 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 00:56:03 - training - INFO - EPOCH 3/100
+2025-11-28 00:56:03 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 00:56:03 - training - INFO - Training...
+2025-11-28 00:56:39 - training - INFO -   Epoch 3 | Batch 3279/65580 (5.0%) | Loss: 3288.316560
+2025-11-28 00:57:14 - training - INFO -   Epoch 3 | Batch 6558/65580 (10.0%) | Loss: 3036.558307
+2025-11-28 00:57:49 - training - INFO -   Epoch 3 | Batch 9837/65580 (15.0%) | Loss: 3017.501419
+2025-11-28 00:58:24 - training - INFO -   Epoch 3 | Batch 13116/65580 (20.0%) | Loss: 3083.476927
+2025-11-28 00:58:59 - training - INFO -   Epoch 3 | Batch 16395/65580 (25.0%) | Loss: 3057.858102
+2025-11-28 00:59:36 - training - INFO -   Epoch 3 | Batch 19674/65580 (30.0%) | Loss: 3233.517350
+2025-11-28 01:00:11 - training - INFO -   Epoch 3 | Batch 22953/65580 (35.0%) | Loss: 3061.404460
+2025-11-28 01:00:48 - training - INFO -   Epoch 3 | Batch 26232/65580 (40.0%) | Loss: 3064.414623
+2025-11-28 01:01:23 - training - INFO -   Epoch 3 | Batch 29511/65580 (45.0%) | Loss: 3176.285428
+2025-11-28 01:01:58 - training - INFO -   Epoch 3 | Batch 32790/65580 (50.0%) | Loss: 3290.342925
+2025-11-28 01:02:33 - training - INFO -   Epoch 3 | Batch 36069/65580 (55.0%) | Loss: 3261.925229
+2025-11-28 01:03:08 - training - INFO -   Epoch 3 | Batch 39348/65580 (60.0%) | Loss: 3198.010679
+2025-11-28 01:03:43 - training - INFO -   Epoch 3 | Batch 42627/65580 (65.0%) | Loss: 3216.712652
+2025-11-28 01:04:18 - training - INFO -   Epoch 3 | Batch 45906/65580 (70.0%) | Loss: 3232.022223
+2025-11-28 01:04:53 - training - INFO -   Epoch 3 | Batch 49185/65580 (75.0%) | Loss: 3194.342340
+2025-11-28 01:05:29 - training - INFO -   Epoch 3 | Batch 52464/65580 (80.0%) | Loss: 3214.838979
+2025-11-28 01:06:04 - training - INFO -   Epoch 3 | Batch 55743/65580 (85.0%) | Loss: 3248.877729
+2025-11-28 01:06:39 - training - INFO -   Epoch 3 | Batch 59022/65580 (90.0%) | Loss: 3294.756653
+2025-11-28 01:07:15 - training - INFO -   Epoch 3 | Batch 62301/65580 (95.0%) | Loss: 3317.374452
+2025-11-28 01:07:52 - training - INFO -   Epoch 3 | Batch 65580/65580 (100.0%) | Loss: 3300.943242
+2025-11-28 01:07:52 - training - INFO - 
+Validating...
+2025-11-28 01:07:56 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 23.806392
+2025-11-28 01:08:00 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 275.339685
+2025-11-28 01:08:03 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 1548.353704
+2025-11-28 01:08:07 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 1200.739717
+2025-11-28 01:08:10 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 978.746855
+2025-11-28 01:08:14 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 821.325528
+2025-11-28 01:08:18 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 724.323306
+2025-11-28 01:08:21 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 740.607179
+2025-11-28 01:08:25 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 716.624251
+2025-11-28 01:08:28 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 646.300013
+2025-11-28 01:08:28 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 646.061440
+2025-11-28 01:08:28 - training - INFO - 
+================================================================================
+2025-11-28 01:08:28 - training - INFO - EPOCH 3/100 SUMMARY
+2025-11-28 01:08:28 - training - INFO -   Train Loss: 3300.943242
+2025-11-28 01:08:28 - training - INFO -   Val Loss:   646.061440
+2025-11-28 01:08:28 - training - INFO -   LR:         0.001000
+2025-11-28 01:08:28 - training - INFO - ================================================================================
+2025-11-28 01:08:28 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 01:08:28 - training - INFO - EPOCH 4/100
+2025-11-28 01:08:28 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 01:08:28 - training - INFO - Training...
+2025-11-28 01:09:04 - training - INFO -   Epoch 4 | Batch 3279/65580 (5.0%) | Loss: 3686.084893
+2025-11-28 01:09:39 - training - INFO -   Epoch 4 | Batch 6558/65580 (10.0%) | Loss: 3126.214347
+2025-11-28 01:10:14 - training - INFO -   Epoch 4 | Batch 9837/65580 (15.0%) | Loss: 3054.613381
+2025-11-28 01:10:48 - training - INFO -   Epoch 4 | Batch 13116/65580 (20.0%) | Loss: 3263.452329
+2025-11-28 01:11:23 - training - INFO -   Epoch 4 | Batch 16395/65580 (25.0%) | Loss: 3135.324048
+2025-11-28 01:11:59 - training - INFO -   Epoch 4 | Batch 19674/65580 (30.0%) | Loss: 3466.593255
+2025-11-28 01:12:34 - training - INFO -   Epoch 4 | Batch 22953/65580 (35.0%) | Loss: 3477.809961
+2025-11-28 01:13:10 - training - INFO -   Epoch 4 | Batch 26232/65580 (40.0%) | Loss: 3563.561521
+2025-11-28 01:13:47 - training - INFO -   Epoch 4 | Batch 29511/65580 (45.0%) | Loss: 3510.497200
+2025-11-28 01:14:22 - training - INFO -   Epoch 4 | Batch 32790/65580 (50.0%) | Loss: 3395.299970
+2025-11-28 01:14:57 - training - INFO -   Epoch 4 | Batch 36069/65580 (55.0%) | Loss: 3491.191235
+2025-11-28 01:15:32 - training - INFO -   Epoch 4 | Batch 39348/65580 (60.0%) | Loss: 3402.785916
+2025-11-28 01:16:07 - training - INFO -   Epoch 4 | Batch 42627/65580 (65.0%) | Loss: 3286.693368
+2025-11-28 01:16:41 - training - INFO -   Epoch 4 | Batch 45906/65580 (70.0%) | Loss: 3251.222593
+2025-11-28 01:17:17 - training - INFO -   Epoch 4 | Batch 49185/65580 (75.0%) | Loss: 3249.083277
+2025-11-28 01:17:54 - training - INFO -   Epoch 4 | Batch 52464/65580 (80.0%) | Loss: 3319.766416
+2025-11-28 01:18:28 - training - INFO -   Epoch 4 | Batch 55743/65580 (85.0%) | Loss: 3299.629935
+2025-11-28 01:19:03 - training - INFO -   Epoch 4 | Batch 59022/65580 (90.0%) | Loss: 3247.945246
+2025-11-28 01:19:38 - training - INFO -   Epoch 4 | Batch 62301/65580 (95.0%) | Loss: 3259.406176
+2025-11-28 01:20:14 - training - INFO -   Epoch 4 | Batch 65580/65580 (100.0%) | Loss: 3295.096430
+2025-11-28 01:20:14 - training - INFO - 
+Validating...
+2025-11-28 01:20:17 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 28.620956
+2025-11-28 01:20:20 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 1684.682211
+2025-11-28 01:20:23 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 25463.856629
+2025-11-28 01:20:27 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 19136.867189
+2025-11-28 01:20:30 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 15328.608541
+2025-11-28 01:20:33 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 12778.565196
+2025-11-28 01:20:37 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 11098.330118
+2025-11-28 01:20:41 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 10510.425012
+2025-11-28 01:20:45 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 9679.271465
+2025-11-28 01:20:49 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 8712.225350
+2025-11-28 01:20:49 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 8708.972109
+2025-11-28 01:20:49 - training - INFO - 
+================================================================================
+2025-11-28 01:20:49 - training - INFO - EPOCH 4/100 SUMMARY
+2025-11-28 01:20:49 - training - INFO -   Train Loss: 3295.096430
+2025-11-28 01:20:49 - training - INFO -   Val Loss:   8708.972109
+2025-11-28 01:20:49 - training - INFO -   LR:         0.001000
+2025-11-28 01:20:49 - training - INFO - ================================================================================
+2025-11-28 01:20:49 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 01:20:49 - training - INFO - EPOCH 5/100
+2025-11-28 01:20:49 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 01:20:49 - training - INFO - Training...
+2025-11-28 01:21:24 - training - INFO -   Epoch 5 | Batch 3279/65580 (5.0%) | Loss: 3422.672981
+2025-11-28 01:21:58 - training - INFO -   Epoch 5 | Batch 6558/65580 (10.0%) | Loss: 3492.230181
+2025-11-28 01:22:34 - training - INFO -   Epoch 5 | Batch 9837/65580 (15.0%) | Loss: 3335.699667
+2025-11-28 01:23:13 - training - INFO -   Epoch 5 | Batch 13116/65580 (20.0%) | Loss: 3418.673123
+2025-11-28 01:23:49 - training - INFO -   Epoch 5 | Batch 16395/65580 (25.0%) | Loss: 3463.344088
+2025-11-28 01:24:26 - training - INFO -   Epoch 5 | Batch 19674/65580 (30.0%) | Loss: 3338.762535
+2025-11-28 01:25:01 - training - INFO -   Epoch 5 | Batch 22953/65580 (35.0%) | Loss: 3246.795332
+2025-11-28 01:25:37 - training - INFO -   Epoch 5 | Batch 26232/65580 (40.0%) | Loss: 3196.605145
+2025-11-28 01:26:12 - training - INFO -   Epoch 5 | Batch 29511/65580 (45.0%) | Loss: 3256.832471
+2025-11-28 01:26:50 - training - INFO -   Epoch 5 | Batch 32790/65580 (50.0%) | Loss: 3334.391803
+2025-11-28 01:27:26 - training - INFO -   Epoch 5 | Batch 36069/65580 (55.0%) | Loss: 3459.444119
+2025-11-28 01:28:01 - training - INFO -   Epoch 5 | Batch 39348/65580 (60.0%) | Loss: 3403.543935
+2025-11-28 01:28:36 - training - INFO -   Epoch 5 | Batch 42627/65580 (65.0%) | Loss: 3343.094780
+2025-11-28 01:29:11 - training - INFO -   Epoch 5 | Batch 45906/65580 (70.0%) | Loss: 3336.635793
+2025-11-28 01:29:47 - training - INFO -   Epoch 5 | Batch 49185/65580 (75.0%) | Loss: 3297.006916
+2025-11-28 01:30:24 - training - INFO -   Epoch 5 | Batch 52464/65580 (80.0%) | Loss: 3354.198485
+2025-11-28 01:31:01 - training - INFO -   Epoch 5 | Batch 55743/65580 (85.0%) | Loss: 3284.869497
+2025-11-28 01:31:36 - training - INFO -   Epoch 5 | Batch 59022/65580 (90.0%) | Loss: 3331.924027
+2025-11-28 01:32:11 - training - INFO -   Epoch 5 | Batch 62301/65580 (95.0%) | Loss: 3284.059547
+2025-11-28 01:32:42 - training - INFO -   Epoch 5 | Batch 65580/65580 (100.0%) | Loss: 3270.542572
+2025-11-28 01:32:42 - training - INFO - 
+Validating...
+2025-11-28 01:32:46 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 26.873474
+2025-11-28 01:32:49 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 164.834624
+2025-11-28 01:32:52 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 11123.090039
+2025-11-28 01:32:55 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 9835.544915
+2025-11-28 01:32:59 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 7987.441542
+2025-11-28 01:33:02 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 6658.853828
+2025-11-28 01:33:05 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 5720.959175
+2025-11-28 01:33:09 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 5081.687932
+2025-11-28 01:33:12 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 4599.302549
+2025-11-28 01:33:15 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 4139.916050
+2025-11-28 01:33:15 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 4138.369860
+2025-11-28 01:33:15 - training - INFO - 
+================================================================================
+2025-11-28 01:33:15 - training - INFO - EPOCH 5/100 SUMMARY
+2025-11-28 01:33:15 - training - INFO -   Train Loss: 3270.542572
+2025-11-28 01:33:15 - training - INFO -   Val Loss:   4138.369860
+2025-11-28 01:33:15 - training - INFO -   LR:         0.001000
+2025-11-28 01:33:15 - training - INFO - ================================================================================
+2025-11-28 01:33:15 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 01:33:15 - training - INFO - EPOCH 6/100
+2025-11-28 01:33:15 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 01:33:15 - training - INFO - Training...
+2025-11-28 01:33:49 - training - INFO -   Epoch 6 | Batch 3279/65580 (5.0%) | Loss: 3644.795000
+2025-11-28 01:34:24 - training - INFO -   Epoch 6 | Batch 6558/65580 (10.0%) | Loss: 3457.667614
+2025-11-28 01:34:59 - training - INFO -   Epoch 6 | Batch 9837/65580 (15.0%) | Loss: 2902.808030
+2025-11-28 01:35:35 - training - INFO -   Epoch 6 | Batch 13116/65580 (20.0%) | Loss: 3166.151094
+2025-11-28 01:36:11 - training - INFO -   Epoch 6 | Batch 16395/65580 (25.0%) | Loss: 3240.621430
+2025-11-28 01:36:47 - training - INFO -   Epoch 6 | Batch 19674/65580 (30.0%) | Loss: 3253.870379
+2025-11-28 01:37:23 - training - INFO -   Epoch 6 | Batch 22953/65580 (35.0%) | Loss: 3192.768293
+2025-11-28 01:38:00 - training - INFO -   Epoch 6 | Batch 26232/65580 (40.0%) | Loss: 3286.946104
+2025-11-28 01:38:36 - training - INFO -   Epoch 6 | Batch 29511/65580 (45.0%) | Loss: 3346.462467
+2025-11-28 01:39:14 - training - INFO -   Epoch 6 | Batch 32790/65580 (50.0%) | Loss: 3399.414184
+2025-11-28 01:39:51 - training - INFO -   Epoch 6 | Batch 36069/65580 (55.0%) | Loss: 3356.236808
+2025-11-28 01:40:27 - training - INFO -   Epoch 6 | Batch 39348/65580 (60.0%) | Loss: 3264.126835
+2025-11-28 01:41:03 - training - INFO -   Epoch 6 | Batch 42627/65580 (65.0%) | Loss: 3191.800630
+2025-11-28 01:41:40 - training - INFO -   Epoch 6 | Batch 45906/65580 (70.0%) | Loss: 3283.269429
+2025-11-28 01:42:16 - training - INFO -   Epoch 6 | Batch 49185/65580 (75.0%) | Loss: 3277.569930
+2025-11-28 01:42:53 - training - INFO -   Epoch 6 | Batch 52464/65580 (80.0%) | Loss: 3278.543357
+2025-11-28 01:43:30 - training - INFO -   Epoch 6 | Batch 55743/65580 (85.0%) | Loss: 3313.150084
+2025-11-28 01:44:06 - training - INFO -   Epoch 6 | Batch 59022/65580 (90.0%) | Loss: 3332.520341
+2025-11-28 01:44:43 - training - INFO -   Epoch 6 | Batch 62301/65580 (95.0%) | Loss: 3305.006479
+2025-11-28 01:45:20 - training - INFO -   Epoch 6 | Batch 65580/65580 (100.0%) | Loss: 3297.113747
+2025-11-28 01:45:20 - training - INFO - 
+Validating...
+2025-11-28 01:45:23 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 54.796192
+2025-11-28 01:45:27 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 763.441226
+2025-11-28 01:45:31 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 14334.686320
+2025-11-28 01:45:34 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 11047.621480
+2025-11-28 01:45:38 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 8914.191103
+2025-11-28 01:45:41 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 7432.930272
+2025-11-28 01:45:45 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 6422.893012
+2025-11-28 01:45:49 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 5911.165920
+2025-11-28 01:45:52 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 5310.789308
+2025-11-28 01:45:56 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 4780.751887
+2025-11-28 01:45:56 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 4778.966602
+2025-11-28 01:45:56 - training - INFO - 
+================================================================================
+2025-11-28 01:45:56 - training - INFO - EPOCH 6/100 SUMMARY
+2025-11-28 01:45:56 - training - INFO -   Train Loss: 3297.113747
+2025-11-28 01:45:56 - training - INFO -   Val Loss:   4778.966602
+2025-11-28 01:45:56 - training - INFO -   LR:         0.001000
+2025-11-28 01:45:56 - training - INFO - ================================================================================
+2025-11-28 01:45:56 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 01:45:56 - training - INFO - EPOCH 7/100
+2025-11-28 01:45:56 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 01:45:56 - training - INFO - Training...
+2025-11-28 01:46:33 - training - INFO -   Epoch 7 | Batch 3279/65580 (5.0%) | Loss: 2404.522353
+2025-11-28 01:47:10 - training - INFO -   Epoch 7 | Batch 6558/65580 (10.0%) | Loss: 3653.959108
+2025-11-28 01:47:48 - training - INFO -   Epoch 7 | Batch 9837/65580 (15.0%) | Loss: 3343.696072
+2025-11-28 01:48:24 - training - INFO -   Epoch 7 | Batch 13116/65580 (20.0%) | Loss: 3587.867279
+2025-11-28 01:49:00 - training - INFO -   Epoch 7 | Batch 16395/65580 (25.0%) | Loss: 3568.496888
+2025-11-28 01:49:35 - training - INFO -   Epoch 7 | Batch 19674/65580 (30.0%) | Loss: 3564.629360
+2025-11-28 01:50:12 - training - INFO -   Epoch 7 | Batch 22953/65580 (35.0%) | Loss: 3553.249487
+2025-11-28 01:50:47 - training - INFO -   Epoch 7 | Batch 26232/65580 (40.0%) | Loss: 3538.625899
+2025-11-28 01:51:22 - training - INFO -   Epoch 7 | Batch 29511/65580 (45.0%) | Loss: 3405.413929
+2025-11-28 01:51:57 - training - INFO -   Epoch 7 | Batch 32790/65580 (50.0%) | Loss: 3332.030671
+2025-11-28 01:52:32 - training - INFO -   Epoch 7 | Batch 36069/65580 (55.0%) | Loss: 3328.457582
+2025-11-28 01:53:07 - training - INFO -   Epoch 7 | Batch 39348/65580 (60.0%) | Loss: 3351.044767
+2025-11-28 01:53:41 - training - INFO -   Epoch 7 | Batch 42627/65580 (65.0%) | Loss: 3337.485616
+2025-11-28 01:54:16 - training - INFO -   Epoch 7 | Batch 45906/65580 (70.0%) | Loss: 3294.495089
+2025-11-28 01:54:51 - training - INFO -   Epoch 7 | Batch 49185/65580 (75.0%) | Loss: 3181.499278
+2025-11-28 01:55:25 - training - INFO -   Epoch 7 | Batch 52464/65580 (80.0%) | Loss: 3268.723870
+2025-11-28 01:56:00 - training - INFO -   Epoch 7 | Batch 55743/65580 (85.0%) | Loss: 3261.579364
+2025-11-28 01:56:35 - training - INFO -   Epoch 7 | Batch 59022/65580 (90.0%) | Loss: 3249.938548
+2025-11-28 01:57:10 - training - INFO -   Epoch 7 | Batch 62301/65580 (95.0%) | Loss: 3285.730062
+2025-11-28 01:57:44 - training - INFO -   Epoch 7 | Batch 65580/65580 (100.0%) | Loss: 3258.268591
+2025-11-28 01:57:44 - training - INFO - 
+Validating...
+2025-11-28 01:57:48 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 34.142928
+2025-11-28 01:57:51 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 106.693719
+2025-11-28 01:57:54 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 2002.844166
+2025-11-28 01:57:57 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 1537.763615
+2025-11-28 01:58:00 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 1245.832232
+2025-11-28 01:58:04 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 1044.237506
+2025-11-28 01:58:07 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 907.549064
+2025-11-28 01:58:10 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 818.023622
+2025-11-28 01:58:13 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 742.914128
+2025-11-28 01:58:16 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 671.051663
+2025-11-28 01:58:16 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 670.808327
+2025-11-28 01:58:16 - training - INFO - 
+================================================================================
+2025-11-28 01:58:16 - training - INFO - EPOCH 7/100 SUMMARY
+2025-11-28 01:58:16 - training - INFO -   Train Loss: 3258.268591
+2025-11-28 01:58:16 - training - INFO -   Val Loss:   670.808327
+2025-11-28 01:58:16 - training - INFO -   LR:         0.001000
+2025-11-28 01:58:16 - training - INFO - ================================================================================
+2025-11-28 01:58:16 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 01:58:16 - training - INFO - EPOCH 8/100
+2025-11-28 01:58:16 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 01:58:16 - training - INFO - Training...
+2025-11-28 01:58:51 - training - INFO -   Epoch 8 | Batch 3279/65580 (5.0%) | Loss: 2862.712206
+2025-11-28 01:59:25 - training - INFO -   Epoch 8 | Batch 6558/65580 (10.0%) | Loss: 2952.946224
+2025-11-28 01:59:59 - training - INFO -   Epoch 8 | Batch 9837/65580 (15.0%) | Loss: 3074.854668
+2025-11-28 02:00:33 - training - INFO -   Epoch 8 | Batch 13116/65580 (20.0%) | Loss: 3093.972399
+2025-11-28 02:01:07 - training - INFO -   Epoch 8 | Batch 16395/65580 (25.0%) | Loss: 3170.445291
+2025-11-28 02:01:41 - training - INFO -   Epoch 8 | Batch 19674/65580 (30.0%) | Loss: 3191.438718
+2025-11-28 02:02:16 - training - INFO -   Epoch 8 | Batch 22953/65580 (35.0%) | Loss: 3094.431138
+2025-11-28 02:02:51 - training - INFO -   Epoch 8 | Batch 26232/65580 (40.0%) | Loss: 3152.877510
+2025-11-28 02:03:25 - training - INFO -   Epoch 8 | Batch 29511/65580 (45.0%) | Loss: 3173.707868
+2025-11-28 02:04:00 - training - INFO -   Epoch 8 | Batch 32790/65580 (50.0%) | Loss: 3209.937999
+2025-11-28 02:04:35 - training - INFO -   Epoch 8 | Batch 36069/65580 (55.0%) | Loss: 3184.463695
+2025-11-28 02:05:09 - training - INFO -   Epoch 8 | Batch 39348/65580 (60.0%) | Loss: 3224.872709
+2025-11-28 02:05:44 - training - INFO -   Epoch 8 | Batch 42627/65580 (65.0%) | Loss: 3195.175298
+2025-11-28 02:06:18 - training - INFO -   Epoch 8 | Batch 45906/65580 (70.0%) | Loss: 3150.131807
+2025-11-28 02:06:53 - training - INFO -   Epoch 8 | Batch 49185/65580 (75.0%) | Loss: 3195.462539
+2025-11-28 02:07:27 - training - INFO -   Epoch 8 | Batch 52464/65580 (80.0%) | Loss: 3153.333080
+2025-11-28 02:08:02 - training - INFO -   Epoch 8 | Batch 55743/65580 (85.0%) | Loss: 3165.236676
+2025-11-28 02:08:36 - training - INFO -   Epoch 8 | Batch 59022/65580 (90.0%) | Loss: 3221.571152
+2025-11-28 02:09:11 - training - INFO -   Epoch 8 | Batch 62301/65580 (95.0%) | Loss: 3215.443361
+2025-11-28 02:09:46 - training - INFO -   Epoch 8 | Batch 65580/65580 (100.0%) | Loss: 3282.118339
+2025-11-28 02:09:46 - training - INFO - 
+Validating...
+2025-11-28 02:09:49 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 35.513040
+2025-11-28 02:09:52 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 364.859866
+2025-11-28 02:09:55 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 8189.664636
+2025-11-28 02:09:58 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 6231.871107
+2025-11-28 02:10:01 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 4998.153996
+2025-11-28 02:10:05 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 4168.087972
+2025-11-28 02:10:08 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 3595.856127
+2025-11-28 02:10:11 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 3341.118430
+2025-11-28 02:10:14 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 3044.466805
+2025-11-28 02:10:17 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 2740.568209
+2025-11-28 02:10:17 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 2739.545079
+2025-11-28 02:10:17 - training - INFO - 
+================================================================================
+2025-11-28 02:10:17 - training - INFO - EPOCH 8/100 SUMMARY
+2025-11-28 02:10:17 - training - INFO -   Train Loss: 3282.118339
+2025-11-28 02:10:17 - training - INFO -   Val Loss:   2739.545079
+2025-11-28 02:10:17 - training - INFO -   LR:         0.001000
+2025-11-28 02:10:17 - training - INFO - ================================================================================
+2025-11-28 02:10:17 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 02:10:17 - training - INFO - EPOCH 9/100
+2025-11-28 02:10:17 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 02:10:17 - training - INFO - Training...
+2025-11-28 02:10:52 - training - INFO -   Epoch 9 | Batch 3279/65580 (5.0%) | Loss: 2598.253018
+2025-11-28 02:11:26 - training - INFO -   Epoch 9 | Batch 6558/65580 (10.0%) | Loss: 2926.852071
+2025-11-28 02:12:01 - training - INFO -   Epoch 9 | Batch 9837/65580 (15.0%) | Loss: 3150.519792
+2025-11-28 02:12:36 - training - INFO -   Epoch 9 | Batch 13116/65580 (20.0%) | Loss: 3267.280326
+2025-11-28 02:13:11 - training - INFO -   Epoch 9 | Batch 16395/65580 (25.0%) | Loss: 3355.593305
+2025-11-28 02:13:45 - training - INFO -   Epoch 9 | Batch 19674/65580 (30.0%) | Loss: 3284.107218
+2025-11-28 02:14:20 - training - INFO -   Epoch 9 | Batch 22953/65580 (35.0%) | Loss: 3283.034056
+2025-11-28 02:14:54 - training - INFO -   Epoch 9 | Batch 26232/65580 (40.0%) | Loss: 3330.170552
+2025-11-28 02:15:29 - training - INFO -   Epoch 9 | Batch 29511/65580 (45.0%) | Loss: 3411.839472
+2025-11-28 02:16:04 - training - INFO -   Epoch 9 | Batch 32790/65580 (50.0%) | Loss: 3395.102947
+2025-11-28 02:16:39 - training - INFO -   Epoch 9 | Batch 36069/65580 (55.0%) | Loss: 3399.009140
+2025-11-28 02:17:13 - training - INFO -   Epoch 9 | Batch 39348/65580 (60.0%) | Loss: 3491.434419
+2025-11-28 02:17:47 - training - INFO -   Epoch 9 | Batch 42627/65580 (65.0%) | Loss: 3450.382000
+2025-11-28 02:18:22 - training - INFO -   Epoch 9 | Batch 45906/65580 (70.0%) | Loss: 3422.423837
+2025-11-28 02:18:57 - training - INFO -   Epoch 9 | Batch 49185/65580 (75.0%) | Loss: 3371.080210
+2025-11-28 02:19:32 - training - INFO -   Epoch 9 | Batch 52464/65580 (80.0%) | Loss: 3369.486532
+2025-11-28 02:20:07 - training - INFO -   Epoch 9 | Batch 55743/65580 (85.0%) | Loss: 3363.279769
+2025-11-28 02:20:42 - training - INFO -   Epoch 9 | Batch 59022/65580 (90.0%) | Loss: 3281.889763
+2025-11-28 02:21:16 - training - INFO -   Epoch 9 | Batch 62301/65580 (95.0%) | Loss: 3260.574910
+2025-11-28 02:21:51 - training - INFO -   Epoch 9 | Batch 65580/65580 (100.0%) | Loss: 3176.030240
+2025-11-28 02:21:51 - training - INFO - 
+Validating...
+2025-11-28 02:21:55 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 16.116791
+2025-11-28 02:21:58 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 410.136325
+2025-11-28 02:22:01 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 13308.150801
+2025-11-28 02:22:04 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 10211.480847
+2025-11-28 02:22:07 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 8192.629847
+2025-11-28 02:22:10 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 6830.394507
+2025-11-28 02:22:13 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 5871.801563
+2025-11-28 02:22:16 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 5185.365293
+2025-11-28 02:22:19 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 4633.906210
+2025-11-28 02:22:22 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 4171.350679
+2025-11-28 02:22:22 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 4169.793783
+2025-11-28 02:22:22 - training - INFO - 
+================================================================================
+2025-11-28 02:22:22 - training - INFO - EPOCH 9/100 SUMMARY
+2025-11-28 02:22:22 - training - INFO -   Train Loss: 3176.030240
+2025-11-28 02:22:22 - training - INFO -   Val Loss:   4169.793783
+2025-11-28 02:22:22 - training - INFO -   LR:         0.000500
+2025-11-28 02:22:22 - training - INFO - ================================================================================
+2025-11-28 02:22:22 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 02:22:22 - training - INFO - EPOCH 10/100
+2025-11-28 02:22:22 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 02:22:22 - training - INFO - Training...
+2025-11-28 02:22:57 - training - INFO -   Epoch 10 | Batch 3279/65580 (5.0%) | Loss: 2299.059320
+2025-11-28 02:23:32 - training - INFO -   Epoch 10 | Batch 6558/65580 (10.0%) | Loss: 2491.532714
+2025-11-28 02:24:06 - training - INFO -   Epoch 10 | Batch 9837/65580 (15.0%) | Loss: 2484.756095
+2025-11-28 02:24:41 - training - INFO -   Epoch 10 | Batch 13116/65580 (20.0%) | Loss: 2854.412665
+2025-11-28 02:25:16 - training - INFO -   Epoch 10 | Batch 16395/65580 (25.0%) | Loss: 2898.475210
+2025-11-28 02:25:50 - training - INFO -   Epoch 10 | Batch 19674/65580 (30.0%) | Loss: 3087.921170
+2025-11-28 02:26:25 - training - INFO -   Epoch 10 | Batch 22953/65580 (35.0%) | Loss: 3223.200425
+2025-11-28 02:27:00 - training - INFO -   Epoch 10 | Batch 26232/65580 (40.0%) | Loss: 3391.608771
+2025-11-28 02:27:34 - training - INFO -   Epoch 10 | Batch 29511/65580 (45.0%) | Loss: 3268.687460
+2025-11-28 02:28:09 - training - INFO -   Epoch 10 | Batch 32790/65580 (50.0%) | Loss: 3257.256418
+2025-11-28 02:28:44 - training - INFO -   Epoch 10 | Batch 36069/65580 (55.0%) | Loss: 3229.907924
+2025-11-28 02:29:18 - training - INFO -   Epoch 10 | Batch 39348/65580 (60.0%) | Loss: 3275.767315
+2025-11-28 02:29:53 - training - INFO -   Epoch 10 | Batch 42627/65580 (65.0%) | Loss: 3160.443658
+2025-11-28 02:30:28 - training - INFO -   Epoch 10 | Batch 45906/65580 (70.0%) | Loss: 3090.613811
+2025-11-28 02:31:03 - training - INFO -   Epoch 10 | Batch 49185/65580 (75.0%) | Loss: 3117.049006
+2025-11-28 02:31:38 - training - INFO -   Epoch 10 | Batch 52464/65580 (80.0%) | Loss: 3125.261115
+2025-11-28 02:32:13 - training - INFO -   Epoch 10 | Batch 55743/65580 (85.0%) | Loss: 3112.083418
+2025-11-28 02:32:48 - training - INFO -   Epoch 10 | Batch 59022/65580 (90.0%) | Loss: 3138.314801
+2025-11-28 02:33:23 - training - INFO -   Epoch 10 | Batch 62301/65580 (95.0%) | Loss: 3167.527572
+2025-11-28 02:33:59 - training - INFO -   Epoch 10 | Batch 65580/65580 (100.0%) | Loss: 3123.696504
+2025-11-28 02:33:59 - training - INFO - 
+Validating...
+2025-11-28 02:34:02 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 32.661737
+2025-11-28 02:34:05 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 821.788724
+2025-11-28 02:34:08 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 30594.233616
+2025-11-28 02:34:11 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 23130.240233
+2025-11-28 02:34:14 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 18531.496766
+2025-11-28 02:34:17 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 15445.715821
+2025-11-28 02:34:20 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 13336.224163
+2025-11-28 02:34:24 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 11939.857067
+2025-11-28 02:34:27 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 10704.812240
+2025-11-28 02:34:30 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 9635.005298
+2025-11-28 02:34:30 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 9631.406589
+2025-11-28 02:34:30 - training - INFO - 
+================================================================================
+2025-11-28 02:34:30 - training - INFO - EPOCH 10/100 SUMMARY
+2025-11-28 02:34:30 - training - INFO -   Train Loss: 3123.696504
+2025-11-28 02:34:30 - training - INFO -   Val Loss:   9631.406589
+2025-11-28 02:34:30 - training - INFO -   LR:         0.000500
+2025-11-28 02:34:30 - training - INFO - ================================================================================
+2025-11-28 02:34:30 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 02:34:30 - training - INFO - EPOCH 11/100
+2025-11-28 02:34:30 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 02:34:30 - training - INFO - Training...
+2025-11-28 02:35:05 - training - INFO -   Epoch 11 | Batch 3279/65580 (5.0%) | Loss: 3378.678102
+2025-11-28 02:35:41 - training - INFO -   Epoch 11 | Batch 6558/65580 (10.0%) | Loss: 2978.320635
+2025-11-28 02:36:16 - training - INFO -   Epoch 11 | Batch 9837/65580 (15.0%) | Loss: 2789.811106
+2025-11-28 02:36:51 - training - INFO -   Epoch 11 | Batch 13116/65580 (20.0%) | Loss: 3071.749624
+2025-11-28 02:37:27 - training - INFO -   Epoch 11 | Batch 16395/65580 (25.0%) | Loss: 2993.319751
+2025-11-28 02:38:02 - training - INFO -   Epoch 11 | Batch 19674/65580 (30.0%) | Loss: 2999.031316
+2025-11-28 02:38:38 - training - INFO -   Epoch 11 | Batch 22953/65580 (35.0%) | Loss: 3156.386546
+2025-11-28 02:39:13 - training - INFO -   Epoch 11 | Batch 26232/65580 (40.0%) | Loss: 3065.133740
+2025-11-28 02:39:48 - training - INFO -   Epoch 11 | Batch 29511/65580 (45.0%) | Loss: 3185.358819
+2025-11-28 02:40:23 - training - INFO -   Epoch 11 | Batch 32790/65580 (50.0%) | Loss: 3261.029173
+2025-11-28 02:40:58 - training - INFO -   Epoch 11 | Batch 36069/65580 (55.0%) | Loss: 3296.451790
+2025-11-28 02:41:33 - training - INFO -   Epoch 11 | Batch 39348/65580 (60.0%) | Loss: 3282.170860
+2025-11-28 02:42:08 - training - INFO -   Epoch 11 | Batch 42627/65580 (65.0%) | Loss: 3224.339227
+2025-11-28 02:42:43 - training - INFO -   Epoch 11 | Batch 45906/65580 (70.0%) | Loss: 3216.714301
+2025-11-28 02:43:19 - training - INFO -   Epoch 11 | Batch 49185/65580 (75.0%) | Loss: 3236.186494
+2025-11-28 02:43:54 - training - INFO -   Epoch 11 | Batch 52464/65580 (80.0%) | Loss: 3209.126604
+2025-11-28 02:44:29 - training - INFO -   Epoch 11 | Batch 55743/65580 (85.0%) | Loss: 3203.273449
+2025-11-28 02:45:04 - training - INFO -   Epoch 11 | Batch 59022/65580 (90.0%) | Loss: 3167.097071
+2025-11-28 02:45:39 - training - INFO -   Epoch 11 | Batch 62301/65580 (95.0%) | Loss: 3096.562630
+2025-11-28 02:46:14 - training - INFO -   Epoch 11 | Batch 65580/65580 (100.0%) | Loss: 3108.353362
+2025-11-28 02:46:14 - training - INFO - 
+Validating...
+2025-11-28 02:46:17 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 16.012472
+2025-11-28 02:46:20 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 163.713795
+2025-11-28 02:46:23 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 12254.957509
+2025-11-28 02:46:26 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 9269.118425
+2025-11-28 02:46:29 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 7425.709178
+2025-11-28 02:46:32 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 6191.185582
+2025-11-28 02:46:35 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 5318.494752
+2025-11-28 02:46:38 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 4807.545674
+2025-11-28 02:46:41 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 4295.220849
+2025-11-28 02:46:44 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 3866.464433
+2025-11-28 02:46:45 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 3865.021359
+2025-11-28 02:46:45 - training - INFO - 
+================================================================================
+2025-11-28 02:46:45 - training - INFO - EPOCH 11/100 SUMMARY
+2025-11-28 02:46:45 - training - INFO -   Train Loss: 3108.353362
+2025-11-28 02:46:45 - training - INFO -   Val Loss:   3865.021359
+2025-11-28 02:46:45 - training - INFO -   LR:         0.000500
+2025-11-28 02:46:45 - training - INFO - ================================================================================
+2025-11-28 02:46:45 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 02:46:45 - training - INFO - EPOCH 12/100
+2025-11-28 02:46:45 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 02:46:45 - training - INFO - Training...
+2025-11-28 02:47:19 - training - INFO -   Epoch 12 | Batch 3279/65580 (5.0%) | Loss: 4393.030850
+2025-11-28 02:47:54 - training - INFO -   Epoch 12 | Batch 6558/65580 (10.0%) | Loss: 3460.510053
+2025-11-28 02:48:29 - training - INFO -   Epoch 12 | Batch 9837/65580 (15.0%) | Loss: 3382.468690
+2025-11-28 02:49:03 - training - INFO -   Epoch 12 | Batch 13116/65580 (20.0%) | Loss: 3471.434482
+2025-11-28 02:49:38 - training - INFO -   Epoch 12 | Batch 16395/65580 (25.0%) | Loss: 3390.540632
+2025-11-28 02:50:13 - training - INFO -   Epoch 12 | Batch 19674/65580 (30.0%) | Loss: 3441.971307
+2025-11-28 02:50:48 - training - INFO -   Epoch 12 | Batch 22953/65580 (35.0%) | Loss: 3235.209911
+2025-11-28 02:51:23 - training - INFO -   Epoch 12 | Batch 26232/65580 (40.0%) | Loss: 3162.787670
+2025-11-28 02:51:58 - training - INFO -   Epoch 12 | Batch 29511/65580 (45.0%) | Loss: 3162.559693
+2025-11-28 02:52:32 - training - INFO -   Epoch 12 | Batch 32790/65580 (50.0%) | Loss: 3142.667140
+2025-11-28 02:53:07 - training - INFO -   Epoch 12 | Batch 36069/65580 (55.0%) | Loss: 3040.790053
+2025-11-28 02:53:41 - training - INFO -   Epoch 12 | Batch 39348/65580 (60.0%) | Loss: 3029.152644
+2025-11-28 02:54:16 - training - INFO -   Epoch 12 | Batch 42627/65580 (65.0%) | Loss: 3032.816016
+2025-11-28 02:54:50 - training - INFO -   Epoch 12 | Batch 45906/65580 (70.0%) | Loss: 3121.896364
+2025-11-28 02:55:25 - training - INFO -   Epoch 12 | Batch 49185/65580 (75.0%) | Loss: 3253.567425
+2025-11-28 02:55:59 - training - INFO -   Epoch 12 | Batch 52464/65580 (80.0%) | Loss: 3257.731066
+2025-11-28 02:56:33 - training - INFO -   Epoch 12 | Batch 55743/65580 (85.0%) | Loss: 3244.773353
+2025-11-28 02:57:07 - training - INFO -   Epoch 12 | Batch 59022/65580 (90.0%) | Loss: 3214.374281
+2025-11-28 02:57:41 - training - INFO -   Epoch 12 | Batch 62301/65580 (95.0%) | Loss: 3145.942922
+2025-11-28 02:58:15 - training - INFO -   Epoch 12 | Batch 65580/65580 (100.0%) | Loss: 3138.363842
+2025-11-28 02:58:15 - training - INFO - 
+Validating...
+2025-11-28 02:58:18 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 21.673499
+2025-11-28 02:58:22 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 3437.047143
+2025-11-28 02:58:24 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 10780.116155
+2025-11-28 02:58:28 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 8364.465302
+2025-11-28 02:58:31 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 6757.474765
+2025-11-28 02:58:34 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 5636.494257
+2025-11-28 02:58:37 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 4872.233220
+2025-11-28 02:58:40 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 4415.164563
+2025-11-28 02:58:43 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 4196.132231
+2025-11-28 02:58:46 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 3777.334531
+2025-11-28 02:58:46 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 3775.924098
+2025-11-28 02:58:46 - training - INFO - 
+================================================================================
+2025-11-28 02:58:46 - training - INFO - EPOCH 12/100 SUMMARY
+2025-11-28 02:58:46 - training - INFO -   Train Loss: 3138.363842
+2025-11-28 02:58:46 - training - INFO -   Val Loss:   3775.924098
+2025-11-28 02:58:46 - training - INFO -   LR:         0.000500
+2025-11-28 02:58:46 - training - INFO - ================================================================================
+2025-11-28 02:58:46 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 02:58:46 - training - INFO - EPOCH 13/100
+2025-11-28 02:58:46 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 02:58:46 - training - INFO - Training...
+2025-11-28 02:59:20 - training - INFO -   Epoch 13 | Batch 3279/65580 (5.0%) | Loss: 3108.072406
+2025-11-28 02:59:54 - training - INFO -   Epoch 13 | Batch 6558/65580 (10.0%) | Loss: 3289.170264
+2025-11-28 03:00:28 - training - INFO -   Epoch 13 | Batch 9837/65580 (15.0%) | Loss: 3158.663838
+2025-11-28 03:01:02 - training - INFO -   Epoch 13 | Batch 13116/65580 (20.0%) | Loss: 3022.178931
+2025-11-28 03:01:36 - training - INFO -   Epoch 13 | Batch 16395/65580 (25.0%) | Loss: 2951.665184
+2025-11-28 03:02:10 - training - INFO -   Epoch 13 | Batch 19674/65580 (30.0%) | Loss: 2930.023774
+2025-11-28 03:02:44 - training - INFO -   Epoch 13 | Batch 22953/65580 (35.0%) | Loss: 2998.265376
+2025-11-28 03:03:18 - training - INFO -   Epoch 13 | Batch 26232/65580 (40.0%) | Loss: 3212.647233
+2025-11-28 03:03:52 - training - INFO -   Epoch 13 | Batch 29511/65580 (45.0%) | Loss: 3148.261846
+2025-11-28 03:04:26 - training - INFO -   Epoch 13 | Batch 32790/65580 (50.0%) | Loss: 3100.708535
+2025-11-28 03:05:00 - training - INFO -   Epoch 13 | Batch 36069/65580 (55.0%) | Loss: 3124.781696
+2025-11-28 03:05:34 - training - INFO -   Epoch 13 | Batch 39348/65580 (60.0%) | Loss: 3130.591233
+2025-11-28 03:06:08 - training - INFO -   Epoch 13 | Batch 42627/65580 (65.0%) | Loss: 3192.341360
+2025-11-28 03:06:42 - training - INFO -   Epoch 13 | Batch 45906/65580 (70.0%) | Loss: 3246.590135
+2025-11-28 03:07:16 - training - INFO -   Epoch 13 | Batch 49185/65580 (75.0%) | Loss: 3264.095289
+2025-11-28 03:07:50 - training - INFO -   Epoch 13 | Batch 52464/65580 (80.0%) | Loss: 3237.522357
+2025-11-28 03:08:24 - training - INFO -   Epoch 13 | Batch 55743/65580 (85.0%) | Loss: 3204.496096
+2025-11-28 03:08:58 - training - INFO -   Epoch 13 | Batch 59022/65580 (90.0%) | Loss: 3155.662293
+2025-11-28 03:09:32 - training - INFO -   Epoch 13 | Batch 62301/65580 (95.0%) | Loss: 3107.330513
+2025-11-28 03:10:07 - training - INFO -   Epoch 13 | Batch 65580/65580 (100.0%) | Loss: 3098.261080
+2025-11-28 03:10:07 - training - INFO - 
+Validating...
+2025-11-28 03:10:10 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 21.017842
+2025-11-28 03:10:13 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 5265.072760
+2025-11-28 03:10:16 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 103215.691382
+2025-11-28 03:10:19 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 77470.976086
+2025-11-28 03:10:22 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 62425.925305
+2025-11-28 03:10:25 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 52024.729439
+2025-11-28 03:10:28 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 44924.193465
+2025-11-28 03:10:31 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 41084.952421
+2025-11-28 03:10:34 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 37771.300011
+2025-11-28 03:10:37 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 33994.549904
+2025-11-28 03:10:37 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 33981.850099
+2025-11-28 03:10:37 - training - INFO - 
+================================================================================
+2025-11-28 03:10:37 - training - INFO - EPOCH 13/100 SUMMARY
+2025-11-28 03:10:37 - training - INFO -   Train Loss: 3098.261080
+2025-11-28 03:10:37 - training - INFO -   Val Loss:   33981.850099
+2025-11-28 03:10:37 - training - INFO -   LR:         0.000500
+2025-11-28 03:10:37 - training - INFO - ================================================================================
+2025-11-28 03:10:37 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 03:10:37 - training - INFO - EPOCH 14/100
+2025-11-28 03:10:37 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 03:10:37 - training - INFO - Training...
+2025-11-28 03:11:11 - training - INFO -   Epoch 14 | Batch 3279/65580 (5.0%) | Loss: 3153.129191
+2025-11-28 03:11:45 - training - INFO -   Epoch 14 | Batch 6558/65580 (10.0%) | Loss: 3096.589634
+2025-11-28 03:12:19 - training - INFO -   Epoch 14 | Batch 9837/65580 (15.0%) | Loss: 2905.437799
+2025-11-28 03:12:53 - training - INFO -   Epoch 14 | Batch 13116/65580 (20.0%) | Loss: 2949.612536
+2025-11-28 03:13:27 - training - INFO -   Epoch 14 | Batch 16395/65580 (25.0%) | Loss: 2965.951630
+2025-11-28 03:14:01 - training - INFO -   Epoch 14 | Batch 19674/65580 (30.0%) | Loss: 3043.852845
+2025-11-28 03:14:35 - training - INFO -   Epoch 14 | Batch 22953/65580 (35.0%) | Loss: 3026.756905
+2025-11-28 03:15:09 - training - INFO -   Epoch 14 | Batch 26232/65580 (40.0%) | Loss: 3017.363137
+2025-11-28 03:15:43 - training - INFO -   Epoch 14 | Batch 29511/65580 (45.0%) | Loss: 3003.181656
+2025-11-28 03:16:17 - training - INFO -   Epoch 14 | Batch 32790/65580 (50.0%) | Loss: 3101.439077
+2025-11-28 03:16:51 - training - INFO -   Epoch 14 | Batch 36069/65580 (55.0%) | Loss: 3197.034316
+2025-11-28 03:17:25 - training - INFO -   Epoch 14 | Batch 39348/65580 (60.0%) | Loss: 3194.366845
+2025-11-28 03:17:59 - training - INFO -   Epoch 14 | Batch 42627/65580 (65.0%) | Loss: 3202.259662
+2025-11-28 03:18:32 - training - INFO -   Epoch 14 | Batch 45906/65580 (70.0%) | Loss: 3135.230599
+2025-11-28 03:19:07 - training - INFO -   Epoch 14 | Batch 49185/65580 (75.0%) | Loss: 3099.919903
+2025-11-28 03:19:41 - training - INFO -   Epoch 14 | Batch 52464/65580 (80.0%) | Loss: 3060.784686
+2025-11-28 03:20:16 - training - INFO -   Epoch 14 | Batch 55743/65580 (85.0%) | Loss: 3118.465822
+2025-11-28 03:20:50 - training - INFO -   Epoch 14 | Batch 59022/65580 (90.0%) | Loss: 3089.711569
+2025-11-28 03:21:24 - training - INFO -   Epoch 14 | Batch 62301/65580 (95.0%) | Loss: 3110.422236
+2025-11-28 03:21:58 - training - INFO -   Epoch 14 | Batch 65580/65580 (100.0%) | Loss: 3104.218410
+2025-11-28 03:21:58 - training - INFO - 
+Validating...
+2025-11-28 03:22:01 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 28.572322
+2025-11-28 03:22:04 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 1039.629454
+2025-11-28 03:22:07 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 16291.339690
+2025-11-28 03:22:10 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 12296.036417
+2025-11-28 03:22:13 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 9855.609148
+2025-11-28 03:22:16 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 8217.974281
+2025-11-28 03:22:19 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 7143.973920
+2025-11-28 03:22:22 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 6536.011231
+2025-11-28 03:22:25 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 5844.361508
+2025-11-28 03:22:28 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 5260.488394
+2025-11-28 03:22:28 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 5258.523921
+2025-11-28 03:22:28 - training - INFO - 
+================================================================================
+2025-11-28 03:22:28 - training - INFO - EPOCH 14/100 SUMMARY
+2025-11-28 03:22:28 - training - INFO -   Train Loss: 3104.218410
+2025-11-28 03:22:28 - training - INFO -   Val Loss:   5258.523921
+2025-11-28 03:22:28 - training - INFO -   LR:         0.000500
+2025-11-28 03:22:28 - training - INFO - ================================================================================
+2025-11-28 03:22:28 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 03:22:28 - training - INFO - EPOCH 15/100
+2025-11-28 03:22:28 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 03:22:28 - training - INFO - Training...
+2025-11-28 03:23:02 - training - INFO -   Epoch 15 | Batch 3279/65580 (5.0%) | Loss: 2546.268570
+2025-11-28 03:23:36 - training - INFO -   Epoch 15 | Batch 6558/65580 (10.0%) | Loss: 3000.092793
+2025-11-28 03:24:10 - training - INFO -   Epoch 15 | Batch 9837/65580 (15.0%) | Loss: 2720.815903
+2025-11-28 03:24:45 - training - INFO -   Epoch 15 | Batch 13116/65580 (20.0%) | Loss: 2700.732883
+2025-11-28 03:25:20 - training - INFO -   Epoch 15 | Batch 16395/65580 (25.0%) | Loss: 2754.457415
+2025-11-28 03:25:56 - training - INFO -   Epoch 15 | Batch 19674/65580 (30.0%) | Loss: 2828.535919
+2025-11-28 03:26:31 - training - INFO -   Epoch 15 | Batch 22953/65580 (35.0%) | Loss: 2823.698039
+2025-11-28 03:27:06 - training - INFO -   Epoch 15 | Batch 26232/65580 (40.0%) | Loss: 2852.156069
+2025-11-28 03:27:41 - training - INFO -   Epoch 15 | Batch 29511/65580 (45.0%) | Loss: 2814.857184
+2025-11-28 03:28:15 - training - INFO -   Epoch 15 | Batch 32790/65580 (50.0%) | Loss: 3010.322937
+2025-11-28 03:28:50 - training - INFO -   Epoch 15 | Batch 36069/65580 (55.0%) | Loss: 3070.277985
+2025-11-28 03:29:25 - training - INFO -   Epoch 15 | Batch 39348/65580 (60.0%) | Loss: 3131.643096
+2025-11-28 03:29:59 - training - INFO -   Epoch 15 | Batch 42627/65580 (65.0%) | Loss: 3044.998491
+2025-11-28 03:30:33 - training - INFO -   Epoch 15 | Batch 45906/65580 (70.0%) | Loss: 3135.901627
+2025-11-28 03:31:07 - training - INFO -   Epoch 15 | Batch 49185/65580 (75.0%) | Loss: 3086.736910
+2025-11-28 03:31:42 - training - INFO -   Epoch 15 | Batch 52464/65580 (80.0%) | Loss: 3032.499688
+2025-11-28 03:32:16 - training - INFO -   Epoch 15 | Batch 55743/65580 (85.0%) | Loss: 3021.525143
+2025-11-28 03:32:50 - training - INFO -   Epoch 15 | Batch 59022/65580 (90.0%) | Loss: 3022.650097
+2025-11-28 03:33:24 - training - INFO -   Epoch 15 | Batch 62301/65580 (95.0%) | Loss: 3008.180490
+2025-11-28 03:33:59 - training - INFO -   Epoch 15 | Batch 65580/65580 (100.0%) | Loss: 3033.091726
+2025-11-28 03:33:59 - training - INFO - 
+Validating...
+2025-11-28 03:34:02 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 15.924292
+2025-11-28 03:34:05 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 234.622875
+2025-11-28 03:34:08 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 11795.585420
+2025-11-28 03:34:11 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 8896.981780
+2025-11-28 03:34:14 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 7130.800910
+2025-11-28 03:34:17 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 5945.763409
+2025-11-28 03:34:20 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 5106.209965
+2025-11-28 03:34:23 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 4492.261602
+2025-11-28 03:34:26 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 4015.509659
+2025-11-28 03:34:29 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 3614.781400
+2025-11-28 03:34:29 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 3613.432725
+2025-11-28 03:34:29 - training - INFO - 
+================================================================================
+2025-11-28 03:34:29 - training - INFO - EPOCH 15/100 SUMMARY
+2025-11-28 03:34:29 - training - INFO -   Train Loss: 3033.091726
+2025-11-28 03:34:29 - training - INFO -   Val Loss:   3613.432725
+2025-11-28 03:34:29 - training - INFO -   LR:         0.000250
+2025-11-28 03:34:29 - training - INFO - ================================================================================
+2025-11-28 03:34:29 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 03:34:29 - training - INFO - EPOCH 16/100
+2025-11-28 03:34:29 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 03:34:29 - training - INFO - Training...
+2025-11-28 03:35:03 - training - INFO -   Epoch 16 | Batch 3279/65580 (5.0%) | Loss: 4043.178467
+2025-11-28 03:35:38 - training - INFO -   Epoch 16 | Batch 6558/65580 (10.0%) | Loss: 3588.387684
+2025-11-28 03:36:12 - training - INFO -   Epoch 16 | Batch 9837/65580 (15.0%) | Loss: 3262.740935
+2025-11-28 03:36:46 - training - INFO -   Epoch 16 | Batch 13116/65580 (20.0%) | Loss: 3445.660690
+2025-11-28 03:37:20 - training - INFO -   Epoch 16 | Batch 16395/65580 (25.0%) | Loss: 3249.294574
+2025-11-28 03:37:54 - training - INFO -   Epoch 16 | Batch 19674/65580 (30.0%) | Loss: 3233.492180
+2025-11-28 03:38:29 - training - INFO -   Epoch 16 | Batch 22953/65580 (35.0%) | Loss: 3190.938451
+2025-11-28 03:39:03 - training - INFO -   Epoch 16 | Batch 26232/65580 (40.0%) | Loss: 3196.715553
+2025-11-28 03:39:37 - training - INFO -   Epoch 16 | Batch 29511/65580 (45.0%) | Loss: 3150.639502
+2025-11-28 03:40:11 - training - INFO -   Epoch 16 | Batch 32790/65580 (50.0%) | Loss: 3024.903510
+2025-11-28 03:40:45 - training - INFO -   Epoch 16 | Batch 36069/65580 (55.0%) | Loss: 3039.873812
+2025-11-28 03:41:20 - training - INFO -   Epoch 16 | Batch 39348/65580 (60.0%) | Loss: 3029.857760
+2025-11-28 03:41:54 - training - INFO -   Epoch 16 | Batch 42627/65580 (65.0%) | Loss: 2989.038416
+2025-11-28 03:42:28 - training - INFO -   Epoch 16 | Batch 45906/65580 (70.0%) | Loss: 2974.199817
+2025-11-28 03:43:02 - training - INFO -   Epoch 16 | Batch 49185/65580 (75.0%) | Loss: 2917.110859
+2025-11-28 03:43:36 - training - INFO -   Epoch 16 | Batch 52464/65580 (80.0%) | Loss: 3054.547128
+2025-11-28 03:44:11 - training - INFO -   Epoch 16 | Batch 55743/65580 (85.0%) | Loss: 3060.564948
+2025-11-28 03:44:45 - training - INFO -   Epoch 16 | Batch 59022/65580 (90.0%) | Loss: 3047.968181
+2025-11-28 03:45:19 - training - INFO -   Epoch 16 | Batch 62301/65580 (95.0%) | Loss: 3011.863473
+2025-11-28 03:45:54 - training - INFO -   Epoch 16 | Batch 65580/65580 (100.0%) | Loss: 3029.296405
+2025-11-28 03:45:54 - training - INFO - 
+Validating...
+2025-11-28 03:45:57 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 25.071693
+2025-11-28 03:46:00 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 202.775279
+2025-11-28 03:46:03 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 15730.345507
+2025-11-28 03:46:06 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 11926.034850
+2025-11-28 03:46:09 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 9562.730354
+2025-11-28 03:46:12 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 7972.903009
+2025-11-28 03:46:15 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 6844.828861
+2025-11-28 03:46:18 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 6022.427220
+2025-11-28 03:46:21 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 5367.438480
+2025-11-28 03:46:25 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 4832.246342
+2025-11-28 03:46:25 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 4830.444737
+2025-11-28 03:46:25 - training - INFO - 
+================================================================================
+2025-11-28 03:46:25 - training - INFO - EPOCH 16/100 SUMMARY
+2025-11-28 03:46:25 - training - INFO -   Train Loss: 3029.296405
+2025-11-28 03:46:25 - training - INFO -   Val Loss:   4830.444737
+2025-11-28 03:46:25 - training - INFO -   LR:         0.000250
+2025-11-28 03:46:25 - training - INFO - ================================================================================
+2025-11-28 03:46:25 - training - INFO - 
+--------------------------------------------------------------------------------
+2025-11-28 03:46:25 - training - INFO - EPOCH 17/100
+2025-11-28 03:46:25 - training - INFO - --------------------------------------------------------------------------------
+2025-11-28 03:46:25 - training - INFO - Training...
+2025-11-28 03:46:59 - training - INFO -   Epoch 17 | Batch 3279/65580 (5.0%) | Loss: 3502.763563
+2025-11-28 03:47:33 - training - INFO -   Epoch 17 | Batch 6558/65580 (10.0%) | Loss: 3259.992567
+2025-11-28 03:48:07 - training - INFO -   Epoch 17 | Batch 9837/65580 (15.0%) | Loss: 3320.863508
+2025-11-28 03:48:41 - training - INFO -   Epoch 17 | Batch 13116/65580 (20.0%) | Loss: 3241.747337
+2025-11-28 03:49:16 - training - INFO -   Epoch 17 | Batch 16395/65580 (25.0%) | Loss: 3013.815164
+2025-11-28 03:49:50 - training - INFO -   Epoch 17 | Batch 19674/65580 (30.0%) | Loss: 2915.547786
+2025-11-28 03:50:25 - training - INFO -   Epoch 17 | Batch 22953/65580 (35.0%) | Loss: 2957.127889
+2025-11-28 03:50:59 - training - INFO -   Epoch 17 | Batch 26232/65580 (40.0%) | Loss: 2848.141176
+2025-11-28 03:51:34 - training - INFO -   Epoch 17 | Batch 29511/65580 (45.0%) | Loss: 2868.728138
+2025-11-28 03:52:08 - training - INFO -   Epoch 17 | Batch 32790/65580 (50.0%) | Loss: 2893.174655
+2025-11-28 03:52:42 - training - INFO -   Epoch 17 | Batch 36069/65580 (55.0%) | Loss: 2843.017964
+2025-11-28 03:53:16 - training - INFO -   Epoch 17 | Batch 39348/65580 (60.0%) | Loss: 2792.357348
+2025-11-28 03:53:50 - training - INFO -   Epoch 17 | Batch 42627/65580 (65.0%) | Loss: 2796.014507
+2025-11-28 03:54:24 - training - INFO -   Epoch 17 | Batch 45906/65580 (70.0%) | Loss: 2864.613056
+2025-11-28 03:54:58 - training - INFO -   Epoch 17 | Batch 49185/65580 (75.0%) | Loss: 2859.821082
+2025-11-28 03:55:31 - training - INFO -   Epoch 17 | Batch 52464/65580 (80.0%) | Loss: 2882.700775
+2025-11-28 03:56:05 - training - INFO -   Epoch 17 | Batch 55743/65580 (85.0%) | Loss: 2979.970968
+2025-11-28 03:56:38 - training - INFO -   Epoch 17 | Batch 59022/65580 (90.0%) | Loss: 3025.522866
+2025-11-28 03:57:13 - training - INFO -   Epoch 17 | Batch 62301/65580 (95.0%) | Loss: 3018.188619
+2025-11-28 03:57:47 - training - INFO -   Epoch 17 | Batch 65580/65580 (100.0%) | Loss: 3014.737976
+2025-11-28 03:57:47 - training - INFO - 
+Validating...
+2025-11-28 03:57:50 - training - INFO -   Validation | Batch 1873/18737 (10.0%) | Loss: 27.187874
+2025-11-28 03:57:53 - training - INFO -   Validation | Batch 3746/18737 (20.0%) | Loss: 643.251722
+2025-11-28 03:57:56 - training - INFO -   Validation | Batch 5619/18737 (30.0%) | Loss: 31480.367868
+2025-11-28 03:57:59 - training - INFO -   Validation | Batch 7492/18737 (40.0%) | Loss: 24088.681036
+2025-11-28 03:58:02 - training - INFO -   Validation | Batch 9365/18737 (50.0%) | Loss: 19283.822245
+2025-11-28 03:58:05 - training - INFO -   Validation | Batch 11238/18737 (60.0%) | Loss: 16075.015649
+2025-11-28 03:58:08 - training - INFO -   Validation | Batch 13111/18737 (70.0%) | Loss: 13838.155818
+2025-11-28 03:58:11 - training - INFO -   Validation | Batch 14984/18737 (80.0%) | Loss: 12517.559916
+2025-11-28 03:58:14 - training - INFO -   Validation | Batch 16857/18737 (90.0%) | Loss: 11266.863307
+2025-11-28 03:58:17 - training - INFO -   Validation | Batch 18730/18737 (100.0%) | Loss: 10141.808068
+2025-11-28 03:58:17 - training - INFO -   Validation | Batch 18737/18737 (100.0%) | Loss: 10138.024140
+2025-11-28 03:58:17 - training - INFO - 
+================================================================================
+2025-11-28 03:58:17 - training - INFO - EPOCH 17/100 SUMMARY
+2025-11-28 03:58:17 - training - INFO -   Train Loss: 3014.737976
+2025-11-28 03:58:17 - training - INFO -   Val Loss:   10138.024140
+2025-11-28 03:58:17 - training - INFO -   LR:         0.000250
+2025-11-28 03:58:17 - training - INFO - ================================================================================
+2025-11-28 03:58:18 - training - INFO - Early stopping triggered after 17 epochs
+2025-11-28 03:58:18 - training - INFO -   Best val_loss: 452.307151
+2025-11-28 03:58:18 - training - INFO - Restored best model weights
+2025-11-28 03:58:18 - training - INFO - ================================================================================
+2025-11-28 03:58:18 - training - INFO - TRAINING COMPLETE
+2025-11-28 03:58:18 - training - INFO -   Total epochs: 17
+2025-11-28 03:58:18 - training - INFO -   Best val loss: 452.307151
+2025-11-28 03:58:18 - training - INFO - ================================================================================
+2025-11-28 03:58:18 - pipeline_orchestrator - INFO - 
+Evaluating on test set...
+2025-11-28 03:59:04 - pipeline_orchestrator - INFO -   Test Loss (MSE): 882.873615
+2025-11-28 03:59:04 - pipeline_orchestrator - INFO -   Test RMSE: 29.714069
+2025-11-28 03:59:04 - pipeline_orchestrator - INFO -   Test MAPE: 183.84%
+2025-11-28 03:59:04 - pipeline_orchestrator - INFO -   Directional Accuracy: 90.88%
+2025-11-28 03:59:04 - pipeline_orchestrator - INFO - 
+[OK] TensorBoard logs saved
+2025-11-28 03:59:04 - pipeline_orchestrator - INFO - 
+[OK] Model training complete!
+2025-11-28 14:23:34 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-28 14:23:34 - pipeline_orchestrator - INFO - QCEW EMPLOYMENT FORECASTING PIPELINE
+2025-11-28 14:23:34 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-28 14:23:34 - pipeline_orchestrator - INFO - Base directory: C:\GitHub\is-160-project
+2025-11-28 14:23:34 - pipeline_orchestrator - INFO - Raw data: C:\GitHub\is-160-project\data\raw
+2025-11-28 14:23:34 - pipeline_orchestrator - INFO - Processed data: C:\GitHub\is-160-project\data\processed
+2025-11-28 14:23:34 - pipeline_orchestrator - INFO - Feature engineering: C:\GitHub\is-160-project\data\feature_engineering
+2025-11-28 14:23:34 - pipeline_orchestrator - INFO - Plots: C:\GitHub\is-160-project\data\processed\plots
+2025-11-28 14:24:01 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-28 14:24:01 - pipeline_orchestrator - INFO - STAGE 7: MODEL EVALUATION
+2025-11-28 14:24:01 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-28 14:24:01 - pipeline_orchestrator - INFO - 
+Generating enhanced training history plots...
+2025-11-28 14:24:06 - visualization - INFO - [OK] Saved enhanced training history: C:\GitHub\is-160-project\data\processed\plots\evaluation\training_history.png
+2025-11-28 14:24:06 - pipeline_orchestrator - INFO - 
+Generating prediction analysis plots...
+2025-11-28 14:24:08 - visualization - INFO - [OK] Saved prediction analysis: C:\GitHub\is-160-project\data\processed\plots\evaluation\prediction_analysis.png
+2025-11-28 14:24:08 - pipeline_orchestrator - INFO - 
+Model Performance Summary:
+2025-11-28 14:24:08 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-28 14:24:08 - pipeline_orchestrator - INFO -   Training epochs: 1
+2025-11-28 14:24:08 - pipeline_orchestrator - INFO -   Best validation loss: 452.307151
+2025-11-28 14:24:08 - pipeline_orchestrator - INFO -   Test loss (MSE): 82.782203
+2025-11-28 14:24:08 - pipeline_orchestrator - INFO -   Test RMSE: 9.098473
+2025-11-28 14:24:08 - pipeline_orchestrator - INFO -   Test MAPE: 0.00%
+2025-11-28 14:24:08 - pipeline_orchestrator - INFO -   Directional Accuracy: 0.00%
+2025-11-28 14:24:08 - pipeline_orchestrator - INFO -   Model saved at: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-28 14:24:08 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-28 14:24:08 - pipeline_orchestrator - INFO - 
+  Overall Model Quality: NEEDS IMPROVEMENT
+2025-11-28 14:24:08 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-28 14:24:08 - pipeline_orchestrator - INFO - COMPREHENSIVE MODEL EVALUATION WITH BASELINES
+2025-11-28 14:24:08 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO - 
+Generating naive baseline predictions...
+2025-11-28 14:24:08 - comprehensive_evaluation - WARNING -   No historical data provided; using test set mean as baseline
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO - ================================================================================
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO - STAGE 8: COMPREHENSIVE MODEL EVALUATION
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO - ================================================================================
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO - 
+LSTM Model Performance:
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO -   RMSE: 9.0985
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO -   MAE: 2.4037
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO -   MAPE: 169.1760
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO -   R2: 0.2610
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO -   DIRECTIONAL_ACCURACY: 91.3757
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO - 
+Baseline Model Comparisons:
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO - 
+MEAN Model:
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO -   RMSE: 10.5841 ([+] +14.04% vs LSTM)
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO -   MAE: 2.2375 ([-] -7.43% vs LSTM)
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO -   MAPE: 161.6174 ([-] -4.68% vs LSTM)
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO -   R2: 0.0000 ([-] +0.00% vs LSTM)
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO -   DIRECTIONAL_ACCURACY: 0.0000 ([-] +0.00% vs LSTM)
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO - 
+Generating comprehensive evaluation report...
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO - [OK] Evaluation report saved: C:\GitHub\is-160-project\data\processed\plots\evaluation\comprehensive_evaluation_report.txt
+2025-11-28 14:24:08 - comprehensive_evaluation - INFO - 
+Creating model comparison visualizations...
+2025-11-28 14:24:09 - comprehensive_evaluation - INFO - [OK] Model comparison plot saved: C:\GitHub\is-160-project\data\processed\plots\evaluation\model_comparison.png
+2025-11-28 14:24:09 - pipeline_orchestrator - INFO - 
+[OK] Comprehensive model evaluation complete!
+2025-11-28 14:55:33 - pipeline_orchestrator - INFO - 
+================================================================================
+2025-11-28 14:55:33 - pipeline_orchestrator - INFO - STAGE 8: INTERACTIVE PREDICTION INTERFACE
+2025-11-28 14:55:33 - pipeline_orchestrator - INFO - ================================================================================
+2025-11-28 14:55:33 - pipeline_orchestrator - INFO - Model path: C:\GitHub\is-160-project\data\processed\lstm_model.pt
+2025-11-28 14:55:33 - pipeline_orchestrator - INFO - Preprocessor path: C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl
+2025-11-28 14:55:41 - prediction_interface - INFO - ================================================================================
+2025-11-28 14:55:41 - prediction_interface - INFO - STAGE 9: INTERACTIVE PREDICTION INTERFACE
+2025-11-28 14:55:41 - prediction_interface - INFO - ================================================================================
+2025-11-28 14:55:41 - prediction_interface - INFO - 
+Loading model from C:\GitHub\is-160-project\data\processed\lstm_model.pt...
+2025-11-28 14:55:41 - prediction_interface - INFO -   Inferred model architecture from checkpoint: input_size=18, hidden_size=64
+2025-11-28 14:55:41 - prediction_interface - INFO - [OK] Model loaded successfully
+2025-11-28 14:55:41 - prediction_interface - INFO -   Device: cpu
+2025-11-28 14:55:41 - prediction_interface - INFO -   Model architecture: input_size=18, hidden_size=64
+2025-11-28 14:55:41 - prediction_interface - INFO - 
+Loading preprocessor from C:\GitHub\is-160-project\data\processed\qcew_preprocessed_preprocessor.pkl...
+2025-11-28 14:55:41 - prediction_interface - INFO - [OK] Preprocessor loaded successfully
+2025-11-28 14:55:41 - prediction_interface - INFO -   Preprocessor type: EmploymentDataPreprocessor
+2025-11-28 14:55:41 - prediction_interface - INFO - 
+Loading reference data...
+2025-11-28 14:55:41 - prediction_interface - INFO -   Base directory: C:\GitHub\is-160-project\data
+2025-11-28 14:55:41 - prediction_interface - INFO -   Trying: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-28 14:55:41 - prediction_interface - INFO -   Loading from: C:\GitHub\is-160-project\data\processed\qcew_master_consolidated.csv
+2025-11-28 14:55:52 - prediction_interface - INFO -   Loaded 5430384 records
+2025-11-28 14:55:52 - prediction_interface - INFO -   Columns: ['area_type', 'area_name', 'year', 'quarter', 'ownership', 'naics_level', 'industry_code', 'industry_name', 'qtrly_estabs', 'avg_monthly_emplvl']
+2025-11-28 14:55:54 - prediction_interface - INFO -   Filtered to 4732218 county records
+2025-11-28 14:55:54 - prediction_interface - INFO -   Found 58 unique counties
+2025-11-28 14:55:55 - prediction_interface - INFO -   Found 2674 industry codes
+2025-11-28 14:55:55 - prediction_interface - INFO - [OK] Reference data loaded successfully
+2025-11-28 14:55:55 - prediction_interface - INFO - 
+================================================================================
+2025-11-28 14:55:55 - prediction_interface - INFO - INTERACTIVE PREDICTION MODE
+2025-11-28 14:55:55 - prediction_interface - INFO - ================================================================================
